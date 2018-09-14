@@ -1,0 +1,11 @@
+# Anything related to compilation of Latex files
+
+*.aux
+*.bbl
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*.synctex.gz
+*.toc
