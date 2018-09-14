@@ -1,0 +1,319 @@
+\documentclass[11pt,a4paper,english,oneside]{book}
+\usepackage{etex} %Because of many packages --> Extended TeX.
+\usepackage[left=1in, right=1in]{geometry} %Helps to structure the paper layout.
+\usepackage[Lenny]{fncychap} %Design of the thesis.
+\usepackage[utf8]{inputenc} %Due to vowels.
+\usepackage{babel} %Define the language style.
+\usepackage{dsfont} %Nice style for the indicator function.
+\usepackage{fancyhdr} %To customize the headers and footers.
+\usepackage{booktabs} %In case you need \cmidrule or \addlinespace in tables.
+\usepackage[hang,bottom,stable,multiple]{footmisc} %Style of footnotes.
+\usepackage{appendix} %For the \appendixpage command.
+%Load some mathematical packages.
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+%\usepackage[sort,round]{natbib} %For the bibliography.
+\usepackage[natbibapa]{apacite} %for citing and bibliography, by Corinne
+\usepackage{etoolbox} %To remove the page number on \appendixpage.
+\usepackage{amsthm} %For theorems, definitions etc.
+\usepackage{thmtools} %For theorems, definitions etc.
+\usepackage{setspace} %Use double spacing.
+\usepackage{lipsum} %For the \lipsum command to generate a text.
+\usepackage{datetime} %For the specification of the date.
+%\usepackage{tocloft} %The ToC, LoF and LoT each appear not necessarily on a new page.
+\usepackage{graphicx,listings,xcolor,textcomp} %For the graphics, listings etc.
+\usepackage{mcode} %To implement a Matlab code.
+\usepackage[margin=10pt, font=small, labelfont=bf, labelsep=endash]{caption} %Customize the captions.
+\usepackage{chngcntr} %To use counterwithout.
+\usepackage{epstopdf} %For inserting .eps files into the document.
+\usepackage{hyperref} %Must be loaded at the end.
+\usepackage{xparse} %Load for \NewDocumentCommand command.
+\usepackage{cleveref} %For the command \cref, load after hyperref.
+\usepackage{arydshln} %Due to the capability to draw horizontal/vertical dash-lines.
+\usepackage{array,hhline} %To create tables and matrices.
+\usepackage{rotating} %To rotate a table.
+\usepackage{tabularx} %An extended version of tabular.
+
+%Setup of the reference links.
+\hypersetup{
+     colorlinks=false,
+     linkcolor=blue,
+     citecolor=blue,
+     filecolor=magenta,
+     urlcolor=blue}
+
+%Define some reasonable margins.
+%\setlength{\textwidth}{6.6in}
+\setlength{\textheight}{9.3in}
+\setlength{\topmargin}{-0.1in}
+%\setlength{\oddsidemargin}{0in}
+\setlength{\parskip}{1mm}
+
+\bibliographystyle{apacite} %Reference style.
+\allowdisplaybreaks[1] %Page breaks of equations are allowed, but avoided if possible. 2-4 more relaxed.
+
+%New command for the logo.
+\newcommand*{\plogo}{\includegraphics[scale=0.7]{HSG_logo}}
+
+%New command for the differential d to have an ordinary d.
+\makeatletter
+  \newcommand{\ud}{\mathrm{d}}
+\makeatother
+
+%Remove page number on \appendixpage. Use the package 'etoolbox'.
+\makeatletter
+\patchcmd{\@chap@pppage}{\thispagestyle{plain}}{\thispagestyle{empty}}{}{}
+\makeatother
+
+%Declare Definitions, Theorems etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\declaretheorem[style=definition,qed=$\blacktriangleleft$, numberwithin=chapter]{remark} %additional options; numberwithin=,..., see 'Thmtools' Users’ Guide
+\declaretheorem[style=definition,qed=$\triangle$,numberwithin=chapter]{definition}
+\newtheorem{ass}{Assumption}[chapter]
+\newtheorem{prop}{Proposition}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\declaretheorem[style=definition,qed=$\perp$,numberwithin=chapter]{example}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{coroll}{Corollary}[chapter]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Readjust the numbering.
+%\counterwithout{footnote}{chapter}
+\numberwithin{equation}{chapter}
+
+%\setlength{\parindent}{0cm} %Uncomment this if you don't want to have indents.
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\newcommand*{\titleGP}{\begingroup %Create the command for including the title page in the document.
+\centering %Center all text.
+\vspace*{\baselineskip} %White space at the top of the page.
+\plogo\\[2\baselineskip] %University Logo.
+\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} %Thick horizontal line.
+\rule{\textwidth}{0.4pt}\\[\baselineskip] %Thin horizontal line.
+{\LARGE Narratives in Finance }\\[0.2\baselineskip] %Title.
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} %Thin horizontal line.
+\rule{\textwidth}{1.6pt}\\[2\baselineskip] %Thick horizontal line.
+\scshape %Small caps.
+Master's Thesis\\[2\baselineskip]
+Submitted in partial fulfillment of the requirements for the degree of Master of Arts in Quantiative Economics and Finance \par
+\vspace*{2\baselineskip}
+Author\\
+{\Large Corinne Knöpfel \\ [5pt]
+ }
+Wiesen 2488, Herisau \\[5pt]
+11-613-676\\[5pt]
+corinne.knoepfel@student.unisg.ch \\
+
+
+\vspace*{2\baselineskip}
+Supervisor\\
+{\Large Dr. Peter Gruber\\[5pt]%\small Hans Vontobel Professor of Financial Engineering\\[5pt]
+\small Institute of Finance\\[5pt]Universit\`{a} della Svizzera Italiana\par}
+%\vspace*{2\baselineskip}
+%Assistant\\
+%{\Large [ Name ] \par}
+\vfill
+{\scshape Date of Submission: \today } \\[0.3\baselineskip]
+\endgroup}
+
+%Special header and footer style for the Abstract and other special pages.
+\fancypagestyle{firststyle}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyfoot[C]{\thepage}
+}
+
+
+%Customize headers and footers.
+\pagestyle{fancy}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\rightmark} %section in header
+%\fancyhead[L]{\leftmark}  %chapter in header
+%\fancyfoot[L]{[ Your Name ]}
+\fancyfoot[C]{}
+%\fancyfoot[R]{[ Running Master Thesis Title ]}
+
+%Define the signature line with dots.
+\NewDocumentCommand \dotbox {o O{.5\linewidth} m O{3ex} O{\linewidth}}
+{
+  \begin{minipage}{7cm}
+    \makebox[7cm][l]{\,.\dotfill}
+    \\
+    \makebox[7cm][l]{\,#3}
+  \end{minipage}
+}
+
+\begin{document}
+\thispagestyle{empty}
+\titleGP
+\newpage
+\doublespacing
+\setcounter{page}{1}
+\pagenumbering{Roman}
+%\section*{Task Assignment}
+\thispagestyle{firststyle}
+%\pagestyle{firststyle} %from here on it uses pagestyle firststyle (for content, etc.)
+
+
+%\newpage
+\chapter*{Abstract}
+
+{\pagestyle{firststyle}
+\tableofcontents
+\cleardoublepage
+}
+
+\listoffigures
+\listoftables
+%\setcounter{rememberpage}{\value{page}} %in case we want to go back to Roman numbering in the Appendix
+
+\newpage
+
+
+\pagenumbering{arabic}
+% \part{[ Part title ]}
+\chapter{Introduction}
+
+
+\chapter{Monetary Policy and Interest Rates}
+
+
+\section{Excess Sensitivity Puzzle}
+
+\section{Existing Research}
+
+\section{New Insights Through Narratives}
+
+
+
+\chapter{Narratives and Decision Making}
+
+
+\section{What Narratives Are}
+
+\subsection{McAdams Research on Narratives}
+
+\subsection{Social Psychology Background}
+
+
+\section{How Narratives can help}
+
+\subsection{Bayesian Brain and Predictive Coding}
+
+Here, there could be a direct link to the algorithms that are used in Machine Learning, AI, and NLP. \cite{Akerlof.2016}
+
+\subsection{Influence and Change on Human Beings}
+
+Akerlof and Shiller understand narratives as a convention, but it is more than that, it changes how people think and perceive the world. 
+
+
+\section{Narrative Research}
+
+
+
+\chapter{Natural Language Processing}
+
+\section{Methods in Natural Language Processing}
+
+\subsection{Sensitivity Analysis}
+
+\subsection{Topic Modeling}
+
+
+\chapter{Data and Methodology}
+
+\chapter{Results}
+
+\chapter{Conclusion}
+
+
+\newpage
+
+\phantomsection 
+\addcontentsline{toc}{chapter}{Bibliography} 
+\renewcommand\bibname{Bibliography}
+
+\bibliography{EconomicNarrative}
+
+
+
+\newpage
+
+\appendix
+\noappendicestocpagenum
+\addappheadtotoc
+%%\appendixpage
+
+
+
+\renewcommand{\theequation}{A.\arabic{equation}}
+
+
+\chapter{Whatever may come...}
+
+
+
+\section{For Example... }
+
+\renewcommand{\theequation}{B.\arabic{equation}}
+
+
+\chapter{Whatever may come...}
+
+
+
+\section{For Example... }
+
+
+
+
+
+\newpage
+{\pagestyle{firststyle}
+	
+\chapter*{Declaration of Authorship}
+
+"I hereby declare
+\begin{itemize}
+	\item that I have written this thesis without any help from others and without the use of
+	documents and aids other than those stated above;
+	\item that I have mentioned all the sources used and that I have cited them correctly
+	according to established academic citation rules;
+	\item that I have acquired any immaterial rights to materials I may have used such as images
+	or graphs, or that I have produced such materials myself;
+	\item that the topic or parts of it are not already the object of any work or examination of
+	another course unless this has been explicitly agreed on with the faculty member in
+	advance and is referred to in the thesis;
+	\item that I will not pass on copies of this work to third parties or publish them without the
+	University’s written consent if a direct connection can be established with the
+	University of St.Gallen or its faculty members;
+	\item that I am aware that my work can be electronically checked for plagiarism and that I
+	hereby grant the University of St.Gallen copyright in accordance with the Examination
+	Regulations in so far as this is required for administrative action;
+	\item that I am aware that the University will prosecute any infringement of this declaration
+	of authorship and, in particular, the employment of a ghostwriter, and that any such
+	infringement may result in disciplinary and criminal consequences which may result
+	in my expulsion from the University or my being stripped of my degree."
+\end{itemize}
+
+%\noindent By submitting this academic term paper, I confirm through my conclusive action that I am
+%submitting the Declaration of Authorship, that I have read and understood it, and that it is
+%true.
+
+%\hrule
+\vspace*{3cm}
+%\hrule
+
+
+\dotbox{Location, Date} \hfill \dotbox{Signature}
+%By submitting this academic term paper, I confirm through my conclusive action that I am
+%submitting the Declaration of Authorship, that I have read and understood it, and that it is
+%true.
+\cleardoublepage
+}
+\end{document}

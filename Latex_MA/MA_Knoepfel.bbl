@@ -1,0 +1,31 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Akerlof%
+\ \BBA {} Snower%
+}{%
+Akerlof%
+\ \BBA {} Snower%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+Akerlof.2016}
+\APACinsertmetastar {%
+Akerlof.2016}%
+\begin{APACrefauthors}%
+Akerlof, G\BPBI A.%
+\BCBT {}\ \BBA {} Snower, D\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Bread and bullets} {Bread and bullets}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Economic Behavior {\&}
+  Organization}{126}{}{58--71}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.jebo.2015.10.021} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
