@@ -1,0 +1,1159 @@
+ 
+
+
+ HD FEDERAL RESERVE  STATE OF PLAY - By Steve Beckner - 21 Sept'05     WC324 words   PD21 September 2005   ET19:33   SNMarket News International   SCMARNEW   LAEnglish   CY(c) 2005. Market News International, Inc.  
+   TD
+
+     Much was said about Fed Chairman Alan Greenspan's "risk management" 
+proclivities before the Sept. 20 Federal Open Market Committee meeting. 
+Greenspan had led the FOMC to reverse course and ease in August 1998 to 
+prevent a liquidity crisis. He had led unprecedented easing in 2001-03 
+to insure against a remote but potentially disastrous deflation threat. 
+This time, it was supposed, Greenspan would ask the FOMC to defer 
+further interest rate hikes to guard against undue weakening of consumer 
+demand caused by the Hurricane Katrina-induced upsurge in energy costs. 
+
+     The FOMC did weigh the risks, but judged higher inflation, not 
+economic weakness, to be the risk that most needs insuring against. So 
+the FOMC raised the federal funds rate 25 basis points an 11th time to 
+3.75%, and it indicated there will be more to come. The decision was not 
+unanimous. Gov. Mark Olson voted no. The Fed Board had requests from 
+just seven of 12 Fed Banks for an accompanying boost in the discount 
+rate. But, despite the apparent dissension, the rate announcement was 
+forceful. Instead of peering nervously into the future and hinting at a 
+possible pause, the FOMC emphatically signalled it will continue to move 
+away from "accommodation" to keep inflation from accelerating. 
+
+     The Fed acknowledged Katrina's "widespread devastation" and related 
+energy price surge "imply that spending, production, and employment will 
+be set back in the near term." But it added, "while these unfortunate 
+developments have increased uncertainty about near-term economic 
+performance, it is the Committee's view that they do not pose a more 
+persistent threat." It said "monetary policy accommodation" and 
+productivity growth "is providing ongoing support to economic activity." 
+What's more, it warned, "higher energy and other costs have the 
+potential to add to inflation pressures." So the FOMC once again said it 
+expects to remove accommodation at a "measured" pace.  
+   INi814 : Banking | i81401 : Central Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBMarket News International, Inc.   ANDocument MARNEW0020050922e19l0001v  
+
+
+
+ HDUPDATE 1-US mortgage bonds widen as curve flattens     BYBy Julie Haviv     WC387 words   PD21 September 2005   ET22:14   SNReuters News   SCLBA   LAEnglish   CY(c) 2005 Reuters Limited  
+   LP(Updates prices, market activity)  
+
+NEW YORK, Sept 21 (Reuters) - Yield spreads on U.S. mortgage-backed securities ended wider versus comparable Treasuries on Wednesday as a flatter curve offset the benefit of lower interest rate volatility.  
+   TD"Return of the bull flattener caused havoc and put MBS in the corner today," a trader said. "Into the uptick, MBS have lost their fictitious yield bid and are looking for a new sponsor."  
+
+Lower 30-year coupons outperformed higher issues due to 'down-in-coupon' trades from servicers and other participants, while hedge fund buying kept spreads from widening further, he said.  
+
+"We know these (price) levels all too well and don't expect any momentum behind today's widening," the trader added.  
+
+Benchmark 10-year Treasury notes <US10YT=RR> rose 15/32 to 100-17/32 for a yield of 4.183 percent. Yields, which move inversely to price, fell from Tuesday's 4.255 percent.  
+
+Active 15-year and 30-year mortgage-backed securities were 1/32 to 9/32 higher. Bond equivalent yields on 30-year 5.5 percent issues ranged from 5.208 to 5.393 percent, about 0.034 to 0.036 percentage point higher than late Tuesday.  
+
+JP Morgan believes that in the near term low volatility will become more important as the pace of curve flattening subsides. In fact, the flattening may have been technically driven and could reverse depending upon weather patterns, the company said in research published Wednesday.  
+
+If the Federal Reserve continues to raise interest rates it may motivate de-levering from banks who are overweighted MBS, which is why JP Morgan's longer term outlook remains negative for the sector.  
+
+MBS, however, may benefit from the recent increase in demand for adjustable-rate mortgages.  
+
+With fixed mortgage interest rates rising, demand for ARMs has been climbing in tandem. ARMs accounted for 29.8 percent of total mortgage applications last week, up from 28.2 percent the previous week, according to the Mortgage Bankers Association.  
+
+"If this high ARM share persists, higher ARM production should be good for fixed-rate performance," Alec Crawford, MBS strategist at RBS Greenwich Capital, said in research published Wednesday.  
+   RFMARKETS-MORTGAGES (UPDATE 1)|LANGED|Table|ABN|D|E|RBN|U   NSe1122 : Mortgage Applications/Refinancing | e1202 : Interest Rates | ecat : Economic News | m12 : Debt/Bond Markets | mgvdbt : Government Debt/Bond Markets | e11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | mcat : Commodity/Financial Market News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REusa : United States | namz : North America   IPCMTG | DBT | INT | MCE | AGN   PUBReuters Ltd.   ANDocument LBA0000020050921e19l00287  
+
+
+
+ HDUS SWAPS-Spreads narrow on supply, curve flattens     WC431 words   PD21 September 2005   ET21:46   SNReuters News   SCLBA   LAEnglish   CY(c) 2005 Reuters Limited  
+   LPNEW YORK, Sept 21 (Reuters) - U.S. swap spreads narrowed on Wednesday on a resurgence in hedge demand on new debt supply, market sources said.  
+
+A day after the Federal Reserve raised short-term interest rates for the 11th time since June 2004, major bond offerings included $4 billion in two-year notes from the Federal Home Loan Bank system, a $2.5 billion multi-part deal from Telecom Italia and a $1.5 billion 30-year transaction from the Puerto Rico Highways and Transportation Authority.  
+   TDSwap spreads tightened as much as 1.25 basis points from Tuesday with 10-years narrowing to 43.50 basis points, their tightest level in nearly a week.  
+
+Underlying Treasury yields fell on worries that persistent high oil prices could cut into consumer spending and hurt economic growth. Oil prices <OILOIL> rose on fears that Hurricane Rita, a powerful Category 4 storm like Katrina, would hit Texas's Gulf Coast, where major oil facilities are located.  
+
+The two-year swap yield decreased 4 basis points to 4.34 percent, while the two-year Treasury yield <US2YT=RR> dipped 2 basis points to 3.97 percent.  
+
+On Tuesday, two-year Treasury yields climbed after the Fed raised its target on the federal funds rate to 3.75 percent, the highest level in more than four years.  
+
+On the long end, 10-year swap yields fell to 4.61 percent, down from Tuesday's 4.69 percent, and the 10-year Treasury yield <US10YT=RR> slipped 6 basis points to 4.19 percent.  
+
+Players are again favoring curve-flatteners, bets that longer-dated securities will perform better than short-dated issues, as the Fed is expected to keep raising short-term rates and long-term inflation expectations stay low, analysts said.  
+
+The two-to-10-year area of the swap curve flattened below 30 basis points for the first time in September.  
+
+In light of a vigilant Fed and likely weaker economic readings, most analysts anticipate the swap and other rate curves to resume their flattening trend prior to Katrina.  
+
+"We expect the front-end of the curve to remain anchored, with rate volatility pushing further out the curve. That being the case, we expect softening sentiment and weak incoming data and projections to cause a bull flattening, retracing some of August's curve flattening trend," said Eric Hiller, chief interest rate derivatives strategist at Banc of America Securities LLC in a note.  
+   RFMARKETS-SWAPS|LANGEN|Table|ABN|E|RBN|D|M|MNI|U|RNP|DNP   COolivet : Telecom Italia S.p.A.   INi7902 : Telecommunications   NSe1202 : Interest Rates | ecat : Economic News | m12 : Debt/Bond Markets | m15 : Derivative Securities | e12 : Economic/Monetary Policy | mcat : Commodity/Financial Market News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REusa : United States | usny : New York | namz : North America | use : Northeast U.S.   IPCINT | MCE | DBT | DRV   PUBReuters Ltd.   ANDocument LBA0000020050921e19l00267  
+
+
+
+ HDUPDATE 1-Fed's Ferguson says markets may underprice risk      WC463 words   PD21 September 2005   ET17:27   SNReuters News   SCLBA   LAEnglish   CY(c) 2005 Reuters Limited   
+   LP(Adds details on areas of concern, hedge funds)   
+
+WASHINGTON, Sept 21 (Reuters) - Federal Reserve Vice Chairman Roger Ferguson on Wednesday said many financial markets may be underpricing risks and both policy-makers and markets should take a medium-term view when gauging risk.   
+   TDIn a statement to be delivered to the IMF's policy-setting group on Saturday on behalf of the Financial Stability Forum, Ferguson pointed to a number of factors, including low levels of risk premiums and long-term interest rates, that suggested a high level of risk-taking.   
+
+"Considering the potential challenges these developments imply, many markets may perhaps be underpricing risks going forward," Ferguson said.   
+
+Ferguson's comments were posted to the IMF's Web site (  www.imf.org  ) and closely mirrored a statement issued by the FSF after its Sept. 8-9 meeting in London. Ferguson said economic and financial conditions had remained generally benign over the last six months but FSF members still had concerns on the future.   
+
+"Members pointed to the potential impact of higher oil and gas prices on near term prospects for growth and inflation, a factor exacerbated by Hurricane Katrina," he said. "Members also pointed to a number of continuing developments that could over time lead to strains in financial markets."   
+
+In addition to low risk premiums and long-term interest rates, Ferguson pointed to an ongoing search among investors for higher yields, increased exposure to complex and illiquid financial products, rising household indebtedness and persistent and growing current account and budget imbalances.   
+
+"Events or policy mistakes that heighten perception of risks could significantly alter current conditions," Ferguson warned.   
+
+He pointed to the possibility inflation could pick up and alter interest-rate expectations and economic growth could falter under the weight of higher oil prices, shifting perceptions on credit quality and widening credit spreads.   
+
+Ferguson also said lofty oil prices could cause trouble for some emerging market economies.   
+
+"In light of these developments, the FSF noted the importance of policy-makers, financial supervisors and market participants taking an appropriately medium-term view of risks and paying particular attention to ensuring the adequacy of market discipline, credit and operational standards and levels of provisioning," Ferguson said.   
+
+He said the forum, which brings together central bankers and monetary officials, would continue to assess the implications of the rapid growth in complex financial products and the hedge fund industry.   
+
+"Events this year in the credit derivatives markets have emphasized the need for market participants to stress-test their risk managements models effectively for disruptions to market liquidity, in particular with regard to complex products," Ferguson said.   
+   RFECONOMY-FED-FERGUSON (UPDATE 1)|LANGEN|ABN|E|RBN|U|D|M|MNI|ABX|BNX|RNP|DNP   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe1102 : Money Supply | e1202 : Interest Rates | ecat : Economic News | gvexe : Executive Branch | imf : International Monetary Fund | m12 : Debt/Bond Markets | m15 : Derivative Securities | m16 : Fund Markets | mgvdbt : Government Debt/Bond Markets | e11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | gcat : Political/General News | gpir : Politics/International Relations | gpol : Domestic Politics | gvbod : Government Bodies | mcat : Commodity/Financial Market News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter | ocat : International Pol-Econ Organizations | mcpdbt : Corporate Debt/Bond Markets   REusa : United States | namz : North America   IPCMUNI | DBT | WASH | FED | CEN | MCE | IMF | INT | GVD | FUND | DRV   PUBReuters Ltd.   ANDocument LBA0000020050921e19l001nk  
+
+
+
+ HDIMF says U.S. Fed rightly cautious on inflation      WC184 words   PD21 September 2005   ET15:58   SNReuters News   SCLBA   LAEnglish   CY(c) 2005 Reuters Limited   
+   LPWASHINGTON, Sept 21 (Reuters) - U.S. inflation seems contained but it pays to be cautious and it is evident that the Federal Reserve still sees a potential threat, a senior the International Monetary Fund official said on Wednesday.   
+
+"We thing that inflation at this point is still contained but there are signs which make us cautious," IMF chief economist Raghuram Rajan told a Washington press conference. He noted that productivity was slowing and unit labor costs for production were on the rise.   
+   TD"These are warning signs that things may not be so benign going forward, so I think the Fed yesterday in raising interest rates has suggested that it still sees some potential threat from inflationary pressures," he added.   
+
+U.S. Federal Reserve policy-makers on Tuesday raised the trend-setting federal funds rate a quarter percentage point to 3.75 percent, an 11th straight interest-rate rise that it said was aimed at keeping inflation under control.   
+   RFECONOMY-IMF-FED (URGENT)|LANGEN|ABN|E|RBN|U|D|M|MNI|RNP|DNP   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe1102 : Money Supply | e1202 : Interest Rates | ecat : Economic News | m12 : Debt/Bond Markets | mgvdbt : Government Debt/Bond Markets | e11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | mcat : Commodity/Financial Market News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter | imf : International Monetary Fund | mcpdbt : Corporate Debt/Bond Markets | ocat : International Pol-Econ Organizations   REusa : United States | namz : North America   IPCMUNI | DBT | FED | CEN | MCE | GVD | INT   PUBReuters Ltd.   ANDocument LBA0000020050921e19l001f4  
+
+
+
+ HDRPT-U.S. stocks drop as Fed hints no end to rate hikes      BYBy Vivianne Rodrigues      WC686 words   PD21 September 2005   ET06:42   SNReuters News   SCLBA   LAEnglish   CY(c) 2005 Reuters Limited   
+   LPNEW YORK, Sept 20 (Reuters) - U.S. stocks fell on Tuesday after the Federal Reserve raised the benchmark interest rate to its highest level since 2001 and gave no indication it's near the end of its rate-increase campaign.   
+
+Shares of companies sensitive to higher lending rates, such as homebuilders Centex Corp. and D.R. Horton Inc. , declined after the Fed's rate decision. Centex slid 2.4 percent to $64.95, while D.R. Horton fell 5.4 percent to $34.33. The Dow Jones index of homebuilders <.DJUSHB> fell almost 5 percent, its biggest percentage drop since Oct. 4, 2004.   
+   TDWal-Mart Stores Inc. , the world's largest retailer and a Dow component, fell to near a five-year low after the Fed's comments. The stock closed at $43.21, down 1.8 percent, or 80 cents, after earlier hitting a session low of $43.10.   
+
+"Stocks are clearly under pressure," said Tony Dwyer, chief equity strategist at FTN Financial. "You would expect the higher rates to negatively impact the consumer."   
+
+The Dow Jones industrial average <.DJI> was down 76.11 points, or 0.72 percent, to end at 10,481.52. The Standard & Poor's 500 index <.SPX> was down 9.68 points, or 0.79 percent, to finish at 1,221.34. The technology-laced Nasdaq Composite Index <.IXIC> was down 13.93 points, or 0.65 percent, to close at 2,131.33.   
+
+The Fed raised the fed funds rate for the 11th straight time since June 30, 2004, bringing it up a quarter-percentage point to 3.75 percent, and saying Hurricane Katrina will give the broad economy only a temporary setback. [ID:nN20372894]   
+
+Shares of mortgage lenders, including government-sponsored Fannie Mae and Freddie Mac , also declined.   
+
+Fannie Mae dropped 1.9 percent, or 88 cents, to $46.66, and Freddie Mac fell 2.7 percent, or $1.59, to $57.50.   
+
+U.S. crude oil futures ended down on Tuesday after gaining more than $4 on Monday. October crude futures <CLV5>, which expired at the close of Tuesday's regular NYMEX trading, fell $1.16 to settle at $66.23 per barrel.   
+
+Fed officials also said in their statement that higher energy costs have "potential to add to inflation pressures."   
+
+The session's few gainers included Qualcomm Inc. , which climbed 1.7 percent to $43.42. Analysts at Goldman Sachs & Co. raised its rating on the wireless technology company's stock in anticipation of improving demand for high-speed wireless services. [ID:nN20398272]   
+
+Circuit City Stores Inc. also rose after the electronics retailer reported a surprise quarterly profit.[ID:nN20362671]. Shares gained 5.9 percent to $16.43.   
+
+NEW YORK TIMES STOCK DROPS AFTER BELL   
+
+After the closing bell, shares of New York Times Co. fell nearly 2 percent to $31.51 on the Inet electronic brokerage network after the company said it plans to cut about 4 percent of its work force and warned of lower-than-expected profits as it faces weaker advertising across its core newspaper operations.   
+
+The publisher of the New York Times and the Boston Globe said it would cut about 500 jobs over six to nine months starting in October. The reductions would include a total of about 80 newsroom positions -- 45 at the Times and 35 at the Globe. Before the announcement, New York Times Co. stock had ended regular trading up 0.7 percent, or 21 cents, at $32.13.   
+
+During the regular session, trading was heavy on the New York Stock Exchange, with about 1.73 billion shares changing hands, above last year's daily average of 1.46 billion. On Nasdaq, about 1.91 billion shares were traded, above last year's daily average of 1.81 billion.   
+
+Declining shares outnumbered advancing stocks by a ratio of about 2 to 1 on the NYSE and by about 3 to 2 on Nasdaq. (Additional reporting by Jennifer Coogan)   
+   RFMARKETS-STOCKS (REPEAT)|LANGEN|DA|FN|NW|SW   NSe1202 : Interest Rates | m11 : Equity Markets | e12 : Economic/Monetary Policy | ecat : Economic News | mcat : Commodity/Financial Market News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REnamz : North America | usa : United States   PUBReuters Ltd.   ANDocument LBA0000020050921e19l0006c  
+
+
+
+ HDFed Keeps Focus On Inflation And Raises Rate --- Increase to 3.75% Shows Less Concern Over Impact Of Katrina on Growth   BYBy Greg Ip    WC1,498 words   PD21 September 2005   SNThe Wall Street Journal   SCJ   PGA1   LAEnglish   CY(Copyright (c) 2005, Dow Jones & Company, Inc.) 
+   LPWASHINGTON -- The Federal Reserve raised interest rates for the 11th consecutive time, concluding that Hurricane Katrina's impact on inflation is more worrisome than its effect on growth.
+
+The Fed raised its short-term interest-rate target to 3.75%, from 3.5%. It indicated that it expects to raise the rate further at a "measured" pace, which has come to mean an increase of one-quarter percentage point at each meeting of Fed policy makers.
+   TDThe decision to raise rates and to signal more ahead amid the uncertainty created by Katrina as well as some political pressure to take a break attests to the Fed's mounting concern over inflation. Fed Chairman Alan Greenspan appears more willing to risk slowing the economy down by raising rates too much, than to risk letting inflation rise further by raising them too little.
+
+Yesterday's increase wasn't wholly expected: A minority of economists thought the Fed would pause to assess Katrina's impact. And some Fed officials wanted to do so. Fed Governor Mark Olson cast the lone dissent yesterday, breaking a two-year stretch of unanimous votes.
+
+In a statement, the Fed acknowledged Katrina's "tragic toll," but predicted it wouldn't derail the economy's expansion, and may aggravate inflation. "The widespread devastation in the Gulf region, the associated dislocation of economic activity, and the boost to energy prices imply that spending, production, and employment will be set back in the near term," the Fed said.
+
+"While these unfortunate developments have increased uncertainty about near-term economic performance, it is the [Fed's] view that they do not pose a more persistent threat." Economic growth, it said, would be supported by still-low interest rates and brisk productivity growth, while "higher energy and other costs have the potential to add to inflation pressures."
+
+It did say that underlying inflation is "relatively low" and longer-term inflation expectations are "contained," but this was less sanguine than the statement following its Aug. 9 meeting, which called such expectations "well contained."
+
+In June of last year, the federal funds rate, charged on overnight loans between banks, stood at a 46-year low of 1%. The Fed's goal since then has been to return rates to a "neutral" level that neither fuels inflation nor restrains growth. Estimates of neutral range from 3% to 5.5%.
+
+Financial markets now expect only one more quarter-point rate increase during the three remaining meetings before Mr. Greenspan's term ends Jan. 31 -- and possibly one more by next summer.
+
+In response to the Fed move, commercial banks raised their prime lending rate, a benchmark for many short-term business and consumer loans, to 6.75% from 6.5%. Longer-term lending rates will be little affected, however, as bond markets, where long-term rates are set, had anticipated yesterday's action and showed little response.
+
+With the economy growing steadily, unemployment falling and underlying inflation low, Fed officials had been comfortable with a steady diet of small, well-telegraphed rate increases for the past year.
+
+But in the weeks prior to Katrina, the Fed had increasingly fretted that rising energy prices in an economy with little spare capacity were a growing threat to inflation. The unemployment rate in August fell to 4.9%, a level many economists, including those on the Fed's staff, consider indicative of an economy operating at capacity.
+
+Consumer prices rose 3.6% in the 12 months through August, matching the largest such increase in four years, and Morgan Stanley expects them to hit 4.3% in September. Excluding food and energy prices, inflation has hovered around 2%, but Fed officials worry other prices may creep higher as energy costs work their way through the pipeline. Several cities, for instance, recently have permitted taxi companies to boost fares because of higher gasoline prices.
+
+"I'm concerned about core inflation running at the upper end of the range that I feel is consistent with price stability," Federal Reserve Bank of Chicago President Michael Moskow, who voted in favor of yesterday's rate increase, said earlier this month.
+
+Katrina has aggravated those concerns. Ken Simonson, chief economist for Associated General Contractors of America, recently predicted construction-materials prices would rise 10% next year, up from his previous forecast of 6% to 8%. He blames higher fuel and transportation costs, disruptions and shortages related to Katrina.
+
+The University of Michigan found consumers expect inflation in the coming year of 4.6%, a near-15-year high, and expect average inflation of 3.1% over the next five years, a four-year high. Richard Berner, chief U.S. economist at Morgan Stanley, said federal reconstruction spending could boost growth so much next year that the Fed may have to raise rates even further than it previously anticipated.
+
+Still, there is a risk yesterday's increase will prove to be a mistake. The University of Michigan said consumer confidence experienced its largest two-month drop on record from July to September, a development that often foreshadowed recession. Oil and gasoline prices have rebounded this week as Hurricane Rita threatens the Gulf coast. "There is a risk the energy shock is going to be bigger and have more damaging effects on the economy than realized," said Bill Dudley, chief U.S. economist at Goldman Sachs. "They could look bad with the benefit of hindsight."
+
+Mr. Greenspan has in the past altered course in the face of a shock, though not a natural disaster. In 1997, the Fed moved to a neutral from a tightening stance because of the Asian financial crisis. In December 1999, it paused rather than raise rates because of uncertainty over how computers at banks and elsewhere would handle the century date change. And it cut rates rapidly after the terrorist attacks of Sept. 11, 2001.
+
+Its decision not to pause this time drew some political flak. "Chairman Greenspan is insensitive to America's working families," Senator Jim Bunning, a Kentucky Republican and longtime Greenspan critic, said in a statement. "Americans simply don't need another rate hike in the middle of a crisis."
+
+Mr. Greenspan has been praised for bringing down both unemployment and inflation in his 18 years as Fed chairman. But as that tenure draws to a close, he appears clearly more willing to risk a rise in unemployment than a jump in inflation, while aiming to avoid both. Richard DeKaser, chief economist at National City Corp. in Cleveland, said the Fed might welcome a slowdown because it would maintain some slack in the economy. That would make it harder for firms and workers to build higher energy prices into prices and wages. As in 1995, a "soft patch . . . would provide a firmer basis for extending the expansion into the . . . rest of the decade," Mr. DeKaser said.
+
+Mr. Olson, a former banking consultant and Congressional staffer, who cast the lone dissent, primarily works on regulatory and consumer affairs, and his views on the economy and monetary policy seldom make news. A spokeswoman said he declined to comment on the reason for his dissent. The reasons are to be given in minutes to the meeting, to be released in three weeks. Mr. Berner said his dissent probably reflected a desire to await more information, rather than a belief that the time had come for the Fed to stop raising rates.
+
+Other officials may also have had misgivings, but these won't be known until the minutes of this meeting are issued. The Fed's policy-making committee comprises 19 officials, of which 12 may cast a vote on rate moves: the seven members of the Fed board of governors in Washington and presidents of five of the 12 regional Fed banks. With two vacancies on the Fed board, yesterday's vote was 9-1.
+
+In a sign of possible unease among other Fed officials, only seven of the Fed's 12 regional banks asked for a quarter-point increase in the discount rate, to 4.75% from 4.5%, prior to yesterday's meeting. The little-used discount rate is charged on Fed loans to member banks and usually moves in lockstep with the federal funds rate. Regional banks' discount requests can reflect the rate views of either the bank's president, or its private-sector board, or both.
+
+Among those absent from the request were the Atlanta and Dallas Feds, whose districts bore the brunt of Katrina. Dallas Fed President Richard Fisher, however, voted for the increase in the federal funds target. Two more banks asked for the discount-rate requests late yesterday.
+
+Those absent may have asked for no increase or, less likely, a larger increase. It's also possible their boards met in the immediate aftermath of Katrina when the economic outlook was much dicier. 
+
+
+
+License this article from Dow Jones Reprint Service
+   INi814 : Banking | i81401 : Central Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | e1201 : Central Bank Intervention | ecat : Economic News | ghurr : Storms | gvexe : Executive Branch | m131 : Money Markets | npag : Page-One Story | gcat : Political/General News | gdis : Disasters/Accidents | gntdis : Natural Disasters/Catastrophes | gpir : Politics/International Relations | gpol : Domestic Politics | grisk : Risk News | gvbod : Government Bodies | gwea : Weather | m13 : Money/Forex Markets | mcat : Commodity/Financial Market News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REusa : United States | uss : Southern U.S. | namz : North America   IPCPIC | FED | USG | NND | TPX | MHD | PGO | TPT   PUBDow Jones & Company, Inc.   ANDocument J000000020050921e19l0003e  
+
+
+ CLMCredit Markets   HDFed's Move Tightens Yield Spreads --- Rate Increase and Signal Of More to Come Support Longer-Dated Maturities   BYBy Grainne McCarthy and Michael Mackenzie Dow Jones Newswires    WC844 words   PD21 September 2005   SNThe Wall Street Journal   SCJ   PGC5   LAEnglish   CY(Copyright (c) 2005, Dow Jones & Company, Inc.) 
+   LPThe Federal Reserve's decision to stay on a steady course of interest-rate increases answered a key question for the bond market: Hurricane Katrina will not derail this tightening cycle.
+
+The Fed's 11th consecutive quarter-point interest-rate increase put the monetary-policy-sensitive two-year Treasury note under mild pressure and supported government bonds with longer maturity dates, which are most vulnerable to inflation. By extension, the Fed's statement that it may continue to raise interest rates at a "measured" pace gave renewed appeal to a flatter yield curve, whereby yields on shorter-dated maturities rise faster than those on long-dated peers.
+   TDNoting elevated energy prices, the Federal Open Market Committee voted 9 to 1 to lift its target on the key federal-funds rate a quarter percentage point to 3.75% in a widely anticipated move that put the rate at its highest level in more than four years. Fed Governor Mark Olson dissented, advocating no change in the federal-funds target at this meeting.
+
+"The Fed is giving no indication they are close to finishing their rate-hike cycle," said Dominic Konstam, head of interest-rate strategy at Credit Suisse First Boston in New York. "They clearly want to get ahead of inflation risks and it makes 4.25% a likely year-end level for the [federal] funds rate."
+
+Interest-rate-futures contracts forecast a 4% federal-funds rate for the end of the year. Meanwhile, a Dow Jones Newswires/CNBC survey of primary dealers -- banks that deal directly with the Fed -- found a strong majority looking for the nudge to 4% at the FOMC's next meeting Nov. 1, with the short-term rate expected to reach 4.25% in December.
+
+Mr. Konstam said the selling pressure in Treasurys, led by the two-year note, was an understandable reaction. "The yield curve is flattening and that should continue as the Fed keeps raising rates."
+
+After Hurricane Katrina sparked widespread damage across three states, some market participants expected the Fed might hold rates steady, or at least indicate it was prepared to do so. The Fed acknowledged the risks from the hurricane, but in a key statement, it suggested the unfortunate developments and disruption in energy markets "do not pose a more persistent threat," to growth.
+
+Indeed, the jump in energy prices because of Katrina was the focus of the FOMC's concerns. Although policy makers said "core inflation has been relatively low in recent months and longer-term inflation expectations remain contained," they cautioned "higher energy and other costs have the potential to add to inflation pressures."
+
+With those words, the Fed helped breathe life into the flattening of the yield curve, which had succumbed in Katrina's wake to a steepening trend. In late trade, the spread between the yields of two- and 10-year notes had narrowed to 0.26 from 0.32 percentage points before the Fed decision.
+
+Further flattening of the curve is expected to be propelled by a rising two-year yield and a steady 10-year yield.
+
+"As long as the Fed is viewed as being more concerned with inflation than with growth, the 10-year should remain in a 4% to 4.38% range," said Andy Brenner, head of institutional fixed income at Investec in New York. "This will force in more buying over the rest of the month" for the 10-year, he added.
+
+Treasury Bonds
+
+At 4 p.m., the benchmark 10-year note was down 2/32 point, or $0.625 per $1,000 face value, at 99 31/32. Its yield rose to 4.255% from 4.25% Monday. The 30-year bond was up 11/32 point to 112 22/32, with its yield falling to 4.529% from 4.55%. 
+
+
+ 
+                              AUCTION RESULTS 
+ 
+  Here are the results of the Treasury auction of four-week bills. All bids 
+are awarded at a single price at the market-clearing yield. Rates are 
+determined by the difference between that price and the face value. 
+ 
+Applications ................................... $25,263,103,000 
+Accepted bids ................................... $8,000,103,000 
+Bids at market-clearing yield accepted .................. 38.25% 
+Accepted noncompetitively ......................... $100,113,000 
+" foreign noncompetitively .................................. $0 
+Auction price (Rate) ........................ 99.750333 (3.210%) 
+Coupon Equivalent ....................................... 3.263% 
+Cusip number ......................................... 912795VW8 
+ 
+  The bills are dated Sept. 22 and mature Oct. 20, 2005. 
+    
+
+Corporate Bonds
+
+Telecom Italia is planning a $2.5 billion three-part note offering, split between five-year fixed- and floating-rate notes and 10-year notes, according to an investor.
+
+J.P. Morgan and Lehman Brothers will jointly lead the offering, which will be sold this week following a teleconference call with investors today. The Italian telecom operator recently registered with the Securities and Exchange Commission to sell as much as $10 billion in debt securities.
+
+---
+
+Aparajita Saha-Bubna contributed to this article. 
+
+License this article from Dow Jones Reprint Service
+   NSe1202 : Interest Rates | e12 : Economic/Monetary Policy | ecat : Economic News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter | m12 : Debt/Bond Markets | mcat : Commodity/Financial Market News   REusa : United States | namz : North America   IPCCMR | EWR | TRE | USG | NND | TPX | UTI | CRD | MIM   PUBDow Jones & Company, Inc.   ANDocument J000000020050921e19l0000q  
+
+
+
+ SELEX COLUMN   HDRebel without a pause - THE LEX COLUMN.   WC250 words   PD21 September 2005   SNFinancial Times   SCFTFT   EDUSA Ed1   PGPage 16   LAEnglish   CY(c) 2005 The Financial Times Limited. All rights reserved 
+   LPFleetingly, there was something worth betting on. After a run of 10 clearly telegraphed interest rate hikes, Hurricane Katrina injected a rare dose of unpredictability into yesterday's Federal Reserve decision. But any talk of a pause was quickly squashed.
+
+While acknowledging that the devastation in the Gulf region would hit economic activity and cause energy price volatility short-term, the Fed believes it does not represent a longer-term threat. Instead, with still accommodative monetary policy and the risk that higher energy costs will add to inflationary pressure, it signalled its intention to continue raising rates. The Fed is aware that the hurricane will distort economic figures in the coming months. Having laid out its position, the data will have to be pretty terrible for it to change its tune for the November meeting.
+   TDThat helps underline the Fed's inflation fighting credentials - particularly after a recent jump in consumer inflation expectations and with financial conditions still stimulative. There were, however, hints that the tightening phase is coming off autopilot. There was dissent for the first time during this tightening cycle - with Mark Olson voting against an increase. Even if that simply reflects uncertainty in the aftermath of Katrina, it is a sign that after November rate increases might not be a foregone conclusion. Without such a clear roadmap, investors will start having to sit up and take notice if the Fed keeps raising rates into next year. 
+   RF20050921U116.800   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News | nanl : Analysis | ncat : Content Types   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTFT000020050921e19l0006b  
+
+
+
+ SESTOCK MARKETS &CURRENCIES   HDGreenback consolidates gains CURRENCIES.   BYBy CHRIS FLOOD and STEVE JOHNSON    WC633 words   PD21 September 2005   SNFinancial Times   SCFTFT   EDLondon Ed1   PGPage 42   LAEnglish   CY(c) 2005 The Financial Times Limited. All rights reserved 
+   LPThe US dollar edged higher yesterday as the Federal Reserve, as expected, raised interest rates by 25 basis points for the eleventhsuccessive meeting.
+
+Shortly after the decision the greenback was trading at Dollars 1.2130 against the euro, from Dollars 1.2163 prior to the decision, as well as firming up by a similar margin to Dollars 1.8000 against sterling, Y111.89 versus the yen and SFr1.2808 against the Swiss franc. The dollar index strengthened to 88.59, from 88.32 before the announcement.
+   TDAlthough a minority of economists had expected the Fed to pause its rate-hiking cycle in the wake of Hurricane Katrina, the decision to push rates to 3.75 per cent had largely been priced in to the currency market.
+
+The accompanying statement was on the hawkish side with the Federal Open Market Committee saying monetary policy was still "accommodative", that rates could be raised at a "measured pace" and that Katrina would only set back the US economy in the "near term".
+
+The FOMC warned that rising energy prices could push inflation higher, rather than fretting about the potential hit to economic growth. "Higher energy and other costs have the potential to add to inflation pressures,'' the FOMC said.
+
+However, dollar bears were able to take comfort from the fact that, unusually, the FOMC's decision was not unanimous, with one committee member, Mark Olson, dissenting from the 9-1 majority vote.
+
+Alan Greenspan, Fed chairman, has already commented on "froth" in the US housing market and there was little indication of any slowdown in figures released yesterday showing US housing starts remained strong at 2.009m (annualised) in August, a fifth consecutive month above the 2m mark.
+
+The recent push in the gold price to a 17-year high is seen as a sign that the market is becoming more concerned about inflation. The widening spread between 10-year Treasury yields and inflation protected TIPS suggests investors are concerned over how successful the Fed will be in fighting inflation with higher interest rates.
+
+The Canadian central bank is due to hold its interest rate setting meeting shortly. Comments from its US counterpart on inflation expectations could have some impact on the outlook for Canadian rates.
+
+The Canadian dollar moved in a narrow range against the dollar yesterday, trading at CDollars 1.1700 after the loonie reached a 14-year high against the greenback on Monday.
+
+"The Canadian dollar has been one of our most favoured currencies for some time now, given the mix of rising energy costs, strengthening economic momentum, fiscal and current account surpluses and a central bank in the foothills of monetary tightening," said Simon Derrick at the Bank of New York. "Such is the momentum of late, that further progress towards the all-time high (CDollars 1.1198 set in November 1991) now looks a distinct possibility."
+
+In Germany, the ZEW survey of economic sentiment fell more sharply than expected in September with the decline blamed on uncertainty over the general election. Selling pressure on the euro appeared to be easing amid emerging optimism about the possibility of a agreement between the main political parties. Prior to the Federal Reserve decision the euro had been up 0.3 per cent at Dollars 1.2175 from Dollars 1.2134 overnight. Against sterling, the euro strengthened 0.1 per cent to Pounds 0.6749.
+
+In the UK, the housing market showed signs of stabilising, according to a survey by the Royal Institution of Chartered Surveyors.
+
+Concerns over the outlook for consumer spending and economic growth meant sterling remained under pressure against the dollar, trading at Dollars 1.8043 prior to the Fed decision, down fractionally on the day. 
+   RF20050921L142.108   INi814 : Banking | i81401 : Central Banking | ibnk : Banking/Credit   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | m13 : Money/Forex Markets | m132 : Foreign Exchange News | mcat : Commodity/Financial Market News | m11 : Equity Markets | ecat : Economic News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTFT000020050921e19l0005c  
+
+
+
+ SEFT MARKETS   HDEquities trade cautiously ahead of Fed Reserve rates announcement GLOBAL OVERVIEW.   BYBy TONY TASSELL    WC611 words   PD21 September 2005   SNFinancial Times   SCFTFT   EDAsia Ed1   PGPage 28   LAEnglish   CY(c) 2005 The Financial Times Limited. All rights reserved 
+   LPWorld equity markets traded cautiously ahead of the announcement of a decision on interest rate policy by the US Federal Reserve.
+
+The central bank was widely expected to continue on its path of raising interest rates at a "measured" pace, lifting the benchmark Fed Funds rate by another 25 basis points to 3.75 per cent.
+   TDThere had been forecasts in the wake of Hurricane Katrina that the Fed might pause raising rates until the damage of the disaster was fully assessed.
+
+But futures contracts traded on the Chicago Board of Trade yesterday were pricing in a 92 per cent probability that the policy-setting Federal Open Markets Committee would raise rates by 25 basis points. That would be the eleventh consecutive increase in rates since the Fed started tightening monetary policy in June 2004.
+
+However, as usual, comments made along with the rate decision will be heavily debated.
+
+"The devil will be in the detail of the accompanying statement. We expect the Fed will signal its intention to further reduce policy accommodation," said Bernard Walschots, head of research at Rabobank.
+
+"However, the considerable uncertainty caused by Katrina will mean that they will strongly emphasise the conditional nature of further tightening."
+
+On Wall Street, shares firmed slightly. By midsession, the Dow Jones Industrial Average was 0.3 per cent higher at 10,589.87, the S&P 500 firmed 0.2 per cent to 1,234.00 and the Nasdaq Composite was 0.6 per cent stronger at 2,159.02. Treasuries were little moved ahead of the Fed decision.
+
+A survey by State Street Global Markets yesterday indicated US investors might be taking a sanguine view of the after effects of Katrina on the economy. The State Street Investor Confidence index, which measures risk appetite by the extent to which investors allocate their portfolios to equities, eased by 1.2 points to 84. However, while the confidence of European investors fell by 7.7 points, the mood of their peers in the US firmed marginally.
+
+"The implication is that the uncertainty surrounding the outcome of the German election and the longer-term implications of a coalition government have had a much bigger and more lasting impact on investors' sentiment than the one-offeconomic shock providedby Hurricane Katrina,"explained Michael Metcalfe, senior strategist at SSGM.
+
+German shares bounced yesterday, with the Xetra Dax index gaining 0.75 per cent to 4,962.86. In turn, this lifted the FTSE Eurofirst Index by 1.62 points to 1,218.06. However, the downbeat mood in Germany was underlined in a sharp fall in domestic investor confidence in a monthly survey by the ZEW research institute. The data was collated between September 5 and 9.
+
+Commodities were in the spotlight, with gold prices advancing above Dollars 470 an ounce to their highest level since January 1988. Copper and platinum were also in demand, with platinum nearing a 25-year high.
+
+Prices for West Texas Intermediate tumbled Dollars 2.16 to Dollars 65.20 a barrel as concerns over the impact of Hurricane Rita, upgraded from a tropical storm, on Texas refineries eased slightly.
+
+Elsewhere, it was a strong day for Asia. In Tokyo, the Nikkei 225 average crossed the 13,000 barrier for the first time since June 25, 2001. South Korea hit an all-time high after North Korea's pledge to give up its nuclear programme boosted sentiment. The benchmark Kopsi index closed 1.4 per cent higher at 1,190.93, just off the intra-day peak of 1,190.93. 
+   RF20050921J128.025   INi814 : Banking | ibnk : Banking/Credit   NSm11 : Equity Markets | mcat : Commodity/Financial Market News | e11 : Economic Performance/Indicators | e1202 : Interest Rates | ecat : Economic News | e12 : Economic/Monetary Policy | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTFT000020050921e19l00010  
+
+
+
+ HDU.S. stocks drop as Fed hints no end to rate hikes      BYBy Vivianne Rodrigues      WC700 words   PD20 September 2005   ET23:17   SNReuters News   SCLBA   LAEnglish   CY(c) 2005 Reuters Limited   
+   LP(Updates close with New York Times shares drop after bell, moves Wal-Mart reference to new paragraph 3)   
+
+NEW YORK, Sept 20 (Reuters) - U.S. stocks fell on Tuesday after the Federal Reserve raised the benchmark interest rate to its highest level since 2001 and gave no indication it's near the end of its rate-increase campaign.   
+   TDShares of companies sensitive to higher lending rates, such as homebuilders Centex Corp. and D.R. Horton Inc., declined after the Fed's rate decision. Centex slid 2.4 percent to $64.95, while D.R. Horton fell 5.4 percent to $34.33. The Dow Jones index of homebuilders fell almost 5 percent, its biggest percentage drop since Oct. 4, 2004.   
+
+Wal-Mart Stores Inc., the world's largest retailer and a Dow component, fell to near a five-year low after the Fed's comments. The stock closed at $43.21, down 1.8 percent, or 80 cents, after earlier hitting a session low of $43.10.   
+
+"Stocks are clearly under pressure," said Tony Dwyer, chief equity strategist at FTN Financial. "You would expect the higher rates to negatively impact the consumer."   
+
+The Dow Jones industrial average was down 76.11 points, or 0.72 percent, to end at 10,481.52. The Standard & Poor's 500 index was down 9.68 points, or 0.79 percent, to finish at 1,221.34. The technology-laced Nasdaq Composite Index was down 13.93 points, or 0.65 percent, to close at 2,131.33.   
+
+The Fed raised the fed funds rate for the 11th straight time since June 30, 2004, bringing it up a quarter-percentage point to 3.75 percent, and saying Hurricane Katrina will give the broad economy only a temporary setback.   
+
+Shares of mortgage lenders, including government-sponsored Fannie Mae and Freddie Mac, also declined. Fannie Mae dropped 1.9 percent, or 88 cents, to $46.66, and Freddie Mac fell 2.7 percent, or $1.59, to $57.50.   
+
+U.S. crude oil futures ended down on Tuesday after gaining more than $4 on Monday. October crude futures, which expired at the close of Tuesday's regular NYMEX trading, fell $1.16 to settle at $66.23 per barrel.   
+
+Fed officials also said in their statement that higher energy costs have "potential to add to inflation pressures."   
+
+The session's few gainers included Qualcomm Inc., which climbed 1.7 percent to $43.42. Analysts at Goldman Sachs & Co. raised its rating on the wireless technology company's stock in anticipation of improving demand for high-speed wireless services.   
+
+Circuit City Stores Inc. also rose after the electronics retailer reported a surprise quarterly profit. Shares gained 5.9 percent to $16.43.   
+
+NEW YORK TIMES STOCK DROPS AFTER BELL   
+
+After the closing bell, shares of New York Times Co. fell nearly 2 percent to $31.51 on the Inet electronic brokerage network after the company said it plans to cut about 4 percent of its work force and warned of lower-than-expected profits as it faces weaker advertising across its core newspaper operations.   
+
+The publisher of the New York Times and the Boston Globe said it would cut about 500 jobs over six to nine months starting in October. The reductions would include a total of about 80 newsroom positions -- 45 at the Times and 35 at the Globe. Before the announcement, New York Times Co. stock had ended regular trading up 0.7 percent, or 21 cents, at $32.13.   
+
+During the regular session, trading was heavy on the New York Stock Exchange, with about 1.73 billion shares changing hands, above last year's daily average of 1.46 billion. On Nasdaq, about 1.91 billion shares were traded, above last year's daily average of 1.81 billion.   
+
+Declining shares outnumbered advancing stocks by a ratio of about 2 to 1 on the NYSE and by about 3 to 2 on Nasdaq. (Additional reporting by Jennifer Coogan)   
+   RFMARKETS-USA-STOCKS (UPDATE 15)|LANGEN|ABX|BNX|AFA|CSA|LBY|RWSA|RWS|REULB|GNS|SXNA   COcntks : Centex Corporation | drhrtn : D.R. Horton, Inc. | wlmrt : Wal-Mart Stores, Inc.   INi64 : Retail/Wholesale | ibcs : Business/Consumer Services | ibnk : Banking/Credit | i501 : Building Construction | i5010022 : Residential Building Construction | i656 : Mixed Retailing | iconst : Construction | icre : Construction/Real Estate   NSe1102 : Money Supply | e1202 : Interest Rates | ecat : Economic News | gcat : Political/General News | m11 : Equity Markets | m12 : Debt/Bond Markets | ntop : Dow Jones/Reuters Top Wire News | e11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | mcat : Commodity/Financial Market News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter | mcpdbt : Corporate Debt/Bond Markets   REusa : United States | usny : New York | namz : North America | use : Northeast U.S.   IPCBUS | IND | MAC | STX | MUNI | DBT | FIN | NEWS | RET | BNK | INT | MCE | FED   PUBReuters Ltd.   ANDocument LBA0000020050920e19k002j8  
+
+
+
+ HDU.S. stocks drop as Fed hints no end to rate hikes      BYBy Vivianne Rodrigues      WC718 words   PD20 September 2005   ET21:34   SNReuters News   SCLBA   LAEnglish   CY(c) 2005 Reuters Limited   
+   LP(Updates close with New York Times shares drop after bell, moves Wal-Mart reference to new paragraph 3)   
+
+NEW YORK, Sept 20 (Reuters) - U.S. stocks fell on Tuesday after the Federal Reserve raised the benchmark interest rate to its highest level since 2001 and gave no indication it's near the end of its rate-increase campaign.   
+   TDShares of companies sensitive to higher lending rates, such as homebuilders Centex Corp. and D.R. Horton Inc. , declined after the Fed's rate decision. Centex slid 2.4 percent to $64.95, while D.R. Horton fell 5.4 percent to $34.33. The Dow Jones index of homebuilders <.DJUSHB> fell almost 5 percent, its biggest percentage drop since Oct. 4, 2004.   
+
+Wal-Mart Stores Inc. , the world's largest retailer and a Dow component, fell to near a five-year low after the Fed's comments. The stock closed at $43.21, down 1.8 percent, or 80 cents, after earlier hitting a session low of $43.10.   
+
+"Stocks are clearly under pressure," said Tony Dwyer, chief equity strategist at FTN Financial. "You would expect the higher rates to negatively impact the consumer."   
+
+The Dow Jones industrial average <.DJI> was down 76.11 points, or 0.72 percent, to end at 10,481.52. The Standard & Poor's 500 index <.SPX> was down 9.68 points, or 0.79 percent, to finish at 1,221.34. The technology-laced Nasdaq Composite Index <.IXIC> was down 13.93 points, or 0.65 percent, to close at 2,131.33.   
+
+The Fed raised the fed funds rate for the 11th straight time since June 30, 2004, bringing it up a quarter-percentage point to 3.75 percent, and saying Hurricane Katrina will give the broad economy only a temporary setback. [ID:nN20372894]   
+
+Shares of mortgage lenders, including government-sponsored Fannie Mae and Freddie Mac , also declined.   
+
+Fannie Mae dropped 1.9 percent, or 88 cents, to $46.66, and Freddie Mac fell 2.7 percent, or $1.59, to $57.50.   
+
+U.S. crude oil futures ended down on Tuesday after gaining more than $4 on Monday. October crude futures <CLV5>, which expired at the close of Tuesday's regular NYMEX trading, fell $1.16 to settle at $66.23 per barrel.   
+
+Fed officials also said in their statement that higher energy costs have "potential to add to inflation pressures."   
+
+The session's few gainers included Qualcomm Inc. , which climbed 1.7 percent to $43.42. Analysts at Goldman Sachs & Co. raised its rating on the wireless technology company's stock in anticipation of improving demand for high-speed wireless services. [ID:nN20398272]   
+
+Circuit City Stores Inc. also rose after the electronics retailer reported a surprise quarterly profit.[ID:nN20362671]. Shares gained 5.9 percent to $16.43.   
+
+NEW YORK TIMES STOCK DROPS AFTER BELL   
+
+After the closing bell, shares of New York Times Co. fell nearly 2 percent to $31.51 on the Inet electronic brokerage network after the company said it plans to cut about 4 percent of its work force and warned of lower-than-expected profits as it faces weaker advertising across its core newspaper operations.   
+
+The publisher of the New York Times and the Boston Globe said it would cut about 500 jobs over six to nine months starting in October. The reductions would include a total of about 80 newsroom positions -- 45 at the Times and 35 at the Globe. Before the announcement, New York Times Co. stock had ended regular trading up 0.7 percent, or 21 cents, at $32.13.   
+
+During the regular session, trading was heavy on the New York Stock Exchange, with about 1.73 billion shares changing hands, above last year's daily average of 1.46 billion. On Nasdaq, about 1.91 billion shares were traded, above last year's daily average of 1.81 billion.   
+
+Declining shares outnumbered advancing stocks by a ratio of about 2 to 1 on the NYSE and by about 3 to 2 on Nasdaq. (Additional reporting by Jennifer Coogan)   
+   RFMARKETS-STOCKS (UPDATE 15)|LANGEN|ABN|E|RBN|U|D|M|MNI|G|C|GRO|MTL|SOF|O|OIL|RNP|DNP|PGE|PCM   COcntks : Centex Corporation | drhrtn : D.R. Horton, Inc. | wlmrt : Wal-Mart Stores, Inc.   INi64 : Retail/Wholesale | ibcs : Business/Consumer Services | ibnk : Banking/Credit | i501 : Building Construction | i5010022 : Residential Building Construction | i656 : Mixed Retailing | iconst : Construction | icre : Construction/Real Estate   NSe1102 : Money Supply | e1202 : Interest Rates | ecat : Economic News | gcat : Political/General News | m11 : Equity Markets | m12 : Debt/Bond Markets | ntop : Dow Jones/Reuters Top Wire News | e11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | mcat : Commodity/Financial Market News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter | mcpdbt : Corporate Debt/Bond Markets   REusa : United States | usny : New York | namz : North America | use : Northeast U.S.   IPCBUS | IND | MAC | STX | MUNI | DBT | FIN | NEWS | RET | BNK | INT | MCE | FED   PUBReuters Ltd.   ANDocument LBA0000020050920e19k002j5  
+
+
+
+ HDPOLL-Wall St sees Fed intent to raise rates again      BYBy Victoria Thieberger      WC568 words   PD20 September 2005   ET23:17   SNReuters News   SCLBA   LAEnglish   CY(c) 2005 Reuters Limited   
+   LPNEW YORK, Sept 20 (Reuters) - The Federal Reserve, more worried about potential inflation risks than a slowdown in the economy, is set to continue on its path of modest interest rate hikes at its next meeting, a Reuters poll found on Tuesday.   
+
+The Reuters survey found 19 of the 21 Wall Street economists surveyed expect another rate increase at the Fed's November meeting, although nine saw a break at the pre-Christmas meeting.   
+   TDEconomists pointed to a determination in the Fed's statement that accompanied its decision Tuesday to raise the federal funds rate for the 11th straight policy meeting.   
+
+The Fed said the disruption to the economy and energy prices from Hurricane Katrina had increased uncertainty in the near term, but did not pose "a more persistent threat."   
+
+"As bad as Katrina is, this is a near-term phenomenon that will eventually raise the inflation risks and the growth profile for next year," said Eric Green, chief market economist at Countrywide Financial.   
+
+Economists said the Fed's hawkish tone suggested policymakers will look past expected hurricane-induced weakness in the economic data in the next month.   
+
+Fed officials have worried aloud in recent weeks about the risks of rising inflation, and many on Wall Street point to the likely inflationary impact of massive federal spending to help rebuild the ravaged Gulf Coast after Hurricane Katrina, the cost of which some have put as high as $200 billion.   
+
+A BALANCING ACT   
+
+Many economists after reading the Fed's comments said they expect several more rate increases in the federal funds rate, which now stands at 3.75 percent.   
+
+"This does not look to us like a statement from a committee that thinks monetary policy is only 25 basis points away from being neutral," or the point where policy no longer boosts economic activity, said Bear Stearns chief economist John Ryding.   
+
+The Fed retained its vow to remove monetary policy accommodation at a "measured" pace and noted that higher energy prices and other costs could add to inflation pressures.   
+
+RBS Greenwich chief economist Stephen Stanley said he thought the central bank had done a "masterful" job of balancing two competing goals in its statement.   
+
+"The challenge was to balance a sufficient acknowledgment of Katrina and providing themselves with added flexibility, against their feeling that the underlying situation still justifies significantly more tightening," Stanley said.   
+
+Aside from parsing all the adjectives and changes in language in the longer-than-usual Fed statement, Wall Street analysts also pondered the implications of the rare dissent in the vote on interest rates from one of the Federal Reserve Board governors, Mark Olson, who had argued for a pause at Tuesday's meeting.   
+
+Countrywide's Green said the one dissent suggested that other voters may have been leaning toward holding rates steady, but were persuaded by Fed Chairman Alan Greenspan.   
+
+"If Olson dissented, you could probably see three or four other people who could have gone either way. The fact they didn't and that the statement was as hawkish relative to expectations indicates to me that Greenspan is still ruling the roost with an iron first," Green said. (For details of the Reuters Poll, Reuters 3000 users can double-click on [ID:NYA000090])   
+   RFECONOMY-FED (POLL)|LANGEN|Table|ABN|E|RBN|U|D|M|UKI|MNI   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe1102 : Money Supply | e1202 : Interest Rates | ecat : Economic News | m12 : Debt/Bond Markets | mgvdbt : Government Debt/Bond Markets | e11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | mcat : Commodity/Financial Market News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter | mcpdbt : Corporate Debt/Bond Markets   REusa : United States | usny : New York | namz : North America | use : Northeast U.S.   IPCFED | INT | MCE | CEN | MUNI | DBT | GVD   PUBReuters Ltd.   ANDocument LBA0000020050920e19k002gz  
+
+
+
+ HDRPT-POLL-TABLE-Wall St sees Fed hiking again in November     WC450 words   PD20 September 2005   ET22:59   SNReuters News   SCLBA   LAEnglish   CY(c) 2005 Reuters Limited  
+   LPNEW YORK, Sept 20 (Reuters) - A majority of top economists polled predict the Federal Reserve is going to continue on its path of interest rate hikes at its next meeting in November, though analysts are less certain of rate increases after that.  
+
+A Reuters survey taken after Tuesday's official rate increase found 19 of 21 economists expect another hike at the Fed's Nov. 1 meeting, which would take the federal funds rate to a 4.0 percent.  
+   TDHowever, many see a pause after that meeting. The survey found nine expect the central bank to hold its fire in December, while eight expect a pause at the first meeting of the new year.  
+
+In its statement announcing Tuesday's hike, the Fed said the disruption to the economy and energy prices from Hurricane Katrina have increased uncertainty in the near term, but did not pose "a more persistent threat" to growth.  
+
+Economists said the Fed's hawkish statement suggested policymakers will look past expected weakness in the economic data and continue on its path to restore official rates to a "neutral" level.  
+
+The following is a summary of the forecasts of 21 of the 22 primary dealers that trade directly with the Federal Reserve. Dresdner analysts were reconsidering their forecast (all figures in basis points):  
+
+
+                   Fed        Fed        Fed
+                   Action     Action     Action
+COMPANY               Nov 1      Dec 13     Jan 31
+--------------------------------------------------------
+ABN AMRO Inc          Raise 25   Raise 25   Raise 25
+Banc of America       Raise 25   No Move    Raise 25
+Barclays Capital      Raise 25   Raise 25   Raise 25
+Bear, Stearns         Raise 25   Raise 25   Raise 25
+BNP Paribas           Raise 25   Raise 25   No Move
+Citigroup             Raise 25   No Move    No Move
+CIBC World Mrkts      No Move    No Move    No Move
+Countrywide Fin       Raise 25   No Move    Raise 25
+Credit Suisse         Raise 25   Raise 25   Raise 25
+Daiwa Securities      Raise 25   No Move    Raise 25
+Deutsche Bank         Raise 25   Raise 25   *
+Dresdner              N/A        N/A        N/A
+Goldman, Sachs        Raise 25   Raise 25   Raise 25
+HSBC Securities       Raise 25    No Move   No Move
+J.P. Morgan           Raise 25   Raise 25   Raise 25
+Lehman Brothers       Raise 25   Raise 25   Raise 25
+Merrill Lynch         **         **         No Move
+Mizuho Securities     Raise 25   No Move    No Move
+Morgan Stanley        Raise 25   No Move    n/a
+Nomura Securities     Raise 25   No Move    No Move
+RBS Greenwich         Raise 25   Raise 25   Raise 25
+UBS Securities        Raise 25   Raise 25   No Move
+  
+
+* Deutsche: Raise in Jan or March ** Merrill: Raise in Nov or Dec (Additional reporting by the U.S. Treasury Desk)  
+   RFECONOMY-FED-POLL-TABLE (URGENT) (REFILES)|LANGEN|Table|ABN|E|RBN|U|D|M|MNI   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe1102 : Money Supply | e1202 : Interest Rates | ecat : Economic News | e11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy   REusa : United States | usny : New York | namz : North America | use : Northeast U.S.   IPCFED | INT | MCE | CEN   PUBReuters Ltd.   ANDocument LBA0000020050920e19k002ea  
+
+
+
+ HDUS SWAPS-Spreads mixed, curve flattens after FOMC     BYBy Richard Leong     WC443 words   PD20 September 2005   ET22:39   SNReuters News   SCLBA   LAEnglish   CY(c) 2005 Reuters Limited  
+   LPNEW YORK, Sept 20 (Reuters) - U.S. interest rate swaps finished mixed on Tuesday after the Federal Reserve pledged to raise short-term U.S. rates gradually and downplayed the long-term economic impact from Hurricane Katrina.  
+
+"It's a little more hawkish in tone than what we were expecting. The Committee appears willing to look past Katrina," Hussein Malik, head of liquid market strategy at J.P. Morgan Securities, said the Fed's statement issued after its policymakers met on Tuesday. "For swap spreads, this (Fed's latest move) on the margin is not a big factor."  
+   TDShorter swap spreads were unchanged to 0.50 basis points narrowed with a sell-off in two-year Treasuries. In contrast, longer spreads widened mostly 0.50 basis point with 10-years ending at 44.75 basis points.  
+
+The two-year swap yield rose to 4.38 percent, while the underlying two-year Treasury yield <US2YT=RR> rose to 4.00 percent, its highest level since Aug 29 when Katrina hammered the U.S. Gulf.  
+
+The 10-year swap yield was unchanged from Monday at 4.69 percent, while the benchmark 10-year Treasury yield <US10YT=RR> was flat at 4.25 percent.  
+
+Players jumped back into curve-flatteners, selling short-dated and intermediate securities and buying long-dated issues, after Fed's latest rate move, its 11th rate increase since June 2004, analysts said.  
+
+The two-to-10-year area of the swap curve flattened 5 basis points to 32 basis points, reversing most of its recent steepening.  
+
+Fed's latest policy statement suggested that it was more worried about inflation rather than temporary slowdown as a result of Katrina, analysts said. In turn, this meant that short-term rates will continue to rise in a bid to keep a lid on long-term inflation, analysts said.  
+
+Prior to Tuesday's Federal Open Market Committee meeting, investors and traders were unwinding curve flattening trades in case the Fed decided to pause with its rate raising campaign to soften the economic fallout from Katrina.  
+
+"They priced out too many Fed rate hikes. They are trying to correct their knee-jerk reaction to Katrina," said John Herrmann, director of economic commentary at Cantor ViewPoint.  
+
+There is a chance that expensive home heating cost, plus sky-high gasoline prices, could hurt consumers enough into the fourth quarter and force the Fed to stop its rate hikes, said Chris Burdick, director of economic research at the Schwab Center for Investment Research.  
+   RFMARKETS-SWAPS|LANGEN|Table|ABN|E|RBN|D|M|MNI|U|RNP|DNP   COjpmsi : JP Morgan Securities LLC | cnyc : JPMorgan Chase & Co.   INi831 : Financial Investments | i83102 : Security Brokering/Dealing | iinv : Investing/Securities   NSe1202 : Interest Rates | ecat : Economic News | ghurr : Storms | m12 : Debt/Bond Markets | m15 : Derivative Securities | e12 : Economic/Monetary Policy | gcat : Political/General News | gdis : Disasters/Accidents | gntdis : Natural Disasters/Catastrophes | grisk : Risk News | gwea : Weather | mcat : Commodity/Financial Market News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REusa : United States | uss : Southern U.S. | usny : New York | namz : North America | use : Northeast U.S.   IPCINT | MCE | DBT | DRV   PUBReuters Ltd.   ANDocument LBA0000020050920e19k002d7  
+
+
+
+ HDCapital One says undeterred on Hibernia takeover     BYBy Jonathan Stempel     WC558 words   PD20 September 2005   ET21:52   SNReuters News   SCLBA   LAEnglish   CY(c) 2005 Reuters Limited  
+   LPSAN FRANCISCO, Sept 20 (Reuters) - Capital One Financial Corp. on Tuesday said its $5 billion acquisition of New Orleans-based Hibernia Corp. is on schedule, and that it sees potential growth "of a different sort" in the wake of Hurricane Katrina and potential fallout from Hurricane Rita.  
+
+"It's a pretty humbling experience to be involved in the Gulf Coast right now," said Gary Perlin, Capital One's chief financial officer and a former CFO of the World Bank, at a Bank of America investment conference. "A lot of what we're looking at is the opportunity to serve (Hibernia) customers wherever their customers may be."  
+   TDCapital One this month cut its purchase price for Louisiana's biggest bank by $300 million, and delayed the closing to the fourth quarter from Sept. 1, pending a new vote by Hibernia shareholders. Capital One will swap 9 percent fewer shares and 9 percent less cash for Hibernia shares.  
+
+Katrina struck the Gulf Coast on Aug. 29, and is likely the costliest U.S. natural disaster. One-third of Hibernia's 321 branches were in Katrina's path, and 21 sustained significant damage. About two-thirds of the company's branches are in Louisiana, and the rest in Texas.  
+
+McLean, Virginia-based Capital One, the No. 5 U.S. credit card issuer, had agreed to buy Hibernia to add branches and services, and to reduce its cost of funding and dependence on credit cards.  
+
+Perlin noted that while the hurricane displaced thousands of Hibernia customers, many relocated to other areas the bank serves, maybe permanently.  
+
+Many economists and other observers, meanwhile, expect areas struck by Katrina to benefit from a surge in economic activity once people return, and rebuild.  
+
+"We're certainly looking forward to the opportunity to be a major part of (a) growth play in Texas," Perlin said. "Obviously, what we'll be doing in Louisiana might be a little bit different than we originally thought. That may be a growth market as well, of a different sort."  
+
+The U.S. Federal Reserve on Tuesday raised a key short-term interest rate for an 11th straight time. It said that while Katrina may hurt U.S. spending, production and employment and drive elevated energy prices even higher in the short term, these developments "do not pose a more persistent threat."  
+
+The new Hibernia merger agreement does not contain a material adverse change clause that could allow Capital One to renegotiate the terms because of a new hurricane.  
+
+But it was not immediately clear whether damage that Rita might cause could be attributed to weakened defenses, whether natural or man-made, that resulted from Katrina. Rita is expected to strike Texas or Louisiana this weekend.  
+
+Perlin said that while Capital One would like to expand in several areas, such as home equity lending, other big acquisitions may be on hold for a while.  
+
+"We don't feel obligated to move anywhere quickly," he said. "Right now, we have a transaction to settle, and that's where our focus is."  
+
+In late afternoon trading on the New York Stock Exchange, Capital One shares fell 15 cents to $81.80, while Hibernia was unchanged at $30.25.  
+   RFFINANCIAL-HIBERNIA-CAPITALONE|LANGEN|ABN|E|RBN|U|M|D|RNP|DNP   COcptone : Capital One Financial Corp | hibc : Hibernia Corp   INibcs : Business/Consumer Services | ibnk : Banking/Credit | i814 : Banking | i81402 : Commercial Banking | i81501 : Credit Types/Services | i8150108 : Credit Cards   NSc181 : Acquisitions/Mergers/Takeovers | e1102 : Money Supply | e1202 : Interest Rates | ecat : Economic News | ghurr : Storms | gwea : Weather | c18 : Ownership Changes | ccat : Corporate/Industrial News | e11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | gcat : Political/General News | gdis : Disasters/Accidents | gntdis : Natural Disasters/Catastrophes | grisk : Risk News | ncat : Content Types | nfact : Factiva Filters | nfcpin : FC&E Industry News Filter   REusa : United States | uss : Southern U.S. | namz : North America   IPCBNK | FIN | MRG | WEA | FED | INT | MCE   PUBReuters Ltd.   ANDocument LBA0000020050920e19k0029m  
+
+
+
+ HDANALYSIS-Bond market starts to grapple with Katrina funding      BYBy Oliver Ludwig      WC879 words   PD20 September 2005   ET19:53   SNReuters News   SCLBA   LAEnglish   CY(c) 2005 Reuters Limited   
+   LPNEW YORK, Sept 20 (Reuters) - Bond investors are wondering how the government will borrow money to pay for rebuilding after Hurricane Katrina and anticipating what a substantial influx of debt would mean for the U.S. Treasuries market.   
+
+President George Bush made it clear in his televised address that he does not want to raise taxes to pay the bill. So bond traders, strategists and economists realize this means the bond market will have to raise the $150 billion to $200 billion estimated necessary to rebuild New Orleans and the Gulf Coast.   
+   TDMore immediate issues, like the interest rate outlook and energy-related inflation, are preoccupying the bond market right now. But many in the market are also questioning whether Katrina-related funding will come from long- or short-dated securities, or perhaps a combination of both.   
+
+"Why put the debt way out the curve if the spending is only going to last two or three years?" asked Gerald Zukowski, deputy chief economist at Nomura Securities International in New York. "That argues for keeping it in bills or somewhere else on the short end of the curve."   
+
+In a research note issued on Monday, Merrill Lynch researchers reached the same conclusion, arguing that the costs are one-time outlays and would therefore be more appropriately covered by shorter-dated debt. Merrill predicted a rise in debt issuance of bills and debt with maturities ranging up to five years.   
+
+But some, like Andrew Brenner, head of fixed income at Investec US, note that short-term yields are only slightly lower than long-term yields. That makes reliance on shorter-dated Treasury bills and notes short-sighted.   
+
+"Listen, we haven't even started rebuilding the World Trade Center towers, and that was four years ago. They're going to be just cleaning up New Orleans for the next year.   
+
+"You're going to need that money for a long time," Brenner said, adding that if the government rolls over short-dated debt again and again as rates trend higher, the cost will rise over time. "You better move out on the curve. You better take advantage of the flat yield curve."   
+
+Yields on 10-year notes were just 11 basis points above those on two-year notes before Hurricane Katrina rocked the bond market and pushed two-year yields downward as the market expected to Federal Reserve to pause in its program of gradual interest rate increases. Yields on 10-year notes are now 31 basis points, or 0.31 percentage point, above two-year yields.   
+
+Some in the bond market wonder if the government might create a special Katrina-relief entity, like the Resolution Trust Corp., which the government created in the late 1980s specifically to deal with failing savings and loan institutions.   
+
+Such an entity could issue its own debt. That could prevent the Treasury market from getting clogged up by a calendar packed with both Katrina and non-Katrina financing needs.   
+
+But that possibility remains unclear, as does the estimated $150 billion to $200 billion price tag and the timeframe in which all the spending will occur.   
+
+"When people talk about $200 billion, how soon is this money going to need to be raised?" asked Kevin Flanagan, a fixed-income strategist with Morgan Stanley in White Plains, New York.   
+
+"If this is $200 billion over five or 10 years, I don't see too much of a problem. But if it's $200 billion over the next 12 to 24 months, then you've got a different story on your hands."   
+
+Most traders and analysts do not think the extra Katrina-related issuance will play out in the bond market until sometime later this year or next year.   
+
+Merrill analysts, in their research note, said they anticipate bigger weekly offerings of three-month bills and six-month bills to pay for Katrina, starting in the first week of October.   
+
+Some traders and economists, recognizing the risk that Katrina-related debt may temporarily overwhelm the market, said that while the Treasuries market will be able to absorb the extra issuance, it will come at a price.   
+
+"It's certainly not bullish for the debt markets," said a bond trader at one of Wall Street's 22 primary dealers of Treasury debt. Like many others in the market, he said he had yet to study fully the implications of the issuance.   
+
+According to a report issued by Deutsche Bank last week, Katrina expenses will swell the federal budget deficit to around $450 billion in fiscal 2006, up from around $330 billion in the current fiscal year ending Sept. 30.   
+
+That amount of debt points to lower prices and higher yields, though predicting exactly how yields will change is difficult due to uncertainty surrounding which maturities the government will sell. The inflation outlook is also important, especially for longer-term debt.   
+
+"When you line up all the pluses and minuses, this sort of reconstruction will be fundable, but at higher interest rates. That's really the bottom line here," said Dick Berner, the chief U.S. economist at Morgan Stanley.   
+   RFMARKETS-BONDS-KATRINA (ANALYSIS)|LANGEN|ABN|E|U|RBN|M|D|MNI|C|GRO|SOF|MTL   INi02 : Forestry/Logging | ibuildpr : Building Materials/Products | icre : Construction/Real Estate | i0 : Agriculture/Forestry   NSe1102 : Money Supply | e1202 : Interest Rates | e211 : Government Taxation/Revenue | ecat : Economic News | ghurr : Storms | gjob : Labor Issues | m12 : Debt/Bond Markets | mgvdbt : Government Debt/Bond Markets | e11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e21 : Government Finance | gcat : Political/General News | gcom : Society/Community/Work | gdis : Disasters/Accidents | gntdis : Natural Disasters/Catastrophes | grisk : Risk News | gwea : Weather | mcat : Commodity/Financial Market News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter | gpol : Domestic Politics | mcpdbt : Corporate Debt/Bond Markets | gpir : Politics/International Relations   REusa : United States | uss : Southern U.S. | usny : New York | namz : North America | use : Northeast U.S.   IPCGVD | DBT | INT | MCE | FED | TAX | MUNI | REA | JOB | BLD | CON | TIM   PUBReuters Ltd.   ANDocument LBA0000020050920e19k0022m  
+
+
+
+ CLMCredit Markets   HDBond Market Signals Little Faith In Fed to Slow March of Inflation   BYBy Mark Whitehouse    WC867 words   PD20 September 2005   SNThe Wall Street Journal   SCJ   PGC6   LAEnglish   CY(Copyright (c) 2005, Dow Jones & Company, Inc.) 
+   LPThe bond market has a message for Federal Reserve officials trying to gauge Hurricane Katrina's economic impact: Inflation probably will accelerate no matter what you do.
+
+Today, the policy-making Federal Open Market Committee decides whether to keep raising short-term interest rates to fight inflation or pause for more data on how the economy has fared since Katrina. Most economists expect the Fed to raise its interest-rate target for the 11th time in 15 months -- by a quarter percentage point to 3.75% -- but will read the accompanying statement closely for signs of future moves.
+   TDIn the bond market, though, investors already are demanding higher returns on longer-term securities -- a sign they expect inflation to heat up as the government, companies and individuals spend billions of dollars to rebuild in New Orleans and elsewhere along the Gulf Coast. "We're about to rebuild a major U.S. metropolitan area," says David Glocke, a Treasury-bond portfolio manager at The Vanguard Group, an asset-management firm in Valley Forge, Penn. " . . . That's definitely inflationary."
+
+Before Katrina hit, short-term and long-term rates had been converging, a sign that investors expected the Fed's campaign of rate increases to slow the economy or even tip it into recession, which would in turn force the central bank to bring rates back down in the future. But now that convergence -- known as a flattening yield curve -- has reversed: In afternoon trading yesterday, 10-year Treasury notes yielded 0.32 percentage point more than two-year Treasurys, compared with a difference of 0.12 percentage point on Aug. 29.
+
+The "steepening" trend suggests that while investors' expectations for economic growth haven't necessarily changed, they are more concerned about the level of inflation associated with that growth. "If we get through this without a major hit to economic activity, then I think you'd have to be more worried about inflation than before," says Jan Hatzius, senior U.S. economist at Goldman Sachs in New York.
+
+Since Katrina, for example, more investors have come to believe that the Fed will pause in its interest-rate increases this year. In a survey of 22 big Wall Street banks published yesterday, most expected the FOMC to pause at least once at its three remaining meetings this year. Early yesterday, the futures market was assigning a probability of more than 90% to a rate increase today, but closer to 60% for an increase at the next meeting Nov. 1, and much less to a third raise at the Dec. 13 meeting.
+
+The hurricane -- along with Tropical Storm Rita -- has added uncertainty. Katrina's short-term effect on fuel and construction-materials prices will skew inflation data through at least October, making it difficult for the Fed and investors to understand what is happening in the economy.
+
+But even investors who expect the Fed to keep raising its short-term interest-rate target this year believe that the risk of accelerated inflation has increased. "There's a risk that somewhere along the line inflation gets ahead" of the Fed, says Dave MacEwen, chief investment officer for fixed income at American Century Investments, an asset manager based in Mountain View, Calif.
+
+To mitigate the perceived inflation risk, Mr. MacEwen and other money managers have been reducing bets that would benefit from a flatter yield curve and putting on bets that would benefit from a steepening curve.
+
+Treasury Bonds
+
+Prices of Treasury securities firmed modestly yesterday, buoyed by soaring energy prices, though gains were limited ahead of the Fed's meeting. The benchmark 10-year note was up 5/32 point, or $1.5625 per $1,000 face value, at 100. Its yield fell to 4.25% from 4.267% Friday. The 30-year bond was up 4/32 point at 112 11/32 to yield 4.550% from 4.557%. 
+
+
+ 
+                           AUCTION RESULTS 
+ 
+  Here are the results of the Treasury auction of 13-week and 26-week bills. 
+All bids are awarded at a single price at the market-clearing yield. Rates 
+are determined by the difference between that price and the face value. 
+ 
+                                     13-Week              26-Week 
+ 
+Applications ................... $38,230,176,000      $31,674,470,000 
+Accepted bids .................. $17,000,056,000      $15,000,050,000 
+Accepted noncomp ................ $1,683,313,000       $1,473,270,000 
+Accepted frgn non ................. $207,400,000         $180,000,000 
+Auction price (Rate) ......... 99.116542(3.495%)    98.121861 (3.715%) 
+Coupon equivalent ....................... 3.575%               3.839% 
+Bids at market yield .................... 87.48%               60.92% 
+Cusip number ......................... 912795WF4            912795WU1 
+ 
+  Both issues are dated Sept. 22, 2005. The 13-week bills mature Dec. 22, 
+2005, and the 26-week bills mature March 23, 2006. 
+   
+
+Asset-Backed Securities
+
+Issuers poured more than $10 billion in new supply into the asset-backed market, making up for time lost to last week's annual industry conference in Florida. Securities backed by home-equity debt accounted for about $7 billion of the new deals.
+
+---
+
+Michael Mackenzie and Steven Johnson of Dow Jones Newswires contributed to this article. 
+
+License this article from Dow Jones Reprint Service
+   INi814 : Banking | ibnk : Banking/Credit   NSm12 : Debt/Bond Markets | mcat : Commodity/Financial Market News | mntdbt : National Government Debt/Bond Markets | c172 : Corporate Debt Instruments | e1202 : Interest Rates | ghurr : Storms | gvtre : Treasury Department | m131 : Money Markets | c17 : Funding/Capital | ccat : Corporate/Industrial News | e12 : Economic/Monetary Policy | ecat : Economic News | gcat : Political/General News | gdis : Disasters/Accidents | gntdis : Natural Disasters/Catastrophes | gpir : Politics/International Relations | gpol : Domestic Politics | grisk : Risk News | gvbod : Government Bodies | gvexe : Executive Branch | gwea : Weather | m13 : Money/Forex Markets | mgvdbt : Government Debt/Bond Markets | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter | nfcpin : FC&E Industry News Filter   REusa : United States | uss : Southern U.S. | namz : North America   IPCTRE | USG | NND | TPX | CRD | MIM | TPT   PUBDow Jones & Company, Inc.   ANDocument J000000020050920e19k0003a  
+
+
+
+ HDFT.com site : Treasuries end mixed after rate rise.   BYKevin Allison in New York, Joanna Chung in London and Mariko Sanchanta in Tokyo    WC445 words   PD20 September 2005   SNFinancial Times (FT.Com)   SCFTCOM   LAEnglish   CY(c) 2005 The Financial Times Limited. All rights reserved 
+   LPUS Treasuries were mixed by the close of trading on Tuesday after the Federal Reserve voted to raise interest rates.The move, which most analysts expected, raised the federal funds rate for the 11th consecutive time to 3.75 per cent.Bond prices fell shortly after the Fed decision, pushing yields higher. But the benchmark 10-year US Treasury later recovered, with yields down 0.3 basis points at 4.250 per cent after the close. The yield on 2-year notes rose 7.2bp to 3.995 per cent.The Fed said although the storm and its aftermath could hit spending, production and employment in the short-term, they were not likely to pose a long-term threat to the economy.
+   TDThe central bank warned there was an increased risk of energy price volatility in the wake of the storm, but said: "Core inflation has been relatively low in recent months and longer-term inflation expectations remain contained."Some investors had been betting that the Fed would decide put its programme of monetary tightening on hold as it attempted to sort through the consequences of Hurricane Katrina.Eurozone government bonds continued to find support from the political uncertainly following the inconclusive election in Germany. In late afternoon trading in London, the yield on the 10-year Bund edged down 0.4bp to 3.087 per cent. The ZEW German confidence also came in weaker than expected and indicated that, even before Sunday's poll, investors were jittery about what impact the results would have on the country's economic policy."Germany has had a double whammy of bad news this week," said David Brown, chief European economist at Bear Stearns. Gilts pushed higher as investors looked to the release on Wednesday of the minutes of the September meeting of the Bank of England's interest-rate setting committee. The central bank left rates on hold earlier this month, after cutting them to 4.5 per cent in August. The 10-year gilt was yielding 4.227 per cent, down 0.1bp.The bookbuilding process for the world's first 50-year inflation linked bond also began with price guidance at about 14bp to 19bp below the linker that matures in 2035. The gilt is expected to be priced on Thursday. Japanese government bond prices were lower after the Nikkei 225 Average rallied to close above the 13,000 level for the first time since 2001. The yield on the benchmark 10-year JGB rose 1bp to 1.365 per cent. 
+   RF44600342   NSe1202 : Interest Rates | ecat : Economic News | e12 : Economic/Monetary Policy   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTCOM00020050921e19k0005j  
+
+
+
+ HDFT.com site : Lex:  Federal Reserve .   WC246 words   PD20 September 2005   SNFinancial Times (FT.Com)   SCFTCOM   LAEnglish   CY(c) 2005 The Financial Times Limited. All rights reserved 
+   LPFleetingly, there was something worth betting on. After a run of 10 clearly-telegraphed interest rate hikes, Hurricane Katrina injected a rare dose of unpredictability into yesterday's Federal Reserve decision.
+
+But any talk of a pause was quickly squashed.
+   TDWhile acknowledging that the devastation in the Gulf region would hit economic activity and cause energy price volatility short-term, the Fed believes it does not represent a longer-term threat. Instead, with still accommodative monetary policy and the risk that higher energy costs will add to inflationary pressure, it signalled its intention to continue raising rates. The Fed is aware that the hurricane will distort economic figures in the coming months. Having laid out its position, the data will have to be pretty terrible for it to change its tune for the November meeting.
+
+That helps underline the Fed's inflation fighting credentials - particularly after a recent jump in consumer inflation expectations and with financial conditions still stimulative. There were, however, hints that the tightening phase is coming off autopilot. There was dissent for the first time during this tightening cycle, with Mark Olson voting against an increase.
+
+Even if that simply reflects uncertainty in the aftermath of Katrina, it is a sign that after November rate increases might not remain a foregone conclusion. Without such a clear roadmap, investors will start having to sit up and take notice if the Fed keeps raising rates into next year. 
+   RF44600225   INi814 : Banking | i81401 : Central Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News | ghurr : Storms | gcat : Political/General News | gdis : Disasters/Accidents | gntdis : Natural Disasters/Catastrophes | grisk : Risk News | gwea : Weather   REuss : Southern U.S. | namz : North America | usa : United States   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTCOM00020050921e19k00055  
+
+
+
+ HDFT.com site : Dollar consolidates gains as Fed lifts rates.   BYChris Flood in London and Steve Johnson in New York    WC635 words   PD20 September 2005   SNFinancial Times (FT.Com)   SCFTCOM   LAEnglish   CY(c) 2005 The Financial Times Limited. All rights reserved 
+   LPThe US dollar edged higher on Tuesday as the Federal Reserve, as expected, raised interest rates by 25 basis points for the eleventh successive meeting.Shortly after the decision the greenback was trading at $1.2130 against the euro, from $1.2163 prior to the decision, as well as firming up by a similar margin to $1.8000 against sterling, Y111.89 versus the yen and SFr1.2808 against the Swiss franc. The dollar index strengthened to 88.59, from 88.32 before the announcement.Although a minority of economists had expected the Fed to pause its rate-hiking cycle in the wake of Hurricane Katrina, the decision to push rates to 3.75 per cent had largely been priced in to the currency market.
+   TDThe accompanying statement was on the hawkish side with the Federal Open Market Committee saying monetary policy was still "accommodative", that rates could be raised at a "measured pace" and that Katrina would only set back the US economy in the "near term".The FOMC warned that rising energy prices could push inflation higher, rather than fretting about the potential hit to economic growth. "Higher energy and other costs have the potential to add to inflation pressures,'' the FOMC said.However, dollar bears were able to take comfort from the fact that, unusually, the FOMC's decision was not unanimous, with one committee member, Mark Olson, dissenting from the 9-1 majority vote. Alan Greenspan, Fed chairman, has already commented on "froth" in the US housing market and there was little indication of any slowdown in figures released on Tuesday showing US housing starts remained strong at 2.009m (annualised) in August, a fifth consecutive month above the 2m mark. The recent push in the gold price to a 17-year high is seen as a sign that the market is becoming more concerned about inflation. The widening spread between 10-year Treasury yields and inflation protected TIPS suggests investors are concerned over how successful the Fed will be in fighting inflation with higher interest rates. The Canadian central bank is due to hold its interest rate setting meeting shortly. Comments from its US counterpart on inflation expectations could have some impact on the outlook for Canadian rates. The Canadian dollar moved in a narrow range against the dollar on Tuesday, trading at C$1.1700 after the loonie reached a 14-year high against the greenback on Monday. "The Canadian dollar has been one of our most favoured currencies for some time now, given the mix of rising energy costs, strengthening economic momentum, fiscal and current account surpluses and a central bank in the foothills of monetary tightening," said Simon Derrick at the Bank of New York. "Such is the momentum of late, that further progress towards the all-time high [C$1.1198 set in November 1991] now looks a distinct possibility."In Germany, the ZEW survey of economic sentiment fell more sharply than expected in September with the decline blamed on uncertainty over the general election. Selling pressure on the euro appeared to be easing amid emerging optimism about the possibility of a agreement between the main political parties. Prior to the Federal Reserve decision the euro had been up 0.3 per cent at $1.2175 from $1.2134 overnight. Against sterling, the euro strengthened 0.1 per cent to GBP0.6749.In the UK, the housing market showed signs of stabilising, according to a survey by the Royal Institution of Chartered Surveyors. Concerns over the outlook for consumer spending and economic growth meant sterling remained under pressure against the dollar, trading at $1.8043 prior to the Fed decision, down fractionally on the day. 
+   RF44597506   INi814 : Banking | i81401 : Central Banking | i81402 : Commercial Banking | i831 : Financial Investments | ireest : Real Estate | ibnk : Banking/Credit | icre : Construction/Real Estate | iinv : Investing/Securities   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | m13 : Money/Forex Markets | m132 : Foreign Exchange News | e11 : Economic Performance/Indicators | e1101 : Economic Growth | e1103 : Inflation/Prices | e1120 : Housing Starts/Construction Figures | ecat : Economic News | ghurr : Storms | gpol : Domestic Politics | gvote : Elections | mcat : Commodity/Financial Market News | nsur : Survey/Poll | gcat : Political/General News | gdis : Disasters/Accidents | gntdis : Natural Disasters/Catastrophes | gpir : Politics/International Relations | grisk : Risk News | gwea : Weather | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REcana : Canada | gfr : Germany | switz : Switzerland | uk : United Kingdom | usa : United States | uss : Southern U.S. | eecz : European Union Countries | eurz : Europe | namz : North America | weurz : Western Europe   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTCOM00020050921e19k0004j  
+
+
+
+ HDFT.com site : Treasuries slip before Fed announcement.   BYKevin Allison in New York, Joanna Chung in London and Mariko Sanchanta in Tokyo    WC437 words   PD20 September 2005   SNFinancial Times (FT.Com)   SCFTCOM   LAEnglish   CY(c) 2005 The Financial Times Limited. All rights reserved 
+   LPUS Treasuries slipped slightly on Tuesday ahead of an announcement on interest rate policy by the US Federal Reserve.
+
+Most investors expected the central bank to raise rates by a quarter point for the 11th consecutive time to 3.75 per cent. But others were betting that it would decide to put its programme of monetary tightening on hold as it attempted to sort through the consequences of Hurricane Katrina.
+   TDIn the wake of the storm, concerns about high energy prices have raised the prospect of dampened consumer spending in the second half of the year. That view found support in last week's report from the University of Michigan, which showed a sharp drop in consumer confidence in early September.
+
+However, other recent economic data have been mixed and analysts cautioned against reading too much into sentiment data. In mid-day trade in New York, bond prices edged down, pushing the yield on the 10-year US Treasury up 1.2 basis points to 4.265 per cent. The yield on 2-year notes rose 2.1bp to 3.944 per cent.
+
+Eurozone government bonds continued to find support from the political uncertainly following the inconclusive election in Germany. In late afternoon trading in London, the yield on the 10-year Bund edged down 0.4bp to 3.087 per cent.
+
+The ZEW German confidence also came in weaker than expected and indicated that, even before Sunday's poll, investors were jittery about what impact the results would have on the country's economic policy.
+
+"Germany has had a double whammy of bad news this week," said David Brown, chief European economist at Bear Stearns.
+
+Gilts pushed higher as investors looked to the release today of the minutes of the September meeting of the Bank of England's interest-rate setting committee. The central bank left rates on hold earlier this month, after cutting them to 4.5 per cent in August. The 10-year gilt was yielding 4.227 per cent, down 0.1bp.
+
+The bookbuilding process for the world's first 50-year inflation linked bond also began with price guidance at about 14bp to 19bp below the linker that matures in 2035. The gilt is expected to be priced tomorrow.
+
+Japanese government bond prices were lower after the Nikkei 225 Average rallied to close above the 13,000 level for the first time since 2001. The yield on the benchmark 10-year JGB rose 1bp to 1.365 per cent. 
+   RF44595101   INi814 : Banking | i81401 : Central Banking | ibnk : Banking/Credit   NSm12 : Debt/Bond Markets | mcat : Commodity/Financial Market News | mntdbt : National Government Debt/Bond Markets | e11 : Economic Performance/Indicators | e1202 : Interest Rates | ecat : Economic News | e12 : Economic/Monetary Policy | mgvdbt : Government Debt/Bond Markets | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTCOM00020050921e19k0003x  
+
+
+
+ HDFT.com site : Dollar consolidates gains ahead of Fed decision.   BYChris Flood    WC316 words   PD20 September 2005   SNFinancial Times (FT.Com)   SCFTCOM   LAEnglish   CY(c) 2005 The Financial Times Limited. All rights reserved 
+   LPAhead of the latest interest rate setting meeting by the Federal Reserve, the dollar consolidated some of its recent gains against its major trading partners during mid-morning European business
+
+Although a small minority of economists expect the Fed to pause, a rise in interest rates has already been priced in by the market. Analysts said that if the Fed did hold rates steady, this could lead to a materially negative reaction on the dollar.
+   TDThe main area of interest will be the accompanying statement from the Fed which is expected to comment on the disruption caused by Hurricane Katrina, the continued high level of oil prices and their impact on inflation expectations and also the outlook for the US housing market.
+
+The Canadian dollar moved in a narrow range against the US dollar overnight, trading at $1.168 after the loonie reached a fourteen year high against the greenback on Monday. The spike in oil prices on Monday was a key factor supporting the Canadian dollar but sentiment was also boosted by positive capital flows data with stronger than expected foreign investment in securities.
+
+"The Canadian dollar has been one of our most favoured currencies for some time now given the mix of rising energy costs, strengthening economic momentum, fiscal and current account surpluses and a central bank in the foothills of monetary tightening," said Simon Derrick at the Bank of New York: "Such is the momentum of late, that further progress towards the all time high ($1.1198 set in November 1991) now looks a distinct possibility.
+
+Selling pressure on the euro appeared to be easing as the market started to focus on the possible impact of Tropical Storm Rita on the US. The euro moved to $1.2179 before easing back to $1.2146, just 0.1 per cent stronger. 
+   RF44592346   INi814 : Banking | i81401 : Central Banking | i831 : Financial Investments | ibnk : Banking/Credit | iinv : Investing/Securities   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | m13 : Money/Forex Markets | m132 : Foreign Exchange News | mcat : Commodity/Financial Market News | e11 : Economic Performance/Indicators | ecat : Economic News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REcana : Canada | usa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTCOM00020050921e19k00021  
+
+
+
+ HDFed boosts key  interest rate  for 11th time     BYBy MARTIN CRUTSINGER     CRAP Economics Writer   WC828 words   PD20 September 2005   ET21:52   SNAssociated Press Newswires   SCAPRS   LAEnglish   CY(c) 2005.  The Associated Press.  All Rights Reserved.  
+   LPWASHINGTON (AP) - The Federal Reserve on Tuesday boosted a key interest rate for the 11th straight time and signaled that more rate hikes were likely even as the United States recovers from the devastating effects of Hurricane Katrina.  
+
+The action pushed the Fed's target for the federal funds rate -- the interest that banks charge each other-- to 3.75 percent. That's the highest level since the summer of 2001.  
+   TDSome economists had believed that Katrina, the country's costliest natural disaster, might prompt the Fed to pause temporarily in its campaign to drive interest rates higher to keep inflation in check. But Federal Reserve Chairman Alan Greenspan and his colleagues said that Katrina's impact on the overall economy was likely to be short-lived.  
+
+In a brief statement explaining the action, the Fed said that all the problems from Katrina "will be a setback in the near term" for the economy. But the Fed said it did not believe that Katrina would pose a "more persistent threat" and therefore believed it needed to continue raising interest rates to guard against inflation.  
+
+The Fed's rate increase spurred commercial banks to raise their prime rate by a quarter-point. That pushed the prime, the benchmark for millions of consumer and business loans, to 6.75 percent, its highest point in more than four years. The increases were led by Wells Fargo and KeyCorp.  
+
+The Fed indicated it was more concerned that inflation pressures could intensify from the spike in energy prices that has occurred this year, including a surge after Katrina shut down production along the Gulf Coast.  
+
+"Higher energy and other costs have the potential to add to inflation pressures," the central bank said in its statement.  
+
+"The reason they didn't pause at this meeting was the concern about higher energy costs," said David Jones, head of DMJ Advisors, a Denver economic consulting firm.  
+
+Ian Shepherdson, chief U.S. economist at High Frequency Economics, said that he expected the Fed to keep raising rates in quarter-point moves at its final two meetings of the year on Nov. 1 and Dec. 13.  
+
+"The Fed has not been deflected from its prior course by Hurricane Katrina," he said. "Softer data for the next few months are likely, but they will have to be awful to persuade Alan Greenspan to pause."  
+
+Investors were not happy with the Fed's decision. The Dow Jones industrial average lost ground after the mid-afternoon announcement.  
+
+Fed Governor Mark Olson cast a lone dissenting vote, with the Fed explaining that he preferred to leave rates unchanged at Tuesday's meeting. The action was approved on a 9-1 vote of the Federal Open Market Committee, the panel of Fed governors and regional Fed bank presidents who meet eight times a year to set interest rates.  
+
+The federal funds rate stood at a 46-year low of 1 percent when the Fed began raising interest rates in June 2004. Since that time, it has boosted rates at all of its regularly scheduled meetings.  
+
+The central bank signaled in its statement that more rate hikes could be expected by retaining language it has used in the past to describe the current level of interest rates as "accommodative."  
+
+Fed policy-makers also kept language stating that they believed rates could be raised "at a pace that is likely to be measured." That language is viewed as signaling further gradual quarter-point rate hikes.  
+
+The Fed, while deciding not to take a pause in its rate hikes because of Katrina, spent a good deal of its statement discussing the hurricane's likely impact.  
+
+"The widespread devastation in the Gulf region, the associated dislocation of economic activity and the boost to energy prices imply that spending, production and employment will be set back in the near term," it said.  
+
+But Fed policy-makers concluded, "While these unfortunate developments have increased uncertainty about near-term economic performance, it is the committee's view that they do not pose a more persistent threat."  
+
+The Fed's goal is to push the funds rate up to a level where it is neither stimulating economic activity nor slowing it down. Many economists believe that level lies somewhere between 4 percent and 4.5 percent.  
+
+The Fed had pushed the funds rate down to 1 percent as it battled to overcome the negative impacts of the bursting of the stock market bubble in 2000, the 2001 recession and the terrorist attacks that year. However, with the economy now growing at a solid rate, the desire is to make sure that interest rates do not stimulate economic activity to such an extent that unwanted inflation pressures are triggered.  
+
+Many analysts believe that Greenspan wants to have completed the credit tightening needed to get to a neutral rate before he leaves office at the end of January.  
+   RF7   INi814 : Banking | i81401 : Central Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ghurr : Storms | ecat : Economic News | gcat : Political/General News | gdis : Disasters/Accidents | gntdis : Natural Disasters/Catastrophes | grisk : Risk News | gwea : Weather   REusa : United States | namz : North America | uss : Southern U.S.   IPCtagpf1wcat | sel----- | catf   IPDFinancial/Business | NA FIN US Interest Rates | D8CO6H400   PUBPress Association, Inc.   ANDocument APRS000020050920e19k0014y  
+
+
+
+ HDFed boosts interest rates while downplaying concern over Katrina's impact on economy     BYBy JEANNINE AVERSA     CRAP Economics Writer   WC881 words   PD21 September 2005   ET01:28   SNAssociated Press Newswires   SCAPRS   LAEnglish   CY(c) 2005.  The Associated Press.  All Rights Reserved.  
+   LPWASHINGTON (AP) - In Alan Greenspan's world, inflation is a bigger threat to America's long-term economic health than the devastation wrought by Hurricane Katrina.  
+
+For that reason, the Federal Reserve decided Tuesday to keep pushing up interest rates, with the goal of fending off inflation even as the country deals with fallout from the costliest natural disaster in its history.  
+   TDTaking no break in a 15-month rate-raising campaign, as some had speculated, Fed Chairman Greenspan and his colleagues opted to raise an important short-term interest rate by one-quarter percentage point to 3.75 percent. It marked the 11th increase of that size since the Fed began to tighten credit in June 2004.  
+
+The Fed made clear the fighting inflation remained its No. 1 job. Fallout from the storm doesn't pose a "persistent threat" to the nation's economic health, policymakers said.  
+
+In response to the Fed's action, commercial banks began raising their prime lending rates by a corresponding amount, to 6.75 percent. These rates are used for many short-term consumer loans, including some credit cards and popular home equity lines of credit.  
+
+The increases pushed borrowing costs to their highest level since the summer of 2001.  
+
+On Wall Street, stocks fell. The Dow Jones industrials lost 76.11 points to close at 10,481.52.  
+
+Fed policymakers held the door open to additional rate increases in the months ahead -- depending on how economic activity and inflation unfold.  
+
+Much of the Fed's brief statement -- issued after its closed-door meeting -- was devoted to looking at the economic impact of Katrina, which slammed the Gulf Coast in late August, knocking out essential oil facilities and destroying businesses, homes and lives.  
+
+High energy prices made worse by the storm "imply that spending, production and employment will be set back in the near term," Fed policymakers said. Disruptions to oil and gas supplies may add to energy price gyrations, they said.  
+
+Policymakers struck a hopeful tone that such economic fallout would not be long lasting.  
+
+"While these unfortunate developments have increased uncertainty about near-term economic performance, it is the (Fed's) view that they do not pose a more persistent threat," policymakers concluded.  
+
+Fed policymakers observed that before Katrina struck, the economy was moving ahead at a "good pace." Economists said the Fed was trying to convey the sense that because the economy was in such good shape it should be able to weather reasonably well the jolt from the storm.  
+
+Analysts said the economy is resilient and is expected to bounce back.  
+
+For now, Katrina is expected to reduce overall economic growth in the second half of this year by as much as 1 percentage point as high energy prices crimp consumer and business spending, vital ingredients for healthy economic activity.  
+
+Hiring is expected to slow. A reduction of 400,000 jobs over the next four months is forecast.  
+
+In sticking to their rate-raising course, though, Fed policymakers suggested that the risk that high energy prices could touch off broader inflation was greater than the threat of slower economic activity.  
+
+"Higher energy and other costs have the potential to add to inflation pressures," Fed policymakers said.  
+
+Oil prices on Monday shot up more than $4 a barrel -- the biggest one-day price jump ever -- amid worries that a new storm could further hobble oil production facilities on the Gulf Coast. Prices calmed down on Tuesday.  
+
+President Bush-- coping with sinking approval ratings -- wants Congress to approve a massive reconstruction program for the Gulf Coast. The federal government's costs could reach $200 billion or more. Congress already has approved $62 billion.  
+
+Rebuilding, once under way, should help energize overall economic activity and the jobs climate, though probably not until next year. All the billions of dollars expected to be pumped into the economy, however, are raising heightened fears about inflation, analysts said.  
+
+"Clearly the Fed's main eye is on inflation," said Stuart Hoffman, chief economist at PNC Financial Services Group. "They are more worried about inflation because they view the setback to economic growth as temporary."  
+
+The Fed said it would maintain a course of "measured" rate increases in the months ahead. Economists have come to view that as quarter-point bumps.  
+
+Analysts had mixed opinions, though, on whether the Fed will raise rates at both of its next two scheduled meetings this year -- on Nov. 1 and Dec. 13. Many believe that the Fed's key short-term rate, now at 3.75 percent, will be rising. Some think it could climb to 4.25 percent or 4.50 percent by the spring of next year.  
+
+The sole dissenter to the Fed's decision to boost rates on Tuesday was Fed Governor Mark Olson. He favored leaving rates unchanged.  
+
+Leading up to the Fed's meeting, there was speculation that policymakers might take a temporary break in their rate-raising campaign.  
+
+"The central bank won't back off" until it's convinced that inflation isn't a threat to the economy, said economist Sung Won Sohn, president of Hanmi Bank.  
+
+------  
+
+On the Net:  
+
+Federal Reserve:  http://www.federalreserve.gov/ 
+   RF7   INi814 : Banking | i81401 : Central Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ghurr : Storms | ecat : Economic News | gcat : Political/General News | gdis : Disasters/Accidents | gntdis : Natural Disasters/Catastrophes | grisk : Risk News | gwea : Weather   REusa : United States | uss : Southern U.S. | namz : North America   IPCtagdsp | sel----- | catw   IPDAP National News | Washington | Fed Interest Rates | D8CO9MCO3   PUBPress Association, Inc.   ANDocument APRS000020050920e19k000wu  
+
+
+
+ HDU.S.  Federal Reserve  will push interest rates higher, but when?     BYBy MARTIN CRUTSINGER     CRAP Economics Writer   WC687 words   PD20 September 2005   ET02:15   SNAssociated Press Newswires   SCAPRS   LAEnglish   CY(c) 2005.  The Associated Press.  All Rights Reserved.  
+   LPWASHINGTON (AP) - There is a debate over the timing, but nobody disagrees over the ultimate goal of Chairman Alan Greenspan and his policy-making colleagues at the U.S. Federal Reserve.  
+
+They want to push interest rates higher to ensure that an economic expansion about to complete its fourth year does not start generating unwanted inflationary pressures.  
+   TDUncertainty over the timing of the Fed's next move, however, springs from Hurricane Katrina's terrible destruction in the southeastern United States. While most economists still believe the nation's central bank will nudge rates higher by a quarter-point at Tuesday's meeting, there are some who think the Fed will pause until it can get a better read on the impact on the overall economy of Katrina and the surge in energy prices that followed the hurricane.  
+
+Many analysts think the economy's biggest threat now is that consumer spending, which accounts for two-thirds of economic activity in the world's largest economy, could falter under the impact of soaring energy prices.  
+
+Adding to those worries, consumer sentiment, as measured by the University of Michigan's consumer sentiment index, plunged by a sharp 12.2 points, according to a preliminary reading of sentiment in September. That tied the biggest one-month drop ever recorded by the index and surpassed the decline experienced after the September 2001 terror attacks.  
+
+With Americans' savings rates already at record lows, the worry is that consumers might become much more cautious, especially after seeing dramatic pictures of victims of the storm who have lost everything and must start over.  
+
+"This is a situation where the uncertainties have suddenly become huge," Lyle Gramley, senior economic adviser to Schwab Washington Research Group, said Monday. "If all the concerns translate into much lower personal spending, then the economy could falter."  
+
+The Fed is being buffeted by conflicting forces with worries about a Katrina-induced slowdown in consumer spending balanced against unease over the possibility that the sharp spike in energy prices that was occurring even before the hurricane hit might start to spill over to the rest of the economy.  
+
+The Fed sees its primary mission as keeping inflation under control.  
+
+Mark Zandi, chief economist at Economy.com, said that the Fed may well want to move now and perhaps pause at the next meeting in November.  
+
+"In November, there will be a lot of ugly economic data out on Katrina's initial impact and that might make it harder for them to move at that time," he suggested.  
+
+David Wyss, chief economist at Standard & Poor's, said that the retiring Greenspan will have only three more meetings after Tuesday could prove to be a factor in whether the Fed moves this week or not.  
+
+"Greenspan is coming to the end of his term and he really wants to get the interest rate increases done before he leaves," Wyss said. "He may feel he can't afford to take a meeting off."  
+
+The Fed started raising rates in June 2004 when it pushed up the federal funds rate, the interest that banks charge each other, from a 46-year low of 1 percent. Ten quarter-point moves later, the last one on Aug. 9, the funds rate going into Tuesday's meeting stood at 3.5 percent, the highest it has been since early September 2001.  
+
+Commercial banks' prime lending rate, the benchmark for millions of consumer and business loans, stood at 6.50 percent before Tuesday's Fed meeting, also the highest level in four years.  
+
+Even if the Fed should decide this week to declare a hiatus in its rate increases, analysts believe it would be only a temporary pause so long as the economy regains its footing quickly after the blow from Katrina. Many analysts believe Greenspan wants to see the funds rate around 4 percent to 4.5 percent by the time he adjourns his final Fed meeting on Jan. 31, 2006.  
+
+------  
+
+On the Net:  
+
+Federal Reserve:  http://www.federalreserve.gov 
+   RF7   INi814 : Banking | i81401 : Central Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   IPCtagpf1wcat | sel----- | cati   IPDInternational | NA ECO US Federal Reserve Interest Rates | D8CNL9808   PUBPress Association, Inc.   ANDocument APRS000020050920e19k00036  
+
+
+
+ CLMAbreast of the Market   HDU.S. Investors Brace For Fed Policy Meeting --- Debate Over Rates, Impact Of Katrina Seems to Cloud Long-Term Issue: Inflation      BYBy E.S. Browning      WC1,356 words   PD19 September 2005   SNThe Wall Street Journal Europe   SCWSJE   PGM1   LAEnglish   CY(Copyright (c) 2005, Dow Jones & Company, Inc.)   
+   LPINVESTORS HAVE spent a lot of time fretting over tomorrow's U.S. Federal Reserve meeting, but that should be the least of their worries.   
+
+More than at just about any time since the Fed started raising short-term interest rates in June 2004, investors last week were split over what to expect from Fed Chairman Alan Greenspan and his colleagues. Some are certain the Fed will raise rates another quarter-point, while others are firmly predicting that the Fed will pause the rate-increase campaign until it can gauge the economic fallout from Hurricane Katrina.   
+   TDOthers are having trouble deciding which side to take. Goldman Sachs issued a report Sept. 9 forecasting that the Fed would pause "as an insurance policy against a worse-than-expected impact from Katrina." After a heated internal debate, Goldman on Friday predicted that the Fed will raise rates, pushing its target for overnight bank lending to 3.75% from 3.5%.   
+
+"The logic for pausing still exists," said William Dudley, chief U.S. economist at Goldman Sachs, in an interview. "I think there is still a decent probability that they could pause." Then again, he added, the fact that the Fed has done nothing to counter press accounts predicting another rate increase has convinced him that there is a better-than-even chance that the central bank will boost rates again.   
+
+Even the folks who bet real money directly on whether the Fed will raise rates weren't certain for a while, though sentiment shifted late last week. Early in the week, traders of interest-rate futures put the chances of an increase at as low as 50%, but by late Friday, the odds were 96%. Even so, the debate among analysts continued.   
+
+It is unusual these days for there to be so much debate about the Fed's plans. In recent years, policy makers have telegraphed their moves successfully, so there has been little surprise. The probability of a Fed move as measured by futures trading has often been even higher ahead of rate decisions than it was Friday, with only a muted stock-and-bond market reaction afterward. This time, the markets could gyrate more sharply.   
+
+All this Sturm und Drang obscures the much-longer-term issue that investors ought to be worried about: inflation, especially in light of high oil prices and heavy government spending on rebuilding the U.S. Gulf Coast. That appears to be much more of a concern to the Fed and to many economists than the sort of U.S. economic weakness that would prompt a pause in rate increases.   
+
+"There is a whiff of inflation recently in the air," says Jon Brorson, head of growth-stock investing at money-management group Neuberger Berman. "The Fed still needs to lean against that and continue to raise rates."   
+
+What the Fed is dealing with, he says, is that it cut rates so deeply to stimulate the U.S. economy in 2001 that it now must raise rates more than investors would like just to get back to a neutral level. After deducting inflation from the current Fed target rate of 3.5%, he figures, the "real," inflation-adjusted rate is little more than 1%. That is too low, he says, meaning that the Fed probably will raise its target rate at least three more times, to 4.25%. If inflation worsens, the Fed might go even further.   
+
+Mr. Dudley of Goldman Sachs is even more pessimistic. Pause or no pause, he sees the Fed target rate hitting 5% by the middle of next year.   
+
+Not everyone agrees, of course. A variety of money managers, analysts and traders are forecasting that the Fed will leave rates unchanged tomorrow. Stephen Auth, chief investment officer for stocks at Pittsburgh mutual-fund group Federated Investors, forecasts that the Fed will push its target rate up tomorrow, but that this will be the last increase. And that, in his view, will create a positive environment for stocks.   
+
+On Friday, the Dow Jones Industrial Average rose 83.19 to 10641.94. For the week, the index fell 36.62, or 0.3%. The Nasdaq Composite Index gained 14.2 to 2160.35. For the week, the index fell 15.16, or 0.7%. The Standard & Poor's 500-stock index gained 10.18 to 1237.91. For the week, the index shed 3.57, or 0.3%.   
+
+So far this year, stocks have gone nowhere, with the major indexes little changed. Gains have been heavily focused on a limited group of stocks. Of 10 broad industry groups tracked by Dow Jones Indexes, only three show significant gains this year: oil and gas, utilities and health care. The rest are flat or have fallen.   
+
+Whether the gains can broaden out to more stocks now could depend heavily on a factor that investors haven't had to worry about much in recent months: inflation.   
+
+If inflation stays low despite high oil prices and post-Katrina spending, the Fed may be able to stop raising rates sooner rather than later. That could lead to a "Goldilocks" economy -- not too hot and not too cold -- in which the Fed could avoid sharp rate increases and corporate profits could turn in steady growth.   
+
+But if inflation does show signs of spreading beyond oil, the Fed and the economy could become antagonists, as officials feel the need to fight inflation by stifling economic growth through repeated rate increases. That would be bad news for corporate profits, stocks and bonds.   
+
+Investors lately have been caught between hopes that rebuilding after Hurricane Katrina will help sustain economic growth, extending it out into next year, and fears that it will help create inflation. That helps explain why stocks bounced up and down last week, finishing little changed.   
+
+Francois Trahan, chief investment strategist at New York brokerage firm Bear Stearns, warns that the U.S. economy typically continues to be sluggish for some time after the Fed stops raising rates. He thinks it may be the first half of next year before major stock indexes finally break out of the range they have been stuck in for most of the past year.   
+
+Mr. Brorson is more pessimistic. He says that favorable profit gains will push big stocks as a group up an additional 5% or so this year. But by next year, he worries, expectations for profit gains could be outpacing the ability of many companies to deliver the gains.   
+
+"We don't see a recession, but we are looking for a slowdown," Mr. Brorson says. "Analysts are becoming too optimistic about corporate profits. The companies we see benefiting are the steady eddies, the big companies that can turn in reliable profit gains."   
+
+---   
+
+Friday's Market Activity   
+
+American Express advanced 3.3%. The financial-services company said it will provide Delta Air Lines with $350 million, or some 285 million euros, in debtor-in-possession financing to help fund the carrier's operations during its bankruptcy-law proceedings. In turn, Delta will repay American Express $500 million that the financial-services firm prepaid to buy Delta SkyMiles reward points.   
+
+Exxon Mobil gained 2%. Deutsche Bank Securities raised its rating on the stock to "buy" from "hold," saying strong expansion of ethylene-chain profitability into the fourth quarter will bolster hurricane-affected volumes and refining throughputs.   
+
+McDonald's jumped 2.4%. Speculation swirled that hedge fund Pershing Square Capital Management had taken a 4.9% stake in the fast-food giant. Asked whether McDonald's was confirming that such a stake existed, a spokeswoman for the company declined to comment. Nor would she say whether the two parties have communicated in recent days.   
+
+Intel added 1.1%. Credit Suisse First Boston upgraded the chip maker's shares to "neutral" from "underperform."   
+
+Also, quadruple witching, or the expiration and settlement of stock-index futures contracts, single-stock futures, options on stocks and options on cash indexes, took place Friday.   
+
+-- Anjali Cordeiro   
+   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | m11 : Equity Markets | mcat : Commodity/Financial Market News | ecat : Economic News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REusa : United States | namz : North America   IPCCMR | DJCS | EWR | NRG | FED | USG | STT | CYC | ENE | FIN | NND | TEC | TPX | ABS | MIM | SFR | TPT   PUBDow Jones & Company, Inc.   ANDocument WSJE000020050919e19j00010  
+
+
+
+ CLMAbreast of the Market   HDStock Investors Focus on the Fed As Inflation Stirs   BYBy E.S. Browning    WC1,137 words   PD19 September 2005   SNThe Wall Street Journal   SCJ   PGC1   LAEnglish   CY(Copyright (c) 2005, Dow Jones & Company, Inc.) 
+   LPINVESTORS HAVE spent a lot of time fretting over tomorrow's Federal Reserve meeting, but that should be the least of their worries.
+
+More than at just about any time since the Fed started raising short-term interest rates in June 2004, investors last week were split over what to expect from Fed Chairman Alan Greenspan and his colleagues. Some are certain the Fed will raise rates another quarter percentage point, while others are firmly predicting that the Fed will pause the rate-increase campaign until it can gauge the economic fallout from Hurricane Katrina.
+   TDOthers are having trouble deciding which side to take. Goldman Sachs issued a report Sept. 9 forecasting that the Fed would pause "as an insurance policy against a worse-than-expected impact from Katrina."
+
+After a heated internal debate, Goldman on Friday predicted that the Fed will raise rates, pushing its target for overnight bank lending to 3.75% from 3.5%.
+
+"The logic for pausing still exists," said William Dudley, chief U.S. economist at Goldman Sachs, in an interview. "I think there is still a decent probability that they could pause." Then again, he added, the fact that the Fed has done nothing to counter press accounts predicting another rate increase has convinced him that there is a better-than-even chance that the central bank will boost rates again.
+
+Even the folks who bet real money directly on whether the Fed will raise rates weren't certain for a while, though sentiment shifted late last week. Early in the week, traders of interest-rate futures put the chances of an increase at as low as 50%, but by late Friday, the odds were 96%. Even so, the debate among analysts continued.
+
+It is unusual these days for there to be so much debate about the Fed's plans. In recent years, policy makers have telegraphed their moves successfully, so there has been little surprise. The probability of a Fed move as measured by futures trading has often been even higher ahead of rate decisions than it was Friday, with only a muted stock-and-bond market reaction afterward. This time, the markets could gyrate more sharply.
+
+All this Sturm und Drang obscures the much longer-term issue that investors ought to be worried about: inflation, especially in light of high oil prices and heavy government spending on rebuilding the Gulf Coast. That appears to be much more of a concern to the Fed and to many economists than the sort of economic weakness that would prompt a pause in rate increases.
+
+"There is a whiff of inflation recently in the air," says Jon Brorson, head of growth-stock investing at money-management group Neuberger Berman. "The Fed still needs to lean against that and continue to raise rates."
+
+What the Fed is dealing with, he says, is that it cut rates so deeply to stimulate the economy in 2001 that it now must raise rates more than investors would like just to get back to a neutral level. After deducting inflation from the current Fed target rate of 3.5%, he figures, the "real," inflation-adjusted rate is little more than 1%. That is too low, he says, meaning that the Fed probably will raise its target rate at least three more times, to 4.25%. If inflation worsens, the Fed might go even further.
+
+Mr. Dudley of Goldman Sachs is even more pessimistic. Pause or no pause, he sees the Fed target rate hitting 5% by the middle of next year.
+
+Not everyone agrees, of course. A variety of money managers, analysts and traders are forecasting that the Fed will leave rates unchanged tomorrow. Stephen Auth, chief investment officer for stocks at Pittsburgh mutual-fund group Federated Investors, forecasts that the Fed will push its target rate up tomorrow, but that this will be the last increase. And that, in his view, will create a positive environment for stocks.
+
+On Friday, the Dow Jones Industrial Average rose 83.19 points to 10641.94. For the week, the index fell 36.62, or 0.3%. The Nasdaq Composite Index gained 14.2 to 2160.35. For the week, the index fell 15.16, or 0.7%. The Standard &Poor's 500-stock index gained 10.18 to 1237.91. For the week, the index shed 3.57, or 0.3%.
+
+So far this year, stocks have gone nowhere, with the major indexes little changed. Gains have been heavily focused on a limited group of stocks. Of 10 broad industry groups tracked by Dow Jones Indexes, only three show significant gains this year: oil and gas, utilities, and health care. The rest are flat or have fallen.
+
+Whether the gains can broaden out to more stocks now could depend heavily on a factor that investors haven't had to worry about much in recent months: inflation.
+
+If inflation stays low despite high oil prices and post-Katrina spending, the Fed may be able to stop raising rates sooner rather than later. That could lead to a "Goldilocks" economy -- not too hot and not too cold -- in which the Fed could avoid sharp rate increases and corporate profits could turn in steady growth.
+
+But if inflation does show signs of spreading beyond oil, the Fed and the economy could become antagonists, as officials feel the need to fight inflation by stifling economic growth through repeated rate increases. That would be bad news for corporate profits, stocks and bonds.
+
+Investors lately have been caught between hopes that rebuilding after Hurricane Katrina will help sustain economic growth, extending it out into next year, and fears that it will help create inflation. That helps explain why stocks bounced up and down last week, finishing little changed.
+
+Francois Trahan, chief investment strategist at New York brokerage firm Bear Stearns, warns that the economy typically continues to be sluggish for some time after the Fed stops raising rates. He thinks it may be the first half of next year before major stock indexes finally break out of the range they have been stuck in for most of the past year.
+
+Mr. Brorson is more pessimistic. He says that profit gains will push big stocks as a group up an additional 5% or so this year. But by next year, he worries, expectations for profit gains could be outpacing the ability of many companies to deliver the gains.
+
+"We don't see a recession, but we are looking for a slowdown," Mr. Brorson says. "Analysts are becoming too optimistic about corporate profits. The companies we see benefiting are the steady eddies, the big companies that can turn in reliable profit gains." 
+
+
+
+License this article from Dow Jones Reprint Service
+   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | m11 : Equity Markets | mcat : Commodity/Financial Market News | ecat : Economic News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REusa : United States | namz : North America   IPCPIC | STT | NND | TPX | ABS | MIM | TFR   PUBDow Jones & Company, Inc.   ANDocument J000000020050919e19j0002g  
+
+
+ CLMCredit Markets   HDBond Market Joins Bet Fed Will Boost Rates --- Questions Still Linger On Explanation of the Rise, Likelihood of More Increases   BYBy Michael S. Derby Dow Jones Newswires    WC590 words   PD19 September 2005   SNThe Wall Street Journal   SCJ   PGC9   LAEnglish   CY(Copyright (c) 2005, Dow Jones & Company, Inc.) 
+   LPIt has been a painful path getting there, but bond-market traders and investors now are confident the Federal Reserve will raise rates when it meets tomorrow.
+
+That wasn't their belief only a couple of weeks ago. In the wake of Hurricane Katrina, government-bond-market investors initially looked at the massive devastation visited upon the Gulf of Mexico region and its critical energy and shipping infrastructure and concluded the national economy was in trouble.
+   TDOthers were less dire in their outlook. Still, they argued for a pause in rate increases on the grounds of political sensitivity and the low cost of central bankers taking their time to divine the full magnitude of Katrina's impact. For a time, the market priced out almost all chance of monetary-policy tightening for the remainder of the year.
+
+Now, markets have joined with economists and agree that Federal Reserve Chairman Alan Greenspan and the rest of the Fed will lift the federal-funds rate by a quarter percentage point, to 3.75%, tomorrow. The only question for markets is how the Fed will explain its actions, and whether it will indicate that future rate increases remain likely. Many believe central bankers will find a way to affirm future increases, while noting a higher level of uncertainty over the outlook.
+
+Markets show "a 90% chance the Fed is going to move" and "the Fed is not going to disappoint the market," said Gerald Lucas, chief market strategist with Banc of America Securities in New York. In trading late Friday, the futures market was pricing for around a 4% federal-funds rate by year end.
+
+The shift in market expectations has been joined by big swings in yields, which move inversely to prices. Treasury-security yields plummeted as the damage from Katrina became apparent, with the two-year note hitting a low of 3.72% on Sept. 1 and the 10-year hitting 4.02% on Aug. 31, based on closing prices. Since then, it has been a steady grind back up: The two-year yield hit 3.96% and the 10-year yield was at 4.267% Friday at 4 p.m.
+
+On Friday, Treasury prices fell for a third straight day. At 4 p.m., the benchmark 10-year note was down 13/32 point, or $4.06 for each $1,000 invested, at 99 28/32. Its yield rose to 4.267% from 4.218% Thursday. The 30-year bond was down 22/32 point at 112 8/32 to yield 4.557%, up from 4.516% Thursday.
+
+Many analysts never shared the market's interest-rate uncertainty and largely stuck to their projections of a September tightening, even in the darkest days after Katrina. Meanwhile, central-bank officials speaking after the storm have been fairly uniform in their comments. They agreed the economy was expanding solidly ahead of Katrina, even as price pressures were edging toward the limits of their comfort zone. The hurricane, they said, had introduced considerable uncertainty into the outlook, but there were reasons to believe its ultimate effect would be modest.
+
+Charles Lieberman, chief economist with Advisors Financial Center in Paramus, N.J., said, "I'm with the consensus that says they'll hike rates. . . . People who don't share that view are probably long the bond market." 
+
+License this article from Dow Jones Reprint Service
+   INi814 : Banking | ibnk : Banking/Credit   NSmcat : Commodity/Financial Market News | mntdbt : National Government Debt/Bond Markets | e1202 : Interest Rates | gvtre : Treasury Department | m12 : Debt/Bond Markets | m131 : Money Markets | e12 : Economic/Monetary Policy | ecat : Economic News | gcat : Political/General News | gpir : Politics/International Relations | gpol : Domestic Politics | gvbod : Government Bodies | gvexe : Executive Branch | m13 : Money/Forex Markets | mgvdbt : Government Debt/Bond Markets | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REusa : United States | namz : North America   IPCTRE | USG | NND | TPX | CRD | MIM   PUBDow Jones & Company, Inc.   ANDocument J000000020050919e19j0000d  
+
+
+
+ SEFT PREVIEW   HDFed could pause on  interest rate  rises following Katrina THE MARKET.   BYBy CHRIS FLOOD    WC565 words   PD19 September 2005   SNFinancial Times   SCFTFT   EDLondon Ed1   PGPage 38   LAEnglish   CY(c) 2005 The Financial Times Limited. All rights reserved 
+   LPThe next decision on US interest rates by the Federal Reserve Open Market Committee is the central event for global markets this week. The US economy had been expanding strongly before Hurricane Katrina struck and economists are divided over whether the Fed will delay a rise in interest rates at the meeting tomorrow.
+
+"We expect the Fed to pause at this meeting," said John Butler of HSBC, adding that core inflationary pressures have remained muted and that following Katrina there was a risk of a negative shock to US demand from falling consumer confidence.
+   TDEven if there is a pause, the Fed will want play down hopes that monetary tightening is now finished in order to retain room for manoeuvre, depending on the strength or weakness of future data releases.
+
+The language of the accompanying statement is always dissected for any hint of change in the Fed's policy stance. Observers will be keen to see if the Fed decides to drop its commitment to continuing monetary tightening at a measured pace.
+
+The Fed is likely to stress that Katrina's impact on growth will be temporary and that the stimulus from higher fiscal spending and reconstruction activity will provide a boost for growth in 2006. Analysts expect oil prices to stay higher for longer following Katrina and the Fed's comments on oil's impact on growth and inflation could also shed some light on whether US interest rates are nearing a peak.
+
+In the UK, the minutes from the Bank of England's meeting in September, due on Wednesday, will reveal whether there was any split in the vote on interest rates.
+
+The vote was split 5-4 at the August meeting, when rates were cut by 25 basis points. However, oil prices and inflation have remained higher than expected. Mervyn King, governor of the Bank, subsequently stressed that investors should not interpret the rate reduction as the start of a process of monetary easing. Interest rate expectations adapted rapidly in money markets following his comments.
+
+Investors are increasingly concerned about prospects for reform in Germany, pending the general election. The draft of the International Monetary Fund's latest twice-yearly forecasts indicates German economic growth at 0.8 per cent this year, unchanged from April's forecast. However, expectations for growth in 2006 have been lowered to 1.2 per cent, compared with April's forecast of 1.9 per cent. With 5m unemployed, weaker growth is unlikely to stimulate the German labour market.
+
+This week's data releases include the Zew business survey for September, due tomorrow, which is expected to reflect Germany's political uncertainty and the effects of continued high oil prices. The measures for current conditions and expectations are both forecast to edge lower.
+
+High oil prices are clearly affecting producer price inflation in Germany. The consensus forecast suggests an increase of 0.5 per cent on the month, which would push the year-on-year growth rate to 4.8 per cent from 4.6 per cent previously.
+
+German consumer price inflation figures for September are also due for release this week. The consensus forecast suggests high oil prices will push the annual inflation rate up sharply to 2.3 per cent from 1.9 per cent in August. 
+   RF20050919L138.007   INi814 : Banking | i81401 : Central Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News | ghurr : Storms | m11 : Equity Markets | mcat : Commodity/Financial Market News | gcat : Political/General News | gdis : Disasters/Accidents | gntdis : Natural Disasters/Catastrophes | grisk : Risk News | gwea : Weather | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter   REusa : United States | uss : Southern U.S. | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTFT000020050919e19j0003h  
+
+
+
+ SECOMMENT   HDGreenspan must be sensitive to growth uncertainty STEPHEN CECCHETTI.   BYBy STEPHEN CECCHETTI    WC799 words   PD19 September 2005   SNFinancial Times   SCFTFT   EDAsia Ed1   PGPage 13   LAEnglish   CY(c) 2005 The Financial Times Limited. All rights reserved 
+   LPAmonth ago, the US economy looked to be on course.Inflation was edging up but still well within Federal Reserve policymakers' comfort range. With real growth steady at just above 3 1/2 per cent, output was near its target level as well. Then the storm hit. With Hurricane Katrina came not only loss of life and destruction of property but a significant increase in uncertainty.
+
+While the Federal Open Market Committee is poised to raise interest rates at its meeting tomorrow, it is now hard to say what the autumn will bring. What will be the impact of recent energy price increases on the national economy? Will consumer confidence hold up? And what about the property price bubble? In the past, these sorts of uncertainties have led Alan Greenspan and his colleagues to ease, not tighten policy. Today, that means pausing to wait for more information.
+   TDAmong Mr Greenspan's most significant accomplishments is his success in transforming central bankers into the risk managers of the economic and financial system. This means that, first and foremost, monetary policymakers make sure nothing really bad happens. For example, when faced with the very real possibility of deflation in June 2003, the FOMC reduced its target federal funds rate to 1 per cent and kept it there for a full year. The small risk of a severe economic collapse elicited a very forceful policy response.
+
+Another hallmark of Mr Greenspan's tenure at the Fed has been gradualism. The biggest interest rate move has been 0.5 percentage point and a more typical change has been half that. By moving in a series of small steps, policymakers keep their options open.
+
+Returning to the present circumstance, it now appears that Katrina's impact on the national US economy will be relatively small. Oil priceshave returned to their pre-stormlevel and transport bottlenecks are Ã -disappearing.
+
+Nevertheless, there are significant risks left for the Fed to manage. First, it seems almost certain that thedramatic increase in energy prices over the past year will finally eat into non-energy household consumption. American petrol prices have risen from just over Dollars 2 a gallon in early July to Dollars 3 a gallon today. The rule of thumb is that a one cent increase takes about Dollars 1bn out of disposable income. With households saving a mere Dollars 25bn out of Dollars 10,300bn in income, it is impossible to see how Americans can absorb this Dollars 100bn increase in fuel costs without reducing consumption. Rising winter heating bills will make matters worse.
+
+This brings us to the second risk: that the recent decline in consumer confidence will be sustained. When people lose faith in the future strength of the economy, their pessimism can be self-fulfilling. Fearing calamity, they might increase their saving and drive down current consumption. While good in the longer term, in the short run such a move will slow aggregate economic activity.
+
+With housing, the Fed has been walking a tightrope for some time. It is no exaggeration to say that the past three years of American prosperity have been supported by the housing boom. While it is hard to predict what might trigger a correction, the consensus is that one will eventually come. The only hope is that when prices start to fall, the slide will be gradual. And when the boom ends, consumption growth will surely slow.
+
+The right policy response to all this is very tricky. Considering energy price increases in isolation would imply raising interest rates to combat incipient inflationary pressure. Adding the fiscal stimulus that the US Congress is enacting to rebuild New Orleans and the Gulf coast provides a further case for tighter monetary policy.
+
+Before Hurricane Katrina, the risks were primarily on the inflation side. Now, the biggest question mark is growth, so a pause in the steady upward march of interest rates would make sense. In fact, the logic of Mr Greenspan's risk management approach demands it. After all, an increase in uncertainty means the odds of a bad growth outcome have gone up. Since inflation is not an immediate concern, that means keeping interest rates low.
+
+Not only are higher interest rates imprudent in the current economic environment but by raising them the Fed also runs the risk of appearing callous. So, while the pause is not coming this week, Mr Greenspan and his colleagues must strike an uncharacteristically conciliatory tone in their coming public statements. This will prepare everyone for the possibility that their interest rate target will not change when they meet on November 1. Good risk management demands it.
+
+The writer is professor of economics at Brandeis University's International Business School 
+   RF20050919J113.010   INi814 : Banking | i81401 : Central Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | e1103 : Inflation/Prices | e211 : Government Taxation/Revenue | ecat : Economic News | nanl : Analysis | e21 : Government Finance | ncat : Content Types   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTFT000020050919e19j0000d  
+
+
+
+ CLMStock Markets   HDInvestors Brace for Fed Meeting --- Debate Over Rates, Impact Of Hurricane Seems to Cloud Long-Term Issue: Inflation      BYBy E.S. Browning      WC1,404 words   PD19 September 2005   SNThe Asian Wall Street Journal   SCAWSJ   PGM1   LAEnglish   CY(c) 2005 Dow Jones & Company, Inc. To see the edition in which this article appeared, click here   http://awsj.com.hk/factiva-ns
+   LPINVESTORS HAVE spent a lot of time fretting over tomorrow's U.S. Federal Reserve meeting, but that should be the least of their worries.   
+
+More than at just about any time since the Fed started raising short-term interest rates in June 2004, investors last week were split over what to expect from Fed Chairman Alan Greenspan and his colleagues. Some are certain the Fed will raise rates another quarter-point, while others are firmly predicting that the Fed will pause the rate-increase campaign until it can gauge the economic fallout from Hurricane Katrina.   
+   TDOthers are having trouble deciding which side to take. Goldman Sachs issued a report Sept. 9 forecasting that the Fed would pause "as an insurance policy against a worse-than-expected impact from Katrina." After a heated internal debate, Goldman on Friday predicted that the Fed will raise rates, pushing its target for overnight bank lending to 3.75% from 3.5%.   
+
+"The logic for pausing still exists," said William Dudley, chief U.S. economist at Goldman Sachs, in an interview. "I think there is still a decent probability that they could pause." Then again, he added, the fact that the Fed has done nothing to counter press accounts predicting another rate increase has convinced him that there is a better-than-even chance that the central bank will boost rates again.   
+
+Even the folks who bet real money directly on whether the Fed will raise rates weren't certain for a while, though sentiment shifted late last week. Early in the week, traders of interest-rate futures put the chances of an increase at as low as 50%, but by late Friday, the odds were 96%. Even so, the debate among analysts continued.   
+
+It is unusual these days for there to be so much debate about the Fed's plans. In recent years, policy makers have telegraphed their moves successfully, so there has been little surprise. The probability of a Fed move as measured by futures trading has often been even higher ahead of rate decisions than it was Friday, with only a muted stock-and-bond market reaction afterward. This time, the markets could gyrate more sharply.   
+
+All this Sturm und Drang obscures the much-longer-term issue that investors ought to be worried about: inflation, especially in light of high oil prices and heavy government spending on rebuilding the U.S. Gulf Coast. That appears to be much more of a concern to the Fed and to many economists than the sort of economic weakness that would prompt a pause in rate increases.   
+
+"There is a whiff of inflation recently in the air," says Jon Brorson, head of growth-stock investing at money-management group Neuberger Berman. "The Fed still needs to lean against that and continue to raise rates."   
+
+What the Fed is dealing with, he says, is that it cut rates so deeply to stimulate the U.S. economy in 2001 that it now must raise rates more than investors would like just to get back to a neutral level. After deducting inflation from the current Fed target rate of 3.5%, he figures, the "real," inflation-adjusted rate is little more than 1%. That is too low, he says, meaning that the Fed probably will raise its target rate at least three more times, to 4.25%. If inflation worsens, the Fed might go even further.   
+
+Mr. Dudley of Goldman Sachs is even more pessimistic. Pause or no pause, he sees the Fed target rate hitting 5% by the middle of next year.   
+
+Not everyone agrees, of course. A variety of money managers, analysts and traders are forecasting that the Fed will leave rates unchanged tomorrow. Stephen Auth, chief investment officer for stocks at Pittsburgh mutual-fund group Federated Investors, forecasts that the Fed will push its target rate up tomorrow, but that this will be the last increase. And that, in his view, will create a positive environment for stocks.   
+
+On Friday, the Dow Jones Industrial Average rose 83.19 to 10641.94. For the week, the index fell 36.62, or 0.3%. The Nasdaq Composite Index gained 14.2 to 2160.35. For the week, the index fell 15.16, or 0.7%. The Standard & Poor's 500-stock index gained 10.18 to 1237.91. For the week, the index shed 3.57, or 0.3%.   
+
+So far this year, stocks have gone nowhere, with the major indexes little changed. Gains have been heavily focused on a limited group of stocks. Of 10 broad industry groups tracked by Dow Jones Indexes, only three show significant gains this year: oil and gas, utilities and health care. The rest are flat or have fallen.   
+
+Whether the gains can broaden out to more stocks now could depend heavily on a factor that investors haven't had to worry about much in recent months: inflation.   
+
+If inflation stays low despite high oil prices and post-Katrina spending, the Fed may be able to stop raising rates sooner rather than later. That could lead to a "Goldilocks" economy -- not too hot and not too cold -- in which the Fed could avoid sharp rate increases and corporate profits could turn in steady growth.   
+
+But if inflation does show signs of spreading beyond oil, the Fed and the economy could become antagonists, as officials feel the need to fight inflation by stifling economic growth through repeated rate increases. That would be bad news for corporate profits, stocks and bonds.   
+
+Investors lately have been caught between hopes that rebuilding after Hurricane Katrina will help sustain economic growth, extending it out into next year, and fears that it will help create inflation. That helps explain why stocks bounced up and down last week, finishing little changed.   
+
+Francois Trahan, chief investment strategist at New York brokerage firm Bear Stearns, warns that the U.S. economy typically continues to be sluggish for some time after the Fed stops raising rates. He thinks it may be the first half of next year before major stock indexes finally break out of the range they have been stuck in for most of the past year.   
+
+Mr. Brorson is more pessimistic. He says that favorable profit gains will push big stocks as a group up an additional 5% or so this year. But by next year, he worries, expectations for profit gains could be outpacing the ability of many companies to deliver the gains.   
+
+"We don't see a recession, but we are looking for a slowdown," Mr. Brorson says. "Analysts are becoming too optimistic about corporate profits. The companies we see benefiting are the steady eddies, the big companies that can turn in reliable profit gains."   
+
+---   
+
+Friday's Market Activity   
+
+American Express advanced 3.3%. The financial-services company said it will provide Delta Air Lines with $350 million in debtor-in-possession financing to help fund the carrier's operations during its bankruptcy-law proceedings. In turn, Delta will repay American Express $500 million that the financial-services firm prepaid to buy Delta SkyMiles reward points.   
+
+Exxon Mobil gained 2%. Deutsche Bank Securities raised its rating on the stock to "buy" from "hold," saying strong expansion of ethylene-chain profitability into the fourth quarter will bolster hurricane-affected volumes and refining throughputs.   
+
+McDonald's jumped 2.4%. Speculation swirled that hedge fund Pershing Square Capital Management had taken a 4.9% stake in the fast-food giant. Asked whether McDonald's was confirming that such a stake existed, a spokeswoman for the company declined to comment. Nor would she say whether the two parties have communicated in recent days.   
+
+Intel added 1.1%. Credit Suisse First Boston upgraded the chip maker's shares to "neutral" from "underperform."   
+
+Also, quadruple witching, or the expiration and settlement of stock-index futures contracts, single-stock futures, options on stocks and options on cash indexes, took place Friday.   
+
+Meanwhile, in European trading, most key stock indexes advanced moderately, with oil- and mining-sector stocks buoying U.K. and French markets.   
+
+The Dow Jones Stoxx 600, which tracks Europe's 600 largest listed companies, edged higher. The German Xetra DAX Index gained 1.6% ahead of yesterday's federal election.   
+
+-- Anjali Cordeiro and Sarah Turner   
+   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News | ncat : Content Types | nfact : Factiva Filters | nfce : FC&E Exclusion Filter | m11 : Equity Markets | mcat : Commodity/Financial Market News   REusa : United States | namz : North America   IPCCMR | DJCS | EWR | NRG | FED | USG | CYC | ENE | FIN | NND | TEC | MIM | SFR | TPT   PUBDow Jones & Company, Inc.   ANDocument AWSJ000020050918e19j0000m  
+
+
+
+ HDHomebuilders weaken ahead of Fed decision     WC540 words   PD19 September 2005   ET23:19   SNAssociated Press Newswires   SCAPRS   LAEnglish   CY(c) 2005.  The Associated Press.  All Rights Reserved.  
+   LPNEW YORK (AP) - Homebuilding stocks weakened Monday on speculation the Federal Reserve will move to narrow interest rates, increasing concern a nationwide real estate slowdown is getting closer.  
+
+The interest-rate sensitive group has been one of Wall Street's high fliers during the past few years as housing prices have soared. Even talk by Federal Reserve Chairman Alan Greenspan about a real estate bubble has done little to slow the industry down, though share prices have retreated somewhat since July's highs.  
+   TDAnxiety over how rising mortgage rates will affect the sector caused some investors to bail out of their holdings ahead of Tuesday's Fed meeting. Hovnanian Enterprises Inc. shares fell $1.70, or 3.1 percent, to close at $52.87 on the New York Stock Exchange, and earlier changed hands as low as $51.55. Toll Brothers Inc. shares fell $1.36, or 3 percent, to close at $44.31 on the NYSE after trading as low as $43.76. KB Home fell $1.35 to close at $73.65, and DR Horton Inc. rose 2 cents to close at $36.27. Pulte Homes Inc. shares fell 4 cents to close at $43.00.  
+
+However, some analysts say homebuilders have what it takes to weather a slowdown -- even if rates jump another 300 basis points.  
+
+"Are we somewhat more cautious because of all the warning signs of a slowdown? Certainly," said Joseph Snider, a senior credit officer at Moody's Investors Service. "Nevertheless, we feel that the positive fundamentals for the industry remain largely intact."  
+
+Snider said many in the industry could be shielded due to strong balance sheets. In addition, the group will benefit from some supply constraints during a period of high demand and attractive interest rates. He contends the industry could "withstand a 200 to 300 basis point rise before they really begin to pinch."  
+
+Fed watchers are split over whether policy-makers will raise rates for an 11th consecutive time, a move that could cause investors to pull back amid greater uncertainty about economic growth in Hurricane Katrina's aftermath. There is speculation rates will remain unchanged to bolster consumer confidence and keep lending costs low as the Gulf Coast region rebuilds.  
+
+Investors will closely follow what the Fed says about real estate prices. In the past, Greenspan has said only some regions of the nation are showing bubble-like conditions.  
+
+A study released Monday by the Wharton School and Columbia Business School suggests most cities in the U.S. showed little evidence of a housing bubble at the end of 2004. The study, which examined 46 single-family housing markets between 1980 to 2004, suggested that recent growth rates do not reflect a bubble and instead are explained by low interest rates, strong income growth, and unusually low housing prices in the mid-1990s.  
+
+The report -- "Assessing High Housing Prices: Bubbles, Fundamentals and Misperceptions" -- did indicate that further changes in rates can have a "disproportionately large impact" that could cause housing prices to decline. The report was written by Charles Himmelberg, a senior Fed economist in New York, Columbia Business School professor of real estate Chris Mayer, and Wharton School associate professor Todd Sinai.  
+   RF7   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | usny : New York | namz : North America | use : Northeast U.S.   IPCtagapf | selapfin | catf   IPDFinancial/Business | APFN Homebuilders Mover | D8CNIMNOG   PUBPress Association, Inc.   ANDocument APRS000020050919e19j002lw  
+ Page 1 of 1     © 2018 Factiva, Inc.  All rights reserved.
+
+
+ 
+
+ Page 1     © 2018 Factiva, Inc.  All rights reserved.
+

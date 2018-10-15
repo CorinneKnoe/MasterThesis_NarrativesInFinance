@@ -1,0 +1,1564 @@
+ 
+
+
+ HDFACTBOX-Global interest rates.      WC949 words   PD11 August 2004   ET13:41   SNReuters News   SCLBA   LAEnglish   CY(c) 2004 Reuters Limited   
+   LP
+ 
+    LONDON, Aug 11 (Reuters) - The U.S. Federal Reserve raised interest rates by
+a quarter of a percentage point to 1.50 percent on Aug. 10 to head off potential
+inflation, saying the economy was poised to pick up after a recent slowdown.
+    As a result the average rate set by the central banks of the Group of Seven
+nations rose to 2.05 percent from 2.0 percent. The G7 average had been below 2.0
+percent since July last year.
+ 
+    Following the increase, the average rate of 11 leading central banks -- G7
+plus six other major banks -- rose to 2.54 percent from 2.51 percent.
+    The following table of average rates is aimed at reflecting the movement of
+official policy rates during the economic cycle rather than actual borrowing
+costs.
+   
+   TD
+                      2004
+ MONTH: END02..END03..01...02...03...04...05...06...07...08...09...10...11...12
+ ------------------------------------------------------------------------------
+ G7 AVG: 2.15  1.90  1.85 1.90 1.85 1.80 1.85 1.95  -   2.05  -    -    -    -
+ 11 AVG: 3.20  2.47  2.45 2.45 2.40 2.35 2.38 2.47 2.49 2.54  -    -    -    -
+ ------------------------------------------------------------------------------
+ FED     1.25  1.00   -    -    -    -    -   1.25  -   1.50  -    -    -    -
+ BOJ 1)  0.00  0.00   -    -    -    -    -    -    -    -    -    -    -    -
+ ECB     2.75  2.00   -    -    -    -    -    -    -    -    -    -    -    -
+ BOE     4.00  3.75   -   4.0   -    -   4.25 4.50  -   4.75  -    -    -    -
+ BOC     2.75  2.75  2.5   -   2.25 2.00  -    -    -    -    -    -    -    -
+ ------------------------------------------------------------------------------
+ SNB 2)  0.75  0.25   -    -    -    -    -   0.50  -    -    -    -    -    -
+ RBA     4.75  5.25   -    -    -    -    -    -    -    -    -    -    -    -
+ RBNZ    5.75  5.00  5.25  -    -   5.5   -   5.75 6.0   -    -    -    -    -
+ RIKSBK  3.75  2.75   -   2.5   -   2.0   -    -    -    -    -    -    -    -
+ NORWAY  6.50  2.25  2.0   -   1.75  -    -    -    -    -    -    -    -    -
+ DNMRK   2.95  2.15   -    -    -    -    -    -    -    -    -    -    -    -
+ ------------------------------------------------------------------------------
+ NO. OF RATE
+ CHANGES: 2003: 29    3    2    2    3    1    4    1    2    -    -    -    -
+ ------------------------------------------------------------------------------
+ MONTH: END02..END03..01...02...03...04...05...06...07...08...09...10...11...12
+ ------------------------------------------------------------------------------
+ EASTERN EUROPE:
+ NBP    6.75   5.25   -    -    -    -    -   5.75 6.0   -    -    -    -    -
+ NBH    9.0   12.50   -    -  12.25 12.0 11.5  -    -    -    -    -    -    -
+ CNB    2.75   2.00   -    -    -    -    -   2.25  -    -    -    -    -    -
+ NBS    6.50   6.00   -    -   5.50 5.00  -   4.5   -    -    -    -    -    -
+ SLOV   10.0   7.25  7.0  6.75  -   6.25 5.75 5.0   -    -    -    -    -    -
+ ------------------------------------------------------------------------------
+ LATIN AMERICA:
+ BRAZ   25.0  16.5    -    -  16.25 16.0  -    -    -    -    -    -    -    -
+ MEX 3)  6.9   6.1   5.0  5.6  6.2   6.0 6.6  6.6  6.7   -    -    -    -    -
+ CHIL    3.0   2.25  1.75  -    -    -    -    -    -    -    -    -    -    -
+ COL     4.25  6.25   -   6.0  5.75  -    -    -    -    -    -    -    -    -
+ VEN    40.0  28.5    -    -    -    -    -    -    -    -    -    -    -    -
+ ------------------------------------------------------------------------------
+ ASIA
+ KOREA   4.25  3.75   -    -    -    -    -    -    -    -    -    -    -    -
+ THAI    1.75  1.25   -    -    -    -    -    -    -    -    -    -    -    -
+ PHIL    7.00  6.75   -    -    -    -    -    -    -    -    -    -    -    -
+ TAIWN   1.625 1.375  -    -    -    -    -    -    -    -    -    -    -    -
+ INDS 4)12.9   8.3   7.9  7.5  7.4  7.3  7.3  7.3  7.4   -    -    -    -    -
+ ------------------------------------------------------------------------------
+ MIDDLE EAST/AFRICA:
+ SARB   13.5   8.0    -    -    -    -    -    -    -    -    -    -    -    -
+ ISRL    8.9   4.8   4.5  4.3   4.1  -    -    -    -    -    -    -    -    -
+ TURK   44.0  26.0    -  24.0  22.0  -    -    -    -    -    -    -    -    -
+  -----------------------------------------------------------------------------
+ MONTH: DEC02..DEC03..01...02...03...04...05...06...07...08...09...10...11...12
+ 
+    NOTES:
+    If rates change more than once a month, the last rate for that month is
+listed.
+    1. The Bank of Japan shifted policy target from the uncollateralised
+   
+
+overnight call rate to outstanding balance of current account deposits that   
+
+banks and other institutions hold at the BOJ, the so-called quantitative easing,   
+
+on March 19, 2001. Since then the call rate has been effectively zero.   
+
+2. The Swiss National Bank targets a range for the three-month Swiss franc   
+
+LIBOR rate. On June 17 it raised key interest rates by a quarter point, widening   
+
+its interest rate target band to 0.00 to 1.00 percent from 0.00-0.75 percent   
+
+where it had stood since March 6, 2003. The SNB said it now aimed for the   
+
+mid-point, or 0.50 percent within the new, wider target band.   
+
+3. The Bank of Mexico manages reserve money through weekly open market   
+
+operations. The benchmark is the 28-day treasury bills, Cetes. This is a monthly   
+
+average rate, rounded to one decimal.   
+
+4. The Bank of Indonesia's benchmark rate is the one month Sertifikat Bank   
+
+Indonesia (SBI). The bank uses a weighted rate at the last auction of the month   
+
+to reflect the rate for the whole month. Figure rounded to one decimal.   
+
+-   
+
+INTEREST RATES. (All the interest rates are policy rates identified by each   
+
+central bank.):    
+
+
+ 
+ 
+    GROUP OF SEVEN CENTRAL BANKS:
+    U.S FEDERAL RESERVE = federal funds rate
+    BANK OF JAPAN = overnight call rate
+    EUROPEAN CENTRAL BANK = refi rate
+    BANK OF ENGLAND = repo rate
+    BANK OF CANADA = overnight funding rate
+ 
+    MAJOR CENTRAL BANKS:
+    SWISS NATIONAL BANK = 3-month Swiss Libor
+    RESERVE BANK OF AUSTRALIA = cash rate
+    RESERVE BANK OF NEW ZEALAND = cash rate
+    SWEDISH RIKSBANK = repo rate
+    NORGES BANK = deposit rate
+    DENMARKS NATIONALBANK = 2-week cd rate
+ 
+    EASTERN EUROPE:
+    NATIONAL BANK OF POLAND (NBP): 28-day intervention rate
+    NATIONAL BANK OF HUNGARY: (NBH) 2-week deposit rate
+    CZECH NATIONAL BANK (CNB): 2-week repo rate
+    NATIONAL BANK OF SLOVAKIA (NBS): 2-week limit repo rate
+    BANK OF SLOVENIA: Lombard rate replaced discount Jan. 2003.
+ 
+    LATIN AMERICA:
+    CENTRAL BANK OF BRASIL (BCB): Selic rate
+    CENTRAL BANK OF CHILE (BCC): Discount rate
+    BANK OF COLOMBIA (BRC): One-day reverse repo
+    BANK OF MEXICO: 28 day Cetes rate
+    CENTRAL BANK OF VENEZUELA (BCV): Discount rate
+ 
+    ASIA:
+    BANK OF KOREA: Overnight call rate
+    BANK OF THAILAND: 14-day repurchase rate
+    CENTRAL BANK OF PHILIPPINES: Overnight borrowing rate
+    CENTRAL BANK OF CHINA (TAIWAN): Discount rate
+    BANK OF INDONESIA: One month SBI rate
+ 
+    MIDDLE EAST/AFRICA:
+    SOUTH AFRICAN RESERVE BANK: Repurchase rate
+    BANK OF ISRAEL: Short-term lending rate
+    CENTRAL BANK OF TURKEY: Overnight borrowing.
+   
+   NSe1202 : Interest Rates | ntab : Table | e12 : Economic/Monetary Policy | ecat : Economic News | ncat : Content Types | nfact : Factiva Filters | niwe : IWE Filter   REnamz : North America | usa : United States   IPCN2K:AU | N2K:BOE | N2K:BOJ | N2K:CA | N2K:CAN | N2K:CEN | N2K:D | N2K:DNP | N2K:ECB | N2K:EUROPE | N2K:FED | N2K:FRX | N2K:G7 | N2K:GLOBAL/INT | N2K:INT | N2K:J | N2K:M | N2K:MMT | N2K:NAT | N2K:NORD | N2K:NZ | N2K:PTD | N2K:RNP | N2K:SNB | N2K:U | N2K:UKI | N2K:WEU   PUBReuters Ltd.   ANDocument LBA0000020040811e08b008ho  
+
+
+
+ HDFed Raises Rates, Seeing Slowdown As Temporary --- Upbeat Take on Economy Gives Stocks a Lift, Signals More Increases Lie Ahead   BYBy Greg Ip    WC1,279 words   PD11 August 2004   SNThe Wall Street Journal   SCJ   PGA1   LAEnglish   CY(Copyright (c) 2004, Dow Jones & Company, Inc.) 
+   LPWASHINGTON -- The Federal Reserve raised short-term interest rates for the second time in two months and, suggesting that the recent economic slowdown was temporary, signaled that more rate increases remain in store this year.
+
+The Fed's policy-making committee increased its target for the federal-funds rate -- the rate charged on overnight loans between banks -- to 1.5% from 1.25%. It began lifting that target in June. It had cut it 13 times, to 1% from 6.5%, in the prior four years.
+   TDExplaining its reasoning, the Fed said that "in recent months, output growth has moderated and the pace of improvement in labor-market conditions has slowed" -- developments that it blamed on "the substantial rise in energy prices."
+
+Some recent economic reports have been downbeat, in particular a surprisingly weak increase of 32,000 nonfarm jobs in July. That report, together with a softening in consumer spending in June triggered largely by higher oil prices, has prompted some economists to warn that the economic expansion could be in danger.
+
+The Fed doesn't share that view. In its statement, it said: "The economy nevertheless appears poised to resume a stronger pace of expansion going forward."
+
+Morgan Stanley economist David Greenlaw called the inclusion of such an explicit forecast in the Fed's statement "highly unusual" and "a clear indication that the Fed feels the recent incoming data represent a temporary soft patch."
+
+The statement suggests that the Fed is more likely than not to raise interest rates at its next few meetings, including Sept. 21, the last meeting before the election. It remains to be seen whether the Fed's optimism is well-grounded. For one thing, something other than high oil prices may be undermining consumer spending. If so, economic data in coming months could prove disappointing. Another risk is that oil prices may ratchet higher. If either happens, the Fed would have to consider a halt to rate increases.
+
+Still, the Fed seemed to go out of its way to suggest that its previous plan remains largely on track. It repeated that it expected to raise rates at a "measured" pace and retained its caveat that it would modify that course as necessary to preserve "price stability." The Fed first inserted that caveat in June as a warning that more robust growth or inflation numbers could force it to switch to half-point or larger moves. It did say that the likelihood of higher or lower inflation was about even, as were the risks of stronger and weaker economic growth, for the next few quarters.
+
+Even so, recent remarks by Fed Chairman Alan Greenspan and his colleagues clearly show they are more worried about breeding inflation by leaving rates low, than they are about aborting the expansion by continuing to raise them. Yesterday's rate move was approved by all 12 voting members of the Fed's 19-member Federal Open Market Committee. All 12 reserve banks had also requested a quarter-point increase in the more-symbolic discount rate, which is the rate charged on short-term advances to commercial banks
+
+The moves had divergent effects on stocks and bonds. Stocks sold off initially, then rallied to close on their highs, heartened by the Fed's optimistic outlook. The Dow Jones Industrial Average rose 130.01 points to 9944.67. Bond prices, which move in the opposite direction to yields, sold off in anticipation of higher short-term rates. The yield on the 10-year Treasury bond rose to 4.3% from 4.25%.
+
+"I hadn't anticipated the explicit vote of confidence in the continuing underlying thrust of the expansion," said Michael Prell, a former top Fed staffer and now a consultant in Arlington, Va. "Many in the [bond] market were hoping for a more neutral message."
+
+Paradoxically, higher interest rates, which a sitting president normally deplores, might be good news for President Bush's re-election hopes. The Fed's optimistic outlook, ratified by the stock market's rally, will give credence to Mr. Bush's assertion that the economy is improving and hurt challenger John Kerry's claims to the contrary.
+
+In response to the Fed's raising the discount rate to 2.5% from 2.25%, several banks raised their prime lending rate to 4.5% from 4.25%. Other savings and loan rates will probably respond in coming days. Over time, higher rates discourage business and consumer borrowing, and thus keep the economy from overheating.
+
+The Fed's action and statement affirmed its overall strategy, first rolled out in May: to raise the funds rate at a "measured" pace, a euphemism for quarter-point moves. Fed officials say the 1% funds rate in place before June made sense only with last year's tepid growth, extreme business caution and risk of deflation, which is defined as generally falling prices.
+
+With the Fed confident that the expansion is entrenched, its goal now is to get rates back to a more normal level to avoid planting the seeds of inflation a year or two down the road. Before Friday's jobs report, that suggested the Fed would raise rates at most of its remaining meetings this year: in September, November and December, even if growth slowed a bit along the way.
+
+The weakness in July's employment report raised the possibility that growth had softened more than the Fed was willing to tolerate. Many analysts speculated that the Fed wouldn't change rates in September in part to avoid controversy close to the Nov. 2 election, although Fed officials say the election would have no bearing on their decision. To be sure, the Fed's acknowledgment of recent weakness does make coming rate increases a bit less certain. Futures markets late yesterday put the odds of a quarter-point increase in September at 68%, down from 78% Thursday but above 60%, where they stood before the Fed meeting yesterday.
+
+A key measure of credit conditions is the "real" interest rate, which is the interest rate minus the inflation rate. For almost three years, the real federal-funds rate has been negative. Many Fed officials, in particular some reserve-bank presidents who heard growing reports of price increases from local business contacts, are anxious to make the real funds rate positive again (implying a nominal rate of 2% or higher), fearing that leaving it negative would inevitably fuel price pressures. Some Fed governors in Washington were less concerned, believing the recent inflation jump to be transitory and confident that still-high unemployment would contain inflation pressures.
+
+Mr. Greenspan himself has edged closer to the inflation hawks lately. One of his concerns is that a major bulwark against inflation in recent years -- strong productivity growth, which enables firms to boost wages and sales without raising prices -- is fading.
+
+Yesterday, the Labor Department said growth in nonfarm business productivity slowed to an annual rate of 2.9% in the second quarter from 3.7% in the first. That's still a healthy pace but down from the exceptionally high 4% average of the prior three years. Slower growth in output per hour, coupled with brisk growth in hourly wages and benefits, caused labor costs per unit of output to grow 1.9% in the second quarter, the fastest pace in two years.
+
+---
+
+Question of the Day: How many more times do you think Fed policy makers will raise rates before the end of the year? Visit WSJ.com/Question to vote. 
+
+License this article from Dow Jones Reprint Service
+   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | e1116 : Employment/Unemployment | e1201 : Central Bank Intervention | ecat : Economic News | gjob : Labor Issues | gvexe : Executive Branch | m131 : Money Markets | npag : Page-One Story | gcat : Political/General News | gcom : Society/Community/Work | gpir : Politics/International Relations | gpol : Domestic Politics | gvbod : Government Bodies | m13 : Money/Forex Markets | mcat : Commodity/Financial Market News | ncat : Content Types   REusa : United States | namz : North America   IPCPIC | FED | USG | NFP | NND | TPX | MHD | PGO | TPT   PUBDow Jones & Company, Inc.   ANDocument J000000020040811e08b00039  
+
+
+
+ CLMTuesday's Markets   HDStocks Record Biggest Gains In Two Months   BYBy Ian McDonald    WC760 words   PD11 August 2004   SNThe Wall Street Journal   SCJ   PGC1   LAEnglish   CY(Copyright (c) 2004, Dow Jones & Company, Inc.) 
+   LPAFTER DIGESTING THE Federal Reserve's interest-rate increase and parsing its mostly positive comments on the economy, investors exhaled and pushed stocks to their biggest gains in two months.
+
+As widely expected, the Fed raised the target federal-funds interest rate, which banks charge each other for overnight loans, one-quarter point to 1.5%. Rattled by softness in recent economic growth, however, traders zeroed in on central-bank comments about the economy.
+   TDTheir worry: That recent weakness in job growth and consumer spending would make the Fed question if the economy's recovery was losing steam and ratchet down the pace and scope of promised rate increases at future meetings.
+
+In its statement the Fed acknowledged recent economic softness, but blamed high energy prices and said the economy "appears poised to resume a stronger pace of expansion going forward." This gave investors little indication that the Fed would deviate from its plan to raise rates at a "measured" pace in coming months.
+
+Skeptics cautioned that by noting recent weakness, the Fed may have left itself room to hold off on more rate cuts if the economy sputtered. But most investors focused on the positive and read this as a vote of confidence for the economy and more rate increases.
+
+"Their rhetoric is the same and there's no hint of a change in their policies," said Bulent Baygun, head of U.S. fixed- income strategy at Barclays Capital in New York.
+
+The Dow Jones Industrial Average rose 130.01 points, or 1.3%, to 9944.67, and the tech-laden Nasdaq Composite jumped 1.9% to 1808.70. Both indexes are still underwater for the year. But each posted its biggest gain, both by points and percentage, since June 7, albeit with below-average trading volume. The price of a 10-year Treasury bond finished down 3/8, with its yield rising to 4.3%. Yields move inversely to prices.
+
+Both stock and bond prices rose modestly in light trading prior to the Fed's announcement in the afternoon. Following the meeting, stock indexes inched down briefly and then surged to new highs on the day.
+
+Stocks "are certainly glad to see them keep to a measured pace of rate rises," said Ted Oberhaus, director of equity trading at Lord Abbett Funds. "If they hadn't bumped rates up, we'd have to worry what they're worried about."
+
+The gains came after five sessions when the industrial average lost more than 3% and the Nasdaq fell twice that much. Bonds had rallied in recent weeks as weak economic data drove investors to less-risky assets.
+
+Crude-oil prices briefly topped $45 a barrel early yesterday, a new high, due to production worries in Iraq and the Gulf of Mexico. After news of resumed production in Iraq's southern oil fields, futures settled at $44.52, off $0.32.
+
+Despite yesterday's strong stock gains, storm clouds were gathering that could linger today. After yesterday's close, Cisco Systems posted solid earnings, but the tech bellwether company was cautious about its business prospects, and its shares fell sharply in after-hours trading.
+
+Some investors were cautious about reading too much into the Fed's moves yesterday, saying the Fed had little choice to act differently.
+
+"The Fed's hand was forced," said Sandy Rufenacht, chief investment officer at Three Peaks Capital Management in Denver. "They're obviously looking at a fragile economy and the stock market wouldn't have liked to hear talk of backing off."
+
+Others worry gains will fade as the economy and financial markets fail to sustain momentum. "You still have so many head winds -- a muddled economy, high oil prices, terrorism," said Jeffrey Saut, chief strategist at brokerage firm Raymond James. "I think this is a foxtrot economic recovery, fast-fast then slow-slow."
+
+In major U.S. market action:
+
+Stocks rose. On the Big Board, where 1.25 billion shares traded, 2,377 advanced and 878 declined. On the Nasdaq, 1.41 billion shares changed hands.
+
+Bonds slipped. The 10-year Treasury note fell 12/32 point, or $3.75 for each $1,000 invested, to yield 4.3%. The 30-year bond was down 9/32 point to yield 5.07%.
+
+The dollar gained. Late in New York it traded at 111.33 yen from 110.61 yen, while the euro fell against the dollar to $1.2237 from $1.2271. 
+
+License this article from Dow Jones Reprint Service
+   NSm11 : Equity Markets | mcat : Commodity/Financial Market News | mntdbt : National Government Debt/Bond Markets | e1202 : Interest Rates | gpersf : Personal Finance | gvtre : Treasury Department | m12 : Debt/Bond Markets | m131 : Money Markets | m132 : Foreign Exchange News | nsum : News Digest | e12 : Economic/Monetary Policy | ecat : Economic News | gcat : Political/General News | glife : Living/Lifestyle | gpir : Politics/International Relations | gpol : Domestic Politics | gvbod : Government Bodies | gvexe : Executive Branch | m13 : Money/Forex Markets | mgvdbt : Government Debt/Bond Markets | ncat : Content Types | nfact : Factiva Filters | niwe : IWE Filter   REusa : United States | jap : Japan | asiaz : Asia | easiaz : Eastern Asia | namz : North America   IPCPIC | TRE | USG | STT | JPY | NND | TPX | USD | MIM | PMK | TFR | TPT   PUBDow Jones & Company, Inc.   ANDocument J000000020040811e08b0002y  
+
+
+
+ HDHow the Fed's Move Affects Your Pension --- Rising Rates Make Retiring This Year a Good Option For Some Older Employees   BYBy Jeff D. Opdyke    WC1,093 words   PD11 August 2004   SNThe Wall Street Journal   SCJ   PGD1   LAEnglish   CY(Copyright (c) 2004, Dow Jones & Company, Inc.) 
+   LPWORKERS PREPARING to retire should pay extra close attention to the latest interest-rate moves by the Federal Reserve.
+
+Yesterday, for the second time in six weeks, the Fed raised the benchmark rate that banks charge each other by a quarter point, to 1.50%. Wall Street expects further increases throughout the balance of the year.
+   TDThe rate increases present a particularly sharp quandary for people nearing retirement. At retirement, employees with a pension typically choose between some version of receiving lifetime monthly checks or a one-time, lump-sum payment that they can then invest however they wish and draw upon as needed. With rates on the rise, older employees who expect to take a lump-sum payout from their pension plan might want to consider moving up their retirement date. Doing so could save them potentially tens of thousands of dollars or more, depending on the size of their pension. The reason has to do with the way companies calculate these one-time payouts. Essentially, rising rates translate into smaller lump sums.
+
+This marks the first time in nearly a decade that retirees have faced this situation. Until recently, workers have retired into a falling interest-rate environment in which they saw the size of their lump-sum payouts increase.
+
+But a huge number of people will be wrestling with this decision in coming years. Though pension plans have long been on the way out, replaced by 401(k) plans, some 50,000 individual pension plans still exist, covering 23 million active workers. As recently as 1996, an estimated 82% of workers covered by a pension plan were eligible for lump-sum payments. And employees have been rushing to the lump-sum option in recent years because low interest rates have meant larger-than-usual payouts.
+
+The effects of the Fed's earlier June 30 quarter-point increase are already rippling through a variety of financial products and services. Credit-card rates are on the rise, certificates of deposit are paying fatter yields, and home-equity lines of credit have gotten pricier. For instance, home-equity lines that averaged about 3.18% in March are now at 3.65%, according to Bankrate.com. One-year CDs, meanwhile, are yielding about 1.6% on average, a hefty jump from the 1.1% just five months ago.
+
+To be sure, employees should consider numerous factors other than the size of a potential lump-sum payment when contemplating retirement. They need to take into account what benefits they'll forsake and whether they still need those for some period of time. They also need to calculate when they're eligible for full Social Security benefits, or whether they can bide time in retirement until they're eligible -- or whether they can live comfortably on reduced benefits if claimed early.
+
+At issue is the method companies use to calculate the value of a retiring employee's lump-sum payout. A company must cough up a bigger upfront payment to a new retiree when interest rates are falling. That's because with low rates it takes more dollars to equal the so-called present value of all the expected payments into the future. Conversely, as rates rise, the payout shrinks.
+
+In general, companies rely on long-term Treasury bond yields to calculate lump-sum payments. Long-term rates don't move in lockstep with short-term Fed rate moves, but a rising interest-rate environment ultimately does affect longer-term bonds.
+
+Unlike a 401(k), in which individual workers are responsible for managing and distributing their own retirement savings, pensions are typically managed by financial professionals for the benefit of workers. Moreover, where 401(k) workers must pony up a portion of every paycheck to fund their plan, companies typically fund the entire payment in a pension plan.
+
+With traditional pensions, roughly every $1 in monthly income a worker would receive in a pension check currently equals about $140 in a lump-sum payment. That means a worker in line to receive, say, $1,500 a month could expect a lump-sum payment of roughly $210,000.
+
+The rule of thumb is that every one-percentage-point rise in long-term rates lowers a lump-sum payout by between 10% and 15%. The result of a one-point rise is that a payment of, say, $500,000 could be as much as $75,000 lighter.
+
+Already this year, long-term bond rates have moved above 5% and at one point hit 5.5%. As long-term bond rates continue to rise, companies will be forced to reset the rates used to calculate lump-sum payouts.
+
+The good news: For workers with flexibility, there's still time to preserve a fatter pension. Plans that allow for lump-sum distributions typically reset the rate they use at various intervals during the year. For instance, if a worker were to retire in January, the company will look back one to three months and calculate the payment off those interest rates. Other companies employ different formulas in which the rate is set for a certain period of time, maybe as long as a year, and then a year later reset to prevailing rates for the next period.
+
+For workers considering retirement, "it makes a lot of sense to check with your HR department" to understand how and when it resets the rates used to calculate lump-sum payments, says John Parks, an assistant vice president with Principal Financial Group and a consulting actuary.
+
+Lump-sum payouts aren't appropriate for all retirees. Too many view a lump sum as a windfall to spend on vacations and cars, instead of a resource needed to fund their retirement. Pension experts say that the lump-sum option is best selected by workers who already have accumulated sizable assets elsewhere and can generate a big enough stream of money to live on in retirement.
+
+--- 
+
+
+                         Fallout From the Rate Hike 
+ 
+  As the Federal Reserve raises interest rates, lump-sum pension payouts will 
+likely shrink. 
+ 
+  -- Employees nearing retirement who expect to take the lump-sum payout 
+option should consider leaving sooner rather than later. 
+ 
+  -- As a rule of thumb, every one-percentage-point rise in interest rates 
+reduces a lump-sum payout by between 10% and 15%. 
+ 
+  -- Generally, every $1 worth of monthly pension income translates into 
+about $140 of lump-sum payment. 
+   
+
+License this article from Dow Jones Reprint Service
+   INi81502 : Trusts/Funds/Financial Vehicles | i8150214 : Private Pension Funds | iinv : Investing/Securities   NSgpersf : Personal Finance | gwelf : Welfare/Social Services | e1202 : Interest Rates | gjob : Labor Issues | e12 : Economic/Monetary Policy | ecat : Economic News | gcat : Political/General News | gcom : Society/Community/Work | glife : Living/Lifestyle   REusa : United States | namz : North America   IPCNND | PSJ   PUBDow Jones & Company, Inc.   ANDocument J000000020040811e08b00026  
+
+
+
+ CLMCredit Markets   HDMTS Will Keep Curbs In Euro-Zone Trading --- Bond-Transaction Limits Set After Citigroup's Move Will Stay at Least a Month   BYBy Jo Wrighton in Paris, Oliver Biggadike in Frankfurt, and Aaron Lucchetti in New York    WC1,098 words   PD11 August 2004   SNThe Wall Street Journal   SCJ   PGC4   LAEnglish   CY(Copyright (c) 2004, Dow Jones & Company, Inc.) 
+   LPLeading European bond-exchange operator MTS SpA said restrictions imposed last week on trading in euro-zone government bonds would remain at least until September.
+
+The temporary limits were introduced as an emergency measure after high selling volumes by Citigroup Inc. rocked the market and caused large losses for many banks.
+   TDCitigroup sold 11 billion euros ($13.5 billion) of euro-zone government bonds in under two minutes and then bought back 4 billion euros of them at cheaper prices around a half-hour later, people familiar with the matter said.
+
+Citigroup declined to comment on the trades but issued a statement saying "Citigroup continues to be a major provider of liquidity" on electronic-trading platforms for European government debt. The trades were reported by the Financial Times in yesterday's editions.
+
+Such large sell trades have never happened before on the MTS electronic-trading platform, although Citigroup didn't break any rules. Now, however, MTS, based in Milan, has moved to stop this kind of behavior by saying market participants face a two-month suspension from trading if they execute trades that exceed certain limits within a two-minute period.
+
+The new rules are intended "to restore confidence in the market," said Allan Malvar, spokesman for MTS in London. They will remain in place at least until the September meetings of the boards of MTS and its United Kingdom-based subsidiary EuroMTS Ltd., he said. In the meantime, MTS will consult with market participants.
+
+Citigroup's European trading move was seen by some traders as a savvy, if not slightly untoward, way to take advantage of the unique rules in the trading of European government bonds. As a way of ensuring liquidity, trading platforms like MTS have a so-called market-making model, which obliges banks to display the prices at which they will buy or sell a selected number of securities for a certain number of hours each day. That makes it easier for a bank like Citigroup to sell about 200 debt instruments rapidly.
+
+In the U.S., by contrast, trading firms generally aren't required to keep quoted prices at which they will buy and sell various securities, making it more difficult for one bank to simultaneously sell hundreds of different bonds at one time.
+
+Under the new temporary rules at MTS, the base limit for trades via the main EuroMTS platform and offshoots in Ireland, Austria and Greece is now 1 billion euros over a two-minute period per market participant across all the platforms. That means a single market participant could execute, for example, as much as 250 million euros in trades in each of the four exchanges. If market volume has been particularly heavy on EuroMTS exchanges in the previous 10 days, however, there are instances where a single market participant could top the 1 billion euro limit without penalty.
+
+EuroMTS said if 20% of the average market volume over the past 10 days is above 1 billion euros, then the trading limit becomes 20% of that average market volume.
+
+Other MTS trading platforms introduced their own limits. The Italian exchange has a 1 billion euro limit, and the French and German exchanges are capped at 500 million euros each. The 20% rule applies to these platforms as well.
+
+MTS operates fixed-income trading platforms in 11 euro-zone countries and is owned by a consortium of 55 international banks, including Citigroup. MTS has a daily turnover in euro-zone government bonds of about 85 billion euros, representing about 60% of all euro-zone government bonds traded between banks.
+
+Treasurys
+
+Treasurys, particularly short issues, fell as the Federal Reserve raised interest rates and issued a statement that investors interpreted to mean that more increases lie ahead. Policy makers lifted the Federal-funds rate target by a quarter percentage point to 1.50% after a rate move of the same magnitude in June, saying the U.S. "appears poised to resume a stronger pace of expansion going forward."
+
+The developments weighed on short maturities, which are the most sensitive to expectations about monetary policy. Meanwhile, futures contracts based on Federal funds traded at a level suggesting a 68% chance of another quarter-point rate increase at the September Fed meeting.
+
+At 4 p.m., the benchmark 10-year note was down 12/32 point, or $3.75 per $1,000 face value, at 103 18/32. Its yield rose to 4.299% from 4.254% Monday, as yields move inversely to prices. The 30-year bond was down 9/32 point at 104 12/32 to yield 5.074%, up from 5.055% Monday. 
+
+
+ 
+                                AUCTION RESULTS 
+ 
+  Here are results of yesterday's Treasury auction of four-week bills and 
+Monday's auction of three-year notes and 13-week and 26-week bills and 
+yesterday's. All bids are awarded at a single price at the 
+market-clearing yield. Rates are determined by the difference between that 
+price and the face value. 
+ 
+  Four-Week Bills 
+ 
+Applications ............................... $50,357,059,000 
+Accepted bids .............................. $25,001,504,000 
+Accepted noncompetitively ..................     $52,187,000 
+Accepted frgn noncomp ......................              $0 
+Auction price (rate) .......................  99.891 (1.400%) 
+Coupon equivalent ..........................          1.422% 
+Bids at market-clearing yld accepted .......          72.47% 
+Cusip number ...............................       912795RB9 
+ 
+  The bills are dated Aug. 12, 2004, and mature Sept. 9, 2004. 
+ 
+  Three-Year Notes 
+ 
+Applications ........................... $44,476,179,000 
+Accepted bids .......................... $22,000,001,000 
+Bids at market-clearing yield accepted .          59.56% 
+Accepted noncompetitively ..............    $276,025,000 
+Accepted foreign noncompetitively ......              $0 
+Auction price (rate) ...................  99.737 (2.842%) 
+Interest rate ..........................           2.75% 
+Cusip number ...........................       912828CR9 
+ 
+  The notes are dated Aug. 15, 2004, and mature Aug. 15, 2007. 
+ 
+  13-Week and 26-Week Bills 
+                            13-Week            26-Week 
+ 
+Applications .......... $35,727,715,000    $29,879,533,000 
+Accepted bids ......... $19,000,180,000    $17,000,273,000 
+Accepted noncomp ......  $1,423,490,000     $1,137,753,000 
+Accepted frgn non .....    $216,000,000        $95,000,000 
+Auction price (rate) ..  99.624 (1.470%)    99.158 (1.665%) 
+Coupon equivalent .....          1.497%             1.703% 
+Bids at market yield ..          24.09%             89.54% 
+Cusip number ..........       912795RL7          912795RZ6 
+ 
+  Both issues are dated Aug. 12. The 13-week bills mature Nov. 12, 2004, and 
+the 26-week bills mature Feb. 10, 2005.   
+
+---
+
+Brian Blackstone and Adam Bradbery contributed to this article. 
+
+License this article from Dow Jones Reprint Service
+   COccred : Citigroup Inc.   INi83106 : Securities/Commodity Exchange Activities | iinv : Investing/Securities | i814 : Banking | i831 : Financial Investments | i83101 : Investment Banking | ibnk : Banking/Credit   NSm12 : Debt/Bond Markets | mcat : Commodity/Financial Market News | mntdbt : National Government Debt/Bond Markets | c13 : Regulation/Government Policy | ccat : Corporate/Industrial News | e1202 : Interest Rates | e52 : Euro Zone/Currency | gvtre : Treasury Department | m131 : Money Markets | e12 : Economic/Monetary Policy | ecat : Economic News | gcat : Political/General News | gpir : Politics/International Relations | gpol : Domestic Politics | gvbod : Government Bodies | gvexe : Executive Branch | m13 : Money/Forex Markets | mgvdbt : Government Debt/Bond Markets | ncat : Content Types | nfact : Factiva Filters | nfcpin : FC&E Industry News Filter   REaust : Austria | fra : France | gfr : Germany | greece : Greece | ire : Ireland | italy : Italy | uk : United Kingdom | usa : United States | usny : New York | balkz : Balkan States | eecz : European Union Countries | eurz : Europe | medz : Mediterranean | namz : North America | use : Northeast U.S. | weurz : Western Europe   IPCBKG | CMR | DJCB | IGV | TRE | USG | FIN | NND | TPX | CRD | MIM   PUBDow Jones & Company, Inc.   ANDocument J000000020040811e08b00013  
+
+
+
+ SELEX COLUMN   HDHigh energy - THE LEX COLUMN.   WC267 words   PD11 August 2004   SNFinancial Times   SCFTFT   EDUSA Ed1   PGPage 12   LAEnglish   CY(c) 2004 The Financial Times Limited. All rights reserved 
+   LPBlame it on the oil price. The most striking change to the Federal Reserve's statement was the explicit inclusion of the "e" word. It acknowledged the recent skid in output growth and job creation. But attributed it largely to rising energy prices.
+
+Markets have swung from fretting about resurgent inflation, which could push interest rates up quickly, to worrying about stalling job creation, which would signal a more sedate climb. Interest rate expectations have been scaled back sharply in recent months. Meanwhile, the Fed continues to steer its "measured" course for raising interest rates from their emergency level. It is pinning the blame for both concerns, at least in part, on energy prices. It is one of the "transient factors" that pushed up inflation in the first half. According to the statement it is also an important element in recent economic softness.
+   TDThe Fed was more upbeat on economic growth prospects than many had expected. That keeps the door open for another rate rise in September. But the Fed, as always, left itself plenty of flexibility to react to data in the interim. Inflation and job creation figures will be closely watched. Meanwhile, the oil price, which has always loomed large in the economic debate, will move closer to centre stage as a factor for predicting the Fed's next move on interest rates. If the price comes back under control it should both reduce inflationary pressures and free the economy from a significant drag. At least that is what the Fed appears to be betting on. 
+   RF20040811U112.800   INi1300003 : Crude Petroleum Extraction | i1 : Energy | i13 : Crude Oil/Natural Gas | iextra : Natural Gas/Oil Extraction   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | c314 : Pricing | ccat : Corporate/Industrial News | ecat : Economic News | nanl : Analysis | c31 : Marketing | ncat : Content Types | nfact : Factiva Filters | nfcpin : FC&E Industry News Filter   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTFT000020040811e08b0006j  
+
+
+
+ SEFRONT PAGE - FIRST SECTION   HDUS interest rates up by quarter point.   BYBy ANDREW BALLS    WC333 words   PD11 August 2004   SNFinancial Times   SCFTFT   EDLondon Ed3   PGPage 1   LAEnglish   CY(c) 2004 The Financial Times Limited. All rights reserved 
+   LPThe US Federal Reserve raised its target interest rate by a quarter point to 1.5 per cent yesterday, and gave no indication that recent weaker economic data would rein in its intention to tighten monetary policy at a measured pace.
+
+The policymaking Federal open market committee noted: "In recent months, output growth has moderated and the pace of improvement in labour market conditions has slowed." In line with Congress testimony of Alan Greenspan, Fed chairman, the statement said: "This softness likely owes importantly to the substantial rise in energy prices. The economy nevertheless appears poised to resume a stronger pace of expansion."
+   TDThe rest of the statement was unchanged from June's, with the Fed reiterating that, with underlying inflation expected to be relatively low, rates could be moved back towards a more neutral level "at a pace likely to be measured".
+
+The rate increase was expected despite weaker economic activity at the end of the second quarter and a weak July jobs report. Some Fed-watchers predicted the central bank would give itself greater flexibility in its guidance following Friday's announcement that US employers added only 32,000 jobs to payrolls in July.
+
+The yield on the two-year Treasury note rose 10 basis points to 2.54 per cent following the announcement and the 10-year yield rose 5 basis points to 4.3 per cent. The S&P 500 rose 1 per cent and the dollar strengthened.
+
+Futures contracts suggested investors raised the probability of a September rate increase from below 50 to above 70 per cent.
+
+The US labour department reported that productivity grew at a 2.9 per cent annual rate in the second quarter in the non-farm business sector, slower than the 3.7 per cent in the first quarter but above consensus expectations of a 2 per cent rate. Markets, Page 42 www.ft.com/lex
+   RF20040811L301.038   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | e1102 : Money Supply | ecat : Economic News | npag : Page-One Story | ncat : Content Types   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTFT000020040811e08b00060  
+
+
+
+ SESTOCK MARKETS &CURRENCIES   HDWeak consumer data hit sterling CURRENCIES.   BYBy JENNIFER HUGHES and STEVE JOHNSON    WC499 words   PD11 August 2004   SNFinancial Times   SCFTFT   EDLondon Ed2   PGPage 40   LAEnglish   CY(c) 2004 The Financial Times Limited. All rights reserved 
+   LPRate rises - both actual and the discussion of - dominated foreign exchange markets yesterday as the US Federal Reserve raised rates by the expected quarter point. In the UK, data led investors to reconsider their projections for domestic rates.
+
+The dollar managed a short-term dip after the Fed announced that the Fed funds rate would move to 1.5 per cent. The euro rose to Dollars 1.2319 before settling back to Dollars 1.228, its level before the news. The Fed maintained its pledge of "measured" rate rises but was more bullish on the economic outlook than some had expected.
+   TDBut sterling was the big loser after a triumvirate of weak economic updates pushed the pound to centre stage. Shortly after the Fed's announcement, sterling was at Dollars 1.834 against the greenback, down from more than Dollars 1.84 in London morning trade.
+
+UK consumer prices fell 0.3 per cent in July, dragging the annual rate down to 1.4 per cent, well below both the 1.6 per cent recorded in June and the 2 per cent rate targeted by the Bank of England.
+
+With the British Retail Consortium also reporting a fall in like-for-like sales growth to 1.8 per cent in the year to July, from 2.4 per cent in June, some concluded that the pace of UK monetary tightening was set to ease.
+
+"With retailers finding it increasingly difficult to get customers and therefore raise prices, we believe that inflation will continue to undershoot 2 per cent for the foreseeable future," said James Knightley at ING Financial Markets. The data "should deter the MPC from making back-to-back (rate) increases," said Tim Fox at National Australia Bank, who added that further rate hikes were likely if the UK output gap had closed, as NAB believes.
+
+However, Howard Archer at Global Insight did not rule out a September hike, seeing consumer borrowing and the housing market as key. In addition, the UK's trade gap widened to Pounds 4.97bn in June from Pounds 4.83bn in May, confounding expectations for a narrowing and raising questions about its long-term funding.
+
+The yen was also soft as Toshihiko Fukui, the governor of the Bank of Japan, said a change in the Bank's zero interest rate policy was "nowhere in sight". Further, Mr Fukui said higher inflation alone would not be enough to bring about any change in monetary policy, with wider economic expansion also necessary. He also raised concerns about high oil prices.
+
+"The comments clearly indicate that despite the signs of improving economic conditions, the Bank of Japan is still some way from changing the current monetary stance," said Derek Halpenny at Bank of Tokyo-Mitsubishi. "That fact will help reinforce investor outflows from Japan." The yen eased 0.4 per cent to Y136.33 to the euro. 
+   RF20040811L240.010   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | m13 : Money/Forex Markets | m132 : Foreign Exchange News | mcat : Commodity/Financial Market News | ecat : Economic News   REuk : United Kingdom | usa : United States | eecz : European Union Countries | eurz : Europe | namz : North America | weurz : Western Europe   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTFT000020040811e08b0005w  
+
+
+
+ HDFT.com site : Lex: US interest rates.   WC264 words   PD11 August 2004   SNFinancial Times (FT.Com)   SCFTCOM   LAEnglish   CY(c) 2004 The Financial Times Limited. All rights reserved 
+   LPBlame it on the oil price. The most striking change to the US Federal Reserve's statement was explicit inclusion of the "e" word. It acknowledged the recent skid in output growth and job creation. But attributed it largely to rising energy prices. Markets have swung from fretting about resurgent inflation, which could push interest rates up quickly, to worrying about stalling job creation, which would signal a more sedate climb. Interest rate expectations have been scaled back sharply in recent months. The Fed, meanwhile, continues to steer its "measured" course for raising interest rates from their emergency level. It is pinning the blame for both market concerns, at least in part, on energy prices. They are one of the "transitory factors" that pushed up inflation in the first half. According to yesterday's statement they are also an important element in recent economic softness. The Fed was more upbeat on economic growth prospects than many had expected.
+   TDThat keeps the door open for another interest rate rise in September. But the Fed has left itself the flexibility to react to new data. Inflation and job-creation figures will remain closely watched. Meanwhile, energy prices, which have always loomed large in the economic debate, will inch further towards centre stage as a factor to be watched when predicting the Fed's next move on rates. If prices come back under control it should help reduce inflationary pressures and free the economy from a significant drag. At least that is what the Fed appears to be hoping. 
+   RF37193969   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | c152 : Earnings Projections | e1101 : Economic Growth | e1103 : Inflation/Prices | ecat : Economic News | gcat : Political/General News | c15 : Performance | ccat : Corporate/Industrial News | ncat : Content Types | nfact : Factiva Filters | nfcpin : FC&E Industry News Filter   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTCOM00020040812e08b0000m  
+
+
+
+ HDFT.com site : European bourses set for opening gains.   BYNeil Dennis    WC253 words   PD11 August 2004   SNFinancial Times (FT.Com)   SCFTCOM   LAEnglish   CY(c) 2004 The Financial Times Limited. All rights reserved 
+   LPEuropean equity markets were expected to open a little higher on Wednesday as gains on Wall Street in the previous session followed the Federal Reserve's widely-anticipated quarter-point interest rate rise.
+
+Financial bookmakers expected both London's FTSE 100 and Frankfurt's Xetra Dax to open around five points higher, while the CAC-40 in Paris was seen starting unchanged.
+   TDAlan Greenspan, Federal Reserve chairman, announced the decision to raise the Fed funds rate to 1.5 per cent and made efforts to reassure that the economy, which has looked less impressive in recent months, was poised for a better second half of the year.
+
+Mr Greenspan said that recent "softness" in the economy "owed importantly to the substantial rise in energy prices". With crude prices still hovering close to record highs, caution was expected to remain.
+
+On Wall Street, the Dow Jones Industrial Average finished up 1.3 per cent to 9,944.67, and the Nasdaq Composite added 1.9 per cent to 1,808.7.
+
+Back in Europe, Cap Gemini, the IT services group, reported second-quarter revenue rose 1.7 per cent from the same period a year ago. Although this beat expectations, underlying sales were weaker and the company gave no guidance on the remainder of the year.
+
+Bouygues, the French conglomerate, announced a 7 per cent rise in first-half sales, thanks in part to strength at its infrastructure and wireless telecoms divisions. 
+   RF37188767   NSe12 : Economic/Monetary Policy | m11 : Equity Markets | mcat : Commodity/Financial Market News | e11 : Economic Performance/Indicators | e1202 : Interest Rates | ecat : Economic News   REusa : United States | fra : France | gfr : Germany | eecz : European Union Countries | eurz : Europe | medz : Mediterranean | namz : North America | weurz : Western Europe   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTCOM00020040812e08b00003  
+
+
+
+ HDFed retains flexibility, with hawkish tilt - UPDATE 2     WC689 words   PD11 August 2004   SNAFX Asia   SCAFXASI   LAEnglish   CY(c) 2004, AFX Asia. All rights reserved.  
+   LPFed retains flexibility, with hawkish tilt - UPDATE 2  
+   TDWASHINGTON (AFX) - The Federal Open Market Committee raised its overnight interest rate to 1.5 percent on Tuesday and gave every indication it is leaning toward raising rates again in September, analysts said. The FOMC attributed the recent slowdown in the economy to higher energy prices and expressed optimism that the economy was poised to resume stronger growth. Fed officials also squashed any thoughts that the FOMC was split between hawks ready to raise rates and doves worried about growth slowing. Not only did all 12 voting members vote to raise the federal funds rate, all seven Fed governors and all 12 Fed bank presidents backed a simultaneous and symbolic increase in the discount rate. Nineteen to nothing is not a split committee. "The unanimity of these requests suggests broad-based support for a steady diet of tightening," said Maury Harris, chief U.S. economist for UBS. Many analysts had expected the Fed would reveal some concern that the summer swoon could be more serious than just a temporary soft patch. If so, the FOMC could afford adopt a slower pace of tightening. "The Fed continues to have every intention to hike rates meaningfully further in the future," said Sherry Cooper, chief economist for BMO Nesbitt Burns. "This is a more hawkish Fed statement than the markets expected." Federal funds futures fell, showing that traders believe the odds of future rate hikes had increased slightly. However, the market is still pricing in one fewer rate hike than there are meetings left this year. December contract implies a 2 percent fed funds rate at the end of the year. Some analysts said the FOMC statement showed some flexibility to raise rates or not in September, depending on the incoming data. Listen to an interview with former Fed Gov. Susan Phillips. "They have their eye on the ball," said Jefferies & Co. chief market strategist Art Hogan. "They've given themselves enough wiggle room to address the issues if they need to in September." The FOMC retained language in the statement that it believed it could raise interest rates at a "measured" pace, a phrase that has come to mean many things to many people. Most economists seem to believe it means the FOMC will probably not raise rates in half- percentage-point increments, while giving the committee the flexibility to stand pat for a meeting or two if the recovery turns soft. The changes in the statement's wording were "subtle enough to give the Fed flexibility," said Irwin Kellner, chief economist for CBS MarketWatch and the Weller professor of economics at Hofstra University. Listen to an interview with Kellner. Kellner said he still believes the FOMC will pause in September while it waits for more data on growth and inflation. Market reaction was mixed. Stocks jumped while bonds were slightly lower. The dollar reversed its losses against the euro after falling to a three-week low on bets the Fed might skip a rate increase in coming months. "The Fed sent a very confident message that it feels that, despite the rise in energy prices, the economy is poised to resume a stronger pace of expansion," said Jeffrey Kleintop, chief investment strategist at PNC Advisors. "I think that's a bit of what the market wanted to hear and certainly acknowledges the softness in recent data but in a way brushes that aside as attributable to transitory affect like energy prices," Kleintop said. While the Fed blamed the soft spot on higher energy costs, economist Rich Yamarone has an alternate but related explanation: terrorism. "Just as crude oil prices are being impacted by a 'terror premium,' so too are hiring and investment decisions," he said. "Each quarter we listen in on approximately 250 quarterly earnings conference calls, and to date, there have been more references to fear, terrorism, and uncertainty than the economic consequences of higher oil prices, the Federal Reserve's tightening campaign, or the presidential election," Yamarone said. This story was supplied by CBSMarketWatch. For further information see  www.cbsmarketwatch. com.  
+   COjefa : Jefferies Group Inc.   INi81401 : Central Banking | i814 : Banking | i831 : Financial Investments | ibnk : Banking/Credit | iinv : Investing/Securities   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBXinhua Financial Network Limited   ANDocument AFXASI0020040810e08b0083t  
+
+
+
+ HDFed lifts rate target a quarter point to 1.5% - UPDATE 3     WC745 words   PD11 August 2004   SNAFX Asia   SCAFXASI   LAEnglish   CY(c) 2004, AFX Asia. All rights reserved.  
+   LPFed lifts rate target a quarter point to 1.5% - UPDATE 3  
+   TDWASHINGTON (AFX) -- The Federal Reserve on Tuesday boosted its overnight interest rate target to 1.50 percent from 1.25 percent, saying economy appeared poised to resume a stronger pace of expansion after being hurt by higher energy prices. The statement from the Federal Open Market Committee repeated earlier language that rate increases can proceed at a "measured" pace. The vote to raise the federal funds rate by a quarter point was unanimous. The Fed also raised the discount rate to 2.5 percent on the recommendation of all 12 Fed banks. The stock market rallied after the announcement, while bonds weakened. There was no immediate consensus among Fed watchers about the tenor of the statement. Many economists said the Federal Reserve had given itself the necessary wiggle room to hold rates steady in coming months if the economy continues to disappoint. The change in the wording of the statement was "subtle enough to give them flexibility," said Irwin Kellner, chief economist for CBS MarketWatch. Listen to an interview with Kellner. But other economists viewed the statement as hawkish, signaling to the markets that quarter-point rate hikes will continue. "All in all, the policy statement did not read like the FOMC envisions retreating to the sidelines at its next meeting [Sept. 21], unless the current soft patch proves less temporary than anticipated," said Josh Shapiro, chief U.S. economist at MFR. "This was a more hawkish tilt than some in the marketplace anticipated. August's employment report [due on Sept. 3] will be a pivotal piece of data ahead of the next meeting," he added. Despite the conflicting views, most economists expect the Fed funds rate to hit 2 percent by the end of the year. That's also the forecast of the fed funds futures market at the Chicago Board of Trade. Listen to an interview with former Fed Gov. Susan Phillips, who says September remains "murky." This implies two more rate hikes at the last three FOMC meetings of the year, on Sept. 21, Nov. 10 and Dec. 14. An uninterrupted path would result in a year-end fed funds rate of 2.25 percent. Some economists think the Fed will be on hold in September simply to avoid making headlines during the peak of the presidential election. The FOMC had kept interest rates at a 46-year low of 1 percent for about one year, beginning in summer 2003, out of concern about deflation, or falling prices. But this year, rising oil and commodity prices erased fears about deflation and Fed officials said it was time to move interest rates higher to avoid even higher prices. They took the first step in June, boosting the overnight interest rate target to 1.25 percent, saying the economy was on a solid footing. Fed officials must have been surprised by the sudden weakness in the economy over the past two months. In particular, July nonfarm payroll employment rose by only 32,000 jobs, far below expectations and raising doubts about the strength of the economy. In its statement, the Fed said that "output growth has moderated and the pace of improvement in labor market conditions has slowed." It blamed the weakness on higher oil prices. "This softness likely owes importantly to the substantial rise in energy prices," the statement added. But the remarks were upbeat about the economic outlook. "The economy nevertheless appears poised to resume a stronger pace of expansion going forward," the Fed said. There was no change in the Federal Reserve's outlook on inflation since the last meeting six weeks ago. They repeated their statement made in June that inflation has been "somewhat elevated this year, though a portion of the rise in prices seems to reflect transitory factors." The fed funds rate is the rate banks charge each other for overnight loans to meet the Fed's reserve requirements. The Fed targets the rate by buying and selling Treasurys through its Open Market Desk. Banks typically base their prime lending rates for their best customers on the federal funds rate. Other lending rates in the economy, including home mortgages, credit card rates and commercial paper rates, are based on market forces and are influenced over time by the Fed's actions. This story was supplied by CBSMarketWatch. For further information see  www.cbsmarketwatch.com.  
+   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBXinhua Financial Network Limited   ANDocument AFXASI0020040810e08b007eu  
+
+
+
+ HDFed lifts rate target a quarter point to 1.5% - UPDATE 3     WC746 words   PD11 August 2004   SNAFX Asia   SCAFXASI   LAEnglish   CY(c) 2004, AFX Asia. All rights reserved.  
+   LPFed lifts rate target a quarter point to 1.5% - UPDATE 3  
+   TDWASHINGTON (AFX) -- The Federal Reserve on Tuesday boosted its overnight interest rate target to 1.50 percent from 1.25 percent, saying economy appeared poised to resume a stronger pace of expansion after being hurt by higher energy prices. The statement from the Federal Open Market Committee repeated earlier language that rate increases can proceed at a "measured" pace. The vote to raise the federal funds rate by a quarter point was unanimous. The Fed also raised the discount rate to 2.5 percent on the recommendation of all 12 Fed banks. The stock market rallied after the announcement, while bonds weakened. There was no immediate consensus among Fed watchers about the tenor of the statement. Many economists said the Federal Reserve had given itself the necessary wiggle room to hold rates steady in coming months if the economy continues to disappoint. The change in the wording of the statement was "subtle enough to give them flexibility," said Irwin Kellner, chief economist for CBS MarketWatch. Listen to an interview with Kellner. But other economists viewed the statement as hawkish, signaling to the markets that quarter-point rate hikes will continue. "All in all, the policy statement did not read like the FOMC envisions retreating to the sidelines at its next meeting [Sept. 21], unless the current soft patch proves less temporary than anticipated," said Josh Shapiro, chief U.S. economist at MFR. "This was a more hawkish tilt than some in the marketplace anticipated. August's employment report [due on Sept. 3] will be a pivotal piece of data ahead of the next meeting," he added. Despite the conflicting views, most economists expect the Fed funds rate to hit 2 percent by the end of the year. That's also the forecast of the fed funds futures market at the Chicago Board of Trade. Listen to an interview with former Fed Gov. Susan Phillips, who says September remains "murky." This implies two more rate hikes at the last three FOMC meetings of the year, on Sept. 21, Nov. 10 and Dec. 14. An uninterrupted path would result in a year-end fed funds rate of 2.25 percent. Some economists think the Fed will be on hold in September simply to avoid making headlines during the peak of the presidential election. The FOMC had kept interest rates at a 46-year low of 1 percent for about one year, beginning in summer 2003, out of concern about deflation, or falling prices. But this year, rising oil and commodity prices erased fears about deflation and Fed officials said it was time to move interest rates higher to avoid even higher prices. They took the first step in June, boosting the overnight interest rate target to 1.25 percent, saying the economy was on a solid footing. Fed officials must have been surprised by the sudden weakness in the economy over the past two months. In particular, July nonfarm payroll employment rose by only 32,000 jobs, far below expectations and raising doubts about the strength of the economy. In its statement, the Fed said that "output growth has moderated and the pace of improvement in labor market conditions has slowed." It blamed the weakness on higher oil prices. "This softness likely owes importantly to the substantial rise in energy prices," the statement added. But the remarks were upbeat about the economic outlook. "The economy nevertheless appears poised to resume a stronger pace of expansion going forward," the Fed said. There was no change in the Federal Reserve's outlook on inflation since the last meeting six weeks ago. They repeated their statement made in June that inflation has been "somewhat elevated this year, though a portion of the rise in prices seems to reflect transitory factors." The fed funds rate is the rate banks charge each other for overnight loans to meet the Fed's reserve requirements. The Fed targets the rate by buying and selling Treasurys through its Open Market Desk. Banks typically base their prime lending rates for their best customers on the federal funds rate. Other lending rates in the economy, including home mortgages, credit card rates and commercial paper rates, are based on market forces and are influenced over time by the Fed's actions. This story was supplied by CBSMarketWatch. For further information see  www.cbsmarketwatch.com. NNNN  
+   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBXinhua Financial Network Limited   ANDocument AFXASI0020040810e08b007es  
+
+
+
+ HDFed lifts rate target a quarter point to 1.5% - UPDATE 2      WC593 words   PD11 August 2004   SNAFX Asia   SCAFXASI   LAEnglish   CY(c) 2004, AFX Asia. All rights reserved.   
+   LP   Fed lifts rate target a quarter point to 1.5% - UPDATE 2   
+   TD    WASHINGTON (AFX) -- The Federal Reserve on Tuesday boosted its overnight  interest rate target to 1.5 percent from 1.25 percent, saying that higher oil  prices had hurt the economy but that it appeared poised to resume a stronger  pace of expansion.  The statement repeated that rate increases can proceed at  a "measured" pace. The vote was unanimous. The Fed also raised the discount  rate to 2.5 percent on the recommendation of all 12 Fed banks. There was no  immediate consensus among Fed watchers about the tenor of the statement. Many  economists said the Federal Reserve had given itself the necessary wiggle  room to hold rates steady in coming months if the economy continues to  disappoint.  The change in the wording of the statement was "subtle enough to  give them flexibility," said Irwin Kellner, chief economist for CBS  MarketWatch. But other economists viewed the statement as hawkish, signaling  to the markets that quarter-point rate hikes will continue. "All in all, the  policy statement did not read like the FOMC envisions retreating to the  sidelines at its next meeting [September 21], unless the current soft patch  proves less temporary than anticipated," said Josh Shapiro, chief U.S.  economist at MFR. "This was a more hawkish tilt than some in the marketplace  anticipated. August's employment report [September 3] will be a pivotal piece  of data ahead of the next meeting," he added. The FOMC had kept interest  rates at a 46-year low of 1 percent for about one year, beginning in summer  2003, out of concern about deflation, or falling prices. But this year,  rising oil prices have erased fears about deflation and Fed officials said it  was time to move interest rates higher to avoid even higher prices. They took  the first step in June, boosting the overnight interest rate target to 1.25  percent, saying the economy was on solid footing. Fed officials must have  been surprised by the sudden weakness in the economy over the past two  months. In particular, July nonfarm payroll employment rose by only 32,000  jobs, far below expectations and raising doubts about the strength of the  economy. In its statement, the Fed said that "output growth has moderated and  the pace of improvement in labor market conditions has slowed." It blamed the  weakness on higher oil prices. "This softness likely owes importantly to the  substantial rise in energy prices," the statement added. But the remarks were  upbeat about the economic outlook. "The economy nevertheless appears poised  to resume a stronger pace of expansion going forward," the Fed said. There  was no change in the Federal Reserve's outlook on inflation over the last six  weeks. They repeated their statement made in June that inflation has been  "somewhat elevated this year, though a portion of the rise in prices seems to  reflect transitory factors." The federal funds rate is the rate banks charge  each other for overnight loans to meet the Fed's reserve requirements. The  Fed targets the rate by buying and selling Treasurys through its Open Market  Desk. Banks typically base their prime lending rates for their best customers  on the federal funds rate. Other lending rates in the economy, including home  mortgages, credit card rates and commercial paper rates, are based on market  forces and are influenced over time by the Fed's actions. This story was  supplied by CBSMarketWatch. For further information see   www.cbsmarketwatch. com.   
+   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBXinhua Financial Network Limited   ANDocument AFXASI0020040810e08b006v9  
+
+
+
+ HDFed lifts rate target a quarter point to 1.5% - UPDATE 2      WC594 words   PD11 August 2004   SNAFX Asia   SCAFXASI   LAEnglish   CY(c) 2004, AFX Asia. All rights reserved.   
+   LPFed lifts rate target a quarter point to 1.5% - UPDATE 2   
+   TDWASHINGTON (AFX) -- The Federal Reserve on Tuesday boosted its overnight interest rate target to 1.5 percent from 1.25 percent, saying that higher oil prices had hurt the economy but that it appeared poised to resume a stronger pace of expansion. The statement repeated that rate increases can proceed at a "measured" pace. The vote was unanimous. The Fed also raised the discount rate to 2.5 percent on the recommendation of all 12 Fed banks. There was no immediate consensus among Fed watchers about the tenor of the statement. Many economists said the Federal Reserve had given itself the necessary wiggle room to hold rates steady in coming months if the economy continues to disappoint. The change in the wording of the statement was "subtle enough to give them flexibility," said Irwin Kellner, chief economist for CBS MarketWatch. But other economists viewed the statement as hawkish, signaling to the markets that quarter-point rate hikes will continue. "All in all, the policy statement did not read like the FOMC envisions retreating to the sidelines at its next meeting [September 21], unless the current soft patch proves less temporary than anticipated," said Josh Shapiro, chief U.S. economist at MFR. "This was a more hawkish tilt than some in the marketplace anticipated. August's employment report [September 3] will be a pivotal piece of data ahead of the next meeting," he added. The FOMC had kept interest rates at a 46-year low of 1 percent for about one year, beginning in summer 2003, out of concern about deflation, or falling prices. But this year, rising oil prices have erased fears about deflation and Fed officials said it was time to move interest rates higher to avoid even higher prices. They took the first step in June, boosting the overnight interest rate target to 1.25 percent, saying the economy was on solid footing. Fed officials must have been surprised by the sudden weakness in the economy over the past two months. In particular, July nonfarm payroll employment rose by only 32,000 jobs, far below expectations and raising doubts about the strength of the economy. In its statement, the Fed said that "output growth has moderated and the pace of improvement in labor market conditions has slowed." It blamed the weakness on higher oil prices. "This softness likely owes importantly to the substantial rise in energy prices," the statement added. But the remarks were upbeat about the economic outlook. "The economy nevertheless appears poised to resume a stronger pace of expansion going forward," the Fed said. There was no change in the Federal Reserve's outlook on inflation over the last six weeks. They repeated their statement made in June that inflation has been "somewhat elevated this year, though a portion of the rise in prices seems to reflect transitory factors." The federal funds rate is the rate banks charge each other for overnight loans to meet the Fed's reserve requirements. The Fed targets the rate by buying and selling Treasurys through its Open Market Desk. Banks typically base their prime lending rates for their best customers on the federal funds rate. Other lending rates in the economy, including home mortgages, credit card rates and commercial paper rates, are based on market forces and are influenced over time by the Fed's actions. This story was supplied by CBSMarketWatch. For further information see   www.cbsmarketwatch.com. NNNN   
+   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBXinhua Financial Network Limited   ANDocument AFXASI0020040810e08b006si  
+
+
+
+ HDFed lifts rate target 0.25 point to 1.5% - UPDATE 1      WC442 words   PD11 August 2004   SNAFX Asia   SCAFXASI   LAEnglish   CY(c) 2004, AFX Asia. All rights reserved.   
+   LPFed lifts rate target 0.25 point to 1.5% - UPDATE 1   
+   TDWASHINGTON (AFX) -- The Federal Reserve on Tuesday boosted its overnight interest rate target to 1.5 percent from 1.25 percent. The Fed said that higher oil prices had hurt the economy but that the economy appears poised to resume a stronger pace of expansion going forward. The statement repeated that rate increases can proceed at a "measured" pace. The vote was unanimous. The Fed also raised the discount rate to 2.5 percent on the recommendation of all 12 Fed banks. The FOMC had kept interest rates at a 46-year low of 1 percent for almost a year, beginning in summer 2003, out of concern about deflation, or falling prices. But this year, rising oil prices have erased fears about deflation and Fed officials said it was time to move interest rates higher to avoid even higher prices. They took the first step in June, boosting the overnight interest rate target to 1.25 percent, saying the economy was on solid footing. Fed officials must have been surprised by the sudden weakness in the economy over the past two months. In particular, July non-farm payroll employment rose by only 32,000 jobs, below expectations, and raising doubt about the strength of the economy. In the statement, the Fed said that "output growth has moderated and the pace of improvement in labor market conditions has slowed." It blamed the weakness on higher oil prices. "This softness likely owes importantly to the substantial rise in energy prices," the statement said. But the statement was upbeat about the economic outlook. "The economy nevertheless appears poised to resume a stronger pace of expansion going forward," the Fed said. There was no change in the Fed's outlook on inflation over the last six weeks. They repeated their statement made in June that inflation has been "somewhat elevated this year, though a portion of the rise in prices seems to reflect transitory factors." The federal funds rate is the rate banks charge each other for overnight loans to meet the Fed's reserve requirements. The Fed targets the rate by buying and selling Treasurys through its Open Market Desk. Banks typically base their prime lending rates for their best customers on the fed funds rate. Other lending rates in the economy, including home mortgages, credit card rates and commercial paper rates, are based on market forces and are highly influenced over time by the Fed's actions. This story was supplied by CBSMarketWatch. For further information see   www.cbsmarketwatch.com.   
+   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBXinhua Financial Network Limited   ANDocument AFXASI0020040810e08b006kh  
+
+
+
+ HDFed lifts rate target 0.25 point to 1.5% - UPDATE 1      WC443 words   PD11 August 2004   SNAFX Asia   SCAFXASI   LAEnglish   CY(c) 2004, AFX Asia. All rights reserved.   
+   LPFed lifts rate target 0.25 point to 1.5% - UPDATE 1   
+   TDWASHINGTON (AFX) -- The Federal Reserve on Tuesday boosted its overnight interest rate target to 1.5 percent from 1.25 percent. The Fed said that higher oil prices had hurt the economy but that the economy appears poised to resume a stronger pace of expansion going forward. The statement repeated that rate increases can proceed at a "measured" pace. The vote was unanimous. The Fed also raised the discount rate to 2.5 percent on the recommendation of all 12 Fed banks. The FOMC had kept interest rates at a 46-year low of 1 percent for almost a year, beginning in summer 2003, out of concern about deflation, or falling prices. But this year, rising oil prices have erased fears about deflation and Fed officials said it was time to move interest rates higher to avoid even higher prices. They took the first step in June, boosting the overnight interest rate target to 1.25 percent, saying the economy was on solid footing. Fed officials must have been surprised by the sudden weakness in the economy over the past two months. In particular, July non-farm payroll employment rose by only 32,000 jobs, below expectations, and raising doubt about the strength of the economy. In the statement, the Fed said that "output growth has moderated and the pace of improvement in labor market conditions has slowed." It blamed the weakness on higher oil prices. "This softness likely owes importantly to the substantial rise in energy prices," the statement said. But the statement was upbeat about the economic outlook. "The economy nevertheless appears poised to resume a stronger pace of expansion going forward," the Fed said. There was no change in the Fed's outlook on inflation over the last six weeks. They repeated their statement made in June that inflation has been "somewhat elevated this year, though a portion of the rise in prices seems to reflect transitory factors." The federal funds rate is the rate banks charge each other for overnight loans to meet the Fed's reserve requirements. The Fed targets the rate by buying and selling Treasurys through its Open Market Desk. Banks typically base their prime lending rates for their best customers on the fed funds rate. Other lending rates in the economy, including home mortgages, credit card rates and commercial paper rates, are based on market forces and are highly influenced over time by the Fed's actions. This story was supplied by CBSMarketWatch. For further information see   www.cbsmarketwatch.com. NNNN   
+   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBXinhua Financial Network Limited   ANDocument AFXASI0020040810e08b006kf  
+
+
+
+ HDFed lifts rate target 0.25 point to 1.5%     WC377 words   PD11 August 2004   SNAFX Asia   SCAFXASI   LAEnglish   CY(c) 2004, AFX Asia. All rights reserved.  
+   LPFed lifts rate target 0.25 point to 1.5%  
+   TDWASHINGTON (AFX) -- The Federal Reserve on Tuesday boosted its overnight interest rate target to 1.5 percent from 1.25 percent. The Fed said that higher oil prices had hurt the economy but that the economy appears poised to resume a stronger pace of expansion going forward. The statement repeated that rate increases can proceed at a measured pace. The vote was unanimous. The Fed also raised the discount rate to 2.5 percent on the recommendation of all 12 Fed banks. The FOMC had kept interest rates at a 46-year low of 1 percent for almost a year, beginning in summer 2003, out of concern about deflation, or falling prices. But this year, rising oil prices have erased fears about deflation and Fed officials said it was time to move interest rates higher to avoid even higher prices. They took the first step in June, boosting the overnight interest rate target to 1.25 percent, saying the economy was on solid footing. Fed officials must have been surprised by the sudden weakness in the economy over the past two months. In particular, July non-farm payroll employment rose only 32,000 jobs, below expectations, and raising doubt about the strength of the economy. In the statement, the Fed said that "output growth has moderated and the pace of improvement in labor market conditions has slowed." "This softness likely owes importantly to the substantial rise in energy prices," the statement said. "The economy nevertheless appears poised to resume a stronger pace of expansion going forward," the Fed said. The federal funds rate is the rate banks charge each other for overnight loans to meet the Fed's reserve requirements. The Fed targets the rate by buying and selling Treasurys through its Open Market Desk. Banks typically base their prime lending rates for their best customers on the fed funds rate. Other lending rates in the economy, including home mortgages, credit card rates and commercial paper rates, are based on market forces and are highly influenced over time by the Fed's actions. This story was supplied by CBSMarketWatch. For further information see  www.cbsmarketwatch.com. NNNN  
+   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBXinhua Financial Network Limited   ANDocument AFXASI0020040810e08b006em  
+
+
+
+ HDFed raises interest rates by quarter point to 1.5%      WC115 words   PD11 August 2004   SNAFX Asia   SCAFXASI   LAEnglish   CY(c) 2004, AFX Asia. All rights reserved.   
+   LPFed raises interest rates by quarter point to 1.5%   
+
+WASHINGTON (AFX) -- The Federal Reserve boosted its overnight interest rate target to 1.5 percent from 1.25 percent on Tuesday. The Fed said that higher oil prices had hurt the economy but that the economy appears poised to resume a stronger pace of expansion going forward. The statement repeated that rate hikes can proceed at a measured pace. The vote was unanimous. The Fed also raised the discount rate to 2.5 percent on the recommendation of all 12 Fed banks. This story was supplied by CBSMarketWatch. For further information see   www.cbsmarketwatch.com.   
+   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBXinhua Financial Network Limited   ANDocument AFXASI0020040810e08b00692  
+
+
+
+ HDFed raises interest rates by quarter point to 1.5%      WC116 words   PD11 August 2004   SNAFX Asia   SCAFXASI   LAEnglish   CY(c) 2004, AFX Asia. All rights reserved.   
+   LP   Fed raises interest rates by quarter point to 1.5%   
+
+ WASHINGTON (AFX) -- The Federal Reserve boosted its overnight interest rate target to 1.5 percent from 1.25 percent on Tuesday. The Fed said that higher oil prices had hurt the economy but that the economy appears poised to resume a stronger pace of expansion going forward. The statement repeated that rate hikes can proceed at a measured pace. The vote was unanimous. The Fed also raised the discount rate to 2.5 percent on the recommendation of all 12 Fed banks. This story was supplied by CBSMarketWatch. For further information see   www.cbsmarketwatch.com.  NNNN   
+   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBXinhua Financial Network Limited   ANDocument AFXASI0020040810e08b00691  
+
+
+
+ HDRepeat:Talk From The Trenches:No Free Pass From the Fed     WC1,012 words   PD11 August 2004   ET03:34   SNMarket News International   SCMARNEW   LAEnglish   CY(c) 2004. Market News International, Inc.  
+   TD
+--Retransmitting Story Initially Sent 15:41 ET Tuesday
+
+By Isobel Kennedy 
+
+     NEW YORK, Aug 10 (MktNews) - For all the bullish hype leading up to 
+the Federal Reserve's meeting Tuesday, the statement accompanying the 25 
+basis point rate hike was short, to the point and it cut the bond market 
+no slack. 
+  
+     "The Committee believes that, even after this action, the stance of 
+monetary policy remains accommodative and, coupled with robust 
+underlying growth in productivity, is providing ongoing support to 
+economic activity. In recent months, output growth has moderated and the 
+pace of improvement in labor market conditions has slowed. This softness 
+likely owes importantly to the substantial rise in energy prices. The 
+economy nevertheless appears poised to resume a stronger pace of 
+expansion going forward. Inflation has been somewhat elevated this year, 
+though a portion of the rise in prices seems to reflect transitory 
+factors. 
+        
+     "The Committee perceives the upside and downside risks to the 
+attainment of both sustainable growth and price stability for the next 
+few quarters are roughly equal. With underlying inflation still expected 
+to be relatively low, the Committee believes that policy accommodation 
+can be removed at a pace that is likely to be measured. Nonetheless, the 
+Committee will respond to changes in economic prospects as needed to 
+fulfill its obligation to maintain price stability." 
+
+     It looks like Mr. Greenspan is sticking to his guns -- he started a 
+tightening cycle and he is going to continue it, despite the weak jobs 
+reports which the Fed blames almost entirely on higher oil prices. 
+
+     So much for market talk of skipping meetings. In fact the Fed said 
+the "economy is poised to resume a stronger pace of expansion going 
+forward." 
+
+     Bond prices were hesitant at first, possibly in disbelief. But soon 
+the selling picked up and the front end got hit worse than the longer 
+end. The two-year note high yield of 2.55% on the news, up 10 basis 
+points from Monday's close. The issue hit a low yield of 2.32% during 
+the employment Friday rally. Keep in mind this issue was trading at 
+2.63% prior to the jobs report. 
+
+     The 10-year note hit a high yield of 4.30% vs. Monday's settle of 
+4.24% and the intra-day low yield of 4.17% last Friday. 
+
+     The backoff might be a blessing in disguise since Treasury traders 
+need to bid $15.0 billion 5-year notes tomorrow and $14.0 billion 
+10-year notes on Thursday. 
+
+     And it looks like the buyside is standing defiant like the oak too.  
+JP Morgan's Client survey taken yesterday says the buyside shorts were 
+unchanged at 44 in the latest week. The neutrals rose from 44 to 49 and 
+the longs fell to 7 from 12. 
+
+     While the bond market was disappointed by the Fed, market players 
+say prices have a floor under them for a wide variety of reasons: still 
+high oil, weak jobs, short duration positions, terror fears ahead of the 
+Olympics, the Republican convention and the November elections. 
+
+     Only time will tell if these supports for the market continue to 
+hold in a rising rate environment.  
+
+     In a very well-balanced piece written before the Fed announcement, 
+Tony Crescenzi of Miller Tabak said all the good news was already priced 
+into the bond market, thus increasing the odds of a consolidation 
+post-Fed. 
+
+     "If the Fed were to surprise the markets today by either refraining 
+from raising interest rates or by instead indicating that future 
+interest rate hikes might be delayed indefinitely, it would risk 
+cannibalizing the effort it began on June 30th when it raised interest 
+rates in attempt to slow the economy and hence rid it of the recent 
+buildup in inflation pressures, Crescenzi said.   
+
+     "The fact is, the more bond-market friendly the Fed's statement is 
+today, the more likely it is that the recent bond rally will hold and 
+possibly extend further. It is doubtful that the Fed feels that 
+inflation pressures have abated enough to justify encouraging a decline 
+in market interest rates and thus increase the degree of stimulus to the 
+economy," Crescenzi added.  
+
+     Crescenzi also expected the Fed to show the optimism on the economy 
+that did in fact appear in today's Fed statement. And he  reminded 
+readers that the Fed has often been very upbeat about the economy in 
+recent years, even in the "dark days that followed 9/11." 
+
+     In an interesting interview by CNBC Tuesday, former Federal Reserve 
+Governor Laurence Meyer was asked about the danger of high oil prices 
+precipitating stagflation. 
+
+     Meyer answered, "I think the danger is considerable. Because the 
+biggest contingency, the biggest risk factor is that oil prices will 
+stay as high as they are, already close to $5 above where most of us 
+expected it to be just a couple months, even a couple of weeks ago and 
+there are still upside risks because of geopolitical concerns." 
+
+     So, Meyer added, "that is the biggest risk. Higher oil prices mean 
+higher inflation, also greater weakness on the real side and create a 
+daunting challenge to monetary policymakers." 
+
+     A seasoned bond pro said he was surprised that Meyer used the "S" 
+word.  
+
+     "Stagflation is at the back of everyone's minds, but no one wants 
+to talk about it -- Larry Meyer is like a breath of fresh air!," the 
+bond guy exclaimed. 
+
+     In economic news Tuesday, U.S. nonfarm 2Q productivity came in at 
++2.9% SAAR] vs. +3.7% in 1Q and higher than expectations for +2.0%. 
+
+     Unit labor costs came in at +1.9% SAAR vs. a downwardly revised 
++0.3% in 1Q and just below expectations of +2.0%. 
+
+     NOTE: Talk From the Trenches is a daily compendium of chatter from 
+Treasury trading rooms offered as a gauge of the mood in the financial 
+markets. It is not necessarily hard, verified news. email 
+isobelk@marketnews.com
+
+  ** Market News International New York Newsroom: 212-669-6430 **  
+   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | mcat : Commodity/Financial Market News | ecat : Economic News   REusa : United States | namz : North America   PUBMarket News International, Inc.   ANDocument MARNEW0020040811e08b002sx  
+
+
+
+ HDHawaii banks follow Fed in raising rates by a quarter point     WC191 words   PD11 August 2004   ET05:34   SNAssociated Press Newswires   SCAPRS   LAEnglish   CY(c) 2004.  The Associated Press.  All Rights Reserved.  
+   LPHONOLULU (AP) - Hawaii's three largest banks announced Wednesday they would raise prime lending rates by a quarter point in response to the Federal Reserve's interest rate hike.  
+
+Bank of Hawaii, American Savings Bank and First Hawaiian Bank each raised their prime lending rates from 4.25 to 4.5 percent. The prime is the benchmark for millions of consumer and business loans.  
+   TDThe rate normally moves in lockstep with Fed rate increases.  
+
+The rate increase by Bank of Hawaii and American Savings Bank were to take effect Wednesday while First Hawaiian Bank's rate increase was effective Tuesday.  
+
+The Federal Reserve, discounting recent signs of economic weakness, pushed ahead with its campaign to keep inflation under control by boosting the key interest rate.  
+
+The boost in the funds rate marked the second quarter-point move this year following a June 30 increase which had been the Fed's first rate increase in four years. Like its June statement, the Fed again said it believed it could raise rates "at a pace that is likely to be measured."  
+   RF7   COfsthwn : First Hawaiian Bank | wshmut : Washington Mutual Inc | banqnp : BNP Paribas SA   INi814 : Banking | i81402 : Commercial Banking | i81403 : Savings Institutions | i81501 : Credit Types/Services | i8150103 : Mortgages/Real Estate Credit | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REushi : Hawaii | namz : North America | usa : United States | usw : Western U.S.   IPCtagpf0wcat | selhihi- | catf   IPDAP State Wires: Hawaii | Financial/Business | HI Interest Rates Hawaii | D84CP7H00   PUBPress Association, Inc.   ANDocument APRS000020040811e08b003h2  
+
+
+
+ HDUPDATE 2-INSTANT VIEW-Stocks-Fed  interest rate  at 1.50.      WC532 words   PD10 August 2004   ET20:30   SNReuters News   SCLBA   LAEnglish   CY(c) 2004 Reuters Limited   
+   LPNEW YORK, Aug 10 (Reuters) - The following are comments from stock market analysts and fund managers about the U.S. Federal Reserve's decision to raise U.S. borrowing costs by a quarter point to 1.5 percent.   
+
+Wall Street anticipated the Fed to raise interest rates from 1.25 percent to 1.5 percent.   
+   TDBRETT MITSTIFER, SENIOR PORTFOLIO MANAGER, AT NEW YORK-BASED VALUELINE ASSET MANAGEMENT:   
+
+"It's as expected. The key here is what their language is. It looks like they're certainly addressing the issue of slower labor markets. That means they may put things on hold at the next meeting."   
+
+MICHAEL VOGELZANG, CHIEF INVESTMENT OFFICER, BOSTON ADVISORS INC., BOSTON:   
+
+"It's pretty much exactly what the Street expected. The Fed remains measured and predictable. The Fed is clearly following the market here and not wanting to send any kinds of shock waves through it."   
+
+FRANK GANNON, SENIOR PORTFOLIO MANAGER, AIG SUNAMERICA MUTUAL FUNDS, JERSEY CITY, NEW JERSEY:   
+
+"They do talk about the economy. That's the key for the stock market. Growth has moderated and hiring has slowed, but the economy is poised to resume a stronger pace of expansion. I think that is what the stock market was hoping to find. I think it's positive.   
+
+JEFFREY SAUT, RAYMOND JAMES FINANCIAL CHIEF INVESTMENT STRATEGIST:   
+
+"No surprises, it's measured. I think it's a fox-trot economy. You'll get fast-fast figures followed by slow-slow numbers. This is not your father's economy, so it's not your father's typical interest rate cycle."   
+
+HUGH JOHNSON, CHIEF INVESTMENT OFFICER AT FIRST ALBANY CORP, ALBANY, N.Y.:   
+
+"This certainly reflects the fact that many of the governor on the Open Market Committee wanted the Federal Reserve to convey that they are going to be cautious, and I think that message comes through."   
+
+"The response in financial markets has been subdued, which reflects that (the decision) is pretty much as expected."   
+
+HENRY HERRMANN, CHIEF INVESTMENT OFFICER, WADDELL & REED, $35 BILLION IN ASSETS UNDER MANAGEMENT:   
+
+"They changed the wording quite a bit, now acknowledging only a portion of the inflation increase is a temporary factor. I think that will leave open the door as to whether or not they will go another 1/4 point" at the next FOMC meeting.   
+
+"I think we are going to get more focused about what the economic data for August will be, what the consumer is doing. If that shows some strength, it will give a firmer tone to the equity markets, but given the overhang of elections and terrorism, I think a firmer tone is all you can expect. We won't off to the races."   
+
+PETER SCHIFF, CHIEF EXECUTIVE, EURO PACIFIC CAPITAL, NEWPORT BEACH, CALIFORNIA:   
+
+"It is still much too little too late. Rates are already way too low. This is slightly less ridiculous than 1.25.   
+
+"Rates need to be a lot higher. The longer they stay behind the curve, the worse inflation is going to get.   
+
+"Oil is not the problem. The problem is insufficient income growth and rising debt burdens. Oil is a marginal problem."    
+   NSm11 : Equity Markets | e1202 : Interest Rates | ntra : Transcript | e12 : Economic/Monetary Policy | ecat : Economic News | mcat : Commodity/Financial Market News | ncat : Content Types | nfact : Factiva Filters | nfcpex : FC&E Executive News Filter | niwe : IWE Filter   REusa : United States | namz : North America   IPCN2K:BNK | N2K:CEN | N2K:D | N2K:E | N2K:FED | N2K:FIN | N2K:INT | N2K:M | N2K:MUNI | N2K:STX | N2K:U | N2K:US | N2K:XX   PUBReuters Ltd.   ANDocument LBA0000020040810e08a00iiu  
+
+
+
+ HDINSTANT VIEW-Stocks-Fed  interest rate  at 1.50.      WC113 words   PD10 August 2004   ET20:21   SNReuters News   SCLBA   LAEnglish   CY(c) 2004 Reuters Limited   
+   LPNEW YORK, Aug 10 (Reuters) - The following are comments from stock market analysts and fund managers about the U.S. Federal Reserve's decision to raise U.S. borrowing costs by a quarter point to 1.5 percent.   
+
+Wall Street anticipated the Fed to raise interest rates from 1.25 percent to 1.5 percent.   
+   TDBRETT MITSTIFER, SENIOR PORTFOLIO MANAGER, AT NEW YORK-BASED VALUELINE ASSET MANAGEMENT:   
+
+"It's as expected. The key here is what there language is. It looks like they're certainly addressing the issue of slower labor markets. That means they may put thins on hold at the next meeting."    
+   NSe1202 : Interest Rates | e12 : Economic/Monetary Policy | ecat : Economic News   REusa : United States | namz : North America   IPCN2K:BNK | N2K:CEN | N2K:D | N2K:E | N2K:FED | N2K:FIN | N2K:INT | N2K:M | N2K:MUNI | N2K:STX | N2K:U | N2K:US | N2K:XX   PUBReuters Ltd.   ANDocument LBA0000020040810e08a00ig7  
+
+
+
+ CLMMonday's Markets   HDBlue Chips Slip Despite Early Gains   BYBy Craig Karmin    WC460 words   PD10 August 2004   SNThe Wall Street Journal   SCJ   PGC1   LAEnglish   CY(Copyright (c) 2004, Dow Jones & Company, Inc.) 
+   LPAFTER SINKING to a low for the year Friday, the Dow Jones Industrial Average failed to hold early gains, ending down a fraction of a point in light summer trading.
+
+Stocks climbed at the opening bell, as bargain hunters picked through the carnage of last week's powerful selloff that sent many stocks to their lowest levels since the fall. But with oil prices climbing to another high, investors have become increasing concerned about the sustainability of the economic recovery and are starting to wonder whether it will temper the Federal Reserve's convictions about future interest-rate increases.
+   TDWhile the Fed is widely expected to raise rates by a quarter percentage point to 1.5% at its policy meeting today, many traders are waiting to hear what central-bank officials will have to say about rising oil prices and Friday's soft July employment numbers.
+
+"People are nervous right now, and they are worried about doing anything too bold," says Tim Heekin, director of trading at Thomas Weisel Partners.
+
+The industrial average slipped 0.01%, or 0.67 point, to 9814.66, its lowest close since Nov. 28. The blue-chip index is down 6.1% for the year. With media and many tech stocks continuing to flounder, the Nasdaq Composite Index fell 0.1%, or 2.25 points, to 1774.64. It is down 11.4% for the year.
+
+Traders said they have been frustrated by the mixed signals they are getting from the economic and corporate data. While second-quarter profits were strong, with most companies beating analyst estimates, the recent disappointing jobs data and gross domestic product figures suggest a slowdown may be looming.
+
+"The lack of consistency in the data is one big reason why the market is struggling," says Andy Brooks, head of stock trading at T. Rowe Price.
+
+Others note that the market will be on heightened alert for terrorist activity this month during the Athens Olympic Games and the Republican National Convention. After that, September is historically one of the most difficult months for stocks, though some analysts are still holding out hope for a fourth-quarter rally.
+
+In major U.S. market action:
+
+Stocks were mixed. On the Big Board, 1.08 billion shares traded.
+
+Bonds declined. The 10-year Treasury note fell 11/32, or $3.4375 for each $1,000 invested, to yield 4.254%. The 30-year bond was also down 11/32 to yield 5.055%.
+
+The dollar was mixed. Late in New York, it traded at 110.61 yen, up from 110.40, while the euro rose against the dollar to $1.2271 from $1.2289. 
+
+License this article from Dow Jones Reprint Service
+   NSm11 : Equity Markets | mcat : Commodity/Financial Market News | mntdbt : National Government Debt/Bond Markets | e1202 : Interest Rates | gpersf : Personal Finance | gvtre : Treasury Department | m12 : Debt/Bond Markets | m131 : Money Markets | m132 : Foreign Exchange News | nsum : News Digest | e12 : Economic/Monetary Policy | ecat : Economic News | gcat : Political/General News | glife : Living/Lifestyle | gpir : Politics/International Relations | gpol : Domestic Politics | gvbod : Government Bodies | gvexe : Executive Branch | m13 : Money/Forex Markets | mgvdbt : Government Debt/Bond Markets | ncat : Content Types | nfact : Factiva Filters | niwe : IWE Filter   REjap : Japan | usa : United States | asiaz : Asia | easiaz : Eastern Asia | namz : North America   IPCTRE | USG | STT | JPY | NND | TPX | USD | MIM | PMK | TFR | TPT   PUBDow Jones & Company, Inc.   ANDocument J000000020040810e08a00032  
+
+
+
+ CLMCredit Markets   HDBonds Ignore the Caution Flag --- Returns on Benchmark Note Top Stocks and Money-Market Funds, Defying the Pros' Betting Line   BYBy Aaron Lucchetti    WC1,141 words   PD10 August 2004   SNThe Wall Street Journal   SCJ   PGC1   LAEnglish   CY(Copyright (c) 2004, Dow Jones & Company, Inc.) 
+   LPTHIS WAS SUPPOSED to be the year to get out of bonds. Move back into the stock market or make a defensive bet on cash and take advantage of rising short-term interest rates, many pros recommended.
+
+So far, those suggestions have been dead wrong.
+   TDThe benchmark 10-year Treasury note has returned 3.1% this year, far exceeding the performance of money-market funds and major stock-market averages, which have lost ground. After a powerful bond rally in the past two weeks, the yield on the 10-year note, which moves in the opposite direction of its price, has dropped to 4.25% from 4.60%. It now stands at about the same level as at the end of 2003 and well off the 4.87% level seen in June.
+
+The latest bond rally gained steam on Friday when a far-weaker-than-expected July employment report sent investors running for cover to the haven of fixed-income investments such as bonds. Yesterday, the 10-year note gave back some of those gains, dropping 11/32 to 103 30/32, or $3.44 per $1,000 note.
+
+Where does the bond market go from here? Today, the next clue comes from the Federal Reserve, which is widely expected to raise its target short-term interest rate by a quarter percentage point to 1.5% at its scheduled meeting. But traders and economists will look closely at the statement accompanying today's Fed announcement for signals about whether the central bank is wavering on its plan to raise its target for the benchmark federal-funds rate, which banks charge each other for overnight loans, at future meetings.
+
+"I think there's a serious possibility the Fed will sit on its hands" at its September meeting, says David Goldman, head of fixed-income research at Banc of America Securities. Mr. Goldman previously had predicted Fed rate increases in September and through the end of the year. But after the recent weakness in some economic indicators -- including the jobs number -- Mr. Goldman now says the Fed may skip the September increase if conditions don't improve.
+
+Indeed, after Friday's report that the U.S. economy added only 32,000 jobs in July, the chance of a quarter-percentage-point short-term rate increase in September decreased to about 60% from 85% in the days before the jobs report, according to trading in fed-funds futures contracts.
+
+Bond investors were caught off guard by the sudden weakness in job growth. Early last week, before the employment number came out, a J.P. Morgan survey found nearly four investors were bearish on bonds for every one who was bullish. "We were all surprised by the Friday number," Mr. Goldman says.
+
+Bond investors are now dealing with a volatile mix of a suddenly tumultuous jobs picture, resurgent terrorism fears and a weak stock market. In addition, stubbornly high oil prices have helped stoke inflation fears, something that could force the Fed's hand even if the economy remains fragile. Many of these factors have helped push up bond prices, making the once-conventional wisdom that this year could resemble the 1994 bear market in bonds seem premature, or flat out wrong. The 10-year Treasury lost more than 7% of its value in that difficult year, compared with the gains of 2004.
+
+Those predicting higher yields believe they will be right. Eventually. "We still think we'll see a 5% yield" on the 10-year note, "but we keep pushing the date out," says Jack Malvey, chief global fixed-income strategist at Lehman Brothers. Mr. Malvey's latest projection: bond yields will bounce around for a couple of months and then head up to 5% by early 2005.
+
+All eyes today will be on the Fed's statement. In its last statement, the Fed noted recent improvement in the job market. In this statement, some traders say the Fed may signal that it needs to see more data before it continues to push rates up.
+
+"The market is reassessing this Fed tightening cycle," says Michael Ryan, chief fixed-income strategist at UBS Financial Services. Even more than usual, bond prices are "going to hang off every economic release," because there is widespread disagreement about how they will turn out, he said.
+
+Still, Mr. Ryan believes the Fed will continue to raise short-term rates from current levels because they are still near historical lows, especially compared with the still-low-but-rising level of inflation. Fed rate increases are "going to happen in a methodical and maybe not consistent fashion," Mr. Ryan predicts. He says bond yields, now near a four-month low, "are near the bottom of the range," and that the economy will regain its footing from this current "soft spot."
+
+Indeed, some argue that one weak jobs number won't prevent the Fed from raising rates to levels more in line with historical norms when compared with inflation, which has been running well above the fed-funds target rate this year. If it does that, the Fed would be said to be moving to a neutral stance, though there is considerable debate about precisely what rate would be considered neutral.
+
+"I'm a little concerned that otherwise well-meaning people are thinking the Fed will react emotionally to one statistic," says James Bianco, head of Bianco Research LLC, a Chicago financial-research firm. "It's a dangerous way to conduct monetary policy." Still, he says that the Fed may not increase its target rate in September because it usually doesn't raise rates so close to an election.
+
+Some big investors also think the bond rally is due for a correction. Bill Gross, chief investment officer of Pacific Investment Management Co. in Newport Beach, Calif., says he believes the two-year Treasury -- at its current yield of about 2.44% -- is underestimating how high the fed-funds rate could go. He says he has been "taking some profits" by selling bonds he bought in June, when yields were higher. "I believe the market has run out of room to run," he says.
+
+Some see a link between the recent spike in oil prices above $40 a barrel, even though higher oil prices generally raise fears of inflation and could force the Fed to move aggressively to slow economic growth. Mr. Goldman points out that in recent months, both bond and oil prices have risen in part because of tension in the Middle East and fears of terrorist attacks in the U.S. Such developments could both disrupt oil supplies and force investors into safer investments such as bonds. 
+
+License this article from Dow Jones Reprint Service
+   NSm12 : Debt/Bond Markets | mcat : Commodity/Financial Market News | mntdbt : National Government Debt/Bond Markets | e1202 : Interest Rates | gpersf : Personal Finance | gvtre : Treasury Department | m131 : Money Markets | e12 : Economic/Monetary Policy | ecat : Economic News | gcat : Political/General News | glife : Living/Lifestyle | gpir : Politics/International Relations | gpol : Domestic Politics | gvbod : Government Bodies | gvexe : Executive Branch | m13 : Money/Forex Markets | mgvdbt : Government Debt/Bond Markets   REusa : United States | namz : North America   IPCPIC | TRE | USG | NND | TPX | CRD | MIM | TFR   PUBDow Jones & Company, Inc.   ANDocument J000000020040810e08a0002i  
+
+
+
+ SECOMMENT   HDGreenspan is running out of buttons to push: PETER HARTCHER.   WC919 words   PD10 August 2004   SNFinancial Times   SCFTFT   EDUSA Ed1   PGPage 13   LAEnglish   CY(c) 2004 The Financial Times Limited. All rights reserved 
+   LPThe US Federal Reserve has offered such an extraordinary stimulus to the US economy for the past three years that America's official real interest rates are still in the remarkable state of being deeply negative. In June, Alan Greenspan, the Fed chairman, and his colleagues started the long process of bringing rates back to a more normal level. But Friday's jobs data must have given them a serious jolt.
+   TDIt was just over five weeks ago that the Fed gingerly edged up the main policy rate, the Fed funds rate, from its 46-year low of 1 per cent to 1.25 per cent. A neutral level - at which the economy is being neither stimulated nor restrained - should be about 4 per cent for the US, according to economists at the Organisation for Economic Co-operation and Development. Markets had been expecting that the Fed would take the rate up to 2 per cent by the end of the year. But the jobs data were so feeble that they stirred a storm of doubt. While Wall Street had expected that about 215,000 new jobs would have been created in July, the Department of Labor reported that the number was a scant 32,000. It was the second month of worryingly weak numbers. The crucial question is whether America's economic recovery can bear the strain of anything even approaching a normal interest rate.
+
+The Federal open market committee, when it meets today, is expected to press ahead and raise the Fed funds rate once again by the same cautious increment of 0.25 percentage points, taking the rate to 1.5 per cent. But futures markets have shifted to reflect a new view on the chances that the Fed will continue its campaign into September; the odds have shifted from a 70 per cent likelihood to only half that.
+
+The FOMC members will have much to ponder. The market movements on Friday spotlight the twin dangers through which Mr Greenspan must navigate the economy. The Dow Jones index of share prices fell by 1.5 percentage points to its lowest level for the year. Stock investors are anxious that the recovery is slowing unexpectedly. That is the first danger Mr Greenspan must avoid.
+
+But consider two other prices: the price of gold leapt by Dollars 7 an ounce to Dollars 402 after the report, and the price of oil remained at about Dollars 44 a barrel. These numbers suggest no slackening in inflationary pressures. If anything, they imply that inflation is returning. This is the second danger. Of course, the Fed's cure for inflation is to raise interest rates. Yet, with the recovery in an apparently delicate state, that could precipitate a sharp slowing.
+
+In all likelihood, the jobs figures will prove not to be a harbinger of a slump but an aberration, or handmaiden to a modest slowing in growth. There are too many signs of persistent recovery to believe that a crunch is upon us. From other July reports we know that motor vehicle sales were up strongly and retail sales in reasonable shape.
+
+Still, the troubling news is an important reminder of the restraints on US monetary policy. If anything were to go seriously wrong with the economy, the Fed would be more constrained in its options than it has been for many years. With official interest rates so low, there is very little scope for any meaningful cuts.
+
+How did America get to this point? In 1996 Mr Greenspan hovered on the brink of trying to manage the Wall Street bubble - remember his famous warning of "irrational exuberance"? But he decided that this was too politically risky. He instead accommodated the bubble, cheered on the so-called New Economy and waited for the bubble to burst.
+
+In the following three years the bubble bloated to become, in proportion to the US economy, more than twice the size of the one that had preceded the Great Crash of 1929. When it burst, Mr Greenspan had to take extraordinary measures. His recovery plan took rates so low for so long that America's conventional monetary policy options now approach the point of exhaustion. The problem Mr Greenspan is trying to solve is one of his own making.
+
+The other arms of US economic policy are constrained too. Fiscal policy is not in a robust condition to offer help. The Federal Budget is on course to be in deficit this year by Dollars 478bn - or 4.2 per cent of gross domestic product - according to the Congressional Budget Office, and both George W. Bush and John Kerry, his Democratic challenger for the presidency, have pledged to halve the deficit over the next four years.
+
+There is some scope for using a cheaper dollar as a source of stimulus. It has fallen by 15 per cent against main currencies in the past two years and it could fall further without serious consequences, although any precipitate plunge could begin a rout.
+
+In sum, however, America already has pushed all three of its levers of macroeconomic stimulus fairly hard over to the "go" position. Mr Greenspan must be praying that nothing goes awry in the year ahead.
+
+The writer is international editor at The Sydney Morning Herald and a visiting fellow at the Lowy Institute for International Policy. He is author of a forthcoming book on Alan Greenspan and Wall Street, entitled Bubble Man 
+   RF20040810U113.074   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTFT000020040810e08a0006b  
+
+
+
+ HDFT.com site : Fed lifts rates by a quarter point.   BYAndrew Balls in Washington    WC510 words   PD10 August 2004   SNFinancial Times (FT.Com)   SCFTCOM   LAEnglish   CY(c) 2004 The Financial Times Limited. All rights reserved 
+   LPThe Federal Reserve on Tuesday raised its target interest rate by a quarter point to 1.5 per cent, and gave no indication that recent weaker economic data would affect its intentions of continuing to raise interest rates at a measured pace.
+
+In its statement the committee noted that "in recent months, output growth has moderated and the pace of improvement in labor market conditions has slowed".
+   TDIn line with Alan Greenspan's testimony before Congress last month, the statement said: "This softness likely owes importantly to the substantial rise in energy prices. The economy nevertheless appears poised to resume a stronger pace of expansion going forward".
+
+The rest of the statement was unchanged, with the Fed reiterating that with underlying inflation low, the commitee believes that rates can be moved back towards a more neutral "at a pace that is likely to be measured".
+
+The Fed's rate increase was widely expected, in spite of weakr economic activity at the end of the second quarter. But economists had predicted that the central bank would give itself greater flexibility in its policy guidance following the weak July jobs report.
+
+Following the announcement that US employers added only 32,000 jobs to their payrolls last month, compared with consensus forecasts of about 230,000, and downward revisions to previous months, futures contracts had reduced the probability of a Fed rate increase at its September at below below 50 per cent.
+
+Fed officials have indicated that they would be unlikely to be diverted from a measured pace of rate increases as long as the data remains consistent with growth slightly above trend using up spare capacity and labour market slack and inflation remains under control.
+
+Other data has been consistent with the view laid out by Mr Greenspan that economic weakness in June was temporary "softness" caused by the impact of high gasoline prices on household budgets.
+
+However, energy prices have remained high, with crude oil reaching record levels.
+
+The Labor Department reported yesterday that labour productivity grew at a 2.9 per cent annual rate in the second quarter in the non-farm business sector, slower than the 3.7 per cent annual rate in the first quarter but above consensus expectations of a 2 per cent rate.
+
+Hours worked rose at a 0.8 per cent rate in the second quarter compared with 2 per cent in the first quarter. Hourly compensation, including benefits, rose at a 4.9 per cent rate but dropped at at 0.1 per cent rate, adjusted for inflation.
+
+Unit labour costs rose at a 1.9 per cent rate in the period, in line with consensus expectations. Mr Greenspan has said that the Fed expects unit labour costs to rise, after they fell in 2002 and 2003, but that wide corporate margins and still elevated productivity growth means that companies should be able to absorb higher labour costs at least in the short-term without leading to accelerating inflation. 
+   RF37179021   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTCOM00020040811e08a0001v  
+
+
+
+ HDFT.com site : Sterling drops ahead of US Fed decision.   BYSteve Johnson in London    WC510 words   PD10 August 2004   SNFinancial Times (FT.Com)   SCFTCOM   LAEnglish   CY(c) 2004 The Financial Times Limited. All rights reserved 
+   LPSterling was the big loser on Tuesday ahead of the all-important monetary policy statement from the US Federal Reserve.
+
+The Fed was widely expected to raise rates by 25 basis points to 1.5 per cent, its second straight hike, with the market instead fixated on whether the mantra of "measured" tightening would be repeated despite recent soft data.
+   TDThe greenback ticked lower, slipping 0.4 per cent to $1.2311 against the euro, but a triumvirate of weak economic updates pushed sterling to centre-stage by mid-session in New York.
+
+UK consumer prices fell 0.3 per cent in July, dragging the annual rate down to 1.4 per cent - well below both the 1.6 per cent recorded in June and the 2 per cent rate targeted by the Bank of England.
+
+With the British Retail Consortium also reporting a fall in like-for-like sales growth to 1.8 per cent in the year to July, from 2.4 per cent in June, echoing recent soft survey evidence from the CBI, some concluded that the pace of UK monetary tightening was set to ease.
+
+"The Bank of England had anticipated a slight pull-back in inflation before expecting it to re-accelerate, but we remain more cautious," said James Knightley at ING Financial Markets. "With retailers finding it increasingly difficult to get customers and therefore raise prices, we believe that inflation will continue to undershoot 2 per cent for the foreseeable future, negating the need for further aggressive rate hikes."
+
+The data "should deter the MPC from making back-to-back [rate] increases," said Tim Fox, head of market strategy at National Australia Bank, although further rate hikes are likely if the UK output gap has closed, as the Bank believes.
+
+However Howard Archer at Global Insight did not rule out a September hike, seeing consumer borrowing and the housing market as vital.
+
+In addition, the UK's trade gap widened to GBP4.97bn in June from GBP4.83bn in May, confounding expectations for a narrowing and raising questions about the long -term funding of the deficit.
+
+As a result, sterling eased 0.5 per cent against the euro and Swiss franc to GBP0.6695 and SFr2.2985 respectively.
+
+The yen was also soft as Toshihiko Fukui, the governor of the Bank of Japan, said a change in the bank's zero interest rate policy was "nowhere in sight". Mr Fukui also said higher inflation alone would not be enough to bring about any change in monetary policy, with wider economic expansion also necessary, and raised concerns about high oil prices.
+
+"The comments clearly indicate that, despite the signs of improving economic conditions, the Bank of Japan is still some way from changing the current monetary stance," said Derek Halpenny, senior currency economist at Bank of Tokyo-Mitsubishi. "That fact will help reinforce investor outflows from Japan."
+
+The yen eased 0.4 per cent to Y136.33 to the euro. 
+   RF37177937   INi814 : Banking | i81401 : Central Banking | ibnk : Banking/Credit   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News | gpol : Domestic Politics | mcat : Commodity/Financial Market News | gcat : Political/General News | gpir : Politics/International Relations   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTCOM00020040811e08a0000z  
+
+
+
+ HDFT.com site : Bourses edge higher ahead Fed rate decision.   BYNeil Dennis    WC435 words   PD10 August 2004   SNFinancial Times (FT.Com)   SCFTCOM   LAEnglish   CY(c) 2004 The Financial Times Limited. All rights reserved 
+   LPEuropean equity markets were a little higher in early trade on Tuesday after hitting year lows in the previous session, but trade was thin ahead of the US Federal Reserve's interest rate decision due after the close.
+
+The FTSE Eurotop 300 was up 0.2 per cent to 949.02, while Frankfurt's Xetra Dax was 0.3 per cent higher at 3,700.56. In Paris, the CAC-40 added 0.3 per cent to 3,506.14 and London's FTSE 100 climbed 0.3 per cent to 4,325.3.
+   TDStocks in Europe hit their lowest levels of the year on Monday as fresh jitters concerning economic recovery followed Friday's weak US employment data and the ever-present threat of high oil prices denting corporate profits.
+
+The FTSE Eurotop finished the session down 0.8 per cent. In New York, the Dow Jones Industrial Average ended flat at 9,814.66 as investors held their fire ahead of an expected quarter-point increase in US interest rates. The Nasdaq Composite ended 0.1 per cent lower at 1,774.64.
+
+"With oil prices sky high, ongoing tension in Iraq and the concerns that US recovery has stalled, it's difficult to see what will drive markets higher," said Gary Parkinson at FinSpreads. "But valuations are starting to look much more enticing and bargain hunters are likely to tempted."
+
+Swiss bank UBS matched forecasts with its second-quarter net profit, thanks to a strong performance at its wealth mangement divisions. However, the company warned that revenues in the second half were unlikely to be as good as in the first now financial markets appeared to be stuck in a downward trend. The shares were down 0.6 per cent at SFr81.15.
+
+Deutsche Borse, the German stock market operator, was ahead of expectations in spite of a 2.3 per cent fall in second-quarter operating profits, held back by flat markets and falling volumes. The company however, reiterated its target of ?450m earnings before interest and tax for the full year and the shares gained 2.1 per cent to ?38.73.
+
+RWE, the German utility, reported that first-half operating profit rose 11.8 per cent, beating forecasts, driven by strong growth at its power generating division. The company reiterated its forecast of single-digit growth in full-year operating profit. The shares, which have risen more than 28 per cent this year, were down 2.7 per cent to ?39.57 as investors took profits. 
+   RF37166954   NSc1521 : Analyst Comment/Recommendation | c1522 : Share Price Movement/Disruptions | m11 : Equity Markets | mcat : Commodity/Financial Market News | e11 : Economic Performance/Indicators | e1202 : Interest Rates | ecat : Economic News | c15 : Performance | c152 : Earnings Projections | ccat : Corporate/Industrial News | e12 : Economic/Monetary Policy | ncat : Content Types | nfact : Factiva Filters | nfcpin : FC&E Industry News Filter   REfra : France | gfr : Germany | usa : United States | eecz : European Union Countries | eurz : Europe | medz : Mediterranean | namz : North America | weurz : Western Europe   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTCOM00020040811e08a00001  
+
+
+
+ HDDollar buoyed on Fed optimism     BYBUR     WC377 words   PD11 August 2004   ET00:53   SNAgence France Presse   SCAFPR   LAEnglish   CYCopyright Agence France-Presse, 2004 All reproduction and presentation rights reserved.  
+   LPNEW YORK, Aug 10 (AFP) -  
+
+The euro yielded to a dollar strengthened Tuesday by Federal Reserve optimism over the US economy and a quarter-point rise in a key interest rate.  
+   TDAt 2100 GMT the euro was quoted at 1.2235 dollars against 1.2269 late Monday.  
+
+The dollar brought 111.26 yen against 110.67 yen late Monday.  
+
+The European coin dropped after the Fed decision, having attained its highest price since July 22 at 1.2319 just hours earlier.  
+
+The federal funds target rate, which banks charge each other for overnight loans, climbed to 1.50 percent from 1.25 percent. It was the second hike in rates this year since June 30.  
+
+The Federal Reserve Open Market Committee (FMOC) calmed Tuesday's market jitters by raising its key rate and driving home the reassuring message that any faults the economy has are temporary.  
+
+"In recent months, output growth has moderated and the pace of improvement in labor market conditions has slowed," the FMOC said in a statement.  
+
+"This softness likely owes importantly to the substantial rise in energy prices. The economy nevertheless appears poised to resume a stronger pace of expansion going forward."  
+
+Analysts said the Fed is keeping a close eye on oil prices, which broached a historic high of 45 dollars a barrel in New York on Tuesday, but that the central bank believes the economy is on a sure footing.  
+
+"I think the Fed sent a very confident message that it feels that, despite the rise in energy prices, the economy is poised to resume a stronger pace of expansion," said Jeff Kleintop, chief investment strategist at PNC Advisors.  
+
+"I think that's a bit of what the market wanted to hear and certainly acknowledges the softness in recent data, but in a way brushes that aside as attributable to transitory effects like energy prices," Kleintop.  
+
+On Friday, the federal government's monthly measure of employment showed only 32,000 jobs were created last month, far below the expected 243,000.  
+
+In other major currencies, the dollar traded at 1.2619 Swiss francs against 1.2542 late Monday.  
+
+The pound sterling was sold at 1.8264 dollars against 1.8410 dollars.  
+
+bur-ved/kd/gs  
+   NSe12 : Economic/Monetary Policy | e1202 : Interest Rates | m13 : Money/Forex Markets | m132 : Foreign Exchange News | mcat : Commodity/Financial Market News | ecat : Economic News   REusa : United States | namz : North America   IPDForex | US   PUBAgence France Presse   ANDocument AFPR000020040810e08a00gcy  
+
+
+
+ HDUS raises key  interest rate  quarter point to 1.5 percent     BYDJW     WC558 words   PD10 August 2004   ET23:03   SNAgence France Presse   SCAFPR   LAEnglish   CYCopyright Agence France-Presse, 2004 All reproduction and presentation rights reserved.  
+   LPWASHINGTON, Aug 10 (AFP) -  
+
+US Federal Reserve policymakers Tuesday boosted key short-term interest rates by a quarter point, blaming boiling oil prices for bogging down the economy, but only temporarily.  
+   TDActivity was poised to rebound, they said.  
+
+The federal funds target rate, which banks charge each other for overnight loans, climbed to 1.50 percent from 1.25 percent.  
+
+The vote was unanimous.  
+
+"In recent months, output growth has moderated and the pace of improvement in labor market conditions has slowed," the Federal Open Market Committee said in a statement.  
+
+"This softness likely owes importantly to the substantial rise in energy prices. The economy nevertheless appears poised to resume a stronger pace of expansion going forward."  
+
+It was the second rate rise since June 30, when Federal Reserve chairman Alan Greenspan and his colleagues edged up the key rate from a 1958 low of 1.0 percent in a pre-emptive anti-inflation strike.  
+
+The step was widely expected because a failure to carry on a promised program of gradual increases in rates could have spread fears about the true state of the economy.  
+
+Share prices jumped as the bullish language sunk in, sending the blue-chip Dow Jones industrials average up 130.01 points, or 1.32 percent, to close at 9,944.67.  
+
+Even after the move, policymakers said, interest rates are low enough to act as a stimulant for the economy, particularly when combined with solid productivity gains.  
+
+The big question now is whether soft economic data will persist and, if so, whether policymakers will leave rates untouched at the next meeting September 21, the last before presidential elections November 2.  
+
+Democratic presidential contender John Kerry accuses President George W. Bush of mismanaging the economy and losing jobs to foreign competitors such as China.  
+
+US employers hired just 32,000 extra workers in July, a government report showed Friday, shattering expectations for a 240,000-strong rebound from a sluggish June.  
+
+Most analysts still predict a recovery in jobs growth.  
+
+But some say a return to a jobs-scarce economic expansion, which crushed the hopes of job seekers in 2002 and 2003, cannot be ruled out, particularly with oil prices high.  
+
+As the Federal Reserve policymakers met, New York's main crude oil contract shot above 45 dollars for the first time on record, propelled by unrest in Iraq and a crisis at Russian oil titan Yukos.  
+
+New York's benchmark contract, light sweet crude for delivery in September, leapt 20 cents to hit a high of 45.04 dollars a barrel.  
+
+"Inflation has been somewhat elevated this year, though a portion of the rise in prices seems to reflect transitory factors," the FOMC statement said in an allusion to energy prices.  
+
+The risks for both prices and sustainable economic growth appeared to be neutral for the next few quarters, it said.  
+
+"With underlying inflation still expected to be relatively low, the committee believes that policy accommodation can be removed at a pace that is likely to be measured," the policymakers said.  
+
+Nonetheless, they underscored their "obligation" to act as needed to stamp out any sign of inflation.  
+
+The FOMC also raised the discount rate, which the central bank charges commercial banks, by a quarter point to 2.5 percent.  
+
+djw/mk  
+   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   IPDUS | economy | bank | rates sched | lead   PUBAgence France Presse   ANDocument AFPR000020040810e08a00f7b  
+
+
+
+ HDUS raises key  interest rate  quarter point to 1.5 percent     BYDJW     WC580 words   PD10 August 2004   ET21:25   SNAgence France Presse   SCAFPR   LAEnglish   CYCopyright Agence France-Presse, 2004 All reproduction and presentation rights reserved.  
+   LPWASHINGTON, Aug 10 (AFP) -  
+
+US Federal Reserve policymakers Tuesday boosted the key short-term interest rate by a quarter point, blaming boiling oil prices for curbing economy activity, but only temporarily.  
+   TDActivity was poised to rebound, they said.  
+
+The federal funds target rate, which banks charge each other for overnight loans, climbed to 1.50 percent from 1.25 percent.  
+
+The vote was unanimous.  
+
+"In recent months, output growth has moderated and the pace of improvement in labor market conditions has slowed," the Federal Open Market Committee said in a statement.  
+
+"This softness likely owes importantly to the substantial rise in energy prices. The economy nevertheless appears poised to resume a stronger pace of expansion going forward."  
+
+It was the second rate rise since June 30, when Federal Reserve chairman Alan Greenspan and his colleagues edged up the key rate from a 1958 low of 1.0 percent in a pre-emptive anti-inflation strike.  
+
+The step was widely expected because a failure to carry on a promised program of gradual increases in rates could have spread fears about the true state of the economy.  
+
+Share prices jumped as the bullish language sunk in, sending the blue-chip Dow Jones industrials average up 106.11 points, or 1.08 percent, to 9,920.77 within an hour of the decision.  
+
+Ten-year bond yields rose to 4.269 percent from 4.246 percent just before the announcement.  
+
+Even after the increase, policymakers said, interest rates are low enough to act as a stimulant for the economy, particularly when combined with solid productivity gains.  
+
+The big question now is whether soft economic data will persist and, if so, whether policymakers will leave rates untouched at the next meeting September 21, the last before presidential elections November 2.  
+
+Democratic presidential contender John Kerry accuses President George W. Bush of mismanaging the economy and losing jobs to foreign competitors such as China.  
+
+US employers hired just 32,000 extra workers in July, a government report showed Friday, shattering expectations for a 240,000-strong rebound from a sluggish June.  
+
+Most analysts still predict a recovery in jobs growth.  
+
+But some say a return to a jobs-scarce economic expansion, which crushed the hopes of job seekers in 2002 and 2003, cannot be ruled out, particularly with oil prices high.  
+
+As the Federal Reserve policymakers met, New York's main crude oil contract shot above 45 dollars for the first time on record, propelled by unrest in Iraq and a crisis at Russian oil titan Yukos.  
+
+New York's benchmark contract, light sweet crude for delivery in September, leapt 20 cents to hit a high of 45.04 dollars a barrel.  
+
+"Inflation has been somewhat elevated this year, though a portion of the rise in prices seems to reflect transitory factors," the FOMC statement said in an allusion to energy prices.  
+
+The risks for both prices and sustainable economic growth appeared to be neutral for the next few quarters, it said.  
+
+"With underlying inflation still expected to be relatively low, the committee believes that policy accommodation can be removed at a pace that is likely to be measured," the policymakers said.  
+
+Nonetheless, they underscored their "obligation" to act as needed to stamp out any sign of inflation.  
+
+The FOMC also raised the discount rate, which the central bank charges commercial banks, by a quarter point to 2.5 percent.  
+
+djw/mac/gs  
+   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   IPDUS | economy | bank | rates lead   PUBAgence France Presse   ANDocument AFPR000020040810e08a00dnp  
+
+
+
+ HDUS stocks higher after Fed hikes rates by expected quarter point     BYBUR     WC167 words   PD10 August 2004   ET20:38   SNAgence France Presse   SCAFPR   LAEnglish   CYCopyright Agence France-Presse, 2004 All reproduction and presentation rights reserved.  
+   LPNEW YORK, Aug 10 (AFP) -  
+
+US stocks were higher Tuesday after the Federal Reserve hiked interest rates by a widely expected quarter point to 1.50 percent.  
+   TDIn the wake of the Fed announcement, the Dow Jones industrials average of 30 top stocks was up 34.81 points, or 0.35 percent, at 9,849.47.  
+
+The broader Standard and Poor's 500 index was up 4.06 points, or 0.38 percent, to 1,069.29.  
+
+The technology-heavy Nasdaq index gained 10.61 points, or 0.60 percent, to 1,785.25.  
+
+It is the second time this year the US central bank has raised its key interest rate following a rate cutting cycle that had seen interest rates languish as low as 1.0 percent.  
+
+Stocks were off their pre-announcement highs, but confirmation of the rate rise helped support the markets, which had priced in such a move.  
+
+bur-jjc/mac  
+   NSm11 : Equity Markets | mcat : Commodity/Financial Market News | e1202 : Interest Rates | e12 : Economic/Monetary Policy | ecat : Economic News   REusa : United States | namz : North America   IPDUS | economy | bank | rates | rise | stocks   PUBAgence France Presse   ANDocument AFPR000020040810e08a00dkx  
+
+
+
+ HDUS raises key  interest rate  quarter point to 1.5 percent     BYCG     WC126 words   PD10 August 2004   ET20:20   SNAgence France Presse   SCAFPR   LAEnglish   CYCopyright Agence France-Presse, 2004 All reproduction and presentation rights reserved.  
+   LPWASHINGTON, Aug 10 (AFP) -  
+
+US Federal Reserve policymakers Tuesday raised the key short-term interest rate by a quarter point to 1.5 percent, blaming a spike in oil prices for curbing economic activity.  
+   TDThe vote was unanimous.  
+
+"In recent months, output growth has moderated and the pace of improvement in labor market conditions has slowed," the Federal Open Market Committee said in a statement.  
+
+"This softness likely owes importantly to the substantial rise in energy prices. The economy nevertheless appears poised to resume a stronger pace of expansion going forward."  
+
+Inflation had been "somewhat elevated" this year but some of the price-rise was caused by temporary factors, it said.  
+
+cg/djw/mac  
+   NSe11 : Economic Performance/Indicators | e1202 : Interest Rates | e12 : Economic/Monetary Policy | ecat : Economic News   REusa : United States | namz : North America   IPDUS | economy | bank | rates | rise lead   PUBAgence France Presse   ANDocument AFPR000020040810e08a00d4b  
+
+
+
+ HD Federal Reserve  seems set to raise interest rates     BYDJW     WC483 words   PD10 August 2004   ET17:31   SNAgence France Presse   SCAFPR   LAEnglish   CYCopyright Agence France-Presse, 2004 All reproduction and presentation rights reserved.  
+   LPWASHINGTON, Aug 10 (AFP) -  
+
+US Federal Reserve policymakers opened a meeting Tuesday apparently determined to push up interest rates even in the face of unexpectedly weak employment growth.  
+   TDThe Federal Open Market Committee (FOMC) was broadly expected to raise the federal funds target rate, which banks charge each other overnight, to 1.50 percent from 1.25 percent.  
+
+An announcement is expected at about 2:15 pm (1815 GMT).  
+
+"We expect a quarter-point hike," said Wells Fargo Bank chief economist Sung Won Sohn.  
+
+Federal Reserve chairman Alan Greenspan seemed to be locked into an interest rate tightening cycle, which began June 30 when he edged up the key rate from a 1958 low of 1.0 percent in a pre-emptive blow at inflation.  
+
+A failure to raise rates now would risk panicking financial markets about the state of the economy, analysts said.  
+
+Greenspan's plans were being tested, however, by a recent string of weaker-than-expected economic data in the summer, including a startlingly feeble employment report for July.  
+
+Employers hired just 32,000 extra workers in July, a government report showed Friday, shattering expectations for a 240,000-strong rebound from a sluggish June.  
+
+As a result, many investors and analysts say the pace of future increases, once expected to be running at a quarter-point at each FOMC meeting, could slow.  
+
+"I am more interested in what the (Federal Reserve) statement will say about the current economic conditions and possible Fed action in the future," Sohn said.  
+
+"My hope is that they will acknowledge the economic softness that is going on now and also perhaps indicate that ... monetary policy could be on hold if upcoming economic data do not confirm economic growth."  
+
+Sohn said he expected solid growth activity ahead, however, leading to quarter-point increases in interest rates at the remaining three FOMC meetings this year.  
+
+The next FOMC meeting, September 21, is the last before November 2 presidential elections.  
+
+"Really, the big question mark is the price of oil and its impact on the economy," Sohn said.  
+
+Oil prices acted like a tax on the consumer, he said, potentially slowing activity sufficiently to force a suspension in the cycle of rising interest rates.  
+
+New York's light, sweet crude for September delivery hit an all-time high of 44.99 dollars in electronic trade overnight. After inflation, however, prices remain well below levels reached in the 1970s oil shock.  
+
+Joel Naroff, president of Naroff Economic Advisors, agreed that the Federal Reserve policymakers were likely to raise key interest rates by a quarter-point but issue a cautious statement.  
+
+"I expect them to put in some sort of sentence that they will carefully monitor the data going forward, giving an indication that if the data is weak they might consider holding off in September," he said.  
+
+djw/ejp  
+   COnwbc : Wells Fargo & Company   INi814 : Banking | i81402 : Commercial Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   IPDUS | economy | rates | bank sched | lead   PUBAgence France Presse   ANDocument AFPR000020040810e08a00b1c  
+
+
+
+ HD Federal Reserve  seems set to raise  interest rate    BYDJW     WC361 words   PD10 August 2004   ET16:42   SNAgence France Presse   SCAFPR   LAEnglish   CYCopyright Agence France-Presse, 2004 All reproduction and presentation rights reserved.  
+   LPWASHINGTON, Aug 10 (AFP) -  
+
+US Federal Reserve policymakers opened a meeting Tuesday apparently determined to push up interest rates even in the face of unexpectedly tepid jobs growth.  
+   TDThe Federal Open Market Committee (FOMC) was widely expected to raise the federal funds target rate, which banks charge each other overnight, to 1.50 percent from 1.25 percent.  
+
+An announcement is expected at about 2:15 pm (1815 GMT).  
+
+"We expect a quarter point hike," Wells Fargo Bank chief economist Sung Won Sohn said.  
+
+Federal Reserve chairman Alan Greenspan seemed to be locked into an interest rate tightening cycle, which began June 30 when he edged up the key rate from a 1958 low of 1.0-percent in a preemptive blow at inflation.  
+
+His plans are being tested, however, by a recent string of weaker-than-expected economic data in the summer, including a startlingly weak employment report for July.  
+
+Employers hired just 32,000 extra workers in July, a government report showed Friday, shattering expectations for a 240,000-strong rebound from a sluggish June.  
+
+"I am more interested in what the (Federal Reserve) statement will say about the current economic conditions and possible Fed action in the future," Sohn said.  
+
+"My hope is that they will acknowledge the economic softness that is going on now and also perhaps indicate that ... monetary policy could be on hold if upcoming economic data do not confirm economic growth."  
+
+Sohn said he expected solid growth activity ahead, however, leading to quarter-point increases in interest rates at the remaining three FOMC meetings this year, including one before the November 2 presidential election.  
+
+"Really, the big question mark is the price of oil and its impact on the economy," he said.  
+
+Oil prices acted like a tax on the consumer, he said, potentially slowing activity sufficiently to force a suspension in the cycle of rising interest rates.  
+
+New York's light, sweet crude for September delivery hit an all-time high 44.99 dollars in electronic trade overnight. After inflation, however, prices remain well below levels reached in the 1970s oil shock.  
+
+djw/mac  
+   COnwbc : Wells Fargo & Company   INi81401 : Central Banking | i814 : Banking | i81402 : Commercial Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   IPDUS | economy | rates | bank   PUBAgence France Presse   ANDocument AFPR000020040810e08a00akl  
+
+
+
+ HDFed predicted to raise US interest rates Tuesday     BYCG     WC621 words   PD10 August 2004   ET11:38   SNAgence France Presse   SCAFPR   LAEnglish   CYCopyright Agence France-Presse, 2004 All reproduction and presentation rights reserved.  
+   LPWASHINGTON, Aug 10 (AFP) -  
+
+The US Federal Reserve is expected to raise interest rates for the second time this year on Tuesday but concerns over employment and the mounting cost of oil could limit moves to tighten credit.  
+   TDMost experts predict that Fed chairman Alan Greenspan and his colleagues will raise the federal funds target rate, which banks charge each other overnight, to 1.5 percent from 1.25.  
+
+The decision is expected to be announced at about 1815 GMT after a meeting of the Federal Open Market Committee.  
+
+The US central bank lifted rates from their four-decade low on June 30 amid signs that it had embarked on a policy of gradual increases.  
+
+Despite worrying employment figures for July, when only 32,000 extra workers were taken on, against expectations of 240,000, most analysts say the new rate hike will still go ahead.  
+
+David Rosenberg of Merrill Lynch said "the Fed has locked itself into hiking rates another 25 basis points." A failure to carry out expectations could panic markets.  
+
+And Robert DiClemente, chief North America economist at Citigroup, said that even at 1.5 percent, the main interest rate would still be "highly accommodative" and below the inflation rate.  
+
+The job figures released last week led some experts to question the strength of the US economic recovery, which could play a key role in President George W. Bush's chances of re-election in November.  
+
+The Washington Post, however, said there was a "swelling minotiry" of observers who predict the Fed would leave interest rates unchanged.  
+
+"At a minimum, the recent 'soft patch' is proving softer and more prolonged than anticipated," Nigel Gault, research director of Global Insight, an economic research firm, wrote in an analysis for clients, predicting that the Fed would keep the rate on hold.  
+
+So many will be closely studying comments made in the Federal Reserve's statement after its meeting.  
+
+"As long as you think the economy is going to rebound, and I assume that's what the Fed believes, then they will probably go ahead and raise interest rates in August," said Wells Fargo Bank chief economist Sung Won Sohn.  
+
+Adding to pressure for a rate rise, the Wall Street Journal said Greenspan could be accused of trying to help Bush if he leaves rates untouched.  
+
+Wachovia chief economist John Silvia said the weak jobs report did not necessarily signal a weakening economy.  
+
+"Disappointing employment gains do not signal a similar fate for growth," Silvia said. "Instead the economy may be back in the same mix we saw in 2002-2003 where real growth is being driven by productivity gains and not employment."  
+
+Rising oil prices are a dark new cloud for the gas guzzling US economy.  
+
+The question many economists want Greenspan to answer is whether this is a temporary factor -- as he said in July -- and will it fuel inflation.  
+
+World oil prices closed at new all-time highs Monday as Iraq's southern oil fields halted pumping to avoid a threatened attack by Shiite Muslim militia. New York's light sweet crude for September delivery surged 89 cents to close at 44.84 dollars a barrel, after reaching a high of 44.98 dollars.  
+
+Brent North Sea crude oil for September delivery surged 93 cents to an unprecedented close of 41.56 dollars.  
+
+DiClemente said the possibility of accelerating energy prices were more menacing for the economy than the jobs news.  
+
+"To be sure, without some relief from rising energy costs, we would have to rethink the outlook, but with market interest rates plunging today, chances of runaway pessimism overtaking recovery appear limited," he said.  
+
+cg-djw/tw/fgf  
+   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   IPDUS | economy | rates sched | lead   PUBAgence France Presse   ANDocument AFPR000020040810e08a002mh  
+
+
+
+ HDTalk From The Trenches: No Free Pass From the Fed for Bonds     WC1,005 words   PD10 August 2004   ET17:41   SNMarket News International   SCMARNEW   LAEnglish   CY(c) 2004. Market News International, Inc.  
+   TD
+
+By Isobel Kennedy 
+
+     NEW YORK, Aug 10 (MktNews) - For all the bullish hype leading up to 
+the Federal Reserve's meeting Tuesday, the statement accompanying the 25 
+basis point rate hike was short, to the point and it cut the bond market 
+no slack. 
+  
+     "The Committee believes that, even after this action, the stance of 
+monetary policy remains accommodative and, coupled with robust 
+underlying growth in productivity, is providing ongoing support to 
+economic activity. In recent months, output growth has moderated and the 
+pace of improvement in labor market conditions has slowed. This softness 
+likely owes importantly to the substantial rise in energy prices. The 
+economy nevertheless appears poised to resume a stronger pace of 
+expansion going forward. Inflation has been somewhat elevated this year, 
+though a portion of the rise in prices seems to reflect transitory 
+factors. 
+        
+     "The Committee perceives the upside and downside risks to the 
+attainment of both sustainable growth and price stability for the next 
+few quarters are roughly equal. With underlying inflation still expected 
+to be relatively low, the Committee believes that policy accommodation 
+can be removed at a pace that is likely to be measured. Nonetheless, the 
+Committee will respond to changes in economic prospects as needed to 
+fulfill its obligation to maintain price stability." 
+
+     It looks like Mr. Greenspan is sticking to his guns -- he started a 
+tightening cycle and he is going to continue it, despite the weak jobs 
+reports which the Fed blames almost entirely on higher oil prices. 
+
+     So much for market talk of skipping meetings. In fact the Fed said 
+the "economy is poised to resume a stronger pace of expansion going 
+forward." 
+
+     Bond prices were hesitant at first, possibly in disbelief. But soon 
+the selling picked up and the front end got hit worse than the longer 
+end. The two-year note high yield of 2.55% on the news, up 10 basis 
+points from Monday's close. The issue hit a low yield of 2.32% during 
+the employment Friday rally. Keep in mind this issue was trading at 
+2.63% prior to the jobs report. 
+
+     The 10-year note hit a high yield of 4.30% vs. Monday's settle of 
+4.24% and the intra-day low yield of 4.17% last Friday. 
+
+     The backoff might be a blessing in disguise since Treasury traders 
+need to bid $15.0 billion 5-year notes tomorrow and $14.0 billion 
+10-year notes on Thursday. 
+
+     And it looks like the buyside is standing defiant like the oak too.  
+JP Morgan's Client survey taken yesterday says the buyside shorts were 
+unchanged at 44 in the latest week. The neutrals rose from 44 to 49 and 
+the longs fell to 7 from 12. 
+
+     While the bond market was disappointed by the Fed, market players 
+say prices have a floor under them for a wide variety of reasons: still 
+high oil, weak jobs, short duration positions, terror fears ahead of the 
+Olympics, the Republican convention and the November elections. 
+
+     Only time will tell if these supports for the market continue to 
+hold in a rising rate environment.  
+
+     In a very well-balanced piece written before the Fed announcement, 
+Tony Crescenzi of Miller Tabak said all the good news was already priced 
+into the bond market, thus increasing the odds of a consolidation 
+post-Fed. 
+
+     "If the Fed were to surprise the markets today by either refraining 
+from raising interest rates or by instead indicating that future 
+interest rate hikes might be delayed indefinitely, it would risk 
+cannibalizing the effort it began on June 30th when it raised interest 
+rates in attempt to slow the economy and hence rid it of the recent 
+buildup in inflation pressures, Crescenzi said.   
+
+     "The fact is, the more bond-market friendly the Fed's statement is 
+today, the more likely it is that the recent bond rally will hold and 
+possibly extend further. It is doubtful that the Fed feels that 
+inflation pressures have abated enough to justify encouraging a decline 
+in market interest rates and thus increase the degree of stimulus to the 
+economy," Crescenzi added.  
+
+     Crescenzi also expected the Fed to show the optimism on the economy 
+that did in fact appear in today's Fed statement. And he  reminded 
+readers that the Fed has often been very upbeat about the economy in 
+recent years, even in the "dark days that followed 9/11." 
+
+     In an interesting interview by CNBC Tuesday, former Federal Reserve 
+Governor Laurence Meyer was asked about the danger of high oil prices 
+precipitating stagflation. 
+
+     Meyer answered, "I think the danger is considerable. Because the 
+biggest contingency, the biggest risk factor is that oil prices will 
+stay as high as they are, already close to $5 above where most of us 
+expected it to be just a couple months, even a couple of weeks ago and 
+there are still upside risks because of geopolitical concerns." 
+
+     So, Meyer added, "that is the biggest risk. Higher oil prices mean 
+higher inflation, also greater weakness on the real side and create a 
+daunting challenge to monetary policymakers." 
+
+     A seasoned bond pro said he was surprised that Meyer used the "S" 
+word.  
+
+     "Stagflation is at the back of everyone's minds, but no one wants 
+to talk about it -- Larry Meyer is like a breath of fresh air!," the 
+bond guy exclaimed. 
+
+     In economic news Tuesday, U.S. nonfarm 2Q productivity came in at 
++2.9% SAAR] vs. +3.7% in 1Q and higher than expectations for +2.0%. 
+
+     Unit labor costs came in at +1.9% SAAR vs. a downwardly revised 
++0.3% in 1Q and just below expectations of +2.0%. 
+
+     NOTE: Talk From the Trenches is a daily compendium of chatter from 
+Treasury trading rooms offered as a gauge of the mood in the financial 
+markets. It is not necessarily hard, verified news. email 
+isobelk@marketnews.com
+
+  ** Market News International New York Newsroom: 212-669-6430 **  
+   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | mcat : Commodity/Financial Market News | ecat : Economic News   REusa : United States | namz : North America   PUBMarket News International, Inc.   ANDocument MARNEW0020040811e08a002qh  
+
+
+
+ HDDollar Strengthens Modestly on Fed Hike     WC375 words   PD10 August 2004   ET23:36   SNAssociated Press Newswires   SCAPRS   LAEnglish   CY(c) 2004.  The Associated Press.  All Rights Reserved.  
+   LPNEW YORK (AP) - The dollar advanced modestly after the Federal Reserve raised interest rates a quarter point as expected Tuesday, but remained confined to recent trading ranges.  
+
+The U.S. currency held onto respectable gains as it exited North American trading near highs for the day versus its major rivals following the Federal Reserve Open Market Committee's afternoon announcement.  
+   TDThe Federal Reserve Open Market Committee raised a key interest rate to 1.50 percent, from 1.25 percent. In the accompanying statement, which was scrutinized by market participants, the policymakers reiterated their commitment to measured rate increases -- a view that the economy's growth remains in place despite recently tepid payroll data.  
+
+The statement noted that while "the pace of improvement in labor market conditions has slowed," the economy "appears poised to resume a stronger pace of expansion going forward."  
+
+The modest jump in the dollar may have been due to currency investors' relief that the Fed's point-of-view in the statement was markedly similar to the last statement, a modest stance that points to continued gradual rate hikes. After the rate decision was released, Federal funds futures contracts showed that market expectations of a September rate hike increased.  
+
+In late New York trading Monday, the euro was quoted at $1.2231, down from $1.2275 on Monday. Against the yen, the dollar was at 111.42, up from 110.54. The dollar was also up against the Swiss franc at 1.2625 from 1.2533, and against the Canadian dollar at 1.3192 from 1.3166. The British pound fell to $1.8264 from $1.8406.  
+
+"At the end of the day, we're still in a broad trading range," said Marc Chandler, chief currency strategist at HSBC Bank in New York.  
+
+That's because the Fed's statement indicated that while the FOMC will monitor economic pressures like rising oil prices and recently tepid jobs growth, it believes fundamental economic improvement is still underway.  
+
+"There's nothing in this statement that leads us to believe that the Fed has changed its view that the weakness we've seen is a lasting phenomenon," said Michael Woolfolk, senior currency strategist at Bank of New York.  
+   RF5   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | m132 : Foreign Exchange News | m1421 : Gold Markets | ecat : Economic News | m13 : Money/Forex Markets | m14 : Commodity Markets | m142 : Metals Markets | mcat : Commodity/Financial Market News | mpcsmt : Precious Metals Markets   REusa : United States | namz : North America   IPCtagpf1apon | sel----- | catf | 1312   IPDFinancial/Business | Dollar | D84CK00O0   PUBPress Association, Inc.   ANDocument APRS000020040810e08a00my5  
+
+
+
+ HDFed keeps faith on economic view     BYBy NEAL LIPSCHUTZ     WC721 words   PD10 August 2004   ET22:37   SNAssociated Press Newswires   SCAPRS   LAEnglish   CY(c) 2004.  The Associated Press.  All Rights Reserved.  
+   LPNEW YORK (AP) - Call it the "nevertheless" interest rate increase.  
+
+The Federal Reserve stayed on its recently charted course of measured (read quarter-point) short-term interest rate increases Tuesday, taking the Federal funds rate up to a still-low 1.50 percent.  
+   TDIn a widely watched statement that acknowledges a slowing in economic growth that has U.S. financial markets in a frenzy, the Fed stuck to its bigger-picture view that the economy is in a recovery and a re-acceleration in the pace of that recovery is coming sometime soon.  
+
+"The economy nevertheless appears poised to resume a stronger pace of expansion going forward," the Fed said Tuesday in a statement accompanying its interest-rate decision.  
+
+The Fed's statement and continued faith in economic growth should provide comfort to those unnerved by the minuscule increase in job creation registered in July and June (110,000 all told).  
+
+The central bank stayed consistent with its theme: any slowdown is essentially a soft patch in a positive story, albeit a slow patch that stretches longer than Fed Chairman Alan Greenspan publicly foresaw in late July.  
+
+The only thing market participants have to worry about is this: the Fed could be wrong.  
+
+Right or wrong, Tuesday's statement shows the Fed hasn't done a full reversal in its economic outlook. The statement also shows up a basic difference between the central bank and market participants: they get paid to do different things.  
+
+The Fed has to take the long view (absent a systemic crisis) and a couple of months of weakish economic numbers after a long-awaited employment pickup doesn't come close to registering as the long view.  
+
+Markets, on the other hand, have to react and overreact. Swinging back and forth on the latest data and extrapolating that data it to its most negative or positive implication is part and parcel of the markets' price discovery mechanism. It's also how traders make or lose money.  
+
+So it won't be surprising if we hear some calls from the markets that the Fed's still mainly sanguine view of the economy and even employment shows the central bank's increasingly tenuous tie to reality.  
+
+But two months of a weaker, but still growing, economy is no reason for the Fed or anyone else to panic. That's especially true given how low interest rates already are and the fact that small increases won't serve as a real drag on economic activity.  
+
+That's especially true since the Fed has spent time and effort to convince the market it has embarked on a measured removal of the monetary accommodation it baked into the economy for so long.  
+
+The Fed changed a line from its June 30 statement, when it said "output is continuing to expand at a solid pace and labor market conditions have improved." It had to, or else it would have ignored the less-than-stellar economic figures for June and July.  
+
+Tuesday it replaced that line with this: "In recent months, output growth has moderated and the pace of improvement in labor market conditions has slowed."  
+
+Then it added this, "This softness likely owes importantly to the substantial rise in energy prices."  
+
+For a long while, after oil prices left their perch of $30 a barrel (considered high at the time), much of the commentary about the increases revolved around how much less impact oil prices had on the broad U.S. economy and non-energy prices.  
+
+It set one wondering how high oil prices would have to get to have that broader impact. With oil futures near $45, the Fed acknowledged Tuesday that it thinks we have gotten to that point of broader impact.  
+
+The fact that the Fed said it still believed "policy accommodation can be removed at a pace that is likely to be measured," echoing earlier post-Federal Open Market Committee meeting statements, implies that the quarter-point increases will continue at the scheduled September meeting and beyond.  
+
+That's assuming, of course, that between now and then the economic data aren't so dreadful that the Fed policy makers convince themselves of the possibility their broad view is wrong.  
+
+------  
+
+Neal Lipschutz is a senior editor for Dow Jones Newswires.  
+   RF7   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   IPCtagpf1wcat | sel----- | catf   IPDFinancial/Business | NA FIN US Economy Analysis | D84CJ4D81   PUBPress Association, Inc.   ANDocument APRS000020040810e08a00mdq  
+
+
+
+ HDFed pushes  interest rate  up quarter of a percentage point     BYBy MARTIN CRUTSINGER     CRAP Economics Writer   WC499 words   PD10 August 2004   ET20:25   SNAssociated Press Newswires   SCAPRS   LAEnglish   CY(c) 2004.  The Associated Press.  All Rights Reserved.  
+   LPWASHINGTON (AP) - The Federal Reserve boosted a key short-term interest rate by a quarter-point on Tuesday as the central bank continued its campaign to keep inflation under control.  
+
+Fed Chairman Alan Greenspan and his colleagues on the Federal Open Market Committee, the panel that sets interest rates, boosted the target for the federal funds rate to 1.50 percent.  
+   TDThe funds rate, the interest that banks charge each, had been at a 46-year low of 1 percent just six weeks ago when the Fed raised it to 1.25 percent, the first increase in four years.  
+
+The Fed action this week had been expected as analysts predicted the central bank would continue with its campaign to raise rates even in the face of last Friday's report that showed job creation slowed to a near-standstill last month.  
+
+Analysts said that if the Fed had decided to forgo its widely expected rate hike it would have raised concerns in financial markets that the central bank was worried that the current economic slowdown, which Greenspan has termed a "soft patch," was threatening to become more severe.  
+
+In explaining its action, the Fed noted that economic growth had moderated somewhat in recent months and "the pace of improvement in labor market conditions has slowed."  
+
+It blamed this economic slowdown on the jump in energy prices this year but predicted that the economic weakness should be temporary.  
+
+The Fed statement said that the economy "appears poised to resume a stronger pace of expansion going forward."  
+
+The Fed also repeated a pledge it made on June 30 when it first raised rates. It said that it believes future rate increases can be made "at a pace that is likely to be measured."  
+
+Private economists have interpreted that phrase to mean small quarter-point increases in rates at the Fed's regular meetings.  
+
+The Fed's next meeting will occur on Sept. 21. While another rate increase could come at that time, analysts said it will depend on the data between now and then.  
+
+If the next employment report shows continued weakness, then the Fed is expected to take a breather in its rate increases.  
+
+However, if the slowdown that began in June proves to be temporary, as Greenspan has predicted, then private economists said the central bank could well continue with further rate increases in September and at the Fed's last two meetings of the year in November and December.  
+
+The key will be the performance of the job market, analysts said. In July, the increase of just 32,000 payroll jobs was the weakest showing this year and far below the 200,000-plus that private analysts had been predicting.  
+
+On Tuesday, the Labor Department reported that productivity in the April-June quarter rose at an annual rate of 2.9 percent, the slowest increase since the final quarter of 2002.  
+   RF5   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   IPCtagpf0wcat | sel----- | catf   IPDFinancial/Business | NA FIN US Fed Interest Rates | D84CH64O2   PUBPress Association, Inc.   ANDocument APRS000020040810e08a005pl  
+
+
+
+ HDFed pushes rates higher, anticipating stronger economy     BYBy MARTIN CRUTSINGER     CRAP Economics Writer   WC786 words   PD11 August 2004   ET01:48   SNAssociated Press Newswires   SCAPRS   LAEnglish   CY(c) 2004.  The Associated Press.  All Rights Reserved.  
+   LPWASHINGTON (AP) - The Federal Reserve, discounting recent signs of economic weakness, pushed ahead Tuesday with its campaign to keep inflation under control by boosting a key interest rate by a quarter-point.  
+
+Wall Street, encouraged by the Fed's optimistic assessment of economic prospects, pushed stocks higher.  
+   TDDeclaring that the economy "appears poised to resume a stronger pace of expansion," Federal Reserve Chairman Alan Greenspan and his colleagues announced they were increasing the target for the federal funds rate from 1.25 percent to 1.50 percent.  
+
+Commercial banks immediately followed that move by announcing they were raising their prime rates, the benchmark for millions of business and consumer loans, from 4.25 percent to 4.5 percent. The prime rate normally moves in lockstep with Fed rate increases.  
+
+Many economists read the Fed's statement as a signal that the central bank intended to keep pushing rates up by quarter-point moves at each of its remaining three meetings this year.  
+
+"This is a very confident statement. They are unequivocal in their view that the economy is going to revive," said Mark Zandi, chief economist at Economy.com.  
+
+Investor confidence was bolstered by the Fed's assurances that the recent slowdown should be temporary, and stocks moved sharply higher. The Dow Jones industrial average finished the day up 130.01 points at 9,944.67.  
+
+President Bush, who is seeking to avoid his father's fate of being one-term president because of a weak economy, is insisting the economy has turned the corner, but a slump in various economic statistics in recent weeks have cast doubts about that contention.  
+
+The government reported last Friday that only 32,000 jobs were created in July, the poorest showing this year and far below the 200,000-plus jobs analysts had been expecting.  
+
+After that weak report, many analysts believed the Fed would go ahead with an expected quarter-point rate hike this week but might signal that it was prepared to pause in September if the economy had not shown signs of a rebound by then.  
+
+The Fed statement Tuesday did note that economic growth had moderated and the improvement in the labor market "has slowed." But it blamed the slowdown on the spike in energy prices, and said it should be shortlived.  
+
+The boost in the funds rate marked the second quarter-point move this year following a June 30 increase which had been the Fed's first rate increase in four years. Like its June statement, the Fed again said it believed it could raise rates "at a pace that is likely to be measured."  
+
+Economists have interpreted that as meaning quarter-point moves at regular intervals of Fed meetings. Many saw its repetition in the August announcement as a sign that the central bank sees no need to alter its plan for steady but modest rate increases in coming months.  
+
+Analysts noted that even with a half-point increase in the funds rate so far, this key Fed policy lever remains at a level that, before last year's cut, was last reached in the early 1960s.  
+
+"The Fed is not putting the brakes on the economy," said Bill Cheney, chief economist at MFC Global Investment Management in Boston. "They are just getting their foot off the accelerator."  
+
+Economist David Jones, author of several books on the Greenspan Fed, said he still believed the Fed could put its credit tightening on hold, at least for September, if the August jobs report, due out Sept. 3, does not show sharp improvement.  
+
+"The fact that they acknowledged the softness in the economy injects a note of caution in the Fed's actions," Jones said. "I think they are going to be very measured and cautious going forward."  
+
+The central bank pushed the funds rate to a 46-year low of 1 percent in June 2003, the 13th in a series of rate cuts that began in January 2001 as the Fed battled to right the economy after a series of blows including the country's first recession in a decade, the Sept. 11, 2001, terrorist attacks and a wave of corporate accounting scandals.  
+
+In Tuesday's statement, the Fed said it believed an economic revival was being supported by interest rates that were "accommodative" and by "robust underlying growth in productivity."  
+
+Earlier Tuesday, the government reported that productivity in April-June quarter rose at an annual rate of 2.9 percent, the smallest gain since late 2002, but still significantly higher than the anemic productivity increases posted during the 1970s and 1980s.  
+
+------  
+
+On the Net:  
+
+Federal Reserve:  http://www.federalreserve.gov
+   RF7   INi81401 : Central Banking | i814 : Banking | ibnk : Banking/Credit   NSe11 : Economic Performance/Indicators | e12 : Economic/Monetary Policy | e1202 : Interest Rates | ecat : Economic News   REusa : United States | namz : North America   IPCtagdsp | sel----- | catw   IPDAP National News | Washington | Fed Interest Rates | D84CLTQG0   PUBPress Association, Inc.   ANDocument APRS000020040810e08a000bj  
+
+
+
+ CLMCredit Markets   HDSurprise! Bonds Poised for Bull Run --- Jobs Data Could Produce Big Losses for Investors Who Bet on Higher Yields   BYBy Agnes T. Crane Dow Jones Newswires    WC783 words   PD9 August 2004   SNThe Wall Street Journal   SCJ   PGC4   LAEnglish   CY(Copyright (c) 2004, Dow Jones & Company, Inc.) 
+   LPNEW YORK -- Treasury investors are looking at a bull run after the surprisingly weak July jobs report sent yields plummeting Friday.
+
+This may be good news for Treasury prices, which move inversely to yields, but it means big losses for the large number of investors who had bet that yields would take their cue from Federal Reserve interest-rate increases and track higher, not lower.
+   TDThe yield on the benchmark 10-year Treasury note fell 0.2 percentage point to 4.17% in the span of one minute on the jobless-report news, its lowest level since April 8 and 0.73 percentage point lower than its 4.9% highwater mark touched back in May.
+
+At 4 p.m. Friday, the benchmark 10-year Treasury note was up 1 15/32, or $14.6875 per $1,000 face value, at 104 9/32. Its yield stood at 4.212%, compared with 4.392% late Thursday. The 30-year bond's price was up 1 22/32 at 105 to yield 5.032%, compared with 5.145% Thursday.
+
+Many investors were still digesting the ramifications of the jobs data and said it is too early to call the resumption of the bull market in bonds, particularly as trading desks are typically thinly staffed on Fridays in August. But technical factors such as a large number of short positions, which suffer when yields fall, coupled with mortgage investors who may need to buy Treasurys to rebalance their portfolios amid the lower rate environment, are likely to push the market into the horns of the bull.
+
+"I'm still in shock," said Gary Pollack, portfolio manager and head of fixed-income trading and research at Deutsche Bank Private Wealth Management in New York. "I think a lot of people are going to do a lot of hard work this weekend to put revisions in their forecasts. They're going to assess some difficult, hard facts."
+
+Mr. Pollack said he believes the market is in a long-term bear trend, where yields will edge higher, but he admits to doubts about the economy. "All of a sudden, you wake up, rub your eyes, and say `wow, things aren't that great for the economy.' Maybe 4.6% [on the 10-year yield] was too high."
+
+Rising oil prices, the threat of terrorism and sluggish stocks also bode well for Treasurys, which are considered the safest haven for funds during periods of uncertainty.
+
+Though these other factors have been in play for a while, many investors continued to bet on higher yields anyway. "It's shocking to me that the market has been rallying for months and people have fought it because of Fed expectations," said Mike Krauss, chief technical strategist at J.P. Morgan in New York.
+
+Through the language in its policy-setting statements, the Federal Reserve has suggested it will raise interest rates at a gradual pace of a quarter point at each of its scheduled meetings.
+
+The trouble now is that economic weakness is catching Treasury investors off guard and causing a reassessment of Fed expectations. The scramble to cover bearish positions could push the 10-year benchmark back down toward 4% just as the Fed is ready to raise rates again at its policy-setting meeting tomorrow.
+
+Corporate Bonds
+
+In the primary market, Marquee Inc. and its holding company sold $625 million of senior notes in three parts via underwriters Citigroup and J.P. Morgan, according to a syndicate source. Proceeds will be used to fund the acquisition of movie-theater company AMC Entertainment Inc. by Marquee, a newly created investment vehicle that combines affiliates of two private-equity powerhouses, J.P. Morgan Partners and Apollo Management.
+
+The first tranche is $250 million of eight-year senior unsecured notes sold at par to yield 8.625%. That tranche was rated single-B-minus by Standard &Poor's and single-B-2 by Moody's Investors Service. The next chunk, $205 million of six-year floating-rate notes with the same ratings, sold at par to yield 4.25 percentage points over the three month London interbank offered rate. The final tranche, $169.917 million of 10-year discount notes, rated triple-C-plus by S&P and Caa1 by Moody's, were priced at 55.89 for a yield-to-maturity of 12%. The notes are pay-in-kind for five years; interest accrues starting in year six to reach 12% at maturity.
+
+-- Simona Covel 
+
+License this article from Dow Jones Reprint Service
+   INiinv : Investing/Securities   NSm12 : Debt/Bond Markets | mcat : Commodity/Financial Market News | mntdbt : National Government Debt/Bond Markets | c172 : Corporate Debt Instruments | c174 : Corporate Credit Ratings | e1202 : Interest Rates | gvtre : Treasury Department | m131 : Money Markets | c17 : Funding/Capital | ccat : Corporate/Industrial News | e12 : Economic/Monetary Policy | ecat : Economic News | gcat : Political/General News | gpir : Politics/International Relations | gpol : Domestic Politics | gvbod : Government Bodies | gvexe : Executive Branch | m13 : Money/Forex Markets | mgvdbt : Government Debt/Bond Markets | ncat : Content Types | nfact : Factiva Filters | nfcpin : FC&E Industry News Filter   REusa : United States | namz : North America   IPCTRE | USG | FIN | NND | TPX | CRD | MIM   PUBDow Jones & Company, Inc.   ANDocument J000000020040809e0890000l  
+
+
+
+ SEGLOBAL INVESTING FUND MANAGEMENT   HD Interest rate  rises to hit households' debt loads - US ECONOMY.   BYBy Jenny Wiggins    WC908 words   PD9 August 2004   SNFinancial Times   SCFTFT   EDUSA Ed1   PGPage 25   LAEnglish   CY(c) 2004 The Financial Times Limited. All rights reserved 
+   LPAlan Greenspan's promise that rising interest rates will not scar consumers too deeply appears to have resonated with investors, who do not seem unduly alarmed at the toll higher rates will take on record levels of household debt.
+
+But market observers say some consumers will certainly suffer, and that investors in mortgage and asset-backed securities could share the pain. One of the key questions weighing on economists' minds this year has been how higher rates will affect US household debt loads, which now exceed household incomes.
+   TDMr Greenspan sought to answer that question last month by pointing out that most household debt has a fixed interest rate, and therefore will not be affected by higher rates straight away.
+
+"Very large fractions of the total outstanding obligations of businesses and households are long-term, fixed-rate debt," he told Congress while testifying on the economy. "As a result, rising market interest rates will not have much immediate direct effect on business and household debt service burdens."
+
+Although exact statistics on the nature of household debt are hard to come by, most economists agree with Mr Greenspan. Simply put, mortgages make up the bulk of US household debt, and most have fixed interest rates. However, economists concede that one area of weakness in a rising rate environment is the home equity market. Home equity loans, which are lines of credit secured by a home or second home, have become increasingly popular in recent years, with the amount of loans outstanding more than doubling to some Dollars 712.8bn in the first quarter from Dollars 331.9bn in 1997, according to the Federal Reserve.
+
+The interest on home equity loans adjusts to movements in the prime rate (used by banks to price commercial loans), which is determined by changes in the Federal funds rate.
+
+Meanwhile, the heavy dependence of consumers on mortgage debt is worrying for some economists, who foresee the creditworthiness of mortgage and home equity lending declining if housing prices fall.
+
+"The explosive growth in lending to a large number of untested mortgage borrowers creates substantial uncertainty for creditors, particularly as interest rates rise," says Mark Zandi, chief economist at Economy.com.
+
+These concerns have become more acute because the mortgage market is fluid and changing. "There's so much churning," says Doug Noland, financial market strategist at investment adviser David Tice &Associates. "The scope of mortgage credit can change over in a year."
+
+As mortgages with fixed rates become more expensive, consumers - particularly those with low incomes - are taking out mortgages with variable interest rates.
+
+Fitch Ratings estimates that more than 30 per cent of mortgages in the highly creditworthy "prime market" now have some kind of variable rates, up from less than 5 per cent in 1999, compared with more than 60 per cent in the less creditworthy "sub-prime" market. One sign of the increasing importance of variable rate mortgages was Fannie Mae's recent warning of slowing earnings growth, in part because there are less mortgages available for it to buy and put in its portfolio.
+
+Although banks are happy to sell fixed-rate mortgages to providers such as Fannie Mae and Freddie Mac, they are comfortable holding adjustable mortgages on their books because the changes in the interest rates match changes in their funding costs.
+
+As well as potentially lifting debt repayment costs for consumers, the growing amount of variable rate debt in the mortgage market has implications for investors. More than half of all outstanding mortgage debt is packaged together into securities and sold to banks and institutional investors.
+
+Owners of these securities have had a happy few years, with the creditworthiness of the securities benefiting from low rates and a booming housing market.
+
+But subprime mortgages are expected to experience stress as rates rise and some homeowners with adjustable mortgages have difficulty making interest payments.
+
+Homeowners with variable rate mortgages are more likely to default than homeowners with fixed rates. About 4.7 per cent of homeowners with adjustable mortgages were overdue on payments in the third quarter of last year, compared with 3.6 per cent of homeowners with fixed mortgages, according to the Mortgage Bankers Association.
+
+As higher rates slow mortgage lenders' fixed rate businesses, some are lowering their underwriting standards. A recent survey from the Consumer Federation of America found that some lenders are selling variable rate mortgages to any potential buyer, regardless of the buyer's income or credit history. Mortgage securities are not the only securities considered at risk of stress from higher rates. Securities collateralised with credit cards could also be vulnerable.
+
+Many credit cards have floating interest rates, with the Federal Reserve's most recent bi-annual survey of credit card plans showing 57 banks offering cards with variable rates and 61 with fixed rates.
+
+But Allen Grommett, senior economist at the Cambridge Consumer Credit Index, said: "What most people don't realise is that even if you have a fixed rate, the banks can change the fixed rate on you."
+
+Economists at UBS recently expressed concern after conducting a survey that showed 72 per cent of credit card holders and 55 per cent of home equity borrowers believed their rates were fixed. "The findings in our survey suggest some borrower confusion and surprise as short rates keep heading higher," the economists said. 
+   RF20040809U125.019   NSe11 : Economic Performance/Indicators | e1202 : Interest Rates | ecat : Economic News | e12 : Economic/Monetary Policy   REusa : United States | namz : North America   PUBThe Financial Times Limited (AAIW/EIW)   ANDocument FTFT000020040809e0890004m  
+ Page 1 of 1     © 2018 Factiva, Inc.  All rights reserved.
+
+
+ 
+
+ Page 1     © 2018 Factiva, Inc.  All rights reserved.
+
