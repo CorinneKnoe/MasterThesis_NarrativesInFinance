@@ -49,18 +49,23 @@ def tokenizer_porter(text):
     return " ".join(stopremoved)
 
 
+
 if __name__ == '__main__':
     
     #Reading in data and preparing for preprocessing
     #===============================================
     
     #change path to directory of txt data
-    this_path = os.path.abspath(os.path.dirname('__file__')) #take absolute path of file, to construct relative path to data
-    base_path = os.path.dirname(this_path)
-    path = os.path.join(base_path, "FACTIVA_Data")
-    #path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/FACTIVA_Data/" #absolute path to the txt files
+# =============================================================================
+#     #use this when using relative paths  
+#     this_path = os.path.abspath(os.path.dirname(__file__)) #take absolute path of file, to construct relative path to data
+#     base_path = os.path.dirname(this_path)
+#     path = os.path.join(base_path, "FACTIVA_Data")
+# =============================================================================
+    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/FACTIVA_Data/" #absolute path to the txt files
     os.chdir(path) #setting working directory
-        
+    
+    
     #initialiye indicator variables
     title = False
     source = False
@@ -89,7 +94,6 @@ if __name__ == '__main__':
             if title:
                 titlelist.append(line)
                 if titlelist[-1] in titlelist[:-1]: #check whether exact same title has already been stored, indicates double
-                    print('is double', titlelist[-1])
                     double = True
                 title = False
             if time: #via timecheck alerted that this line will contain a time, set before timecheck
@@ -149,6 +153,7 @@ if __name__ == '__main__':
     
     #name column headers
     articledf.columns = ["Date", "Title", "Article", "Source"]
+    type(articledf.iloc[0,0])
     
     #Save to CSV to use in other projects, etc.
     #==========================================
