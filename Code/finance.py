@@ -3,7 +3,7 @@
 Created on 10.10.2018
 
 @author: coknoe
-
+produces a csv with all FED and other financial data
 
 """
 
@@ -15,6 +15,10 @@ import os
 import numpy as np
 import math
 import datetime
+import matplotlib.pyplot as plt
+#%matplotlib inline #for notebooks
+import seaborn; seaborn.set()
+plt.style.use('seaborn-whitegrid') #whitegrid style for plot
 
 
 
@@ -53,7 +57,7 @@ if __name__ == '__main__':
     meetingdf.sort_values('MeetingDate', inplace = True)
     
     #read in the csv files with the treasury yields
-    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/Datastream" #absolute path to the txt files
+    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/Datastream2" #absolute path to the txt files
     os.chdir(path) #setting working directory
     
     #build a dataframe for every file in directory and store in dictionary
@@ -64,7 +68,7 @@ if __name__ == '__main__':
     
     
     #keys are not ordered, here a list with all keys in the order we want them in the final data frame
-    yieldorder = ['TRUS1MT', 'TRUS3MT', 'TRUS6MT', 'TRUS1YT', 'TRUS3YT', 'TRUS5YT', 'TRUS7YT', 'TRUS10YT', 'TRUS30YT']   
+    yieldorder = ['TRUS1MT', 'TRUS3MT', 'TRUS6MT', 'TRUS1YT', 'TRUS3YT', 'TRUS5YT', 'TRUS7YT', 'TRUS10YT', 'TRUS20CT', 'TRUS30YT']   
         
     #create a big dataframe for all yield duration, pull data from dictionary
     treasurydf = pd.DataFrame()  #initiate new data fram
@@ -77,6 +81,7 @@ if __name__ == '__main__':
             break
     
     #add data on target rate to data frame
+        #inefficient code, runs a couple of minutes
     treasurydf['TgtLow'] = np.nan
     treasurydf['TgtHigh'] = np.nan
     treasurydf['Adjustment'] = np.nan
@@ -89,9 +94,186 @@ if __name__ == '__main__':
                     treasurydf.loc[treasurydf.index[i], 'Adjustment'] = 1
                 else:
                     treasurydf.loc[treasurydf.index[i], 'Adjustment'] = 0
-    sum(treasurydf['Adjustment'])
-    len(adjustdf)
-        
-        
-        
+    
+    #yields are in %, but target rate still in decimal number, make target in percent as well
+    treasurydf['TgtLow'] = treasurydf['TgtLow']*100
+    treasurydf['TgtHigh'] = treasurydf['TgtHigh']*100
+
+    
+    
+    #saving in csv -- careful, has floating point problems, decimals are changed
+    treasurydf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/financeData.csv", index=False, encoding="utf-8") #create a csv to store our data
+    
+    
+    #Producing graphs
+    #----------------
+    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
+    os.chdir(path)
+    os.getcwd()
+    
+    #set start and end dates, cut df to fit windows we want
+    start = datetime.datetime.strptime('01.10.1998', '%d.%m.%Y')
+    end = datetime.datetime.strptime('01.10.2018', '%d.%m.%Y')
+    tdf = treasurydf.loc[(treasurydf.Date >= start) & (treasurydf.Date < end), :]
+    
+#    tdf.loc[tdf.TRUS1MT.notnull()] #find non nan entries for 1month rate
+#    tdf.loc[tdf.TRUS7YT.notnull()] #find non nan entries for 7year rate
+
+#   Graph for 1M treasury    
+# =============================================================================
+#     #Figure of target rate and 1M treasury rate
+#     fig = plt.figure()
+#     seaborn.set_context('paper')
+#     figM1 = plt.figure(figsize=(7,4))
+#     ax = plt.axes()
+#     plt.plot(tdf['Date'], tdf['TRUS1MT'], '-', label='1M Treasury Yield', 
+#              linewidth=1, color=seaborn.color_palette('deep')[0])
+#     plt.plot(tdf['Date'], tdf['TgtLow'], linestyle='-', 
+#              linewidth=1, label = 'Target Rate', color=seaborn.color_palette('deep')[2])
+#     plt.plot(tdf['Date'], tdf['TgtHigh'], linestyle='-', color=seaborn.color_palette('deep')[2], 
+#              linewidth=1, label='_nolegend_')
+#     ax.legend(framealpha=1, loc='upper right', frameon=False)
+#     plt.ylabel('Interest rate in %')
+#     plt.savefig("1Mtreasury.pdf", bbox_inches='tight')
+# =============================================================================
+    
+    
+    #Figure of target rate and 3M treasury rate
+    fig = plt.figure()
+    plt.style.use('seaborn-whitegrid')
+    #plt.style.use('classic')
+    seaborn.set_context('paper')
+    figM1 = plt.figure(figsize=(7,4))
+    ax = plt.axes()
+    plt.plot(tdf['Date'], tdf['TRUS3MT'], '-', label='3M Treasury Yield', 
+             linewidth=1, color=seaborn.color_palette('deep')[0])
+    plt.plot(tdf['Date'], tdf['TgtLow'], linestyle='-', 
+             linewidth=1, label = 'Target Rate', color=seaborn.color_palette('deep')[2])
+    plt.plot(tdf['Date'], tdf['TgtHigh'], linestyle='-', color=seaborn.color_palette('deep')[2], 
+             linewidth=1, label='_nolegend_')
+    #plt.title('Target Rate and 3M Treasury Yield') #no need for title when labeled in latex anyways
+    ax.legend(loc='upper right', frameon=False)
+    plt.ylabel('Interest rate in %')
+    #plt.savefig("1Mtreasury.png", bbox_inches='tight')
+    plt.savefig("3Mtreasury.pdf", bbox_inches='tight')
+    
+#   For three plots for short, middle and long term rates    
+# =============================================================================
+#     #Figure of target rate and short treasury rates
+#     fig = plt.figure()
+#     plt.style.use('seaborn-whitegrid')
+#     seaborn.set_context('paper')
+#     figM1 = plt.figure(figsize=(7,4))
+#     ax = plt.axes()
+#     plt.plot(tdf['Date'], tdf['TRUS1MT'], '-', label='1M Treasury Yield', 
+#              linewidth=1, color=seaborn.color_palette('deep')[1])
+#     plt.plot(tdf['Date'], tdf['TRUS6MT'], '-', label='6M Treasury Yield', 
+#              linewidth=1, color=seaborn.color_palette('deep')[3])
+#     plt.plot(tdf['Date'], tdf['TRUS1YT'], '-', label='1Y Treasury Yield', 
+#              linewidth=1, color=seaborn.color_palette('deep')[4])
+#     plt.plot(tdf['Date'], tdf['TgtLow'], linestyle='-', 
+#              linewidth=1, label = 'Target Rate', color=seaborn.color_palette('deep')[2])
+#     plt.plot(tdf['Date'], tdf['TgtHigh'], linestyle='-', color=seaborn.color_palette('deep')[2], 
+#              linewidth=1, label='_nolegend_')
+#     ax.legend(loc='upper right', frameon=False)
+#     plt.ylabel('Interest rate in %')
+#     plt.savefig("shorttreasury.pdf", bbox_inches='tight')
+#     
+#     #Figure of target rate and middle treasury rates
+#     fig = plt.figure()
+#     ax = plt.axes()
+#     plt.style.use('seaborn-whitegrid')
+#     seaborn.set_context('paper')
+#     figM1 = plt.figure(figsize=(7,4))
+#     plt.plot(tdf['Date'], tdf['TRUS3YT'], '-', label='3Y Treasury Yield', 
+#              linewidth=1, color=seaborn.color_palette('deep')[1])
+#     plt.plot(tdf['Date'], tdf['TRUS5YT'], '-', label='5Y Treasury Yield', 
+#              linewidth=1, color=seaborn.color_palette('deep')[3])
+#     plt.plot(tdf['Date'], tdf['TRUS7YT'], '-', label='7Y Treasury Yield', 
+#              linewidth=1, color=seaborn.color_palette('deep')[4])
+#     plt.plot(tdf['Date'], tdf['TgtLow'], linestyle='-', 
+#              linewidth=1, label = 'Target Rate', color=seaborn.color_palette('deep')[2])
+#     plt.plot(tdf['Date'], tdf['TgtHigh'], linestyle='-', color=seaborn.color_palette('deep')[2], 
+#              linewidth=1, label='_nolegend_')
+#     ax.legend(loc='upper right', frameon=False)
+#     plt.ylabel('Interest rate in %')
+#     plt.savefig("middletreasury.pdf", bbox_inches='tight')
+#     
+#     #Figure of target rate and long treasury rates
+#     fig = plt.figure()
+#     plt.style.use('seaborn-whitegrid')
+#     seaborn.set_context('paper')
+#     figM1 = plt.figure(figsize=(7,4))
+#     ax = plt.axes()
+#     plt.plot(tdf['Date'], tdf['TRUS10YT'], '-', label='10Y Treasury Yield', 
+#              linewidth=1, color=seaborn.color_palette('deep')[1])
+#     plt.plot(tdf['Date'], tdf['TRUS20CT'], '-', label='20Y Treasury Yield', 
+#              linewidth=1, color=seaborn.color_palette('deep')[3])
+#     plt.plot(tdf['Date'], tdf['TRUS30YT'], '-', label='30Y Treasury Yield', 
+#              linewidth=1, color=seaborn.color_palette('deep')[4])
+#     plt.plot(tdf['Date'], tdf['TgtLow'], linestyle='-', 
+#              linewidth=1, label = 'Target Rate', color=seaborn.color_palette('deep')[2])
+#     plt.plot(tdf['Date'], tdf['TgtHigh'], linestyle='-', color=seaborn.color_palette('deep')[2], 
+#              linewidth=1, label='_nolegend_')
+#     ax.legend(loc='upper right', frameon=False)
+#     plt.ylabel('Interest rate in %')
+#     plt.savefig("longtreasury.pdf", bbox_inches='tight')
+# =============================================================================
+    
+    
+    #A graph of three subplots displayin the yield curve for short, middle and long term treasury yields
+    f, axarr = plt.subplots(3, figsize=(7,10))
+    plt.style.use('seaborn-whitegrid')
+    #plt.style.use('classic')
+    seaborn.set_context('paper')
+    
+    axarr[0].plot(tdf['Date'], tdf['TRUS1MT'], '-', label='1M Treasury Yield', 
+             linewidth=1, color=seaborn.color_palette('deep')[1])
+    axarr[0].plot(tdf['Date'], tdf['TRUS6MT'], '-', label='6M Treasury Yield', 
+             linewidth=1, color=seaborn.color_palette('deep')[3])
+    axarr[0].plot(tdf['Date'], tdf['TRUS1YT'], '-', label='1Y Treasury Yield', 
+             linewidth=1, color=seaborn.color_palette('deep')[4])
+    axarr[0].plot(tdf['Date'], tdf['TgtLow'], linestyle='-', 
+             linewidth=1, label = 'Target Rate', color=seaborn.color_palette('deep')[2])
+    axarr[0].plot(tdf['Date'], tdf['TgtHigh'], linestyle='-', color=seaborn.color_palette('deep')[2], 
+             linewidth=1, label='_nolegend_')
+    axarr[0].set_title('Target Rate and Short Term Treasury Yields') #no need for title when labeled in latex anyways
+    axarr[0].legend(loc='upper right', frameon=False)
+    axarr[0].set_ylabel('Interest rate in %')
+    axarr[0].set_ylim([-0.5, 7])
+    
+    axarr[1].plot(tdf['Date'], tdf['TRUS3YT'], '-', label='3Y Treasury Yield', 
+             linewidth=1, color=seaborn.color_palette('deep')[1])
+    axarr[1].plot(tdf['Date'], tdf['TRUS5YT'], '-', label='5Y Treasury Yield', 
+             linewidth=1, color=seaborn.color_palette('deep')[3])
+    axarr[1].plot(tdf['Date'], tdf['TRUS7YT'], '-', label='7Y Treasury Yield', 
+             linewidth=1, color=seaborn.color_palette('deep')[4])
+    axarr[1].plot(tdf['Date'], tdf['TgtLow'], linestyle='-', 
+             linewidth=1, label = 'Target Rate', color=seaborn.color_palette('deep')[2])
+    axarr[1].plot(tdf['Date'], tdf['TgtHigh'], linestyle='-', color=seaborn.color_palette('deep')[2], 
+             linewidth=1, label='_nolegend_')
+    axarr[1].set_title('Target Rate and Middle Term Treasury Yields') #no need for title when labeled in latex anyways
+    axarr[1].legend(loc='upper right', frameon=False)
+    axarr[1].set_ylabel('Interest rate in %')
+    axarr[1].set_ylim([-0.5, 7])
+    
+    axarr[2].plot(tdf['Date'], tdf['TRUS10YT'], '-', label='10Y Treasury Yield', 
+             linewidth=1, color=seaborn.color_palette('deep')[1])
+    axarr[2].plot(tdf['Date'], tdf['TRUS20CT'], '-', label='20Y Treasury Yield \n Constant Maturity', 
+             linewidth=1, color=seaborn.color_palette('deep')[3])
+    axarr[2].plot(tdf['Date'], tdf['TRUS30YT'], '-', label='30Y Treasury Yield', 
+             linewidth=1, color=seaborn.color_palette('deep')[4])
+    axarr[2].plot(tdf['Date'], tdf['TgtLow'], linestyle='-', 
+             linewidth=1, label = 'Target Rate', color=seaborn.color_palette('deep')[2])
+    axarr[2].plot(tdf['Date'], tdf['TgtHigh'], linestyle='-', color=seaborn.color_palette('deep')[2], 
+             linewidth=1, label='_nolegend_')
+    axarr[2].set_title('Target Rate and Long Term Treasury Yields') #no need for title when labeled in latex anyways
+    axarr[2].legend(loc='upper right', frameon=False)
+    axarr[2].set_ylabel('Interest rate in %')
+    axarr[2].set_ylim([-0.5, 7])
+    
+    plt.savefig("alltreasury.pdf", bbox_inches='tight')
+
+    
+    
 

@@ -56,7 +56,7 @@
 \allowdisplaybreaks[1] %Page breaks of equations are allowed, but avoided if possible. 2-4 more relaxed.
 
 %New command for the logo.
-\newcommand*{\plogo}{\includegraphics[scale=0.7]{HSG_logo}}
+\newcommand*{\plogo}{\includegraphics[scale=0.7]{Images/HSG_logo}}
 
 %New command for the differential d to have an ordinary d.
 \makeatletter
@@ -349,20 +349,33 @@ Akerlof and Shiller understand narratives as a convention, but it is more than t
 
 Data on target rate adjustments and FOMC meetings was retrieved from the Fed's website (\citealp{FRS.2018}, \citeyear{FRS.2013}; \citealp{FOMC.2018Archive}; \citeyear{FOMC.2018}) and summarized in table \ref{tab:meetings} and \ref{tab:target} in Appendix \ref{AppendixA}. 
 
-The FOMC holds eight regularly scheduled meetings during the year. Additional, unscheduled meetings are called when necessary \citep{FOMC.2018}. In April 2011, the Fed has taken up the practice of holding quarterly press conferences where it comments on its policy decisions, including its treatment of the target rate. Usually, the press conference took place after every other meeting. In June 2018, the Fed announced that from January 2019 on it will hold a press conference after every meeting \citep{PressConference.2018}. Table \ref{tab:meetings} in Appendix \ref{AppendixA} lists all 195 FOMC meetings that have taken place over the last 20 years. If a meeting lasted two days, only the last day is listed. Unsurprisingly, certain years necessitated more emergency meetings than others: In 2008, the FOMC held a total of 14 meetings, 6 more than usual. In 2001, the FOMC held 13 meetings, two of which were conference calls shortly after the events of 9/11. While the market anticipates the scheduled meetings and forms expectations about potential policy actions, the same is not possible for unscheduled emergency meetings. 
+The FOMC holds eight regularly scheduled meetings during the year. Additional, unscheduled meetings are called when necessary \citep{FOMC.2018}. In April 2011, the Fed has taken up the practice of holding quarterly press conferences where it comments on its policy decisions, including its treatment of the target rate. Usually, the press conferences take place after every other meeting. In June 2018, the Fed announced that starting January 2019 it will hold a press conference after every meeting \citep{PressConference.2018}. Table \ref{tab:meetings} in Appendix \ref{AppendixA} lists all 195 FOMC meetings that have taken place over the last 20 years. If a meeting lasted two days, only the last day is listed. Unsurprisingly, certain years necessitated more emergency meetings than others: In 2008, the FOMC held a total of 14 meetings, 6 more than usual. In 2001, the FOMC held 13 meetings, two of which were conference calls shortly after the events of 9/11. While the market anticipates the scheduled meetings and forms expectations about potential policy actions, the same is not possible for unscheduled emergency meetings. 
 
 Table \ref{tab:target} in Appendix \ref{AppendixA} gives an overview of the changes in the target rate over the past 20 years. From January 1998 to September 2018, the target rate was adjusted on 57 occasions. Only six of the 57 adjustments happened after unscheduled meetings. Most notably, two surprise adjustments took place during 2008 and three during 2001, one of them shortly after 9/11. Until 2008, the Fed used to decide and implement the new target rate on the very same day. The practice was changed after 2008 and the target rate was subsequently adjusted on the day following the FOMC meeting. 
 
 The development of the target rate over time is characterized by periods of stark increase and decrease. In May 2000, the target rate was at its highest with 6.5\%. From January 2001 to June 2003, the target rate decreased steadily until it reached a low point of 1\%. Mid-2006, the target rate was again at 5.25\% but was lowered drastically in 2007 and 2008 until it reached its all-time low of 0\% in December 2008. At the same time, the FOMC introduced a target range and defined the target rate no longer as a discrete number but with the help of an upper and lower bound. For seven years, until december 2015, the FOMC kept the target rate in the range of 0\% to 0.25\%. Since then, it has slowly increased the target rate, announcing a range of 2\%--2.25\% in September 2018.
+%
+%\begin{figure}
+%	\caption{Target rate and 3M treasury yield.}
+%	\centering
+%	\includegraphics[scale=1]{Images/3Mtreasury.pdf}
+%	\label{3Mtreasury}
+%\end{figure}
 
-Daily yield curve, tomson reuters, FRED
+The daily yield curve of the US Treasury bills, notes, and bonds for the period of October 1, 1998 to September 30, 2018 was retrieved from Thomson Reuters Datastream. Figure \ref{3Mtreasury} illustrates the development of the 3-month treasury yield as well as the target rate over the 20-year period. As explained in Chapter \ref{ExistingResearch}, \citeauthor{Ellingsen.2003} approximate unexpected monetary policy actions with the change in the 3-month T-bill rate. They argue, that the 3-month rate is sufficiently short to be determined by the target rate, but also sufficiently long to avoid noise from expectation errors \citep[~p. 13]{Ellingsen.2003}. Indeed, Figure \ref{3Mtreasury} shows that the 3-month T-bill rate and the target rate seem to move in tandem.  
 
-Graph mit target rate und 1M and/or 3M rates
+The treasury yields for all other maturities are depicted in Figure \ref{alltreasury} in Appendix \ref{AppendixA}. Please note that for the 1-month rate the data series starts on July 31, 2001 and for the 7-year rate the series starts on May 26, 2009. Due to data availability, the 20-year rate is given as a constant maturity rate while the rates of the other maturities are given as bid yields. As expected, while the short term yields (up to 1 year) move quite closely with the target rate, the longer the maturity the more it emancipates itself from the target rate. 
 
+%The bid yield is the yield figure that you get when you consider what your long-term return would be if you paid the bid price for the bond. 
+%Bid yields are always higher than ask yields, because if the buyer were willing to take a yield that was equal to or less than the ask yield, then the seller would sell the bond to the buyer at that corresponding price. 
+%Constant maturity is the theoretical value of a U.S. Treasury that is based on recent values of auctioned U.S. Treasuries. The value is obtained by the U.S. Treasury on a daily basis through interpolation of the Treasury yield curve which, in turn, is based on closing bid-yields of actively-traded Treasury securities. It is calculated using the daily yield curve of U.S. Treasury securities.
 
-\cite{FOMC.2018}
-\cite{FOMC.2018Archive}
-
+\begin{figure}
+	\caption{Target rate and 3M treasury yield.}
+	\centering
+	\includegraphics[scale=1]{Images/3Mtreasury.pdf}
+	\label{3Mtreasury}
+\end{figure}
 
 \section{Text Data}
 
@@ -466,7 +479,7 @@ BEsprechung - 24.09.2018
 \renewcommand{\theequation}{A.\arabic{equation}}
 
 
-\chapter{Data on Target Rate and FOMC Meetings}\label{AppendixA}
+\chapter{Target Rate and Yield Curves}\label{AppendixA}
 \vspace{-0.5cm}
 %\lipsum[2-4]
 
@@ -477,7 +490,7 @@ BEsprechung - 24.09.2018
 %		& & & & & \multicolumn{2}{l}{FOMC Meeting on} & & & & & & \multicolumn{2}{l}{FOMC Meeting on} \\ % Amalgamating several columns into one cell is done using the \multicolumn command with the number of columns to amalgamate as the first argument and then the justification (l, r or c)
 		%		\cmidrule(l){6-7} % Horizontal line spanning less than the full width of the table - you can add (r) or (l) just before the opening curly bracket to shorten the rule on the left or right side
 %		Date & $Tgt_{low}$ & $Tgt_{up}$ & $\Delta Tgt_{low}$ & $\Delta Tgt_{up}$ & day prior &  same day & Date & $Tgt_{low}$ & $Tgt_{up}$ & $\Delta Tgt_{low}$ & $\Delta Tgt_{up}$ & day prior &  same day \\ % Column names row
-		\multicolumn{7}{c}{Dates of all FOMC meetings over the last 20 years} \\
+		\multicolumn{7}{c}{Dates of all FOMC meetings since January 1, 1998} \\
 		\midrule % In-table horizontal line
 						26.09.2018 & 18.03.2015 & 13.12.2011 & *07.02.2009 & 12.12.2006 & 12.08.2003 & 31.01.2001 \\
 						01.08.2018 & 28.01.2015 & *28.11.2011 & 28.01.2009 & 25.10.2006 & 25.06.2003 & *03.01.2001 \\
@@ -513,7 +526,7 @@ BEsprechung - 24.09.2018
 		%		Average Rate & 0.920 & 0.882 & 0.477 & 0.539 & 0.923\\ % Summary/total row
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
-	\caption{FOMC meetings} % Table caption, can be commented out if no caption is required
+	\caption{FOMC meetings.} % Table caption, can be commented out if no caption is required
 	\label{tab:meetings} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
@@ -568,14 +581,20 @@ BEsprechung - 24.09.2018
 		%		Average Rate & 0.920 & 0.882 & 0.477 & 0.539 & 0.923\\ % Summary/total row
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
-	\caption{Target rate adjustments} % Table caption, can be commented out if no caption is required
+	\caption{Target rate adjustments since January 1, 1998.} % Table caption, can be commented out if no caption is required
 	\label{tab:target} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{sidewaystable}
 
 \newpage
 \thispagestyle{firststyle}
 
-\textcolor{red}{ev. graphs to all interest rates and also target rate movements so we see what is happening}
+\begin{figure}
+	\caption{Target rate and treasury yields of all maturities.}
+	\centering
+	\includegraphics[scale=1]{Images/alltreasury.pdf}
+	\label{alltreasury}
+\end{figure}
+
 
 \renewcommand{\theequation}{B.\arabic{equation}}
 
