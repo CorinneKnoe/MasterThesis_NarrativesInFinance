@@ -102,7 +102,7 @@ if __name__ == '__main__':
     
     
     #saving in csv -- careful, has floating point problems, decimals are changed
-    treasurydf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/financeData.csv", index=False, encoding="utf-8") #create a csv to store our data
+    treasurydf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/financeData.csv", index=False, float_format='%.3f') #create a csv to store our data
     
     
     #Producing graphs
@@ -115,6 +115,8 @@ if __name__ == '__main__':
     start = datetime.datetime.strptime('01.10.1998', '%d.%m.%Y')
     end = datetime.datetime.strptime('01.10.2018', '%d.%m.%Y')
     tdf = treasurydf.loc[(treasurydf.Date >= start) & (treasurydf.Date < end), :]
+    
+#    sum(tdf['Adjustment']) #total target rate adjustments in the time period
     
 #    tdf.loc[tdf.TRUS1MT.notnull()] #find non nan entries for 1month rate
 #    tdf.loc[tdf.TRUS7YT.notnull()] #find non nan entries for 7year rate

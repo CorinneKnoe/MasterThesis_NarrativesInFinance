@@ -74,7 +74,7 @@ if __name__ == '__main__':
     article = False
     timecheck = False
     double = False
-    
+    articleno = [] #count the no of articles per adjustment day
     #create a data frame
     articledf = pd.DataFrame()                 #create a dataframe with columns for date, source, title and article text
     
@@ -88,72 +88,76 @@ if __name__ == '__main__':
         #print(os.path.join(path,file))
         #with open(os.path.join(path,file), 'r') as infile:
          #   f = infile.read()
-        f = open(os.path.join(path,file)) #open file of this iteration of loop
-        for line in f: #read through every line of file that was just opened
-            line = line.strip()
-            if title:
-                titlelist.append(line)
-                if titlelist[-1] in titlelist[:-1]: #check whether exact same title has already been stored, indicates double
-                    double = True
-                title = False
-            if time: #via timecheck alerted that this line will contain a time, set before timecheck
-                date = " ".join([daycontent,  line]) + ":00" #add day and time string as well as 00 for format
-                datelist.append(datetime.datetime.strptime(date, '%d %B %Y %X')) #transform string into timestamp
-                time = False
-            if timecheck: #need to check whether the line is ET, or no ET data is avaialable, set before day!
-                if line == "ET":
-                    time = True
-                    timecheck = False
-                else:
-                    date = " ".join([daycontent,  "00:00:00"]) #no time, just take string for time, add 00:00:00 for time
+        if  datetime.datetime.strptime(file[:-4], '%Y-%m-%d') > datetime.datetime.strptime('1998-10-01', '%Y-%m-%d'): #only read in data if after Oct 1, 1998
+            f = open(os.path.join(path,file)) #open file of this iteration of loop
+            for line in f: #read through every line of file that was just opened
+                line = line.strip()
+                if title:
+                    titlelist.append(line)
+                    if titlelist[-1] in titlelist[:-1]: #check whether exact same title has already been stored, indicates double
+                        double = True
+                    title = False
+                if time: #via timecheck alerted that this line will contain a time, set before timecheck
+                    date = " ".join([daycontent,  line]) + ":00" #add day and time string as well as 00 for format
                     datelist.append(datetime.datetime.strptime(date, '%d %B %Y %X')) #transform string into timestamp
-                    timecheck = False
-            if day:
-                daycontent = line
-                day = False
-                timecheck = True  #set time to true, to check whether next line is ET or not (not always the case)
-            if source:
-                sourcelist.append(line)
-                source = False
-            if article:
-                if line != 'TD': #in case article started with marker LP, we don't want to include TD in text
-                    articletext = " ". join([articletext, line]).strip() #collect all lines of the article in one string
-                    if line == "CO" or line == 'RF' or line == 'IN' or line == 'NS': #possible markers for end of article
-                        articlelist.append(articletext[:-2].strip())
-                        articletext = "" #empty variable for next use
-                        article = False
-                        if double: # drop entry if it is double
-                            titlelist = titlelist[:-1]
-                            datelist = datelist[:-1]
-                            sourcelist = sourcelist[:-1]
-                            articlelist = articlelist[:-1]
-                            double = False
-                    if line == 'Related': #end article before related articles are mentioned
-                        articlelist.append(articletext[:-7].strip())
-                        articletext = "" #empty variable for next use
-                        article = False
-                        if double: # drop entry if it is double
-                            titlelist = titlelist[:-1]
-                            datelist = datelist[:-1]
-                            sourcelist = sourcelist[:-1]
-                            articlelist = articlelist[:-1]
-                            double = False
-            if line == "HD":
-                title = True
-            if line == "PD":
-                day = True
-            if line == "SN":
-                source = True
-            if line == "LP" or line == "TD":
-                article = True
-        f.close()
+                    time = False
+                if timecheck: #need to check whether the line is ET, or no ET data is avaialable, set before day!
+                    if line == "ET":
+                        time = True
+                        timecheck = False
+                    else:
+                        date = " ".join([daycontent,  "00:00:00"]) #no time, just take string for time, add 00:00:00 for time
+                        datelist.append(datetime.datetime.strptime(date, '%d %B %Y %X')) #transform string into timestamp
+                        timecheck = False
+                if day:
+                    daycontent = line
+                    day = False
+                    timecheck = True  #set time to true, to check whether next line is ET or not (not always the case)
+                if source:
+                    sourcelist.append(line)
+                    source = False
+                if article:
+                    if line != 'TD': #in case article started with marker LP, we don't want to include TD in text
+                        articletext = " ". join([articletext, line]).strip() #collect all lines of the article in one string
+                        if line == "CO" or line == 'RF' or line == 'IN' or line == 'NS': #possible markers for end of article
+                            articlelist.append(articletext[:-2].strip())
+                            articletext = "" #empty variable for next use
+                            article = False
+                            if double: # drop entry if it is double
+                                titlelist = titlelist[:-1]
+                                datelist = datelist[:-1]
+                                sourcelist = sourcelist[:-1]
+                                articlelist = articlelist[:-1]
+                                double = False
+                        if line == 'Related': #end article before related articles are mentioned
+                            articlelist.append(articletext[:-7].strip())
+                            articletext = "" #empty variable for next use
+                            article = False
+                            if double: # drop entry if it is double
+                                titlelist = titlelist[:-1]
+                                datelist = datelist[:-1]
+                                sourcelist = sourcelist[:-1]
+                                articlelist = articlelist[:-1]
+                                double = False
+                if line == "HD":
+                    title = True
+                if line == "PD":
+                    day = True
+                if line == "SN":
+                    source = True
+                if line == "LP" or line == "TD":
+                    article = True
+            f.close()
+            articleno.append((len(articlelist), file)) #stores number of articles appended to df for very date in a list
+            for i in range(len(titlelist)): #save content of file as collected in lists in data frame
+                articledf = articledf.append([[datelist[i], titlelist[i], articlelist[i], sourcelist[i]]], ignore_index=True)
         
-        for i in range(len(titlelist)): #save content of file as collected in lists in data frame
-            articledf = articledf.append([[datelist[i], titlelist[i], articlelist[i], sourcelist[i]]], ignore_index=True)
-    
     #name column headers
     articledf.columns = ["Date", "Title", "Article", "Source"]
-    type(articledf.iloc[0,0])
+    articledf.shape
+    len(articleno)
+    max(articleno)
+    min(articleno)
     
     #Save to CSV to use in other projects, etc.
     #==========================================

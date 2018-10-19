@@ -379,66 +379,17 @@ The treasury yields for all other maturities are depicted in Figure \ref{alltrea
 
 \section{Text Data}
 
-Articles are collected from the Dow Jones Factiva Database (https://global.factiva.com) by use of the search terms \textit{Federal Reserve} and \textit{interest rate}. Only articles that appeared in the \textit{United States} on the subject of \textit{interest rates} in the time frame of three days around each target rate adjustment (the day before, of, and after every target rate adjustment listed in Table \ref{tab:target}) are taken into account. The articles are from the \textit{The Wall Street Journal}, \textit{Financial Times}, \textit{Reuters}, \textit{The Associated Press}, \textit{Market News International}, \textit{Dow Jones Institutional News}, \textit{Agence France}, and \textit{AFX}, as these newspap	ers seem to publish the most articles on the topic.
+Articles are collected from the Dow Jones Factiva Database (https://global.factiva.com) by use of the search terms \textit{Federal Reserve} and \textit{interest rate}. Only articles that appeared in the \textit{United States} on the subject of \textit{interest rates} in a window of three days around each target rate adjustment (the day before, of, and after an adjustment as listed in Table \ref{tab:target}) are taken into account. The articles are mainly taken from the \textit{The Wall Street Journal}, \textit{Financial Times}, \textit{Reuters}, \textit{The Associated Press}, \textit{Market News International}, \textit{Dow Jones Institutional News}, \textit{Agence France}, and \textit{AFX}, as these newspapers seem to publish the most articles on the topic. 
 
-More than 100 articles: 15.12.2016 / 17.12.2015 / 22.01.2008 / 18.09.2007/ // 08.10.2008 corrupted file!//
+From October 1, 1998 to September 30, 2018, 56 target rate adjustments have taken place, for which a total of 2'324 articles have been extracted. Since the FED changed its policy from undertaking a target rate change on the same day as a FOMC meeting to only doing so on the following day, articles $\pm1$ day around the official target rate change have been collected. This ensures that the articles capture any information, speculation, and interpretations that abound directly after the meeting, on the day of the target rate change as well as on the following day. On rare occasions, the number of articles ran in the several hundreds and only the most relevant have been selected. The final sample comprises between 14 and 98 publications for every adjustment %there have been  concerning the target rate and its implications for interest rates and the economy. 
 
-
-The Wall Street Journal
-
-Financial Times
-
-Dow Jones Newswires / Institutional News
-
-Reuters News
-
-The Associated Press
-
-Market News International
-
-Oster Down Jones Select
-
-AFX
-
-SUBJECT: Interest rate
-
-REgion: United States
-
-Sources: Reuters - All Sources, The Associated Press - all Sources, Financial Times - avail....all sources, The Wall Street Journal -- All sources, Market News International, Dow Jones Institutional News
-
-articles from +-1 day of target rate adjustment
-
--- Agence France 
-
--- AFX
-
--- the evening standard
-
--- New york Post
-
-NBC News:today
-
-CBS News
-
-Dow Jones Business News
-
-\begin{itemize}
-	\item Federal Funds target rates  and major anouncements -> website of the Federal Reserve
-	\item newspaper articles as collected by the Factiva database
-	\item daily yield curve by Thompson Reuters Datastream.
-\end{itemize}
+%More than 100 articles, needed selection: 15.12.2016 / 17.12.2015 / 22.01.2008 / 18.09.2007/ // 08.10.2008 corrupted file! - no wall street journal//
 
 
-all absolute Fed target rate changes during the sample period -- ev. sind 10 Jahre nicht genug, vor allem weil es dann nur die extraordinary years sind - 20 Jahre? training and testing samples? aber dann müsste man annehmen, dass die Narrative über die Jahre gleichbleiben? oder aber man nimmt einzelne Datenpunkte aus dem sample raus? einzelne Tage (wohl zu wenige Observations) - einzelne ARtikel - sagt das was aus?
-
-Bloomberg, Financial Times, Reuters, Wall Street Journal, Dow Jones Newswires, AFX, Market News International, the Associated Press and others as collected from the Factiva database
 
 
-January, 1st 2002 until June, 27th 2017, implying 4,040 changes in the yield curve of which 33 took place during a target rate adjustment
-
-
-\subsection{NOTES}
-BEsprechung - 24.09.2018
+\section{NOTES}
+Besprechung - 24.09.2018
 ------------------------
 
 - Frage Juan Pablo Ortega ob er Korreferent sein will
@@ -449,7 +400,9 @@ BEsprechung - 24.09.2018
 
 - modell ist gut, unsupervised learning verwenden, nicht vorher sagen, wo geht's hoch und wo runter, und dann ev. auch out-of sample probieren, aber das wäre Paradedisplizin, keine Garantie, dass das funktoniert
 
+---my thoughts before meeting
 
+all absolute Fed target rate changes during the sample period -- ev. sind 10 Jahre nicht genug, vor allem weil es dann nur die extraordinary years sind - 20 Jahre? training and testing samples? aber dann müsste man annehmen, dass die Narrative über die Jahre gleichbleiben? oder aber man nimmt einzelne Datenpunkte aus dem sample raus? einzelne Tage (wohl zu wenige Observations) - einzelne ARtikel - sagt das was aus?
 
 
 \chapter{Results}
