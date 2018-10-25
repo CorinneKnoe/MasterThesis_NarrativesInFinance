@@ -3,7 +3,7 @@
 Created on Sun Oct 14 11:40:29 2018
 
 @author: corin
-create graphs that show the timeseries data over time
+read in financial data as prepared in csv
 """
 
 import time
@@ -22,16 +22,11 @@ if __name__ == '__main__':
     for i in range(len(financedf)): #replace date string with date format
         financedf.iloc[i,0] = datetime.datetime.strptime(financedf.iloc[i,0], '%Y-%m-%d')
     
-    financedf.iloc[1,0] == treasurydf.iloc[1,0]
-    financedf.iloc[:,1] == treasurydf.iloc[:,1]
-    financedf.iloc[5215,11] == treasurydf.iloc[5215,11]
-    type(financedf.iloc[0,-1])
-
+    #set start and end dates, cut df to fit windows we want
+    start = datetime.datetime.strptime('01.10.1998', '%d.%m.%Y')
+    end = datetime.datetime.strptime('01.10.2018', '%d.%m.%Y')
+    financedf = financedf.loc[(financedf.Date >= start) & (financedf.Date < end), :]
     
-    print('its running')
-    #change path to directory of txt data
-    this_path = os.path.abspath(os.path.dirname(__file__)) #take absolute path of file, to construct relative path to data
-    base_path = os.path.dirname(this_path)
-    path = os.path.join(base_path, "FACTIVA_Data")
-    #path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/FACTIVA_Data/" #absolute path to the txt files
-    print(path) #setting working directory
+    
+    
+   

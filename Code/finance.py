@@ -69,7 +69,7 @@ if __name__ == '__main__':
     
     #keys are not ordered, here a list with all keys in the order we want them in the final data frame
     yieldorder = ['TRUS1MT', 'TRUS3MT', 'TRUS6MT', 'TRUS1YT', 'TRUS3YT', 'TRUS5YT', 'TRUS7YT', 'TRUS10YT', 'TRUS20CT', 'TRUS30YT']   
-        
+    
     #create a big dataframe for all yield duration, pull data from dictionary
     treasurydf = pd.DataFrame()  #initiate new data fram
     treasurydf['Date'] = tydict['TRUS1MT'].iloc[:, 0] #we take dates of 1 month rate and put in first column
@@ -99,9 +99,10 @@ if __name__ == '__main__':
     treasurydf['TgtLow'] = treasurydf['TgtLow']*100
     treasurydf['TgtHigh'] = treasurydf['TgtHigh']*100
 
+    #to preven unnecessary decimals
+    treasurydf = treasurydf.round(3)
     
-    
-    #saving in csv -- careful, has floating point problems, decimals are changed
+    #saving in csv
     treasurydf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/financeData.csv", index=False, float_format='%.3f') #create a csv to store our data
     
     
@@ -115,7 +116,7 @@ if __name__ == '__main__':
     start = datetime.datetime.strptime('01.10.1998', '%d.%m.%Y')
     end = datetime.datetime.strptime('01.10.2018', '%d.%m.%Y')
     tdf = treasurydf.loc[(treasurydf.Date >= start) & (treasurydf.Date < end), :]
-    
+    tdf.loc[5214,'TgtLow']
 #    sum(tdf['Adjustment']) #total target rate adjustments in the time period
     
 #    tdf.loc[tdf.TRUS1MT.notnull()] #find non nan entries for 1month rate

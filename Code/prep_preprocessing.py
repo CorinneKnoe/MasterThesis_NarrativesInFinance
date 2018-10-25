@@ -29,6 +29,11 @@ from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
 #from sklearn.decomposition import LatentDirichletAllocation 
 
+from nltk.probability import ConditionalFreqDist
+nltk.download('punkt')
+from nltk.tokenize import word_tokenize
+
+
 def preprocessor(text):
     '''removing all punctuation, non-letter characters and white spaces'''
     text.strip()
@@ -65,6 +70,8 @@ if __name__ == '__main__':
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/text_Data/" #absolute path to the txt files
     os.chdir(path) #setting working directory
     
+    #Reading in text data between Oct 1, 98 and Sep. 30,2018
+    #===============================================
     
     #initialiye indicator variables
     title = False
@@ -154,10 +161,10 @@ if __name__ == '__main__':
         
     #name column headers
     articledf.columns = ["Date", "Title", "Article", "Source"]
-    articledf.shape
-    len(articleno)
-    max(articleno)
-    min(articleno)
+    
+#    len(articleno) #to see how many articles there are per file
+#    max(articleno)
+#    min(articleno)
     
     #Save to CSV to use in other projects, etc.
     #==========================================
@@ -171,9 +178,49 @@ if __name__ == '__main__':
 #     articledf.iloc[3,2]
 #     articledf.iloc[0,:]
 # =============================================================================
+    articleno[0][0]
+   articledf.iloc[0,1]
+   word_tokenize(articledf.iloc[0,1])
+   articledf.iloc[0,2]
+   word_tokenize(articledf.iloc[0,2])
 
+    #Set up data frame with No of words and articles per day
+    #=======================================================
+    
+    #call FED data
+    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/FED_Data" #absolute path to the txt files
+    os.chdir(path) #setting working directory
+    
+    #read in the FED data on target rate
+    adjustdf = pd.read_csv('adjustments.csv', sep = ',')
+    #drop rows if empty
+    while math.isnan(adjustdf.iloc[len(adjustdf)-1,1]):
+        adjustdf = adjustdf[:-1] #drop last row if it is empty
+                
+    for i in range(len(adjustdf)): #replace date string with date format
+        adjustdf.iloc[i,0] = datetime.datetime.strptime(adjustdf.iloc[i,0], '%d/%m/%Y')
+    
+    #rearrange dataframes to ascending order
+    adjustdf.sort_values('Date', inplace = True)
+    
+    #set start and end dates, cut df to fit windows we want
+    start = datetime.datetime.strptime('01.10.1998', '%d.%m.%Y')
+    end = datetime.datetime.strptime('01.10.2018', '%d.%m.%Y')
+    adjustdf = adjustdf.loc[(adjustdf.Date >= start) & (adjustdf.Date < end), :]
+    
+    #Set up data frame with word and article count per date
+    wcount = pd.DataFrame()
+    for i in range(len(adjustdf.loc[:,'Date'])):
+        day = adjustdf.loc[0, 'Date']
+        dayup = day + datetime.timedelta(days=1) #look for articles day prior
+        daylow = day - datetime.timedelta(days=1) #look for articles day after, and everything between
+    
+    wcount.append([[datelist[i], titlelist[i], articlelist[i], sourcelist[i]]], ignore_index=True)
+        
+    #name column headers
+    wcount.columns = ["Date", "ArticleCount", "WordCount"]
+    
    
-
     
     #Preprocessing - Cleaning up the text data
     #==========================================
@@ -187,3 +234,9 @@ if __name__ == '__main__':
     #Save to CSV to use in other projects, etc.
     #==========================================
     df.to_csv("got_processed.csv", index=False, encoding="utf-8") #create a csv to store our data
+    
+    sent = "the the won't, and isn't 99 the dog dog some other words that we do not care about"
+    cfdist = ConditionalFreqDist() #ist ein dictionary
+    for word in word_tokenize(sent):
+        condition = len(word)
+        cfdist[condition][word] += 1
