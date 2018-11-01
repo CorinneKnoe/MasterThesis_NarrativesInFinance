@@ -381,10 +381,48 @@ The treasury yields for all other maturities are depicted in Figure \ref{alltrea
 
 Articles are collected from the Dow Jones Factiva Database (https://global.factiva.com) by use of the search terms \textit{Federal Reserve} and \textit{interest rate}. Only articles that appeared in the \textit{United States} on the subject of \textit{interest rates} in a window of three days around each target rate adjustment (the day before, of, and after an adjustment as listed in Table \ref{tab:target}) are taken into account. The articles are mainly taken from the \textit{The Wall Street Journal}, \textit{Financial Times}, \textit{Reuters}, \textit{The Associated Press}, \textit{Market News International}, \textit{Dow Jones Institutional News}, \textit{Agence France}, and \textit{AFX}, as these newspapers seem to publish the most articles on the topic. 
 
-From October 1, 1998 to September 30, 2018, 56 target rate adjustments have taken place, for which a total of 2'324 articles have been extracted. Since the FED changed its policy from undertaking a target rate change on the same day as a FOMC meeting to only doing so on the following day, articles $\pm1$ day around the official target rate change have been collected. This ensures that the articles capture any information, speculation, and interpretations that abound directly after the meeting, on the day of the target rate change as well as on the following day. On rare occasions, the number of articles ran in the several hundreds and only the most relevant have been selected. The final sample comprises between 14 and 98 publications for every adjustment %there have been  concerning the target rate and its implications for interest rates and the economy. 
+From October 1, 1998 to September 30, 2018, 56 target rate adjustments have taken place, for which a total of 2'318 articles have been extracted. Since the FED changed its policy from undertaking a target rate change on the same day as a FOMC meeting to only doing so on the following day, articles $\pm1$ day around the official target rate change have been collected. This ensures that the articles capture any information, speculation, and interpretations that abound directly after the meeting, on the day of the target rate change as well as on the following day. On rare occasions, the number of articles ran in the several hundreds and only the most relevant have been selected. 
 
+The final sample comprises between 14 and 97 publications for every policy day. In total, over $1'600'000$ tokens are extracted from these articles. After stop words have been removed, the token count drops to roughly $1'100'000$. (For more information on text preprocessing, see Chapter \ref{preprocessing}). Figure \ref{tokencount} in Appendix \ref{AppendixB} illustrates the spread of the text data across policy days and shows that the token count fluctuates quite drastically. More data is available for recent target rate adjustments, less for more historic adjustments.
+
+Looking at the most common words in the entire text data base, as illustrated in Figure \ref{wcloud}, yields no surprises. As one might expect, the articles make heavy use of context specific vocabulary such as "interest rate", "federal reserve", "economy", but also of terms appropriate for a financial environment such as "basis point", "percentage point", or "investor". Even just considering the titles of the articles yields an almost identical word distribution. Thus, headlines appear to be just as factual and technical as the general text body. Overall, this is a first indication that while there is a set vocabulary to talk about the facts of a target rate change, there is no similarly systematic vocabulary to express interpretations and sentiments surrounding such a change. 
+
+\begin{figure}
+	\caption{Wordcloud illustrating the most common words across all articles.}
+	\centering
+	\includegraphics[scale=0.2]{Images/wordcloud.pdf}
+	\label{wcloud}
+\end{figure}
+
+
+	
 %More than 100 articles, needed selection: 15.12.2016 / 17.12.2015 / 22.01.2008 / 18.09.2007/ // 08.10.2008 corrupted file! - no wall street journal//
 
+
+\section{Methodology}
+
+
+\subsection{Text Preprocessing}\label{preprocessing}
+For almost all purposes of computational linguistics, the texts have to be processed and prepared. To that end, text data first needs to be segmented into words, that is the sequence of characters that make up a text needs to be broken down to locate the word boundaries. Words identified thus are referred to as tokens and the process is known as tokenization \cite[p. 10]{Palmer.2010}. I apply the word tokenizer of the nltk package \citep{Bird.2010}, as this application is prepared to deal with frequently occurring character sequences appertaining to the English language, such as contractions. \citet[pp. 16-19]{Palmer.2010} rightly points out that there exists plenty of tokenization ambiguity, even in a language where the words are generally space-delimited. Some of this ambiguity is hard to resolve, such as the use of apostrophes for the genitive form of a noun, for the plural form, and for verbal contractions. \textcolor{red}{Could give a (code) example in the appendix}
+
+In a next step, frequent words that carry little information, commonly referred to as stop words, are removed from the text. 
+
+In a next step, Porter stemmer 
+
+ especially concerning punctuation,  already needs to address the ambiguity that is inherent in natural language. there is a lot of ambiguity in natrual language that 
+
+Depending on what we need for further processing, the text needs to be prepared 
+In a first step, the text data must be prepared for analysis. To that end, the text is split into meaningful tokens. I used my own tokenizer for this task,
+Porter stemmer,  
+Preprocessing of text:
+ - tokenization, how and which one chosen and why?
+ - stemmer 
+ 	-stop word removal
+ 	- nltk.tokenize.mwe module
+ 	
+%[word_tokenize(t) for t in sent_tokenize(s)]
+%[['Good', 'muffins', 'cost', '\$', '3.88', 'in', 'New', 'York', '.'],
+%['Please', 'buy', 'me', 'two', 'of', 'them', '.'], ['Thanks', '.']]
 
 
 
@@ -550,6 +588,20 @@ all absolute Fed target rate changes during the sample period -- ev. sind 10 Jah
 
 
 \renewcommand{\theequation}{B.\arabic{equation}}
+
+
+\chapter{Text data}\label{AppendixB}
+
+\begin{figure}
+	\caption{Token and article count for every policy day.}
+	\centering
+	\includegraphics[scale=1]{Images/tokencount.pdf}
+	\label{tokencount}
+\end{figure}
+
+
+
+\renewcommand{\theequation}{C.\arabic{equation}}
 
 
 \chapter{Whatever may come...}
