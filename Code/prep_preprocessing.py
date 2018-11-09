@@ -19,6 +19,8 @@ import os
 import numpy as np
 import math
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+from matplotlib import pylab
 import seaborn; seaborn.set()
 import re
 #import pyprind
@@ -33,25 +35,31 @@ import re
 
 #from sklearn.decomposition import LatentDirichletAllocation 
 from nltk.corpus import gutenberg
-nltk.download('gutenberg')
+#nltk.download()
+#from nltk.book import *
 from wordcloud import WordCloud
 from nltk.probability import ConditionalFreqDist
 from nltk import FreqDist
-from nltk.draw import dispersion_plot
-nltk.download('punkt')
+#from nltk.draw import dispersion_plot
+#nltk.download('punkt')
 from nltk.tokenize import word_tokenize
 
 
-def preprocessor(text):
-    '''apply the nltk tokenizer and remove the stop words, lower case everything'''
-    stop = stopwords.words('english')
+def tokenize(text):
+    '''apply the nltk tokenizer and lower case everything, gives out a 
+    list of tokens'''
     text = nltk.word_tokenize(text.strip()) #tokenize the text of the article    
+    #text = [w.lower() for w in text]
+    return text
+
+def removestopwords(text):
+    '''remove the stop words of a list of tokens'''
+    stop = stopwords.words('english')
     text = [w.lower() for w in text if w.lower() not in stop]
     text = " ".join(text) #to remove all unnecessary white spaces
     return text.strip()
 
-
-def tokenizer_porter(text):
+def stemmer_porter(text):
     '''Porter stemmer - split text and convert all words back to 
     their stem, e.g. running -> run, return a text of the stemmed words'''
     porter = PorterStemmer()
@@ -67,9 +75,62 @@ def albhabetizer(text):
     return text.strip()
 
 
+def dispersion_plot(text, words, xnumbers, xlabels, ignore_case=False, title="Lexical Dispersion Plot"):
+    """
+    Generate a lexical dispersion plot.
+    :param text: The source text
+    :type text: list(str) or enum(str)
+    :param words: The target words
+    :type words: list of str
+    :param ignore_case: flag to set if case should be ignored when searching text
+    :type ignore_case: bool
+    :xnumbers: a list with numbers where to set the x labels, i.e. at 200'000 words, 400'000 words, etc.
+    :xlabels: a list with names/years as to what to call the x labels, 
+    done to replace word count with year number
+    """
+
+    #try:
+    #    from matplotlib import pylab
+    #except ImportError:
+    #    raise ValueError('The plot function requires matplotlib to be installed.'
+           #          'See http://matplotlib.org/')
+    text = list(text)
+    words.reverse()
+
+    if ignore_case:
+        words_to_comp = list(map(str.lower, words))
+        text_to_comp = list(map(str.lower, text))
+    else:
+        words_to_comp = words
+        text_to_comp = text
+
+    #points = [(x,y) for x in range(len(text_to_comp)) for y in range(len(words_to_comp)) if text_to_comp[x] == words_to_comp[y]]
+    points = [] #finding the points where words are identical, even when words have several word parts
+    for x in range(len(text_to_comp)):
+        for y in range(len(words_to_comp)):
+            wordlength = len(words_to_comp[y].split())
+            if " ".join(text_to_comp[x:(x+wordlength)]) == words_to_comp[y]:
+                points.append((x,y))
+                
+    if points:
+        x, y = list(zip(*points)) #produces two big tuples
+        type(x)
+    else:
+        x = y = () #empty tuples if there are no matches
+    plt.style.use('seaborn')
+    seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
+    fig, ax = plt.subplots(figsize=(7,4))
+    ax.plot(x, y, '|', color="b", markeredgewidth=0.1, scalex = True) #seaborn sets markeredgewidth to zero, need to specify or nonfilled markers won't show in the plot
+    ax.set_xlim(xmin=0, xmax=len(text_to_comp))
+    plt.yticks(list(range(len(words))), words, color="b")
+    plt.xticks(xnumbers, xlabels)
+    plt.ylim(-1, len(words))
+    plt.title(title)
+    plt.xlabel("Year")
+    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/dispersionplot.pdf", bbox_inches='tight')
 
 if __name__ == '__main__':
-    
+
     #Reading in data and preparing for preprocessing
     #===============================================
     
@@ -82,6 +143,7 @@ if __name__ == '__main__':
 # =============================================================================
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/text_Data/" #absolute path to the txt files
     os.chdir(path) #setting working directory
+    #os.getcwd()
     
     #Reading in text data between Oct 1, 98 and Sep. 30,2018
     #===============================================
@@ -109,7 +171,7 @@ if __name__ == '__main__':
         #with open(os.path.join(path,file), 'r') as infile:
          #   f = infile.read()
         if  datetime.datetime.strptime(file[:-4], '%Y-%m-%d') > datetime.datetime.strptime('1998-10-01', '%Y-%m-%d'): #only read in data if after Oct 1, 1998
-            f = open(os.path.join(path,file)) #open file of this iteration of loop
+            f = open(os.path.join(path,file))#, errors='ignore')#encoding="utf8") #open file of this iteration of loop
             for line in f: #read through every line of file that was just opened
                 line = line.strip()
                 if title:
@@ -178,7 +240,7 @@ if __name__ == '__main__':
   
     #Save to CSV to use in other projects, etc.
     #==========================================
-    #articledf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/text_Data/FACTIVArticles.csv", index=False, encoding="utf-8") #create a csv to store our data
+    #articledf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/FACTIVA_Data/FACTIVArticles.csv", index=False, encoding="utf-8") #create a csv to store our data
     
 
     #Set up data frame with Number of words and articles per day
@@ -189,6 +251,7 @@ if __name__ == '__main__':
     os.chdir(path) #setting working directory
     
     #read in the FED data on target rate
+    ####################################
     adjustdf = pd.read_csv('adjustments.csv', sep = ',')
     #drop rows if empty
     while math.isnan(adjustdf.iloc[len(adjustdf)-1,1]):
@@ -204,8 +267,11 @@ if __name__ == '__main__':
     start = datetime.datetime.strptime('01.10.1998', '%d.%m.%Y')
     end = datetime.datetime.strptime('01.10.2018', '%d.%m.%Y')
     adjustdf = adjustdf.loc[(adjustdf.Date >= start) & (adjustdf.Date < end), :]
-    
+    adjustdf = adjustdf.reset_index(drop=True) #so that index starts at 0 for oldes entries
+     
     #Set up data frame with word and article count per date
+    #doesn't change anything in articledf itself
+    #############################################
     stop = stopwords.words('english') #stopwords to be removed 
     wcountdf = pd.DataFrame()
     for i in range(len(adjustdf.loc[:,'Date'])):
@@ -218,16 +284,17 @@ if __name__ == '__main__':
         words = 0
         stoptokens = 0
         for l in range(noofart):
-            textprep = nltk.word_tokenize(slicedf.loc[l, 'Article']) #tokenize the text of the article
+            textprep = tokenize(slicedf.loc[l, 'Article']) #tokenize the text of the article
             words += len(textprep) #adding up the words/tokens in all articles per date    
             stoptokens += len([w for w in textprep if w.lower() not in stop]) #count words without stopwords
-        
         wcountdf = wcountdf.append([[day, noofart, words, stoptokens]], ignore_index=True)
-        
+
     #name column headers
     wcountdf.columns = ["Date", "ArticleCount", "TokenCount", "StopTokenCount"]
-    sum(wcountdf["TokenCount"])
+    #sum(wcountdf["TokenCount"])
+    #sum(wcountdf["StopTokenCount"])
     
+    #to store figure of token count
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
     os.chdir(path) 
     
@@ -261,61 +328,70 @@ if __name__ == '__main__':
     #ax2.xaxis.grid(color=seaborn.color_palette('deep')[1])#, grid_alpha=1, grid_linestyle='-')
     plt.savefig("tokencount.pdf", bbox_inches='tight')
     
-    
-
-    
     #Preprocessing - Cleaning up the text data
     #==========================================
         
     #apply preprocessor to articles in data frame: tokenize and remove stop words
-    articledf['Article'] = articledf['Article'].apply(preprocessor)
-    articledf['Title'] = articledf['Title'].apply(preprocessor)
+    articledf['Article'] = articledf['Article'].apply(tokenize)
+    articledf['Article'] = articledf['Article'].apply(removestopwords)
+    articledf['Title'] = articledf['Title'].apply(tokenize)
+    articledf['Title'] = articledf['Title'].apply(removestopwords)
     
     #Save to CSV to use in other projects, etc.
     #==========================================
-    #articledf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/text_Data/TokenizedArticles.csv", index=False, encoding="utf-8") #create a csv to store our data
+    #articledf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/FACTIVA_Data/TokenizedArticles.csv", index=False, encoding="utf-8") #create a csv to store our data
     
     #Counting most common words, explore text data
     #=============================================
-    alltext = ''
+    alltext = ''  #collect text as counted in wcountdf
     for i in range(len(articledf['Article'])):
         alltext += ' ' + articledf.loc[i, 'Article']
         
-    alltitle = ''
+    alltitle = '' #collect title text as counted in wcountdf
     for t in range(len(articledf['Title'])):
         alltitle += ' ' + articledf.loc[t, 'Title']
     
     
     #remove all non alphabetic tokens from this text
-    alltextlist = [w for w in albhabetizer(alltext).split() if len(w) > 1]
-    fdist = FreqDist(alltextlist)
+    alltextalph= [w for w in albhabetizer(alltext).split() if len(w) > 1]
+    fdist = FreqDist(alltextalph)
     fdist.most_common(40)
     
-    alltitle = [w for w in albhabetizer(alltitle).split() if len(w) > 1]
-    fdist = FreqDist(alltitle)
+    alltitlealph = [w for w in albhabetizer(alltitle).split() if len(w) > 1]
+    fdist = FreqDist(alltitlealph)
     fdist.most_common(40)
     
     #generate a word cloud
-    wcloudalltext = " ".join(alltext).strip() #turn list into string
+    wcloudalltext = " ".join(alltextalph).strip() #turn list into string
     wcloud = WordCloud(max_font_size=40, background_color="white").generate(wcloudalltext) #generate a word cloud
     plt.figure(figsize=(40,40))
     plt.imshow(wcloud, interpolation="bilinear")
     plt.axis("off")
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/wordcloud.pdf", bbox_inches='tight')
+    #plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/wordcloud.pdf", bbox_inches='tight')
     
-    wcloudalltitle = " ".join(alltitle).strip() #turn list into string
+    wcloudalltitle = " ".join(alltitlealph).strip() #turn list into string
     wtitlecloud = WordCloud(max_font_size=40, background_color="white").generate(wcloudalltitle) #generate a word cloud
     plt.figure(figsize=(40,40))
     plt.imshow(wtitlecloud, interpolation="bilinear")
     plt.axis("off")
     
-    wcloudtextlist = wcloudalltext.split()
-    dispersion_plot(wcloudtextlist, ["interest", "federal reserve", "central bank", "economy"])
+    #dispersion plot of important words
+    wordsattick = [200000, 400000, 600000, 800000, 1000000] #where to set xlabels
     
-    words = ['Elinor', 'Marianne', 'Edward', 'Willoughby']
-    dispersion_plot(gutenberg.words('austen-sense.txt'), words)
-    plt.show()
+    counter = 0         #get labels for x axis
+    index = 0
+    labellist = []
+    for wc in wordsattick:
+        while counter < wc:
+            day = str(wcountdf.iloc[index, 0])[:4]
+            counter += wcountdf.iloc[index, 3]
+            index += 1
+        labellist.append(day)        
     
+    dispersion_plot(alltext.split(), ["interest rate", "federal reserve", "central bank", "rate cut", "rate increase", "economy"], wordsattick, labellist)
+    
+
+    #????#
     #Processing documents into tokens (incl. stemming and removing stopwords)
     df['chapter'] = df['chapter'].apply(tokenizer_porter)
     

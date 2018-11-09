@@ -385,7 +385,7 @@ From October 1, 1998 to September 30, 2018, 56 target rate adjustments have take
 
 The final sample comprises between 14 and 97 publications for every policy day. In total, over $1'600'000$ tokens are extracted from these articles. After stop words have been removed, the token count drops to roughly $1'100'000$. (For more information on text preprocessing, see Chapter \ref{preprocessing}). Figure \ref{tokencount} in Appendix \ref{AppendixB} illustrates the spread of the text data across policy days and shows that the token count fluctuates quite drastically. More data is available for recent target rate adjustments, less for more historic adjustments.
 
-Looking at the most common words in the entire text data base, as illustrated in Figure \ref{wcloud}, yields no surprises. As one might expect, the articles make heavy use of context specific vocabulary such as "interest rate", "federal reserve", "economy", but also of terms appropriate for a financial environment such as "basis point", "percentage point", or "investor". Even just considering the titles of the articles yields an almost identical word distribution. Thus, headlines appear to be just as factual and technical as the general text body. Overall, this is a first indication that while there is a set vocabulary to talk about the facts of a target rate change, there is no similarly systematic vocabulary to express interpretations and sentiments surrounding such a change. 
+Looking at the most common words in the entire text data base, as illustrated in Figure \ref{wcloud}, yields no surprises. As one might expect, the articles make heavy use of context specific vocabulary such as "interest rate", "federal reserve", "economy", but also of terms appropriate for a financial environment such as "basis point", "percentage point", or "investor". Even analyzing just the headlines of the articles yields an almost identical word usage. Thus, headlines appear to be just as factual and technical as the general text body. Overall, this is a first indication that while there is a set vocabulary to talk about the facts of a target rate change, there is no similarly systematic vocabulary to express interpretations and sentiments surrounding such a change. 
 
 \begin{figure}
 	\caption{Wordcloud illustrating the most common words across all articles.}
@@ -394,6 +394,14 @@ Looking at the most common words in the entire text data base, as illustrated in
 	\label{wcloud}
 \end{figure}
 
+A closer look at the dispersion of the most common words reveals that their usage is consistent over time (see Figure \ref{dispersion}). The frequently used terms are just as likely to be used in older articles as in newer publications. As one might expect, the articles talk about "rate cut" in times where the Fed is lowering the target rate, and about "rate increase" when the Fed is in the process of raising the target rate.
+
+\begin{figure}
+	\caption{Dispersion of most common words across time.}
+	\centering
+	\includegraphics[scale=1]{Images/dispersionplot1.pdf}
+	\label{dispersion}
+\end{figure}
 
 	
 %More than 100 articles, needed selection: 15.12.2016 / 17.12.2015 / 22.01.2008 / 18.09.2007/ // 08.10.2008 corrupted file! - no wall street journal//
