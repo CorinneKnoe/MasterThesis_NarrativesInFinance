@@ -56,6 +56,13 @@ if __name__ == '__main__':
     adjustdf.sort_values('Date', inplace = True)
     meetingdf.sort_values('MeetingDate', inplace = True)
     
+    start = datetime.datetime.strptime('01.10.1998', '%d.%m.%Y')
+    end = datetime.datetime.strptime('01.10.2018', '%d.%m.%Y')
+    mdf = adjustdf.loc[(adjustdf.MeetingDate >= start) & (meetingdf.MeetingDate < end), :]
+    
+    #saving in csv
+    #mdf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/MeetingData.csv", index=False) #create a csv to store our data
+    
     #read in the csv files with the treasury yields
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/Datastream2" #absolute path to the txt files
     os.chdir(path) #setting working directory
@@ -103,7 +110,7 @@ if __name__ == '__main__':
     treasurydf = treasurydf.round(3)
     
     #saving in csv
-    treasurydf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/financeData.csv", index=False, float_format='%.3f') #create a csv to store our data
+    #treasurydf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/financeData.csv", index=False, float_format='%.3f') #create a csv to store our data
     
     
     #Producing graphs

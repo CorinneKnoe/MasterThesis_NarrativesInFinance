@@ -16,11 +16,8 @@ import time
 import datetime
 import pandas as pd
 import os
-import numpy as np
 import math
 import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
-from matplotlib import pylab
 import seaborn; seaborn.set()
 import re
 #import pyprind
@@ -34,7 +31,7 @@ import re
 #nltk.download('stopwords')
 
 #from sklearn.decomposition import LatentDirichletAllocation 
-from nltk.corpus import gutenberg
+#from nltk.corpus import gutenberg
 #nltk.download()
 #from nltk.book import *
 from wordcloud import WordCloud
@@ -236,7 +233,6 @@ if __name__ == '__main__':
                 articledf.iloc[-50:]
     #name column headers
     articledf.columns = ["Date", "Title", "Article", "Source"]
-    
   
     #Save to CSV to use in other projects, etc.
     #==========================================

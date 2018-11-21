@@ -337,9 +337,27 @@ Akerlof and Shiller understand narratives as a convention, but it is more than t
 
 \section{Methods in Natural Language Processing}
 
+\subsection{Topic Analysis}
+Topic analysis aims to uncover latent topics in text data using unsupervised text mining techniques. A topic is the theme or subject of a text and can become salient at different levels of granularity - the topic of a sentence, a paragraph, a book, an entire library, etc. In a first step, a set number of topics has to be discovered in the text data. In a second step, the extent to which a specific document in the text collection covers the identified topics has to be measured \cite[p.~329--330]{Zhai.2016}.
+
+%Following the notation of \citeauthor{Zhai.2016}, topic mining task is defined as follows:
+The input data of a topic model is usually a collection of $N$ text documents, $C = \{ d_1, ... , d_N\}$, as well as a specification of the number of topics $k$ to be identified. As output, the model yields $k$ topics, $\{\theta_1,...,\theta_k\} $, as well as the probability of document $d_i$ covering topic $\theta_j$, denoted by $\pi_{ij}$, with $\sum_{j=1}^{k}\pi_{ij} = 1$. To set up the task, we need to define what exactly constitutes a topic, that is how to define $\theta_j$ \cite[p.~331]{Zhai.2016}.
+
+Different ways to define topics are available: topics as a single term, topics as word distribution,
+unigram language model,, use prob distribution over words to fin tpic, use MLE, problem: common words with giving little information are given high values, ' add background lagnuage model.  
+
+While Topic Analysis can be a powerful tool to evaluate text data, there are also problematic aspects. issues are obvious. Human judgment is needed in defining what exactly constitutes a topic
+
+\cite{Hoffman2010} \\
+\cite{Steyvers(2007)}\\
+\cite{Blei.2003}\\
+\cite{Asuncion.2009}\\
+here:  general topics, document specific word distributions, corpus wide background distribution \cite{Chem.2007}\\
+\cite{Bishop.2006}\\
+\cite{Darling.2011}\\
 \subsection{Sensitivity Analysis}
 
-\subsection{Topic Modeling}
+
 
 
 \chapter{Data and Methodology}
@@ -432,6 +450,14 @@ Preprocessing of text:
 %[['Good', 'muffins', 'cost', '\$', '3.88', 'in', 'New', 'York', '.'],
 %['Please', 'buy', 'me', 'two', 'of', 'them', '.'], ['Thanks', '.']]
 
+
+
+\subsection{Application of Topic Analysis}
+For our purposes, topic analysis is used to identify the topics contained in the articles reporting on the target rate adjustment, the hypothesis being that different topics will emerge for different interpretations of the Fed's policy move. 
+
+I could use LDA when doing out of sample prediction - because then I can predict documents I have not seen before, because I train an LDA model, but when I use all documents, I could just as easily do the mixed model approach with several unigram models???
+
+tf-idf term weighting: Apply Term Frequency Inverse Document Frequency normalization to a sparse matrix of occurrence counts. ,bag of words methodology, feature extraction has a big influence on topics that we will find, corpus specific stopwords, preprocessing with vectorizer of do your own
 
 
 \section{NOTES}
