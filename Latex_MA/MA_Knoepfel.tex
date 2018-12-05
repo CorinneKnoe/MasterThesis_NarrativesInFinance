@@ -333,15 +333,123 @@ Akerlof and Shiller understand narratives as a convention, but it is more than t
 
 
 
-\chapter{Natural Language Processing}\label{NLP}
+\chapter{Natural Language Processing / Topic Modeling}\label{NLP}
 
-\section{Methods in Natural Language Processing}
+\section{Probabilistic Latent Semantic Analysis}
+Probabilistic Latent Semantic Analysis (PLSA) was first introduced by \cite{Hofmann.1999} and proved to be xxx for topic modeling. The main achievement of PLSA was to supplement the theory of Latent Semantic Analysis with a sound statistical foundation and a proper generative model of the data.
+PLSA is based on a mixture model and allows the discovery of latent topics from text data \cite[p.~368]{Zhai.2016}.
 
-\subsection{Topic Analysis}
+ "models each word in a document as a sample from a mixture model, where the mixture components are multinomial random variables that can be viewed as representations of “topics.” \cite[p. 994]{Blei.2003}
+ 
+The linear growth in parameters suggests that the model is prone to overfitting and, empirically, overfitting is indeed a serious problem \cite[p. 1001]{Blei.2003}
+
+\begin{itemize}
+	\item probability of observing a word: $p_d(w) = \lambda_Bp(w|\theta_b) + (1-\lambda_B)\sum_{j=1}^{k}\pi_{d,j}p(w|\theta_j)$
+	\item known: $\lambda_B$, $p(w|\theta_b)$
+	\item Likelihood function for all words in document d: $\sum_{w \in V} c(w,d) log[\lambda_Bp(w|\theta_b) + (1-\lambda_B)\sum_{j=1}^{k}\pi_{d,j}p(w|\theta_j)$]
+	\item Likelihood function for all words in collection C: $\sum_{d \in C}\sum_{w \in V} c(w,d) log[\lambda_Bp(w|\theta_b) + (1-\lambda_B)\sum_{j=1}^{k}\pi_{d,j}p(w|\theta_j)$]
+	\item Unknown parameters: $\pi$ and $\theta$
+	\item use the EM model to compute the Ml estimates for PLSA, more hidden variables in the E step, p. 374, probabilities that word $w$ ind doc $d$ is created by model $j$ or $B$, estimating the latent variables $z$
+	\item $p(z_{d,w}=j)=\frac{\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j)}{\sum_{j'=1}^{k}\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j')}$
+	\item $p(z_{d,w}=B)=\frac{\lambda_Bp(w|\theta_b)}{\lambda_Bp(w|\theta_b)+(1-\lambda_B)\sum_{j=1}^{k}\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j)}$
+	\item M Step, probability of $d$ covering topic $j$, and probability of word $w$ for topic $j$
+	\item $\pi_{d,j}^{(n+1)}=\frac{\sum_{w \in V}c(w,d)(1-p(z_{d,w} =B))p(z_{d,w}=j)}{\sum_{j'}\sum_{w \in V}c(w,d)(1-p(z_{d,w} =B))p(z_{d,w}=j')}$
+	\item $p^{(n+1)}(w|\theta_j)=\frac{\sum_{d \in C}c(w,d)(1-p(z_{d,w} =B))p(z_{d,w}=j)}{\sum_{w'}\sum_{d \in C}c(w',d)(1-p(z_{d,w'} =B))p(z_{d,w'}=j)}$
+	\item p. 376, first need to initialize all the unknown parameters randomly , $\pi$ and the $p(w|\theta)$
+	
+\end{itemize}
+here can implement own algorithm with background model, created myself
+\section{LDA}
+
+First introduced by \cite{Blei.2003}
+%\section{Methods in Natural Language Processing}
+
+"While Hofmann’s work is a useful step toward probabilistic modeling of text, it is incomplete in that it provides no probabilistic model at the level of documents." \cite[p. 994]{Blei.2003}
+
+
+here use package, just include for completeness, prob. difficult to implement myself with background model
+
+\section{Topic Analysis}
 Topic analysis aims to uncover latent topics in text data using unsupervised text mining techniques. A topic is the theme or subject of a text and can become salient at different levels of granularity - the topic of a sentence, a paragraph, a book, an entire library, etc. In a first step, a set number of topics has to be discovered in the text data. In a second step, the extent to which a specific document in the text collection covers the identified topics has to be measured \cite[p.~329--330]{Zhai.2016}.
+
+Bag of words methods, that is we only consider the vocabulary used, but not the position of the word in the document, or the position of the document in the collection.
 
 %Following the notation of \citeauthor{Zhai.2016}, topic mining task is defined as follows:
 The input data of a topic model is usually a collection of $N$ text documents, $C = \{ d_1, ... , d_N\}$, as well as a specification of the number of topics $k$ to be identified. As output, the model yields $k$ topics, $\{\theta_1,...,\theta_k\} $, as well as the probability of document $d_i$ covering topic $\theta_j$, denoted by $\pi_{ij}$, with $\sum_{j=1}^{k}\pi_{ij} = 1$. To set up the task, we need to define what exactly constitutes a topic, that is how to define $\theta_j$ \cite[p.~331]{Zhai.2016}.
+
+\subsection{Mixture Models}
+\begin{itemize}
+	\item probability distribution over words: unigram language model. p. 336 / words can be shared by topics 
+	\item use a probabilistic model to discover such word  distributions - probabilistic topic modeling (337) 
+	\item (TF-IDf approach p.333)
+	\item each topic is a word distribution $\underset{w \in V}{\sum} \ p(w | \theta_i) = 1$, with vocabulary set $V = \{w_1, w_2, ...\} $, and $w$ being unique words, and $p(w | \theta_i)$ is probability of word $w$ in topic $\theta_i$
+	\item as well as the probability of document $d_i$ covering topic $\theta_j$, denoted by $\pi_{ij}$, with $\sum_{j=1}^{k}\pi_{ij} = 1$ / probabilities of all topics sum to one for each document
+	\item generative model (p. 338) a probabilistic model to model how the data are generated, compute probability of how likely we will observe the data we have, model needs some parameters $\Lambda$ / $V$ parameters for word distribution in each topic, so $Vk$, for each document k values of $\pi$, so $Nk$ parameters, free parameters: $(V-1)k + N(k-1)$
+	\item ONE TOPIC: unigram language model, MLE with some prior belief, so Bayesian estimation of parameters
+	\begin{itemize}
+		\item p. 342 / model: $p(w_i | \theta)$ for $ i \in (1, M)$
+		\item likelihood function: $\prod_{i = 1}^{M} p(w_i | \theta)^{c(w_i, d)}$ with $c(w_i, d)$ being the count of unique word $w_i$ in document d
+		\item now maximize, that is find the word probabilities $p(w_i | \theta)$
+	\end{itemize}
+	\item Adding a background language model, p. 347
+	\begin{itemize}
+		\item $p(\theta_i)$ is probability of choosing word distribution $i$, generative model with some uncertainty as to which word distribution will be chosen, must sum to one for all $\theta_i$
+		\item set $p(\theta_b)$ to indicate how many words to factor out // how to set $p(\theta_i)$?
+		\item likelihood function: $\prod_{i = 1}^{M} [ p(\theta_d)p(w_i | \theta_d) + p(\theta_b)p(w_i | \theta_b) ]^{c(w_i, d)} $ with $c(w_i, d)$ being the count of unique word $w_i$ in document d
+	\end{itemize}
+	\item background model $\theta_b$ needs to be preset to bias the word distribution towards common words p. 352! setting background model powerful tool to inject some domain knowledge in estimator -- setting very strong prior in Bayesian estimation
+	\item 
+	\item 
+	\item 
+	\item 
+\end{itemize}
+
+
+
+\subsection{Expectation Maximization}
+\begin{itemize}
+	\item infer which word is from which distribution in a document, based on tentative estimate of parameters, iterative hill-climbing algorithm p. 360
+	\item use Bayes rules, prior is  $p(\theta_i)$, the probability of partitioning, belief before we observe the text
+	\item binary latent variable $z$, to denote which topic a word is from
+	\item posteriori probability $p(z=0|w=text)$, guesses at which probability has been used to generate the word, proportional to $p(\theta_d)p(w_i | \theta_d)$ // E-Step / helps us figure out which word has been attributed to which topic, but does not make it final
+	\item E-Step: how likely is $w$ from $\theta_d$: $\textcolor{red}{p^{(n)}(z=0|w)} = \frac{p(\theta_d)p^{(n)}(w|\theta_d)}{p(\theta_d)p^{(n)}(w|\theta_d) + p(\theta_b)p^{(n)}(w|\theta_b)}$
+	\item M-Step: $p^{(n+1)}(w|\theta_d)=\frac{c(w,d) \textcolor{red}{p^{(n)}(z=0|w)}}{\sum_{w' \in V} c(w',d) p^{(n)}(z=0|w')} $
+	\item we introduce the latent variables because their existence makes the ML trivial to compute, because we can now normalize over all the terms that are of $z=0$
+	\item M-step uses the fact, that all occurrences of $w$ have been split between the distributions, $c(w,d) \textcolor{red}{p^{(n)}(z=0|w)}$ is a discounted count of $w$, expected number of occurrences in topic $z=0$, and $c(w,d) \textcolor{red}{p^{(n)}(z=0|w)} + c(w,d) [1-\textcolor{red}{p^{(n)}(z=0|w)}] = c(w,d)$, that is the total count in the document
+	\item for each iteration we can calculate the likelihood value
+\end{itemize}
+
+\subsection{PLSA}
+
+\begin{itemize}
+	\item probability of observing a word: $p_d(w) = \lambda_Bp(w|\theta_b) + (1-\lambda_B)\sum_{j=1}^{k}\pi_{d,j}p(w|\theta_j)$
+	\item Likelihood function for all words in document d: $\sum_{w \in V} c(w,d) log[\lambda_Bp(w|\theta_b) + (1-\lambda_B)\sum_{j=1}^{k}\pi_{d,j}p(w|\theta_j)$]
+	\item Likelihood function for all words in collection C: $\sum_{d \in C}\sum_{w \in V} c(w,d) log[\lambda_Bp(w|\theta_b) + (1-\lambda_B)\sum_{j=1}^{k}\pi_{d,j}p(w|\theta_j)$]
+	\item Unknown parameters: $\pi$ and $\theta$
+	\item use the EM model to compute the Ml estimates for PLSA, more hidden variables in the E step, p. 374, probabilities that word $w$ ind doc $d$ is created by model $j$ or $B$, estimating the latent variables $z$
+	\item $p(z_{d,w}=j)=\frac{\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j)}{\sum_{j'=1}^{k}\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j')}$
+	\item $p(z_{d,w}=B)=\frac{\lambda_Bp(w|\theta_b)}{\lambda_Bp(w|\theta_b)+(1-\lambda_B)\sum_{j=1}^{k}\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j)}$
+	\item M Step, probability of $d$ covering topic $j$, and probability of word $w$ for topic $j$
+	\item $\pi_{d,j}^{(n+1)}=\frac{\sum_{w \in V}c(w,d)(1-p(z_{d,w} =B))p(z_{d,w}=j)}{\sum_{j'}\sum_{w \in V}c(w,d)(1-p(z_{d,w} =B))p(z_{d,w}=j')}$
+	\item $p^{(n+1)}(w|\theta_j)=\frac{\sum_{d \in C}c(w,d)(1-p(z_{d,w} =B))p(z_{d,w}=j)}{\sum_{w'}\sum_{d \in C}c(w',d)(1-p(z_{d,w'} =B))p(z_{d,w'}=j)}$
+	\item p. 376, first need to initialize all the unknown parameters randomly , $\pi$ and the $p(w|\theta)$
+	
+\end{itemize}
+
+\subsection{Latent Dirichlet Allocation}
+
+\begin{itemize}
+	\item p. 378 impose some prior knowledge about the data set to be estimated
+	\item parameters are $\Lambda$ und prior distribution is $p(\Lambda)$
+	\item using Maximum A priori estimation
+	\item MAP: $\Lambda^* = arg max_{\Lambda}p(\Lambda)p(Data|\Lambda)$
+	\item $p(\Lambda)$ as a conjugate prior distribution
+	\item the topic coverage distribution (a multinomial distribution) for each document is assumed to be drawn from a prior Dirichlet distribution, so are the word distributions representing the latent topics assumed to be drawn from another Dirichlet distribution - thus they are no longer parameters, the only parameters of the model are the ones characterizing the Dirichlet distributions (two kinds), $\alpha_1, ... , \alpha_k$ and $\beta_1, ... \beta_M$, with $M$ being the number of unique words
+\end{itemize}
+
+
+\subsection{Notes}
+
 
 Different ways to define topics are available: topics as a single term, topics as word distribution,
 unigram language model,, use prob distribution over words to fin tpic, use MLE, problem: common words with giving little information are given high values, ' add background lagnuage model.  
@@ -355,7 +463,11 @@ While Topic Analysis can be a powerful tool to evaluate text data, there are als
 here:  general topics, document specific word distributions, corpus wide background distribution \cite{Chem.2007}\\
 \cite{Bishop.2006}\\
 \cite{Darling.2011}\\
-\subsection{Sensitivity Analysis}
+
+Another problem: where the document stands does not matter, but some days have a lot more articles than others, shall we randomly select only a few as to keep the balance? Make several iterations? Questions is: how can topic model pick up on different vocabulary?
+
+
+\section{Sensitivity Analysis}
 
 
 

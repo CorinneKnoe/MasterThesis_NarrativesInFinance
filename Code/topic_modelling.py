@@ -29,7 +29,7 @@ from nltk import word_tokenize
 # from .prep_processing import stemmer_porter
 # from .prep_processing import albhabetizer
 # =============================================================================
-import pyLDAvis.sklearn
+#import pyLDAvis.sklearn
 
 
 #import re
