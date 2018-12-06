@@ -168,48 +168,72 @@ class Plsa(object):
 			# likelihood
             self.L = self.log_likelihood2() #run loglikelihood
 
-            #self.print_top_words(10) #print ten topwords to txt file
+            self.print_top_words(10) #print ten topwords to txt file
 
             print("Iter " + str(i_iter) + ", L=" + str(self.L)) #print likelihood number of iteration
 
 # =============================================================================
-# 			print("E-Step...")
-# 			for di in range(self.n_d): #no of documents
-# 				for wi in range(self.n_w): #no of words
-# 					sum_zk = np.zeros([self.n_t], dtype = float) #range of zeros for k topics
-# 					for zi in range(self.n_t): #no of topics, happens accross all topics per document
-# 						sum_zk[zi] = self.p_z_d[di, zi] * self.p_w_z[zi, wi] #construct a vector of sums by multiplying row and colum of two matrices
-# 					sum1 = np.sum(sum_zk) #sum over all
-# 					if sum1 == 0: #when all topics do not show up at all in a document
-# 						sum1 = 1
-# 					for zi in range(self.n_t):
-# 						self.p_z_dw[di, wi, zi] = sum_zk[zi] / sum1 
-# 
-# 			print("M-Step...")
-# 			# update P(z|d) #pi
-# 			for di in range(self.n_d):
-# 				for zi in range(self.n_t): #no of topics
-# 					sum1 = 0.0
-# 					sum2 = 0.0
-# 					for wi in range(self.n_w): #all words per topic an document
-# 						sum1 = sum1 + self.n_w_d[di, wi] * self.p_z_dw[di, wi, zi] #no of words times E-step
-# 						sum2 = sum2 + self.n_w_d[di, wi] #total word count per document and topic
-# 					if sum2 == 0: #when none of the words show up
-# 						sum2 = 1
-# 					self.p_z_d[di, zi] = sum1 / sum2
-# 
-# 			# update P(w|z) #p(w|theta)
-# 			for zi in range(self.n_t): #for each topic
-# 				sum2 = np.zeros([self.n_w], dtype = np.float) #series of zeroes, enough for each word
-# 				for wi in range(self.n_w): #for each word
-# 					for di in range(self.n_d): #for each document
-# 						sum2[wi] = sum2[wi] + self.n_w_d[di, wi] * self.p_z_dw[di, wi, zi]
-# 				sum1 = np.sum(sum2)
-# 				if sum1 == 0:
-# 					sum1 = 1
-# 				for wi in range(self.n_w):
-# 					self.p_w_z[zi, wi] = sum2[wi] / sum1  
+#             print("E-Step...")
+#             for di in range(self.n_d): #no of documents
+#                 for wi in range(self.n_w): #no of words
+#                     sum_zk = np.zeros([self.n_t], dtype = float) #range of zeros for k topics
+#                     for zi in range(self.n_t): #no of topics, happens accross all topics per document
+#                         sum_zk[zi] = self.p_z_d[di, zi] * self.p_w_z[zi, wi] #construct a vector of sums by multiplying row and colum of two matrices
+#                     sum1 = np.sum(sum_zk) #sum over all
+#                     if sum1 == 0: #when all topics do not show up at all in a document
+#                         sum1 = 1
+#                     for zi in range(self.n_t):
+#                         self.p_z_dw[di, wi, zi] = sum_zk[zi] / sum1
 # =============================================================================
+                        
+                        
+            print("E-Step...")
+            self.p_z_dw = np.einsum('ij,jk->ijk', self.p_z_d, self.p_w_z)
+            divider = np.einsum('ij,jk->ik', self.p_z_d, self.p_w_z)
+            divider[divider == 0] = 1 #replace all zero values with 1, cannot divide by zero
+            self.p_z_dw = self.p_z_dw / divider[:,None]
+            self.p_z_dw = np.transpose(self.p_z_dw, (0,2,1)) #transpose so depth is document, heigt is words, breadth is topic (switching word and topic to fit original set up)
+
+# =============================================================================
+#             print("M-Step...")
+#             # update P(z|d) #pi
+#             for di in range(self.n_d):
+#                 for zi in range(self.n_t): #no of topics
+#                     sum1 = 0.0
+#                     sum2 = 0.0
+#                     for wi in range(self.n_w): #all words per topic an document
+#                         sum1 = sum1 + self.n_w_d[di, wi] * self.p_z_dw[di, wi, zi] #no of words times E-step
+#                         sum2 = sum2 + self.n_w_d[di, wi] #total word count per document and topic
+#                     if sum2 == 0: #when none of the words show up
+#                         sum2 = 1
+#                     self.p_z_d[di, zi] = sum1 / sum2
+# =============================================================================
+            
+            print("M-Step...")
+            self.p_z_d = np.einsum('ij,ijk->ik', self.n_w_d, self.p_z_dw) #p_z_d
+            divider = np.einsum('ij->i', self.n_w_d)
+            divider[divider == 0] = 1 #replace all zero values with 1, cannot divide by zero
+            self.p_z_d = self.p_z_d / divider[:,None]
+            
+# =============================================================================
+#             # update P(w|z) #p(w|theta)
+#             for zi in range(self.n_t): #for each topic
+#                 sum2 = np.zeros([self.n_w], dtype = np.float) #series of zeroes, enough for each word
+#                 for wi in range(self.n_w): #for each word
+#                     for di in range(self.n_d): #for each document
+#                         sum2[wi] = sum2[wi] + self.n_w_d[di, wi] * self.p_z_dw[di, wi, zi]
+#                 sum1 = np.sum(sum2)
+#                 if sum1 == 0:
+#                     sum1 = 1
+#                 for wi in range(self.n_w):
+#                     self.p_w_z[zi, wi] = sum2[wi] / sum1 
+# =============================================================================
+                    
+            # update P(w|z) #p(w|theta)
+            self.p_w_z = np.einsum('ij,ijk->kj', self.n_w_d, self.p_z_dw) #p_z_d
+            divider = np.einsum('ij->i', self.p_w_z)
+            divider[divider == 0] = 1 #replace all zero values with 1, cannot divide by zero
+            self.p_w_z = self.p_w_z / divider[:,None]   
 
 if __name__ == "__main__":
     
@@ -242,7 +266,7 @@ if __name__ == "__main__":
     #execute the PLSA
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/" #absolute path to where to store the txt files
     number_of_topics = 2 #int(argv[1])
-    max_iterations = 1 #int(argv[2])
+    max_iterations = 100 #int(argv[2])
     
     start_time = time.time()
     plsa = Plsa(corpus, number_of_topics, max_iterations, path)
