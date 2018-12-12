@@ -19,6 +19,9 @@ from operator import itemgetter
 #import utils.stemmer as stemmer 
 import pandas as pd
 from nltk.corpus import stopwords
+import math
+import datetime
+import matplotlib.lines as mlines
 
 #import functions from other python modules
 #-------------------------------------------
@@ -68,13 +71,15 @@ class Corpus(object): #gives a list of unique words in all documents
 
 
 class Plsa(object):
-    def __init__(self, corpus, number_of_topics, max_iter, model_path):
+    def __init__(self, corpus, number_of_topics, stoprule, model_path):
         self.n_d = len(corpus.documents) #no of documents
         self.n_w = len(corpus.vocabulary) #no of unique words in corpus
         self.n_t = number_of_topics
-        self.max_iter = max_iter
+        #self.max_iter = max_iter
+        self.stoploop = stoprule
         self.model_path = model_path
         self.L = 0.0 # log-likelihood
+        self.diffL = 1000.0 #store difference here, looping value for likelihood function
         self.error_L = 0.0001; # error for each iter
         self.corpus = corpus		
         # bag of words
@@ -108,15 +113,17 @@ class Plsa(object):
         for zi in range(self.n_t):
             normalize(self.p_w_z[zi])
 
-    def log_likelihood(self): #needs to be optimized with matrix calculation
-        L = 0
-        for di in range(self.n_d): #no of documents
-            for wi in range(self.n_w): #no of unique words
-                sum1 = 0
-                for zi in range(self.n_t): #no of topics
-                    sum1 = sum1 + self.p_z_d[di, zi] * self.p_w_z[zi, wi]
-                L = L + self.n_w_d[di, wi] * np.log(sum1)
-        return L
+# =============================================================================
+#     def log_likelihood(self): #needs to be optimized with matrix calculation, see below
+#         L = 0
+#         for di in range(self.n_d): #no of documents
+#             for wi in range(self.n_w): #no of unique words
+#                 sum1 = 0
+#                 for zi in range(self.n_t): #no of topics
+#                     sum1 = sum1 + self.p_z_d[di, zi] * self.p_w_z[zi, wi]
+#                 L = L + self.n_w_d[di, wi] * np.log(sum1)
+#         return L
+# =============================================================================
     
     def log_likelihood2(self):
         '''likelihood function with array multiplication instead of for loops'''
@@ -126,12 +133,13 @@ class Plsa(object):
         return L
 
     def print_p_z_d(self):
+        '''write the topic distribution per document in a word file'''
         filename = self.model_path + "p_z_d.txt"
         f = open(filename, "w")
         for di in range(self.n_d): #no of documents
             f.write("Doc #" + str(di) +":")
             for zi in range(self.n_t): #no of topic
-                f.write(" "+self.p_z_d[di, zi]) #P(z|d), weights on topics per document
+                f.write(" "+ str(self.p_z_d[di, zi])) #P(z|d), weights on topics per document
             f.write("\n")
         f.close()
 
@@ -146,7 +154,7 @@ class Plsa(object):
         f.close()
 
     def print_top_words(self, topk):
-        filename = self.model_path + "top_words.txt"
+        filename = self.model_path + "top_words_plsa.txt"
         f = open(filename, "w")
         for zi in range(self.n_t): #no of topics
             word_prob = self.p_w_z[zi,:] #array for each word for one topic
@@ -163,14 +171,18 @@ class Plsa(object):
 
     def train(self):
         print("Training...")
-        for i_iter in range(self.max_iter): #maximal iteration instead of stopping rule? a bit ridiculous?
-
+        #for i_iter in range(self.max_iter): #maximal iteration instead of stopping rule? a bit ridiculous?
+        i_iter = 0
+        while self.diffL > self.stoploop: #do until stopping point is reached
+            
+            i_iter += 1 #just to count the iterations
+            
 			# likelihood
-            self.L = self.log_likelihood2() #run loglikelihood
+            placeholderL = self.log_likelihood2() #produce Likelihood and hold temporarily so difference to last round can be assessed
+            self.diffL = abs(self.L - placeholderL) #calculate increase in L from last round
+            self.L = placeholderL #store this round's L result
 
-            self.print_top_words(10) #print ten topwords to txt file
-
-            print("Iter " + str(i_iter) + ", L=" + str(self.L)) #print likelihood number of iteration
+            print("Iter " + str(i_iter) + ", L=" + str(self.L) + ", diff=" + str(self.diffL)) #print likelihood number of iteration
 
 # =============================================================================
 #             print("E-Step...")
@@ -234,14 +246,42 @@ class Plsa(object):
             divider = np.einsum('ij->i', self.p_w_z)
             divider[divider == 0] = 1 #replace all zero values with 1, cannot divide by zero
             self.p_w_z = self.p_w_z / divider[:,None]   
+        
+        
+        #printing topics to file
+        print("printing top words to file...")
+        self.print_top_words(10) #print ten topwords to txt file when process is finished
+        
 
 if __name__ == "__main__":
+    
+    # Read in the FEd meetings dates
+    #---------------------------------
+    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/FED_Data" #absolute path to the txt files
+    os.chdir(path) #setting working directory
+    
+    #read in the FED data on target rate
+    adjustdf = pd.read_csv('adjustments.csv', sep = ',')
+    #drop rows if empty
+    while math.isnan(adjustdf.iloc[len(adjustdf)-1,1]):
+        adjustdf = adjustdf[:-1] #drop last row if it is empty
+        
+    for i in range(len(adjustdf)): #replace date string with date format
+        adjustdf.iloc[i,0] = datetime.datetime.strptime(adjustdf.iloc[i,0], '%d/%m/%Y')
+    
+    #rearrange dataframes to ascending order
+    #adjustdf.sort_values('Date', inplace = True)
+    
+    start = datetime.datetime.strptime('01.10.1998', '%d.%m.%Y')
+    end = datetime.datetime.strptime('01.10.2018', '%d.%m.%Y')
+    feddf = adjustdf.loc[(adjustdf.Date >= start) & (adjustdf.Date < end), :]
+    
     
     #Read in the text dataframe from a csv
     #-------------------------------------
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/FACTIVA_Data/" #absolute path to the txt files
     os.chdir(path)
-    os.getcwd()
+
     #create data frame by reading csv
     textdf = pd.read_csv('FACTIVArticles.csv', sep = ',')
     #turn first colum from string to datetime
@@ -257,6 +297,7 @@ if __name__ == "__main__":
     #textdf['Article'] = textdf['Article'].apply(stemmer_porter)
     
     #build the Corpus
+    #--------------------------------------
     corpus = Corpus()
     for entry in textdf['Article']:
         document = Document(entry)
@@ -264,17 +305,164 @@ if __name__ == "__main__":
     corpus.build_vocabulary()
     
     #execute the PLSA
+    #---------------------------------------
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/" #absolute path to where to store the txt files
     number_of_topics = 2 #int(argv[1])
-    max_iterations = 100 #int(argv[2])
+    stoprule = 0.01 #int(argv[2])
     
     start_time = time.time()
-    plsa = Plsa(corpus, number_of_topics, max_iterations, path)
+    plsa = Plsa(corpus, number_of_topics, stoprule, path)
     print("My program took", time.time() - start_time, "to run")
 
     start_time = time.time()
     plsa.train()
     print("My program took", time.time() - start_time, "to run")
+    
+    
+    
+    #Returning the topic document distribution
+    #Classifying the dates as per topic via average of topci document distribution        
+    
+    # Stacked Bar plot
+    #------------------
+    #list of all meeting dates
+    meetinglist = []
+    for d in range(len(feddf['Date'])):
+        meetinglist.append((str(feddf.iloc[d, 0])[:10]))
+        
+    
+    weights=[]  #take the average of topic porbabilities over all articles per meeting date, this is topic per document distribution
+    docweights=[] #weights for every single document, to check whether averaging messes anything up
+    for day in list(feddf['Date']):
+        dayup = day + datetime.timedelta(days=2) #look for articles day after, needs day = 2 to cover sae and following day, 00:00 is start of day
+        daylow = day - datetime.timedelta(days=1) #look for articles day after, and everything between
+        indexlist = list(textdf.loc[(textdf.Date >= daylow) & (textdf.Date <= dayup), :].index) #all index of df of articles with correct date for that meeting
+        line=[]
+        for i in indexlist:
+            line.append(list(plsa.p_z_d[i])) #here the values are extracted from the matrix p(z|d)
+        weights.append(list(np.mean(line, axis=0))) #only the average over all documents is stored
+        docweights.append(line)
+    
+    #prepare plot - inspiration and code examples from https://de.dariah.eu/tatom/topic_model_visualization.html
+    N, K = len(weights), len(weights[0]) #N is numer of meeting dates, K is numer of topics
+    ind = np.arange(N)
+    width = 0.5 
+    plots = []
+    height_cumulative = np.zeros(N)
+    
+    s = []
+    for x in range(K):
+        t = [] # alist with values for all meetings for one topic
+        for entry in weights:
+            t.append(entry[x])
+        s.append(t)  #a list with K list, each with the weights on the respective topic per meetgin date
+        
+    fig = plt.figure(figsize=(14,4))
+    height_cumulative = []
+    for k in range(K):
+        color = seaborn.color_palette('deep')[k]
+        if k == 0:
+            p = plt.bar(ind, s[k], width, color=color)
+        else:
+            p = plt.bar(ind, s[k], width, bottom=height_cumulative, color=color)
+        height_cumulative += s[k]
+        plots.append(p)    
+    
+    plt.ylim((0, 1))  # proportions sum to 1, so the height of the stacked bars is 1
+    plt.title('Share of Topics')
+    plt.xticks(rotation=90)
+    plt.xticks(ind , meetinglist)
+    plt.ylabel('Average percentage per topic and policy day')
+    
+    titles = ['Share of Topic #1', 'Share of Topic #2', 'sadfasdf']
+    #for i in range(len(titles)):
+    #    titles[i] = titles[i][15:]
+    leg = plt.legend(titles, loc=2, fontsize = 'medium')
+    for text in leg.get_texts():
+        plt.setp(text, weight = 'medium')
+    plt.axhline(0.5, color="red", linewidth = 0.5, linestyle = '--')
+    
+    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
+    os.chdir(path) 
+    plt.savefig("plsamodelling.pdf", bbox_inches='tight')
+    
+    
+    #plot of distribution over the documents per day
+    #first 28 days
+    f, axarr = plt.subplots(7, 4, figsize=(7,10))
+    plt.style.use('seaborn-whitegrid')
+    #plt.style.use('classic')
+    seaborn.set_context('paper')
+    
+    for i in range(28):
+        if i / 4 < 7:
+            c = 6
+        if i / 4 < 6:
+            c = 5
+        if i / 4 < 5:
+            c = 4
+        if i / 4 < 4:
+            c = 3
+        if i / 4 < 3:
+            c = 2
+        if i / 4 < 2:
+            c = 1
+        if i / 4 < 1:
+            c = 0
+        axarr[c, i%4].plot(range(len(docweights[i])), [doc[0] for doc in docweights[i]], 'X', label='Topic 1', 
+             markeredgewidth=0.5, color=seaborn.color_palette('deep')[0])
+        axarr[c, i%4].plot(range(len(docweights[i]), 2*len(docweights[i])), [doc[1] for doc in docweights[i]], 'X', label='Topic 2', 
+             markeredgewidth=0.5, color=seaborn.color_palette('deep')[1])
+        axarr[c, i%4].set_title(meetinglist[i])
+        axarr[c, i%4].set_ylim([0, 1])
+        axarr[c, i%4].set_xlim([0, 2*len(docweights[i])])
+        axarr[c, i%4].set_xticks([len(docweights[i])])
+        axarr[c, i%4].set_yticks([0, 0.5, 1])
+    plt.tight_layout()
+    topic1 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[0], marker='X', linestyle='None',
+                          markersize=7, markeredgewidth=.5, label='Topic 1')
+    topic2 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[1], marker='X', linestyle='None',
+                          markersize=7, markeredgewidth=.5, label='Topic 2')
+    plt.figlegend(handles=[topic1, topic2], loc = 'lower left', ncol=2, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
+        
+    #plot of distribution over the documents per day
+    #second 28 days
+    f, axarr = plt.subplots(7, 4, figsize=(7,10))
+    plt.style.use('seaborn-whitegrid')
+    #plt.style.use('classic')
+    seaborn.set_context('paper')
+    
+    for i in range(28, 56):
+        if (i-28) / 4 < 7:
+            c = 6
+        if (i-28) / 4 < 6:
+            c = 5
+        if (i-28) / 4 < 5:
+            c = 4
+        if (i-28) / 4 < 4:
+            c = 3
+        if (i-28) / 4 < 3:
+            c = 2
+        if (i-28) / 4 < 2:
+            c = 1
+        if (i-28) / 4 < 1:
+            c = 0
+        axarr[c, i%4].plot(range(len(docweights[i])), [doc[0] for doc in docweights[i]], 'X', label='Topic 1', 
+             markeredgewidth=0.5, color=seaborn.color_palette('deep')[0])
+        axarr[c, i%4].plot(range(len(docweights[i]), 2*len(docweights[i])), [doc[1] for doc in docweights[i]], 'X', label='Topic 2', 
+             markeredgewidth=0.5, color=seaborn.color_palette('deep')[1])
+        axarr[c, i%4].set_title(meetinglist[i])
+        axarr[c, i%4].set_ylim([0, 1])
+        axarr[c, i%4].set_xlim([0, 2*len(docweights[i])])
+        axarr[c, i%4].set_xticks([len(docweights[i])])
+        axarr[c, i%4].set_xticklabels([])
+        axarr[c, i%4].set_yticks([0, 0.5, 1])
+    plt.tight_layout()
+    topic1 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[0], marker='X', linestyle='None',
+                          markersize=7, markeredgewidth=.5, label='Topic 1')
+    topic2 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[1], marker='X', linestyle='None',
+                          markersize=7, markeredgewidth=.5, label='Topic 2')
+    plt.figlegend(handles=[topic1, topic2], loc = 'lower left', ncol=2, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
+    
+    
 
-    start_time = time.time()
-    print("My program took", time.time() - start_time, "to run")
