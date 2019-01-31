@@ -346,7 +346,7 @@ The reason for the use of topic analysis in this thesis is obvious: News article
 Probabilistic Latent Semantic Analysis (PLSA) was first introduced by \cite{Hofmann.1999}. \citet[p.~994]{Blei.2003} called \citeauthor{Hofmann.1999}'s model a "significant step forward" in probabilistic topic modeling. The main achievement of PLSA was to supplement the theory of Latent Semantic Analysis with a sound statistical foundation and to introduce a proper generative model of the data \cite[p. 289]{Hofmann.1999}. It is based on the idea that documents are mixtures of topics and the generative model specifies a probabilistic procedure by which documents are assumed to be generated \cite[p.~2]{Steyvers(2007)}. As \citet[p. 994]{Blei.2003} explains, PLSA "models each word in a document as a sample from a mixture model, where the mixture components are multinomial random variables that can be viewed as representations of 'topics'." Let's take a closer look at the generative process via such mixture models.
 
 
-\subsection{Mixture Model / Generative Model}
+\subsection{Mixture Model / Generative Model}\label{GM}
 As input a topic modeling task takes a collection of text documents and a specification of the number of topics, as output it produces the topics as well as the coverage  of the topics in every document \cite[pp.~330--331]{Zhai.2016}, as illustrated in Table \ref{tab:task}.\footnote{Please note that this thesis follows the notation of \cite{Zhai.2016}.} 
 	
 \begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
@@ -368,44 +368,76 @@ As input a topic modeling task takes a collection of text documents and a specif
 	\label{tab:task} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
-In the context of topic modeling, a topic is represented as a probability distribution over words (or terms). That is, a topic is a distribution that assigns each word in the vocabulary set a probability. If we were to sample from this distributions, words closely associated with the topic are more likely to come up as they are given a higher weight in the distribution. In general, all words in the vocabulary set may have a non-zero probability in a given word distribution as it is always possible that a unrelated word shows up in an article on the topic (\citealt[pp.~335--337]{Zhai.2016}; \citealt[p.~994]{Blei.2003}). Figure \ref{fourtopics} illustrates four topics, for each of which the 16 words with the highest probability are listed. Based on these words, the topics could be labeled drug use, colors, memory, and health care \cite[p.2]{Steyvers(2007)}.  
+In the context of topic modeling, a topic is represented as a probability distribution over words (or terms). That is, a topic is a distribution that assigns each word in the vocabulary set a probability. If we were to sample from this distributions, words closely associated with the topic are more likely to come up as they are given a higher weight in the distribution. In general, all words in the vocabulary set may have a non-zero probability in a given word distribution as it is always possible that a unrelated word shows up in an article on the topic (\citealt[pp.~335--337]{Zhai.2016}; \citealt[p.~994]{Blei.2003}). Figure \ref{fourtopics} illustrates four topics, for each of which the 16 words with the highest probability are listed. Based on these words, the topics could be labeled drug use, colors, memory, and health care \cite[p.2]{Steyvers(2007)}. The aim of probabilistic topic models is to discover such word distributions in the text data. 
 
-The aim of probabilistic topic models is to discover such word distributions in the text data. Going back to the formal definition in Table \ref{tab:task}, each $\theta_i$ is a word distribution. Thus,
-
+Going back to the formal definition in Table \ref{tab:task}, each $\theta_i$ is a word distribution. Thus,
 $$
 \underset{w \in V}{\sum} \ p(w | \theta_i) = 1,
 $$
-where $p(w | \theta_i)$ is the probability of word $w$ in the word distribution $\theta_i$ with $w$ being a unique word in the vocabulary set $V = \{w_1, w_2, ...\}$. The vocabulary set is the set of \textcolor{red}{unique?????} words in the collection $C$ \cite[pp.~338]{Zhai.2016}.
+where $p(w | \theta_i)$ is the probability of word $w$ in the word distribution $\theta_i$ with $w$ being a unique word in the vocabulary set $V = \{w_1, w_2, ..., w_M\}$. The vocabulary set is the set of unique words in a document or a collection $C$ \cite[pp.~338]{Zhai.2016}.
 
 \begin{figure}
-	\caption{An illustration of four topics \cite[p.2]{Steyvers(2007)}. \textcolor{red}{update with pdf cut and center proberly}}
+	\caption{An illustration of four topics \cite[p.2]{Steyvers(2007)}.}
 	\centering
-	\includegraphics[scale=0.8]{Images/SteyversGriffithsTopics.png}
+	\includegraphics[scale=1]{Images/SteyversGriffithsTopics.pdf}
 	\label{fourtopics}
 \end{figure}
 
+The generative models underlying topic models are based on probabilistic sampling rules and specify how the words in documents are generated on the basis of latent variables. Given the definition of topics as word distributions, the model assumes that every word in a document is drawn from a topic. From which topic a word is to be drawn is determined by a distribution over topics. As such, documents with different content are generated by choosing different distributions over topics \cite[~p. 2--3]{Steyvers(2007)}. Figure \ref{genproc} illustrates the process of generating three documents from two topics. While two of the documents are generated exclusively from one topic, one document is an equal mixture of both topics. Note that words can be part of more than one topic, allowing the model to capture the multiple meanings of polysemies \cite[~p. 2--3]{Steyvers(2007)}.  \textcolor{red}{list more upsides}
+
+The generative process can be inverted to appear as a problem of statistical inference (see Figure \ref{genproc}): When fitting the generative model, the aim is to identify the latent variables, here the latent topics, that are best able to explain the observed data. Thus the model is able to infer the probability distributions over words and the distribution over topics for each document from the text data \cite[~p. 3]{Steyvers(2007)}. While the inferred distributions over words are interpreted as topics, the probability distribution over topics can be usefully thought of as the extent to which a topic accounts for the content of a document, that is what fraction of words in document $d_i$ is generated by topic $\theta_j$. Note that the probabilities of document $d_i$ covering topic $\theta_{j}$ sum to one across all topics:
+$$
+\sum_{j=1}^{k} \pi_{ij} = 1.
+$$
+Thus, the topics $\{\theta_1, ..., \theta_k\}$ as inferred by the topic model account for every word in the document, with no words being attributed to other topics \cite[pp.~338]{Zhai.2016}. 
+
 \begin{figure}
-	\caption{The generative model and the problem of statistical inference \cite[p.3]{Steyvers(2007)}. \textcolor{red}{update with pdf cut and center proberly}}
+	\caption{The generative model and the problem of statistical inference \cite[p.3]{Steyvers(2007)}.}
 	\centering
-	\includegraphics[scale=0.8]{Images/genproc.png}
+	\includegraphics[scale=1]{Images/genproc.pdf}
 	\label{genproc}
 \end{figure}
 
-Topic models are generative models that, based on probabilistic sampling rules, specify how the words in documents are generated on the basis of latent variables. Given the definition of topics as word distributions, the model assumes that every word in a document is drawn from a topic. From which topic a word is to be drawn is determined by a distribution over topics. As such, documents with different content are generated by choosing different distributions over topics \cite[~p. 2--3]{Steyvers(2007)}. Figure \ref{genproc} illustrates the process of generating three documents from two topics. While two of the documents are generated exclusively from one topic, one document is an equal mixture of both topics. Note that words can be part of more than one topic, allowing the model to capture the multiple meanings of polysemies \cite[~p. 2--3]{Steyvers(2007)}.  \textcolor{red}{list more upsides}
+There is one key assumption underlying the generative model explained above. It assumes that the order of the words in a document as well as the order of the documents in a collection can be neglected. The model picks up on the frequencies of words, but completely ignores their position in the text. Should the order of the words contain useful information, such information is discarded by probabilistic topic models. This assumptions is known as the “bag-of-words” assumption, an assumption of exchangeability of the the words in a document (\citealt[p.~994]{Blei.2003}; \citealt[~p. 3]{Steyvers(2007)}). \citet[~p. 290]{Hofmann.1999} himself admits that the "key assumption is that the simplified 'bag-of-words' [...] representation of documents will in many cases preserve most of the relevant information." In Figure \ref{genproc}, this principle is captured by illustrating topics as bags containing different distribution over words. The position of the words is arbitrary.
 
-The generative process can be inverted to appear as a problem of statistical inference (see Figure \ref{genproc}): When fitting the generative model, the aim is to identify the latent variables that are best able to explain the observed data. Thus the model is able to infer the probability distributions over words and the distribution over topics for each document from the text data \cite[~p. 3]{Steyvers(2007)}. While the inferred distributions over words are interpreted as topics, the probability distribution over topics can be usefully thought of as the extent to which a topic accounts for the content of a document, that is what fraction of words in document $d_i$ was generated by topic $\theta_i$. Note that the probabilities of document $d_i$ covering topic $\theta_{i}$ sum to one across all topics: $\sum_{j=1}^{k} \pi_{ij} = 1.$ Thus, the topics $\{\theta_1, ..., \theta_k\}$ as inferred by the topic model account for every word in the document, with no words being attributed to other topics \cite[pp.~338]{Zhai.2016}. 
+\subsection{Adding a Background Language Model}
 
-There is one key assumption underlying the generative model explained above. It assumes that the order of the words in a document as well as the order of the documents in a collection can be neglected. The model picks up on the frequencies of words, but completely ignores their position in the text. Should the order of the words contain useful information, such information is discarded by probabilistic topic models. This assumptions is known as the “bag-of-words” assumption, an assumption of exchangeability of the the words in a document (\citealt[p.~994]{Blei.2003}; \citealt[~p. 3]{Steyvers(2007)}). \citet[~p. 290]{Hofmann.1999} himself admits that the "key assumption is that the simplified 'bag-of-words' [...] representation of documents will in many cases preserve most of the relevant information." 
+In the original PLSA \cite{Hofmann.1999} there was no background topic. The aim of a background topic is to capture the common words in the text data so that the other topics can capture the words of interest. If a topic model does not include a background model, such as the original PLSA, common words will have a high probability in the learned topics. As a result, entire learned topics could consist mainly of stopwords. 
+ 
+\subsection{Model Fitting with Expectation-Maximization}
+
+As outlined above, a topic model is a mixture model that consists of several (latent) variables, i.e. word distributions. An estimation of the model's variables is obtained via Maximum Likelihood (ML) estimation. If a mixture model consists of several components, that is more than just one topic, there is no analytical solution to the ML estimation and a numerical optimization algorithm must be employed. The Expectation-Maximization algorithm (EM) is a family of useful algorithms to obtain an ML estimate of mixture models \cite[~p. 359]{Zhai.2016} According to \citet[p. 290]{Hofmann.1999}, EM is the "standard procedure for maximum likelihood estimation in latent variable models." 
+
+Based on the generative model outlined in Chapter \ref{GM}, the likelihood function can be derived. Recall that $p(w | \theta_i)$ is the probability of word $w$ in the word distribution $\theta_i$ and that $\pi_{d,j}$ is the coverage of topic $\theta_j$ in document $d$. When facing the problem of statistical inference, $\pi_{d,j}$ can be thought of as the probability of topic $\theta_i$ generating word $w$. Then, the probability of observing the sequence of words that make up document $d$ is:
+
+\begin{align}
+\label{prob} p(d) &= \underset{w \in V}\prod \left( \sum_{j=1}^{k}\pi_{d,j} \ p(w|\theta_j) \right)^{c(w,d)}\\
+\label{log} \text{log} \ p(d) &= \underset{w \in V}\sum c(w,d) \ \text{log} \left( \sum_{j=1}^{k}\pi_{d,j} \ p(w|\theta_j) \right)
+\end{align}
+
+\noindent with $w$ being a unique word in the vocabulary set $V = \{w_1, w_2, ..., w_M\}$ and $c(w,d)$ being the count of word $w$ in document $d$. If we consider the entire collection of $N$ documents $C=\{d_1,...,d_N\}$, the likelihood function is:
+
+\begin{align}
+\label{LL} \text{log} \ p(C|\Lambda) &= \underset{d \in C}{\sum} \ \underset{w \in V}\sum c(w,d) \ \text{log} \left( \sum_{j=1}^{k}\pi_{d,j} \ p(w|\theta_j) \right)
+\end{align}
+
+\noindent with $\Lambda$ denoting the unkown parameters $\pi_{d,j}$ and $\theta_j$, $j\in[1,...,k]$.
+
+A few words of explanation. $\sum_{j=1}^{k}\pi_{d,j} \ p(w|\theta_j)$ denotes the probability of word $w$ occurring once in document $d$. It is the probability of observing the word regardless of which topic is used. We assume indpendence in generating each word, hence the probability of the document equals the probability of each word (see Eq. \ref{prob}). S. 342
+
+In Eq. \ref{prob}
+
+
+The EM algorithm consists of two sequential steps that are iterated over several times. First, in the expectation step (E), posteriori probabilities for the latent variables are computed. Second, in the maximization step (M), the parameters are updated \cite[p. 290]{Hofmann.1999}. In the E-step, the algorithm uses Bayes' rule to infere which topic has been used to generate a word based on a tentative set of parameters \cite[p. 362]{Zhai.2016}
+
+
+
+The simples topic model is the unigram language model (more on the topic in Chapter xxxx- ). Adding a background language model.  setting background model powerful tool to inject some domain knowledge
+in estimator – setting very strong prior in Bayesian estimation Mostly, topic models are mixture models of at least two topic. 
 
 
 First, a topic can be represented as a a word distribution (or a term distribution) and second a text document is a sample of words drawn from a probabilistic model 
 \begin{itemize}
-	\item probability distribution over words: unigram language model. p. 336 / words can be shared by topics 
-	\item use a probabilistic model to discover such word  distributions - probabilistic topic modeling (337) 
-	\item (TF-IDf approach p.333)
-	\item each topic is a word distribution $\underset{w \in V}{\sum} \ p(w | \theta_i) = 1$, with vocabulary set $V = \{w_1, w_2, ...\} $, and $w$ being unique words, and $p(w | \theta_i)$ is probability of word $w$ in topic $\theta_i$
-	\item as well as the probability of document $d_i$ covering topic $\theta_j$, denoted by $\pi_{ij}$, with $\sum_{j=1}^{k}\pi_{ij} = 1$ / probabilities of all topics sum to one for each document
-	\item generative model (p. 338) a probabilistic model to model how the data are generated, compute probability of how likely we will observe the data we have, model needs some parameters $\Lambda$ / $V$ parameters for word distribution in each topic, so $Vk$, for each document k values of $\pi$, so $Nk$ parameters, free parameters: $(V-1)k + N(k-1)$
 	\item ONE TOPIC: unigram language model, MLE with some prior belief, so Bayesian estimation of parameters
 	\begin{itemize}
 		\item p. 342 / model: $p(w_i | \theta)$ for $ i \in (1, M)$
@@ -425,11 +457,6 @@ First, a topic can be represented as a a word distribution (or a term distributi
 	\item 
 \end{itemize}
 
-The
-key assumption is that the simplified 'bag-of-words' or
-vector-space representation [12] of documents will in
-many cases preserve most of the relevant information,
-e.g., for tasks like text retrieval based on keywords \cite[p. 290]{Hofmann.1999}
 
 
 
@@ -620,6 +647,7 @@ I could use LDA when doing out of sample prediction - because then I can predict
 
 tf-idf term weighting: Apply Term Frequency Inverse Document Frequency normalization to a sparse matrix of occurrence counts. ,bag of words methodology, feature extraction has a big influence on topics that we will find, corpus specific stopwords, preprocessing with vectorizer of do your own
 
+\textcolor{red}{EM hill climbing algorithm, only reaches local maximum, thus initialize several times with different RV!! }
 
 \section{NOTES}
 Besprechung - 24.09.2018
