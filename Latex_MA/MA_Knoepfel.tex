@@ -399,36 +399,58 @@ Thus, the topics $\{\theta_1, ..., \theta_k\}$ as inferred by the topic model ac
 \end{figure}
 
 There is one key assumption underlying the generative model explained above. It assumes that the order of the words in a document as well as the order of the documents in a collection can be neglected. The model picks up on the frequencies of words, but completely ignores their position in the text. Should the order of the words contain useful information, such information is discarded by probabilistic topic models. This assumptions is known as the “bag-of-words” assumption, an assumption of exchangeability of the the words in a document (\citealt[p.~994]{Blei.2003}; \citealt[~p. 3]{Steyvers(2007)}). \citet[~p. 290]{Hofmann.1999} himself admits that the "key assumption is that the simplified 'bag-of-words' [...] representation of documents will in many cases preserve most of the relevant information." In Figure \ref{genproc}, this principle is captured by illustrating topics as bags containing different distribution over words. The position of the words is arbitrary.
-
-\subsection{Adding a Background Language Model}
-
-In the original PLSA \cite{Hofmann.1999} there was no background topic. The aim of a background topic is to capture the common words in the text data so that the other topics can capture the words of interest. If a topic model does not include a background model, such as the original PLSA, common words will have a high probability in the learned topics. As a result, entire learned topics could consist mainly of stopwords. 
  
 \subsection{Model Fitting with Expectation-Maximization}
 
-As outlined above, a topic model is a mixture model that consists of several (latent) variables, i.e. word distributions. An estimation of the model's variables is obtained via Maximum Likelihood (ML) estimation. If a mixture model consists of several components, that is more than just one topic, there is no analytical solution to the ML estimation and a numerical optimization algorithm must be employed. The Expectation-Maximization algorithm (EM) is a family of useful algorithms to obtain an ML estimate of mixture models \cite[~p. 359]{Zhai.2016} According to \citet[p. 290]{Hofmann.1999}, EM is the "standard procedure for maximum likelihood estimation in latent variable models." 
+As outlined above, a topic model is a mixture model that consists of several (latent) variables, i.e. word distributions. An estimation of the model's variables is obtained via Maximum Likelihood (ML) estimation. If a mixture model consists of several components, that is more than just one topic, there is no analytical solution to the ML estimation and a numerical optimization algorithm must be employed. The Expectation-Maximization algorithm (EM) is a family of useful algorithms to obtain an ML estimate of mixture models \cite[~p. 359]{Zhai.2016} According to \citeauthor{Hofmann.1999} (\citeyear[p. 290]{Hofmann.1999}; \citeyear[p. 181]{Hofmann.2001}), EM is the "standard procedure for maximum likelihood estimation in latent variable models." 
 
-Based on the generative model outlined in Chapter \ref{GM}, the likelihood function can be derived. Recall that $p(w | \theta_i)$ is the probability of word $w$ in the word distribution $\theta_i$ and that $\pi_{d,j}$ is the coverage of topic $\theta_j$ in document $d$. When facing the problem of statistical inference, $\pi_{d,j}$ can be thought of as the probability of topic $\theta_i$ generating word $w$. Then, the probability of observing the sequence of words that make up document $d$ is:
-
+In a first step, the ML estimation problem is to be defined. Based on the generative model outlined in Chapter \ref{GM}, the likelihood function is derived. Recall that $p(w | \theta_j)$ is the probability of word $w$ in the word distribution $\theta_j$ and that $\pi_{d,j}$ is the coverage of topic $\theta_j$ in document $d$. When faced with the problem of statistical inference, $\pi_{d,j}$ can be thought of as the probability of topic $\theta_j$ generating word $w$. Then, the probability of observing the sequence of words that make up document $d$ is:
 \begin{align}
 \label{prob} p(d) &= \underset{w \in V}\prod \left( \sum_{j=1}^{k}\pi_{d,j} \ p(w|\theta_j) \right)^{c(w,d)}\\
 \label{log} \text{log} \ p(d) &= \underset{w \in V}\sum c(w,d) \ \text{log} \left( \sum_{j=1}^{k}\pi_{d,j} \ p(w|\theta_j) \right)
 \end{align}
 
-\noindent with $w$ being a unique word in the vocabulary set $V = \{w_1, w_2, ..., w_M\}$ and $c(w,d)$ being the count of word $w$ in document $d$. If we consider the entire collection of $N$ documents $C=\{d_1,...,d_N\}$, the likelihood function is:
-
+\noindent with $w$ being a unique word in the vocabulary set $V = \{w_1, w_2, ..., w_M\}$ and $c(w,d)$ being the count of word $w$ in document $d$. If we consider the entire collection of $N$ documents $C=\{d_1,...,d_N\}$, the log likelihood function is:
 \begin{align}
-\label{LL} \text{log} \ p(C|\Lambda) &= \underset{d \in C}{\sum} \ \underset{w \in V}\sum c(w,d) \ \text{log} \left( \sum_{j=1}^{k}\pi_{d,j} \ p(w|\theta_j) \right)
+\label{LL} \text{log} \ p(C|\pi_{d,j},\theta_j) &= \underset{d \in C}{\sum} \ \underset{w \in V}\sum c(w,d) \ \text{log} \left( \sum_{j=1}^{k}\pi_{d,j} \ p(w|\theta_j) \right)
 \end{align}
 
-\noindent with $\Lambda$ denoting the unkown parameters $\pi_{d,j}$ and $\theta_j$, $j\in[1,...,k]$.
+%\noindent with $\Lambda$ denoting the unknown parameters $\pi_{d,j}$ and $\theta_j$, $j\in[1,...,k]$.
 
-A few words of explanation. $\sum_{j=1}^{k}\pi_{d,j} \ p(w|\theta_j)$ denotes the probability of word $w$ occurring once in document $d$. It is the probability of observing the word regardless of which topic is used. We assume indpendence in generating each word, hence the probability of the document equals the probability of each word (see Eq. \ref{prob}). S. 342
+A few words of explanation. $\sum_{j=1}^{k}\pi_{d,j} \ p(w|\theta_j)$ denotes the probability of word $w$ occurring once in document $d$. It is the probability of observing the word regardless of which topic is used. We assume independence in generating each word, hence the probability of the document equals the product of the probability of each word in the document (see Eq. \ref{prob}). Eq. \ref{log} is the log likelihood function for document $d$, just as Eq. \ref{LL} is the log likelihood for the entire collection $C$ (\citealp{Hofmann.1999}; \citeyear{Hofmann.2001}; \citealp{Steyvers(2007)}; for notation see \citealp[~p. 340--377]{Zhai.2016}).
 
-In Eq. \ref{prob}
+With the likelihood function defined, we are faced with a constrained optimization problem:
+\begin{align}%\label{argmax}
+ & \underset{\pi_{d,j} \ \theta_j}{\text{arg max}} \ p(C|\pi_{d,j},\theta_j) &\\
+\label{constraints} \text{s. t. } & \underset{w \in V}{\sum} \ p(w | \theta_j) = 1, \  j \in [1,k] &  \sum_{j=1}^{k} \pi_{dj} = 1, \ d \in C
+\end{align}
+
+All that is left to do is to solve the maximization problem. If we knew from which topic a word is generated it would be straightforward to calculate the ML estimate. In such a case, the word distributions would simply be the normalized word frequencies (see Chapter XXXX for elaborations on unigram language models). However, the partitioning of the words among the topics is not known, that is we do not know from which topic a word is generated, thus we have to fall back on an iterative algorithm to solve the maximization problem. The EM algorithm proceeds by guessing from which distribution a word is generated and making a tentative estimate of the parameters. Based on the assumed partitioning, the estimate of the parameters is updated. This, in turn, allows an improved inference of the partitioning, leading to an iterative hill-climbing algorithm that improves the estimate of the parameters until it reaches a local optimum \cite[p. 360]{Zhai.2016}. The algorithm proceeds in two steps: In the expectation step (E), posteriori probabilities for the latent variables are computed based on current estimates. In the maximization step (M), the parameters are updated (\citealp[p. 290]{Hofmann.1999}; \citeyear[p. 181--182]{Hofmann.1999}). 
 
 
-The EM algorithm consists of two sequential steps that are iterated over several times. First, in the expectation step (E), posteriori probabilities for the latent variables are computed. Second, in the maximization step (M), the parameters are updated \cite[p. 290]{Hofmann.1999}. In the E-step, the algorithm uses Bayes' rule to infere which topic has been used to generate a word based on a tentative set of parameters \cite[p. 362]{Zhai.2016}
+In the E-step, the algorithm uses Bayes rule to infer the topic that has been used to generate a word. We introduce a hidden variable $z_{d,w} \in \{1,2,...,k\}$ to capture this information. The value of this hidden variable is inferred based on a tentative set of parameters (\citealp[p. 290]{Hofmann.1999}; \citeyear[p. 182]{Hofmann.2001}; \citealp[p. 362--374]{Zhai.2016}):
+\begin{align}\label{E1}
+p(z_{d,w}=j)=\frac{\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j)}{\sum_{j=1}^{k}\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j)}
+\end{align}
+
+Eq. \ref{E1} shows the E-Step of the EM algorithm for PLSA, where $p(z_{d,w}=j)$ is the probability that word $w$ in document $d$ is generated from topic $\theta_j$. Note that this probability depends on the document $d$, i.e. whether a word has been generated from a specific topic depends on the document. As a result, each document will have a different topic distribution, $\pi_{d,j}$, indicating the varying emphasis on specific topics across documents. I will use this fact to classify articles according to different narratives (see Chapter XXXX).  The probability value of $z_{d,w}$ is calculated for every unique word in each document by computing the product of the probability of word $w$ given the selected topic and the probability of selecting a topic. The product is normalized to ensure the constraints in Eq. \ref{constraints} hold. The superscript $^{(n)}$ indicates the generation of parameters in the iteration \citep[p. 374--376]{Zhai.2016}.  
+
+In the M-step we calculate an ML estimate of the parameters $\pi_{d,j}$ and $p(w|\theta_j)$ using the estimate obtained in step E. We use the estimated partitioning of the words among the topics to adjust the word count $c(w,d)$, that is we obtain a discounted word count $c(w,d) p(z_{d,w}=j)$ which can be understood as the expected count for the event that word $w$ is generated from $\theta_j$. Remember that the ML estimation could not be solved analytically because we did not know the partitioning of the words. Having obtained a tentative guess of the partitioning, we can easily estimate $\pi_{d,j}$ (the probability of document $d$ covering topic $\theta_j$) and $p(w|\theta_j)$ (the probability of word $w$ for topic $\theta_j$) (\citealp[p. 290]{Hofmann.1999}; \citeyear[p. 182]{Hofmann.2001}; \citealp[p. 364--375]{Zhai.2016}):
+\begin{align}%\label{M1}
+\label{M1pi} \pi_{d,j}^{(n+1)}=\frac{\sum_{w \in V} c(w,d)\ p^{(n)}(z_{d,w}=j)}{\sum_{j \in k}\sum_{w \in V}c(w,d) \ p^{(n)}(z_{d,w}=j)}\\
+\label{M1theta} p^{(n+1)}(w|\theta_j)=\frac{\sum_{d \in C} c(w,d)\ p^{(n)}(z_{d,w}=j)}{\sum_{w \in V}\sum_{d \in C}c(w,d)\ p^{(n)}(z_{d,w}=j)}
+\end{align}
+
+As Eq. \ref{M1pi} and Eq. \ref{M1theta} illustrate, the computation of the parameter estimates amounts simply to aggregating the the expected word counts and normalizing them among all topics or among all words, respectively. The normalization must ensure that the constraints in Eq. \ref{constraints} hold. The new generation of parameters is used to adjust the probabilities of the $z_{d,w}$ values, which subsequently can be used to compute a next generation of parameters. The EM algorithm continues to iterate over the E- and M-step until the likelihood converges. Instead of using a convergence condition, a stopping rule can be employed. In this case, the algorithm stops updating the parameters once a sufficient performance, as defined in the stopping criterion, is reached \citep[p. 182--183]{Hofmann.2001}. 
+
+As mentioned before, EM is a hill-climbing algorithm that starts with an initial guess of the parameter values and then successively improves it. In the process of improving the estimate, the EM algorithm is guaranteed to converge to a local, but not a global maximum. To account for this, \citeauthor{Zhai.2016} recommend applying the algorithm repeatedly with changing initial values for the unknown parameters and using the run with the highest likelihood value (\citeyear[p. 363--368]{Zhai.2016}).
+
+\subsection{Adding a Background Language Model}
+
+In the original PLSA \cite{Hofmann.1999} there was no background topic. The aim of a background topic is to capture the common words in the text data so that the other topics can capture the words of interest. If a topic model does not include a background model, such as the original PLSA, common words will have a high probability in the learned topics. As a result, entire learned topics could consist mainly of stopwords. 
+
+Behavior of a mixture model muss auch hier rein
+
 
 
 
