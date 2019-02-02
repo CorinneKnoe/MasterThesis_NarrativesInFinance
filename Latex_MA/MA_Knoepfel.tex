@@ -400,7 +400,7 @@ Thus, the topics $\{\theta_1, ..., \theta_k\}$ as inferred by the topic model ac
 
 There is one key assumption underlying the generative model explained above. It assumes that the order of the words in a document as well as the order of the documents in a collection can be neglected. The model picks up on the frequencies of words, but completely ignores their position in the text. Should the order of the words contain useful information, such information is discarded by probabilistic topic models. This assumptions is known as the “bag-of-words” assumption, an assumption of exchangeability of the the words in a document (\citealt[p.~994]{Blei.2003}; \citealt[~p. 3]{Steyvers(2007)}). \citet[~p. 290]{Hofmann.1999} himself admits that the "key assumption is that the simplified 'bag-of-words' [...] representation of documents will in many cases preserve most of the relevant information." In Figure \ref{genproc}, this principle is captured by illustrating topics as bags containing different distribution over words. The position of the words is arbitrary.
  
-\subsection{Model Fitting with Expectation-Maximization}
+\subsection{Model Fitting with Expectation-Maximization}\label{Ch:model}
 
 As outlined above, a topic model is a mixture model that consists of several (latent) variables, i.e. word distributions. An estimation of the model's variables is obtained via Maximum Likelihood (ML) estimation. If a mixture model consists of several components, that is more than just one topic, there is no analytical solution to the ML estimation and a numerical optimization algorithm must be employed. The Expectation-Maximization algorithm (EM) is a family of useful algorithms to obtain an ML estimate of mixture models \cite[~p. 359]{Zhai.2016} According to \citeauthor{Hofmann.1999} (\citeyear[p. 290]{Hofmann.1999}; \citeyear[p. 181]{Hofmann.2001}), EM is the "standard procedure for maximum likelihood estimation in latent variable models." 
 
@@ -425,7 +425,7 @@ With the likelihood function defined, we are faced with a constrained optimizati
 \label{constraints} \text{s. t. } & \underset{w \in V}{\sum} \ p(w | \theta_j) = 1, \  j \in [1,k] &  \sum_{j=1}^{k} \pi_{dj} = 1, \ d \in C
 \end{align}
 
-All that is left to do is to solve the maximization problem. If we knew from which topic a word is generated it would be straightforward to calculate the ML estimate. In such a case, the word distributions would simply be the normalized word frequencies (see Chapter XXXX for elaborations on unigram language models). However, the partitioning of the words among the topics is not known, that is we do not know from which topic a word is generated, thus we have to fall back on an iterative algorithm to solve the maximization problem. The EM algorithm proceeds by guessing from which distribution a word is generated and making a tentative estimate of the parameters. Based on the assumed partitioning, the estimate of the parameters is updated. This, in turn, allows an improved inference of the partitioning, leading to an iterative hill-climbing algorithm that improves the estimate of the parameters until it reaches a local optimum \cite[p. 360]{Zhai.2016}. The algorithm proceeds in two steps: In the expectation step (E), posteriori probabilities for the latent variables are computed based on current estimates. In the maximization step (M), the parameters are updated (\citealp[p. 290]{Hofmann.1999}; \citeyear[p. 181--182]{Hofmann.1999}). 
+All that is left to do is to solve the maximization problem. If we knew from which topic a word is generated it would be straightforward to calculate the ML estimate. In such a case, the word distributions would simply be the normalized word frequencies (see Chapter \ref{Ch:background} for elaborations on unigram language models). However, the partitioning of the words among the topics is not known, that is we do not know from which topic a word is generated, thus we have to fall back on an iterative algorithm to solve the maximization problem. The EM algorithm proceeds by guessing from which distribution a word is generated and making a tentative estimate of the parameters. Based on the assumed partitioning, the estimate of the parameters is updated. This, in turn, allows an improved inference of the partitioning, leading to an iterative hill-climbing algorithm that improves the estimate of the parameters until it reaches a local optimum \cite[p. 360]{Zhai.2016}. The algorithm proceeds in two steps: In the expectation step (E), posteriori probabilities for the latent variables are computed based on current estimates. In the maximization step (M), the parameters are updated (\citealp[p. 290]{Hofmann.1999}; \citeyear[p. 181--182]{Hofmann.1999}). 
 
 
 In the E-step, the algorithm uses Bayes rule to infer the topic that has been used to generate a word. We introduce a hidden variable $z_{d,w} \in \{1,2,...,k\}$ to capture this information. The value of this hidden variable is inferred based on a tentative set of parameters (\citealp[p. 290]{Hofmann.1999}; \citeyear[p. 182]{Hofmann.2001}; \citealp[p. 362--374]{Zhai.2016}):
@@ -445,11 +445,26 @@ As Eq. \ref{M1pi} and Eq. \ref{M1theta} illustrate, the computation of the param
 
 As mentioned before, EM is a hill-climbing algorithm that starts with an initial guess of the parameter values and then successively improves it. In the process of improving the estimate, the EM algorithm is guaranteed to converge to a local, but not a global maximum. To account for this, \citeauthor{Zhai.2016} recommend applying the algorithm repeatedly with changing initial values for the unknown parameters and using the run with the highest likelihood value (\citeyear[p. 363--368]{Zhai.2016}).
 
-\subsection{Adding a Background Language Model}
+\subsection{Adding a Background Language Model}\label{Ch:background}
 
-In the original PLSA \cite{Hofmann.1999} there was no background topic. The aim of a background topic is to capture the common words in the text data so that the other topics can capture the words of interest. If a topic model does not include a background model, such as the original PLSA, common words will have a high probability in the learned topics. As a result, entire learned topics could consist mainly of stopwords. 
+In the original PLSA (\citealp{Hofmann.1999}; \citeyear{Hofmann.2001}) as it was introduced in Chapter \ref{Ch:model} there is no background topic. The model contains $k$ topics, $\{\theta_1, ..., \theta_k\}$, that are treated as unknown and inferred via a probabilistic process. As a result, very common words will show up prominently in these learned topics. Yet, common words often carry very little relevant information, such as stop words (more on stop words in Chapter \ref{preprocessing}). 
+The aim of a background topic is to represent the common words in the text data so that the inferred topics can capture the words of interest. 
 
-Behavior of a mixture model muss auch hier rein
+Let's look at the behavior of a mixture model to understand the usefulness of a background model. Topics are word distributions with the simplest word distribution being the unigram language model. In this model, we assume that words in a text are generated independently. Thus, the likelihood of a sequence of words is equal to the product of the probability of each word \citep[p. 51--54]{Zhai.2016}. Assume that $\theta_{u}$ is a unigram language model to be inferred from document $d$. Then the ML estimation problem is given by
+\begin{align}
+\label{ul} & p(d|\theta_{u}) = \underset{w \in V}\prod p(w|\theta_{B})^{c(w,d)}\\
+\label{constraintsul} & \text{s. t. } \underset{w \in V}{\sum} \ p(w|\theta_{u}) = 1
+\end{align}
+the solution to which is \citep[p. 341-343]{Zhai.2016}:
+\begin{align}
+\label{estul} & \ p(w_i|\hat{\theta}_{u}) = \frac{c(w_i,d)}{|d|}
+\end{align}
+where $c(w,d)$ is the word count in document $d$ and $|d|$ is the total number of words in document $d$. Eq. \ref{estul} illustrates that the ML estimator of a unigram language model gives each word a probability equal to its relative frequency in the document. 
+
+A unigram language model gives observed words a non-zero probability and zero probability to words that do not show up. Further, it gives a very high probability to words that show up frequently. The more prominent a word, the higher its probability in the word distribution. This allows a unigram language model to perform semantic analysis as it picks up on words that show up frequently in the same document. Such words will have a similar probability due to their co-occurrence and thus a semantic association is assumed, leading to the mining of a topic. However, usually functional words and stop words are used the most frequently in a text and thus will have high probabilities, while content-carrying words will have a much lower probability. A topic can then be completely dominated by uninformative words. Introducing a background language model can help filter out these words \citep[p. 51--54]{Zhai.2016}.  
+
+
+It is intuitive that a ML estimator tends to assign the highest probabilities to the most common words in oder to maximize the likelihood function.
 
 
 
@@ -562,12 +577,14 @@ here:  general topics, document specific word distributions, corpus wide backgro
 \cite{Bishop.2006}\\
 \cite{Darling.2011}\\
 
-Another problem: where the document stands does not matter, but some days have a lot more articles than others, shall we randomly select only a few as to keep the balance? Make several iterations? Questions is: how can topic model pick up on different vocabulary?
+
 
 
 \section{Sensitivity Analysis}
 
-
+- Another problem: where the document stands does not matter, but some days have a lot more articles than others, shall we randomly select only a few as to keep the balance? Make several iterations? Questions is: how can topic model pick up on different vocabulary? -- figure out what happens when a specific word of aarrative schows up a lot more often than the word in another narrative!!!!
+- cross validation to find the priors that yield highest statistical significance
+- initialize a few times with different RVs and take run with highest likelihood
 
 
 \chapter{Data and Methodology}
