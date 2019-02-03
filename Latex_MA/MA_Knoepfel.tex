@@ -420,7 +420,7 @@ In a first step, the ML estimation problem is to be defined. Based on the genera
 A few words of explanation. $\sum_{j=1}^{k}\pi_{d,j} \ p(w|\theta_j)$ denotes the probability of word $w$ occurring once in document $d$. It is the probability of observing the word regardless of which topic is used. We assume independence in generating each word, hence the probability of the document equals the product of the probability of each word in the document (see Eq. \ref{prob}). Eq. \ref{log} is the log likelihood function for document $d$, just as Eq. \ref{LL} is the log likelihood for the entire collection $C$ (\citealp{Hofmann.1999}; \citeyear{Hofmann.2001}; \citealp{Steyvers(2007)}; for notation see \citealp[~p. 340--377]{Zhai.2016}).
 
 With the likelihood function defined, we are faced with a constrained optimization problem:
-\begin{align}%\label{argmax}
+\begin{align}\label{argmax}
  & \underset{\pi_{d,j} \ \theta_j}{\text{arg max}} \ p(C|\pi_{d,j},\theta_j) &\\
 \label{constraints} \text{s. t. } & \underset{w \in V}{\sum} \ p(w | \theta_j) = 1, \  j \in [1,k] &  \sum_{j=1}^{k} \pi_{dj} = 1, \ d \in C
 \end{align}
@@ -437,8 +437,8 @@ Eq. \ref{E1} shows the E-Step of the EM algorithm for PLSA, where $p(z_{d,w}=j)$
 
 In the M-step we calculate an ML estimate of the parameters $\pi_{d,j}$ and $p(w|\theta_j)$ using the estimate obtained in step E. We use the estimated partitioning of the words among the topics to adjust the word count $c(w,d)$, that is we obtain a discounted word count $c(w,d) p(z_{d,w}=j)$ which can be understood as the expected count for the event that word $w$ is generated from $\theta_j$. Remember that the ML estimation could not be solved analytically because we did not know the partitioning of the words. Having obtained a tentative guess of the partitioning, we can easily estimate $\pi_{d,j}$ (the probability of document $d$ covering topic $\theta_j$) and $p(w|\theta_j)$ (the probability of word $w$ for topic $\theta_j$) (\citealp[p. 290]{Hofmann.1999}; \citeyear[p. 182]{Hofmann.2001}; \citealp[p. 364--375]{Zhai.2016}):
 \begin{align}%\label{M1}
-\label{M1pi} \pi_{d,j}^{(n+1)}=\frac{\sum_{w \in V} c(w,d)\ p^{(n)}(z_{d,w}=j)}{\sum_{j \in k}\sum_{w \in V}c(w,d) \ p^{(n)}(z_{d,w}=j)}\\
-\label{M1theta} p^{(n+1)}(w|\theta_j)=\frac{\sum_{d \in C} c(w,d)\ p^{(n)}(z_{d,w}=j)}{\sum_{w \in V}\sum_{d \in C}c(w,d)\ p^{(n)}(z_{d,w}=j)}
+\label{M1pi} \pi_{d,j}^{(n+1)}=\frac{\sum_{w \in V} c(w,d)\ p(z_{d,w}=j)}{\sum_{j \in k}\sum_{w \in V}c(w,d) \ p(z_{d,w}=j)}\\
+\label{M1theta} p^{(n+1)}(w|\theta_j)=\frac{\sum_{d \in C} c(w,d)\ p(z_{d,w}=j)}{\sum_{w \in V}\sum_{d \in C}c(w,d)\ p(z_{d,w}=j)}
 \end{align}
 
 As Eq. \ref{M1pi} and Eq. \ref{M1theta} illustrate, the computation of the parameter estimates amounts simply to aggregating the the expected word counts and normalizing them among all topics or among all words, respectively. The normalization must ensure that the constraints in Eq. \ref{constraints} hold. The new generation of parameters is used to adjust the probabilities of the $z_{d,w}$ values, which subsequently can be used to compute a next generation of parameters. The EM algorithm continues to iterate over the E- and M-step until the likelihood converges. Instead of using a convergence condition, a stopping rule can be employed. In this case, the algorithm stops updating the parameters once a sufficient performance, as defined in the stopping criterion, is reached \citep[p. 182--183]{Hofmann.2001}. 
@@ -448,90 +448,54 @@ As mentioned before, EM is a hill-climbing algorithm that starts with an initial
 \subsection{Adding a Background Language Model}\label{Ch:background}
 
 In the original PLSA (\citealp{Hofmann.1999}; \citeyear{Hofmann.2001}) as it was introduced in Chapter \ref{Ch:model} there is no background topic. The model contains $k$ topics, $\{\theta_1, ..., \theta_k\}$, that are treated as unknown and inferred via a probabilistic process. As a result, very common words will show up prominently in these learned topics. Yet, common words often carry very little relevant information, such as stop words (more on stop words in Chapter \ref{preprocessing}). 
-The aim of a background topic is to represent the common words in the text data so that the inferred topics can capture the words of interest. 
+The aim of a background topic is to represent the common words in the text data so that the learned topics can capture the words of interest. 
 
-Let's look at the behavior of a mixture model to understand the usefulness of a background model. Topics are word distributions with the simplest word distribution being the unigram language model. In this model, we assume that words in a text are generated independently. Thus, the likelihood of a sequence of words is equal to the product of the probability of each word \citep[p. 51--54]{Zhai.2016}. Assume that $\theta_{u}$ is a unigram language model to be inferred from document $d$. Then the ML estimation problem is given by
+Let's look at the behavior of a mixture model to understand the usefulness of a background model. Topics are word distributions with the simplest word distribution being the unigram language model. We assume that words in a text are generated independently. Thus, the likelihood of a sequence of words is equal to the product of the probability of each word \citep[p. 51--54]{Zhai.2016}. Assume that $\theta$ is the single topic to be inferred from document $d$. Then the ML estimation problem is given by
 \begin{align}
-\label{ul} & p(d|\theta_{u}) = \underset{w \in V}\prod p(w|\theta_{B})^{c(w,d)}\\
-\label{constraintsul} & \text{s. t. } \underset{w \in V}{\sum} \ p(w|\theta_{u}) = 1
+\label{ul} & p(d|\theta) = \underset{w \in V}\prod p(w|\theta)^{c(w,d)}\\
+\label{constraintsul} & \text{s. t. } \underset{w \in V}{\sum} \ p(w|\theta) = 1
 \end{align}
-the solution to which is \citep[p. 341-343]{Zhai.2016}:
+the solution to which is
 \begin{align}
-\label{estul} & \ p(w_i|\hat{\theta}_{u}) = \frac{c(w_i,d)}{|d|}
+\label{estul} & \ p(w_i|\hat{\theta}) = \frac{c(w_i,d)}{|d|}
 \end{align}
-where $c(w,d)$ is the word count in document $d$ and $|d|$ is the total number of words in document $d$. Eq. \ref{estul} illustrates that the ML estimator of a unigram language model gives each word a probability equal to its relative frequency in the document. 
+where $c(w,d)$ is the word count in document $d$ and $|d|$ is the total number of words in document $d$ \citep[p. 341-343]{Zhai.2016}. 
 
-A unigram language model gives observed words a non-zero probability and zero probability to words that do not show up. Further, it gives a very high probability to words that show up frequently. The more prominent a word, the higher its probability in the word distribution. This allows a unigram language model to perform semantic analysis as it picks up on words that show up frequently in the same document. Such words will have a similar probability due to their co-occurrence and thus a semantic association is assumed, leading to the mining of a topic. However, usually functional words and stop words are used the most frequently in a text and thus will have high probabilities, while content-carrying words will have a much lower probability. A topic can then be completely dominated by uninformative words. Introducing a background language model can help filter out these words \citep[p. 51--54]{Zhai.2016}.  
+Eq. \ref{estul} illustrates that the ML estimator of a unigram language model gives each word a probability equal to its relative frequency in the document. Consequently, only observed words have a non-zero probability while words that do not show up have zero probability. Further, a very high probability is given to words that show up frequently. The more prominent a word, the higher its probability in the word distribution. 
+%This allows a unigram language model to perform semantic analysis as it picks up on words that show up frequently in the same document. Such words will have a similar probability due to their co-occurrence and thus a semantic association is assumed, leading to the mining of a topic. 
+However, usually functional words and stop words are used the most frequently in a text and thus will have high probabilities, while content-carrying words will have a much lower probability. Thus, a topic can be completely dominated by uninformative words. Introducing a background language model can help filter out such words \citep[p. 51--54]{Zhai.2016}.  
 
+To change the predominance of common words, the generative process needs to be adjusted so that the learned topics do not have to generate these words. Specifically, another word distribution that generates the common words, called the background topic ($\theta_B$), has to be introduced. A natural choice for the background topic is the unigram language model because it assigns high probabilities to frequent words. Including a background model in the mixture model will allow the learned topics to assign high probabilities to content-carrying words instead \citep[p. 346--347]{Zhai.2016}.  
 
-It is intuitive that a ML estimator tends to assign the highest probabilities to the most common words in oder to maximize the likelihood function.
+Consider the optimization problem of a mixture model in Eq. \ref{argmax} and Eq. \ref{constraints}. In order to maximize the overall likelihood, different topics tend to put a high probability on different words. Put differently, when a word, $w_1$, is assigned a high probability in one word distribution, $w_1$ will tend to have a low probability in another distribution. That is, if $p(w_1|\theta_j)$ is high, then $p(w_1|\theta_i)$ tends to be low, and vice versa. Thus, the behavior of a mixture model ensures that if a background model is introduced, that puts high probabilities on common words, the other distributions are encouraged to put a low probability on common words and more probability mass on words that rank low in the background distribution. Of course, due to the nature of the ML estimate of a mixture model, if a word appears very frequently in the text, it will tend to have a high probability in all distributions as this optimizes the overall likelihood \citep[p. 353--359]{Zhai.2016}.
 
+If a background topic is introduced into the mixture model, a decision needs to be made as to whether a word is generated by the background model, $\theta_B$, or by one of the learned models, $\theta_i$. This choice is controlled by a probability distribution over the components of the mixture models: $\lambda_B$ denotes the probability that the background model was used to generate a word. The likelihood function is given by \citep[p. 372]{Zhai.2016}:
+\begin{align}
+\label{BLL} \text{log} \ p(C|\pi_{d,j},\theta_j) &= \underset{d \in C}{\sum} \ \underset{w \in V}\sum c(w,d) \ \text{log} \left( \textcolor{blue}{\lambda_B p(w|\theta_B) + (1-\lambda_B)} \sum_{j=1}^{k}\pi_{d,j} \ p(w|\theta_j) \right)
+\end{align}
 
+The difference to the likelihood function in Chapter \ref{Ch:model} is marked in blue. The ML estimation problem remains unchanged (see Eq. \ref{argmax} and Eq. \ref{constraints}). Note that the probability of observing a word from the background distribution is $\lambda_B \ p(w|\theta_B)$ while the probability of observing a word from the learned topic $\theta_j$ is $(1-\lambda_B) \ p(w|\theta_j)$. The background model, $p(w|\theta_B)$, is assumed to be known and can, for instance, be estimated as a unigram language model of the collection. This is powerful way to introduce our domain knowledge about the text into the model \citep[p. 352, 372--376]{Zhai.2016}. 
 
+Consider how the probability of choosing the background model $\lambda_B$ influences the maximization problem. The higher the probability of choosing the background model is, the higher is the probability mass on the words in the background model $\lambda_B  p(w|\theta_B)$.  The opposite is true for learned topics as $(1-\lambda_B)  p(w|\theta_j)$ will be lower the higher $\lambda_B$. As a result, inferred distributions will give a low probability to common words because they have a high probability in the background topic. Instead, the learned topics will give other, content-bearing words a higher probability. The higher $\lambda_B$, the more common words are filtered out from the learned topics $\{\theta_1, ..., \theta_k\}$ \citep[p. 352--359]{Zhai.2016}.  
 
-The simples topic model is the unigram language model (more on the topic in Chapter xxxx- ). Adding a background language model.  setting background model powerful tool to inject some domain knowledge
-in estimator – setting very strong prior in Bayesian estimation Mostly, topic models are mixture models of at least two topic. 
+$\lambda_B$ indicates the fraction of words generated from the background model. This parameter needs to be specified and can be understood as a prior in the process of Bayesian inference. It encodes a prior belief about the partitioning of the words between the background and the learned topics and thus again allows us to introduce domain knowledge that we may have about the text \citep[p. 361, 372--376]{Zhai.2016}. 
 
+Based on Eq. \ref{BLL} the EM algorithm looks as follows:
+\begin{align}\label{BE1}
+p(z_{d,w}=j)&=\frac{\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j)}{\sum_{j=1}^{k}\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j)}\\
+\label{BbE1}
+\textcolor{blue}{ p(z_{d,w}=B)} & \textcolor{blue}{ =\frac{\lambda_B \ p(w|\theta_B)}{\lambda_B \ p(w|\theta_B) + (1-\lambda_B) \sum_{j=1}^{k}\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j)} }
+\end{align}
+Eq. \ref{BE1} and Eq. \ref{BbE1} show the E-Step of the EM algorithm for PLSA with a background model, where $p(z_{d,w}=j)$ is the probability that word $w$ in document $d$ is generated from topic $\theta_j$ (conditional on not having chosen the background model) and $p(z_{d,w}=B)$ is the probability of $w$ being generated from the background model $\theta_B$. The M-step is:
 
-First, a topic can be represented as a a word distribution (or a term distribution) and second a text document is a sample of words drawn from a probabilistic model 
-\begin{itemize}
-	\item ONE TOPIC: unigram language model, MLE with some prior belief, so Bayesian estimation of parameters
-	\begin{itemize}
-		\item p. 342 / model: $p(w_i | \theta)$ for $ i \in (1, M)$
-		\item likelihood function: $\prod_{i = 1}^{M} p(w_i | \theta)^{c(w_i, d)}$ with $c(w_i, d)$ being the count of unique word $w_i$ in document d
-		\item now maximize, that is find the word probabilities $p(w_i | \theta)$
-	\end{itemize}
-	\item Adding a background language model, p. 347
-	\begin{itemize}
-		\item $p(\theta_i)$ is probability of choosing word distribution $i$, generative model with some uncertainty as to which word distribution will be chosen, must sum to one for all $\theta_i$
-		\item set $p(\theta_b)$ to indicate how many words to factor out // how to set $p(\theta_i)$?
-		\item likelihood function: $\prod_{i = 1}^{M} [ p(\theta_d)p(w_i | \theta_d) + p(\theta_b)p(w_i | \theta_b) ]^{c(w_i, d)} $ with $c(w_i, d)$ being the count of unique word $w_i$ in document d
-	\end{itemize}
-	\item background model $\theta_b$ needs to be preset to bias the word distribution towards common words p. 352! setting background model powerful tool to inject some domain knowledge in estimator -- setting very strong prior in Bayesian estimation
-	\item 
-	\item 
-	\item 
-	\item 
-\end{itemize}
-
-
-
-
-\subsection{Expectation Maximization}
-\begin{itemize}
-	\item infer which word is from which distribution in a document, based on tentative estimate of parameters, iterative hill-climbing algorithm p. 360
-	\item use Bayes rules, prior is  $p(\theta_i)$, the probability of partitioning, belief before we observe the text
-	\item binary latent variable $z$, to denote which topic a word is from
-	\item posteriori probability $p(z=0|w=text)$, guesses at which probability has been used to generate the word, proportional to $p(\theta_d)p(w_i | \theta_d)$ // E-Step / helps us figure out which word has been attributed to which topic, but does not make it final
-	\item E-Step: how likely is $w$ from $\theta_d$: $\textcolor{red}{p^{(n)}(z=0|w)} = \frac{p(\theta_d)p^{(n)}(w|\theta_d)}{p(\theta_d)p^{(n)}(w|\theta_d) + p(\theta_b)p^{(n)}(w|\theta_b)}$
-	\item M-Step: $p^{(n+1)}(w|\theta_d)=\frac{c(w,d) \textcolor{red}{p^{(n)}(z=0|w)}}{\sum_{w' \in V} c(w',d) p^{(n)}(z=0|w')} $
-	\item we introduce the latent variables because their existence makes the ML trivial to compute, because we can now normalize over all the terms that are of $z=0$
-	\item M-step uses the fact, that all occurrences of $w$ have been split between the distributions, $c(w,d) \textcolor{red}{p^{(n)}(z=0|w)}$ is a discounted count of $w$, expected number of occurrences in topic $z=0$, and $c(w,d) \textcolor{red}{p^{(n)}(z=0|w)} + c(w,d) [1-\textcolor{red}{p^{(n)}(z=0|w)}] = c(w,d)$, that is the total count in the document
-	\item for each iteration we can calculate the likelihood value
-\end{itemize}
+\begin{align}%\label{M1}
+\label{BM1pi} \pi_{d,j}^{(n+1)}=&\frac{\sum_{w \in V} c(w,d) \ \textcolor{blue}{(1-p(z_{d,w}=B))}\ p(z_{d,w}=j)}{\sum_{j \in k}\sum_{w \in V}c(w,d) \ \textcolor{blue}{(1-p(z_{d,w}=B))} \ p(z_{d,w}=j)}\\
+\label{BM1theta} p^{(n+1)}(w|\theta_j)=&\frac{\sum_{d \in C} c(w,d) \ \textcolor{blue}{(1-p(z_{d,w}=B))} \ p(z_{d,w}=j)}{\sum_{w \in V}\sum_{d \in C}c(w,d)\ \textcolor{blue}{(1-p(z_{d,w}=B))}\ p(z_{d,w}=j)}
+\end{align}
+As before, in the M-step we use a tentative partitioning of the words, as derived in the E-step, to update the parameters. Now, however, words are partitioned among the $k$ learned topics conditional on not being allocated to the background topic \citep[p. 372--376]{Zhai.2016}. 
 
 
 
-\subsection{PLSA with background model}
-here can implement own algorithm with background model, created myself
-adding a background language model
-
-\subsection{PLSA}
-
-\begin{itemize}
-	\item probability of observing a word: $p_d(w) = \lambda_Bp(w|\theta_b) + (1-\lambda_B)\sum_{j=1}^{k}\pi_{d,j}p(w|\theta_j)$
-	\item Likelihood function for all words in document d: $\sum_{w \in V} c(w,d) log[\lambda_Bp(w|\theta_b) + (1-\lambda_B)\sum_{j=1}^{k}\pi_{d,j}p(w|\theta_j)$]
-	\item Likelihood function for all words in collection C: $\sum_{d \in C}\sum_{w \in V} c(w,d) log[\lambda_Bp(w|\theta_b) + (1-\lambda_B)\sum_{j=1}^{k}\pi_{d,j}p(w|\theta_j)$]
-	\item Unknown parameters: $\pi$ and $\theta$
-	\item use the EM model to compute the Ml estimates for PLSA, more hidden variables in the E step, p. 374, probabilities that word $w$ ind doc $d$ is created by model $j$ or $B$, estimating the latent variables $z$
-	\item $p(z_{d,w}=j)=\frac{\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j)}{\sum_{j'=1}^{k}\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j')}$
-	\item $p(z_{d,w}=B)=\frac{\lambda_Bp(w|\theta_b)}{\lambda_Bp(w|\theta_b)+(1-\lambda_B)\sum_{j=1}^{k}\pi_{d,j}^{(n)}p^{(n)}(w|\theta_j)}$
-	\item M Step, probability of $d$ covering topic $j$, and probability of word $w$ for topic $j$
-	\item $\pi_{d,j}^{(n+1)}=\frac{\sum_{w \in V}c(w,d)(1-p(z_{d,w} =B))p(z_{d,w}=j)}{\sum_{j'}\sum_{w \in V}c(w,d)(1-p(z_{d,w} =B))p(z_{d,w}=j')}$
-	\item $p^{(n+1)}(w|\theta_j)=\frac{\sum_{d \in C}c(w,d)(1-p(z_{d,w} =B))p(z_{d,w}=j)}{\sum_{w'}\sum_{d \in C}c(w',d)(1-p(z_{d,w'} =B))p(z_{d,w'}=j)}$
-	\item p. 376, first need to initialize all the unknown parameters randomly , $\pi$ and the $p(w|\theta)$
-	
-\end{itemize}
 
 \subsection{Latent Dirichlet Allocation}\label{LDA}
 
@@ -546,7 +510,7 @@ adding a background language model
 
 
 
-\section{LDA}
+\section{Latent Dirichlet Allocation}
 
 PLSA - The linear growth in parameters suggests that the model is prone to overfitting and, empirically, overfitting is indeed a serious problem \cite[p. 1001]{Blei.2003}
 
@@ -582,8 +546,8 @@ here:  general topics, document specific word distributions, corpus wide backgro
 
 \section{Sensitivity Analysis}
 
-- Another problem: where the document stands does not matter, but some days have a lot more articles than others, shall we randomly select only a few as to keep the balance? Make several iterations? Questions is: how can topic model pick up on different vocabulary? -- figure out what happens when a specific word of aarrative schows up a lot more often than the word in another narrative!!!!
-- cross validation to find the priors that yield highest statistical significance
+- Another problem: where the document stands does not matter, but some days have a lot more articles than others, shall we randomly select only a few as to keep the balance? Make several iterations? Questions is: how can topic model pick up on different vocabulary? -- figure out what happens when a specific word of aarrative schows up a lot more often than the word in another narrative!!!!\\
+- cross validation to find the priors that yield highest statistical significance\\
 - initialize a few times with different RVs and take run with highest likelihood
 
 
