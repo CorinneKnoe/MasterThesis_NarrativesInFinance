@@ -447,6 +447,10 @@ As mentioned before, EM is a hill-climbing algorithm that starts with an initial
 
 \subsection{Adding a Background Language Model}\label{Ch:background}
 
+\textcolor{red}{\cite{Darling.2011} talks about background model}
+
+\textcolor{red}{be careful what you call prior, i think the background distribution itself is the prior $\theta_B$ as it encodes the knowledge we have about the text, then it is a infinitely strong prior, that we give a probability distribution to // of course, the fraction of background words is a prior, too // something we know about the text and encode in it}
+
 In the original PLSA (\citealp{Hofmann.1999}; \citeyear{Hofmann.2001}) as it was introduced in Chapter \ref{Ch:model} there is no background topic. The model contains $k$ topics, $\{\theta_1, ..., \theta_k\}$, that are treated as unknown and inferred via a probabilistic process. As a result, very common words will show up prominently in these learned topics. Yet, common words often carry very little relevant information, such as stop words (more on stop words in Chapter \ref{preprocessing}). 
 The aim of a background topic is to represent the common words in the text data so that the learned topics can capture the words of interest. 
 
@@ -511,7 +515,9 @@ As before, in the M-step we use a tentative partitioning of the words, as derive
 
 
 \section{Latent Dirichlet Allocation}
+PLSA is completely unsupervised and the discovery of topics is driven exclusively by the data, taking no regards of any extra knowledge on topics and their coverage that we might have. Some domain knowledge is introduced with the introduction of a background model. 
 
+ Only if a background model is introduced, we also introduce some extra knowledge 
 PLSA - The linear growth in parameters suggests that the model is prone to overfitting and, empirically, overfitting is indeed a serious problem \cite[p. 1001]{Blei.2003}
 
 First introduced by \cite{Blei.2003}
@@ -620,7 +626,27 @@ A closer look at the dispersion of the most common words reveals that their usag
 
 
 \subsection{Text Preprocessing}\label{preprocessing}
-For almost all purposes of computational linguistics, the texts have to be processed and prepared. To that end, text data first needs to be segmented into words, that is the sequence of characters that make up a text needs to be broken down to locate the word boundaries. Words identified thus are referred to as tokens and the process is known as tokenization \cite[p. 10]{Palmer.2010}. I apply the word tokenizer of the nltk package \citep{Bird.2010}, as this application is prepared to deal with frequently occurring character sequences appertaining to the English language, such as contractions. \citet[pp. 16-19]{Palmer.2010} rightly points out that there exists plenty of tokenization ambiguity, even in a language where the words are generally space-delimited. Some of this ambiguity is hard to resolve, such as the use of apostrophes for the genitive form of a noun, for the plural form, and for verbal contractions. \textcolor{red}{Could give a (code) example in the appendix}
+Text data in its raw form contains all the ambiguities that are inherent in natural language. Thus, before any NLP tasks can be performed, the text data needs to be prepared. Text preprocessing is the process of converting raw text into "a well-defined sequence of linguistically meaningful units." This part of the NLP process is essential, as any analysis that follows is based on the linguistic units (characters, words, and sentences) identified at this stage \cite[p. 9]{Palmer.2010}.
+
+As outlined in Chapter \ref{NLP}, this thesis will use probabilistic topic models for its analysis. Such models rely on the "bag-of-words" assumption and neglect the order of words in a text as well as the order of documents in a corpus. Therefore, the main task of the preprocessing stage is the correct identification of words as the linguistically meaningful units to be used in topic modeling. \citet[p. 10]{Palmer.2010} refers to the process of converting text data into its components as text segmentation. In particular, the process of breaking up a sequence of characters at the word boundaries is called word segmentation. Words identified by word segmentations are known as tokens and the process of identifying them is also known as tokenization \citep[p. 10]{Palmer.2010}.
+
+\citet[pp. 16-19]{Palmer.2010} rightly points out that there exists plenty of tokenization ambiguity. In a language where words are generally space-delimited, a natural approach to tokenization is identifying any sequence of characters preceded and followed by a space as a token. However, this leaves a certain amount of ambiguity when it comes to punctuation and multi-word expressions. Apostrophes, for instance, are used to mark contractions, the genitive form of nouns, and even the plural form of nouns. Tokenization needs to implement a rule regarding the treatment of such ambiguous cases. Consider the example word \textit{Peter's}. In this case, \textit{'s} could indicate a possession as well as a contraction of the verb \textit{is} and it could be tokenized as \textit{Peters} or as two tokens, \textit{Peter} and \textit{'s}, or even as \textit{Peter} and \textit{is}, if that was the supposed meaning \cite[pp. 16-19]{Palmer.2010}.
+
+\cite{Bird.2010} supply a series of word tokenizers. However, even they admit that when it comes to tokenization "no single solution works well across-the-board, and we must decide what counts as a token depending on the application domain." The problem of tokenization gets compounded by the problem of stop words. As outlined in Chapter \ref{Ch:background}, functional words occur frequently in texts and thus can clutter up the information we are trying to discover. Such stop words carry little information and obscure the analysis by crowding-out more meaningful words. It can therefore be useful to remove stop words from the text data altogether. 
+
+To remove stop words, one can make use of publicly available lists of stop words. However, \citet{Nothman.2018} point out the difficulties and incompatibilities of such lists. Investigated the variation and consistency of several lists, they come to the conclusion that stop words are often included based frequency statistics but also based on manual selection and filtering. Thus, lists vary greatly in the words they include. Apart from uncertainty regarding the selection of the stop words, stop lists may also assume a particular tokenization strategy. Yet, as \citet{Nothman.2018} point out, the stop lists provided by some open source libraries do not always go with the tokenizer provided by the same libraries. For example, while a tokenizer might split the word \textit{hasn't} into the tokens \textit{has} and \textit{n't}, the accompanying stop word list only contains \textit{has} and \textit{not}, omitting the token \textit{n't}. Further, several lists include the words \textit{has} and \textit{have}, but fail to list \textit{had}, letting the omission and inclusion of stop words appear arbitrary \citep[p. 7--11]{Nothman.2018}.  
+
+The general assumption is that topic models benefits from stop word removal \cite[p. 432]{SchofieldA.MagnussonM.&MimnoD..2017}. \cite{Blei.2003}, \cite{Chem.2007}, \cite{Steyvers(2007)}, and \cite{Hofmann.2001} removed the stop words during text preprocessing so that they did not impact their analysis. Contrary to popular belief, as voiced for example by \citet[p. 7]{Darling.2011}, \cite{SchofieldA.MagnussonM.&MimnoD..2017} show that a document specific approach to stop word removal is not necessary. While the removal of very frequent terms improves the quality of topic models, the removal of text specific stop words yields little benefit. If the removal of common stop words is not sufficient, unwanted terms can be removed after model training, yielding better results than ex-ante removal \cite[p. 432]{SchofieldA.MagnussonM.&MimnoD..2017}.
+
+Another common step in the stage of preprocessing is stemming. Stemming removes the ending of words with the aim to reduce related words to an identical stem. The words \textit{happily}, \textit{happier}, and \textit{happy}, for instance, might be reduced to one token \cite[p. 287]{Schofield.2016}. 
+
+so as to reduce the siye of the vocabulary \cite{Schofield.2016} on stemming
+\cite{Schofield.2017}
+
+\textcolor{red}{I apply the word tokenizer of the nltk package \citep{Bird.2010}, as this application is prepared to deal with frequently occurring character sequences appertaining to the English language, such as contractions. --- do I do some manual adjustment as well??}
+
+
+ Some of this ambiguity is hard to resolve, such as the use of apostrophes for the genitive form of a noun, for the plural form, and for verbal contractions. \textcolor{red}{Could give a (code) example in the appendix}
 
 In a next step, frequent words that carry little information, commonly referred to as stop words, are removed from the text. 
 
@@ -641,7 +667,7 @@ Preprocessing of text:
 %[['Good', 'muffins', 'cost', '\$', '3.88', 'in', 'New', 'York', '.'],
 %['Please', 'buy', 'me', 'two', 'of', 'them', '.'], ['Thanks', '.']]
 
-
+\cite{SchofieldA.MagnussonM.&MimnoD..2017}
 
 \subsection{Application of Topic Analysis}
 For our purposes, topic analysis is used to identify the topics contained in the articles reporting on the target rate adjustment, the hypothesis being that different topics will emerge for different interpretations of the Fed's policy move. 
