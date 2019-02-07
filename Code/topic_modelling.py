@@ -63,6 +63,7 @@ def tokenize(text):
 def removestopwords(text):
     '''remove the stop words of a list of tokens'''
     stop = stopwords.words('english')
+    stop = stop + ["n't", "'ll", "'s", "'d", "'m", "'o", "'re", "'ve", "'y", "'t"] #manually add missing terms
     text = [w.lower() for w in text if w.lower() not in stop]
     text = " ".join(text) #to remove all unnecessary white spaces
     return text.strip()
@@ -86,8 +87,9 @@ def albhabetizer(text):
 
 
 
-
-
+len(stop)
+ ww = stop + ["'ll", "'s"]
+removestopwords(tokenize("They'll soon move on to greener pasture's"))
 if __name__ == '__main__':
     
     #Read in the text dataframe from a csv
@@ -105,7 +107,7 @@ if __name__ == '__main__':
     textdf['Article'] = textdf['Article'].apply(removestopwords)
     textdf['Article'] = textdf['Article'].apply(albhabetizer)
     textdf['Article'] = textdf['Article'].apply(stemmer_porter)
-    
+    tokenize("children's")
     
     # Read in the FEd meetings dates
     #---------------------------------
