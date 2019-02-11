@@ -10,7 +10,7 @@ Created on 10.10.2018
 #install and import packages
 #============================
 import nltk
-from nltk.stem.porter import PorterStemmer
+#from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
 import time
 import datetime
@@ -50,27 +50,32 @@ def tokenize(text):
     return text
 
 def removestopwords(text):
-    '''remove the stop words of a list of tokens'''
+    '''remove the stop words of a list of tokens, takes a list ang gives a text as output'''
     stop = stopwords.words('english')
+    stop = stop + ["n't", "'ll", "'s", "'d", "'m", "'o", "'re", "'ve", "'y", "'t"] #manually add missing terms
     text = [w.lower() for w in text if w.lower() not in stop]
     text = " ".join(text) #to remove all unnecessary white spaces
     return text.strip()
+    #return text
 
-def stemmer_porter(text):
-    '''Porter stemmer - split text and convert all words back to 
-    their stem, e.g. running -> run, return a text of the stemmed words'''
-    porter = PorterStemmer()
-    stem = [porter.stem(word) for word in text.split()]
-    return " ".join(stem).strip()
+# =============================================================================
+# def stemmer_porter(text):
+#     '''Porter stemmer - split text and convert all words back to 
+#     their stem, e.g. running -> run, return a text of the stemmed words'''
+#     porter = PorterStemmer()
+#     stem = [porter.stem(word) for word in text.split()]
+#     return " ".join(stem).strip()
+# =============================================================================
 
 def albhabetizer(text):
-    '''removing all punctuation, non-letter characters and white spaces'''
-    text.strip()
+    '''removing all punctuation, non-letter characters and white spaces, gives list of tokens as output'''
+    text = text.strip()
     text = (re.sub('[\W]+', ' ', text))      #remove non-word characters and make text lowercase
     text = (re.sub('[\d]+', '', text)) #to remove numbers [0-9]
-    " ".join(text.split()) #to remove all unnecessary white spaces
-    return text.strip()
-
+    textlist = [w for w in text.split() if len(w) > 1] #to remove all unnecessary white spaces and words of one character length
+    #text = " ".join(textlist) #join list to string
+    #return text.strip()
+    return textlist
 
 def dispersion_plot(text, words, xnumbers, xlabels, ignore_case=False, title="Lexical Dispersion Plot"):
     """
@@ -234,13 +239,22 @@ if __name__ == '__main__':
     #name column headers
     articledf.columns = ["Date", "Title", "Article", "Source"]
   
-    #Save to CSV to use in other projects, etc.
-    #==========================================
-    #articledf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/FACTIVA_Data/FACTIVArticles.csv", index=False, encoding="utf-8") #create a csv to store our data
     
-
-    #Set up data frame with Number of words and articles per day
-    #===========================================================
+    #Preprocessing - Cleaning up the text data
+    #==========================================
+        
+    #apply preprocessor to articles in data frame: tokenize and remove stop words
+    tokenizedf = articledf.copy(deep=True) #make deep copy, to have tokenized df separate of original
+    tokenizedf['Article'] = tokenizedf['Article'].apply(tokenize)
+    tokenizedf['Article'] = tokenizedf['Article'].apply(removestopwords)
+    tokenizedf['Article'] = tokenizedf['Article'].apply(albhabetizer)
+    tokenizedf['Title'] = tokenizedf['Title'].apply(tokenize)
+    tokenizedf['Title'] = tokenizedf['Title'].apply(removestopwords)
+    tokenizedf['Title'] = tokenizedf['Title'].apply(albhabetizer)
+    
+    # Cut off the dates we don't need from df, for this we need financial data
+    # Set up data frame with Number of words and articles per day
+    #==========================================================================
     
     #call FED data
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/FED_Data" #absolute path to the txt files
@@ -264,31 +278,38 @@ if __name__ == '__main__':
     end = datetime.datetime.strptime('01.10.2018', '%d.%m.%Y')
     adjustdf = adjustdf.loc[(adjustdf.Date >= start) & (adjustdf.Date < end), :]
     adjustdf = adjustdf.reset_index(drop=True) #so that index starts at 0 for oldes entries
-     
-    #Set up data frame with word and article count per date
-    #doesn't change anything in articledf itself
-    #############################################
-    stop = stopwords.words('english') #stopwords to be removed 
+    
+    # Cut off the dates we don't need from text df, for this we need financial data
+    #At the same time, set up data frame with word and article count per date
+    ###############################################################################
+    articledfcut = pd.DataFrame()
+    tokenizedfcut = pd.DataFrame()
     wcountdf = pd.DataFrame()
     for i in range(len(adjustdf.loc[:,'Date'])):
         day = adjustdf.loc[i, 'Date']
         dayup = day + datetime.timedelta(days=2) #look for articles day after, needs day = 2 to cover sae and following day, 00:00 is start of day
         daylow = day - datetime.timedelta(days=1) #look for articles day after, and everything between
-        slicedf = articledf.loc[(articledf.Date >= daylow) & (articledf.Date <= dayup), :] #filter out articles in correct time frame
-        slicedf = slicedf.reset_index(drop=True) #have index of the sliced df start at 0
-        noofart = len(slicedf)   #number of articles for a date 
+        articleslicedf = articledf.loc[(articledf.Date >= daylow) & (articledf.Date <= dayup), :] #filter out articles in correct time frame
+        noofart = len(articleslicedf) #number of articles for a date, articledf
+        tokenslicedf = tokenizedf.loc[(tokenizedf.Date >= daylow) & (tokenizedf.Date <= dayup), :] #filter out articles in correct time frame
+        noofart2 = len(tokenslicedf) #number of articles for a date, tokenizedf
+        articledfcut = articledfcut.append(articleslicedf, ignore_index=True) #create new df where articles outside range are removed
+        tokenizedfcut = tokenizedfcut.append(tokenslicedf, ignore_index=True) #create new df where articles outside range are removed
+        if noofart != noofart2: #just a quick check, that tokenized and articledf are sliced equally
+            raise ValueError("number of articles for dataframe tokenizeddf and articledf is not equal for time slice", daylow, " to ", dayup)
         words = 0
         stoptokens = 0
+        articleslicedf = articleslicedf.reset_index(drop=True) #have index of the sliced df start at 0
+        tokenslicedf = tokenslicedf.reset_index(drop=True) #have index of the sliced df start at 0
         for l in range(noofart):
-            textprep = tokenize(slicedf.loc[l, 'Article']) #tokenize the text of the article
-            words += len(textprep) #adding up the words/tokens in all articles per date    
-            stoptokens += len([w for w in textprep if w.lower() not in stop]) #count words without stopwords
+            words += len(tokenize(articleslicedf.loc[l, 'Article'])) #count words of original artice, without stop word removal
+            stoptokens += len(tokenslicedf.loc[l, 'Article']) #count toekns of prepared text data
         wcountdf = wcountdf.append([[day, noofart, words, stoptokens]], ignore_index=True)
 
     #name column headers
     wcountdf.columns = ["Date", "ArticleCount", "TokenCount", "StopTokenCount"]
-    #sum(wcountdf["TokenCount"])
-    #sum(wcountdf["StopTokenCount"])
+    sum(wcountdf["TokenCount"])
+    sum(wcountdf["StopTokenCount"])
     
     #to store figure of token count
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
@@ -300,9 +321,9 @@ if __name__ == '__main__':
     seaborn.set_context('paper')
     fig, ax1 = plt.subplots(figsize=(7,10))
     ax1.barh(dateasstring, list(wcountdf['TokenCount']), 
-            label='Number of tokens', color=seaborn.color_palette('deep')[0]) 
+            label='Number of tokens before preprocessing', color=seaborn.color_palette('deep')[0]) 
     ax1.barh(dateasstring, list(wcountdf['StopTokenCount']), 
-            label='Number of tokens w/o stop words', color=seaborn.color_palette('deep')[2])
+            label='Number of tokens after preprocessing', color=seaborn.color_palette('deep')[2])
     
     ax1.set_xlabel('Token Count', color=seaborn.color_palette('deep')[0]) 
     ax1.tick_params('x', labelcolor=seaborn.color_palette('deep')[0])#, labelsize=10)#, labelsize=12)
@@ -324,79 +345,71 @@ if __name__ == '__main__':
     #ax2.xaxis.grid(color=seaborn.color_palette('deep')[1])#, grid_alpha=1, grid_linestyle='-')
     plt.savefig("tokencount.pdf", bbox_inches='tight')
     
-    #Preprocessing - Cleaning up the text data
-    #==========================================
+    
+    #Counting most common words, explore text data of tokenized text
+    #================================================================
+    alltext = []  #collect text as counted in wcountdf
+    for i in range(len(tokenizedfcut['Article'])):
+        alltext += tokenizedfcut.loc[i, 'Article']
         
-    #apply preprocessor to articles in data frame: tokenize and remove stop words
-    articledf['Article'] = articledf['Article'].apply(tokenize)
-    articledf['Article'] = articledf['Article'].apply(removestopwords)
-    articledf['Title'] = articledf['Title'].apply(tokenize)
-    articledf['Title'] = articledf['Title'].apply(removestopwords)
+    alltitle = [] #collect title text as counted in wcountdf
+    for t in range(len(tokenizedfcut['Title'])):
+        alltitle += tokenizedfcut.loc[t, 'Title']
     
-    #Save to CSV to use in other projects, etc.
-    #==========================================
-    #articledf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/FACTIVA_Data/TokenizedArticles.csv", index=False, encoding="utf-8") #create a csv to store our data
-    
-    #Counting most common words, explore text data
-    #=============================================
-    alltext = ''  #collect text as counted in wcountdf
-    for i in range(len(articledf['Article'])):
-        alltext += ' ' + articledf.loc[i, 'Article']
-        
-    alltitle = '' #collect title text as counted in wcountdf
-    for t in range(len(articledf['Title'])):
-        alltitle += ' ' + articledf.loc[t, 'Title']
-    
-    
-    #remove all non alphabetic tokens from this text
-    alltextalph= [w for w in albhabetizer(alltext).split() if len(w) > 1]
-    fdist = FreqDist(alltextalph)
+    #find most common words in text data
+    fdist = FreqDist(alltext)
     fdist.most_common(40)
     
-    alltitlealph = [w for w in albhabetizer(alltitle).split() if len(w) > 1]
-    fdist = FreqDist(alltitlealph)
-    fdist.most_common(40)
+    fdisttitle = FreqDist(alltitle)
+    fdisttitle.most_common(40)
     
     #generate a word cloud
-    wcloudalltext = " ".join(alltextalph).strip() #turn list into string
+    wcloudalltext = " ".join(alltext).strip() #turn list into string
     wcloud = WordCloud(max_font_size=40, background_color="white").generate(wcloudalltext) #generate a word cloud
     plt.figure(figsize=(40,40))
     plt.imshow(wcloud, interpolation="bilinear")
     plt.axis("off")
-    #plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/wordcloud.pdf", bbox_inches='tight')
+    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/wordcloud.pdf", bbox_inches='tight')
     
-    wcloudalltitle = " ".join(alltitlealph).strip() #turn list into string
+    wcloudalltitle = " ".join(alltitle).strip() #turn list into string
     wtitlecloud = WordCloud(max_font_size=40, background_color="white").generate(wcloudalltitle) #generate a word cloud
     plt.figure(figsize=(40,40))
     plt.imshow(wtitlecloud, interpolation="bilinear")
     plt.axis("off")
+    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/wordtitlecloud.pdf", bbox_inches='tight')
+    
     
     #dispersion plot of important words
-    wordsattick = [200000, 400000, 600000, 800000, 1000000] #where to set xlabels
+    wordsattick = list(range(100000, 900000, 100000))
+    
+    [100000, 200000, 400000, 600000, 800000] #where to set xlabels
     
     counter = 0         #get labels for x axis
     index = 0
     labellist = []
-    for wc in wordsattick:
+    for wc in range(100000, 900000, 100000):
         while counter < wc:
             day = str(wcountdf.iloc[index, 0])[:4]
             counter += wcountdf.iloc[index, 3]
             index += 1
         labellist.append(day)        
     
-    dispersion_plot(alltext.split(), ["interest rate", "federal reserve", "central bank", "rate cut", "rate increase", "economy"], wordsattick, labellist)
-    
+    dispersion_plot(alltext, ["interest rate", "federal reserve", "central bank", "rate cut", "rate increase", "economy"], wordsattick, labellist)
 
-    #????#
-    #Processing documents into tokens (incl. stemming and removing stopwords)
-    df['chapter'] = df['chapter'].apply(tokenizer_porter)
-    
-    #Save to CSV to use in other projects, etc.
-    #==========================================
-    df.to_csv("got_processed.csv", index=False, encoding="utf-8") #create a csv to store our data
-    
-    sent = "the the won't, and isn't 99 the dMemoryErrorog dog some other words that we do not care about"
-    cfdist = ConditionalFreqDist() #ist ein dictionary
-    for word in word_tokenize(sent):
-        condition = len(word)
-        cfdist[condition][word] += 1
+# =============================================================================
+#     #Save to CSV to use in other projects, etc.
+#     #==========================================
+#     for i in range(len(tokenizedfcut.loc[:,'Article'])):
+#         tokenizedfcut.loc[i, "Article"] = " ".join(tokenizedfcut.loc[i, "Article"]).strip()
+#         tokenizedfcut.loc[i, "Title"] = " ".join(tokenizedfcut.loc[i, "Title"]).strip()
+#     tokenizedfcut.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/FACTIVA_Data/TokenizedArticles.csv", index=False, encoding="utf-8") #create a csv to store our data
+#     
+#     #Save to CSV to use in other projects, etc.
+#     #==========================================
+#     articledfcut.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/FACTIVA_Data/FACTIVArticles.csv", index=False, encoding="utf-8") #create a csv to store our data
+#     
+#     #Save to CSV to use in other projects, etc.
+#     #==========================================
+#     adjustdf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/FED_Data/adjustments_prep.csv", index=False, encoding="utf-8") #create a csv to store our data
+#     
+# =============================================================================
