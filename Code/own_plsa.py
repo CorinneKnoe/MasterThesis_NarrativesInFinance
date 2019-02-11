@@ -27,7 +27,7 @@ import matplotlib.lines as mlines
 #-------------------------------------------
 path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/" #absolute path to the txt files
 os.chdir(path)
-from topic_modelling import tokenize, removestopwords, albhabetizer
+from prep_preprocessing import tokenize, removestopwords, albhabetizer
 
 
 
@@ -46,7 +46,7 @@ def normalize(vec):
 class Document(object):
 
     def __init__(self, text):
-    #'''takes a text and returns a list of words as a document'''
+    #'''takes a text and returns a list of words as a document, basically a tokenizer'''
         self.words = []
         wordlist = text.split(" ") 
         for word in wordlist:
@@ -72,7 +72,7 @@ class Corpus(object): #gives a list of unique words in all documents
 
 class Plsa(object):
     def __init__(self, corpus, number_of_topics, stoprule, model_path):
-        self.n_d = len(corpus.documents) #no of documents
+        self.n_d = len(corpus.documents) #no of documents/articles
         self.n_w = len(corpus.vocabulary) #no of unique words in corpus
         self.n_t = number_of_topics
         #self.max_iter = max_iter
@@ -261,21 +261,7 @@ if __name__ == "__main__":
     os.chdir(path) #setting working directory
     
     #read in the FED data on target rate
-    adjustdf = pd.read_csv('adjustments.csv', sep = ',')
-    #drop rows if empty
-    while math.isnan(adjustdf.iloc[len(adjustdf)-1,1]):
-        adjustdf = adjustdf[:-1] #drop last row if it is empty
-        
-    for i in range(len(adjustdf)): #replace date string with date format
-        adjustdf.iloc[i,0] = datetime.datetime.strptime(adjustdf.iloc[i,0], '%d/%m/%Y')
-    
-    #rearrange dataframes to ascending order
-    #adjustdf.sort_values('Date', inplace = True)
-    
-    start = datetime.datetime.strptime('01.10.1998', '%d.%m.%Y')
-    end = datetime.datetime.strptime('01.10.2018', '%d.%m.%Y')
-    feddf = adjustdf.loc[(adjustdf.Date >= start) & (adjustdf.Date < end), :]
-    
+    adjustdf = pd.read_csv('adjustments_prep.csv', sep = ',')
     
     #Read in the text dataframe from a csv
     #-------------------------------------
@@ -283,18 +269,10 @@ if __name__ == "__main__":
     os.chdir(path)
 
     #create data frame by reading csv
-    textdf = pd.read_csv('FACTIVArticles.csv', sep = ',')
+    textdf = pd.read_csv('TokenizedArticles.csv', sep = ',')
+    
     #turn first colum from string to datetime
-    textdf['Date'] = pd.to_datetime(textdf['Date'])
-    
-    
-    #prepare the text data
-    #--------------------------------------
-    # prepare data and filter out stopwords
-    textdf['Article'] = textdf['Article'].apply(tokenize)
-    textdf['Article'] = textdf['Article'].apply(removestopwords)
-    textdf['Article'] = textdf['Article'].apply(albhabetizer)
-    #textdf['Article'] = textdf['Article'].apply(stemmer_porter)
+    #textdf['Date'] = pd.to_datetime(textdf['Date'])
     
     #build the Corpus
     #--------------------------------------

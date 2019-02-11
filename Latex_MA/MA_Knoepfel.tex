@@ -651,7 +651,34 @@ In line with the recommendation from \cite{Schofield.2017}, I refrain form apply
 After tokenization, the text data collection encompasses round 1'600'000 tokens. After the removal of stop words, the token count drops to roughly 1'100'000 tokens. Subsequently, the non-alphabetic characters, especially the punctuations marks, are removed and the final count amounts to approximately 850'000 tokens. Thus, even though a conservative preprocessing strategy has been chosen, the text data is reduced by almost half during preprocessing (see Figure \ref{tokencount} in Appendix \ref{AppendixB}).
 
 
-\subsection{Application of Topic Modeling}
+\subsection{Application of PLSA / Application of Topic Modeling}
+
+Using the preprocessed and prepared text data, I apply the PLSA algorithm as it is presented in Chapter \ref{Ch:model}. The model specifications are presented in Table \ref{tab:specs}.
+
+\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ l  l  } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+		\multicolumn{2}{ c }{Input} \\
+		\midrule % In-table horizontal line
+		\tabitem A collection of 2'318  text documents & $C=\{d_1,...,d_{2318}\}$ \\
+		\tabitem Number of topics & $k = 2$ \\
+		\midrule
+		\multicolumn{2}{ c }{Output} \\
+		\midrule
+		\tabitem Coverage of topics in each document $d_i$ & $\{\pi_{i1}, \pi_{i2}\}$, with $\pi_{i1}+\pi_{i2}=1$\\
+		\tabitem $2$ topics & $\{\theta_1, \theta_2\}$\\ %, with $\underset{w \in V}{\sum} \ p(w | \theta_i) = 1$\\
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{Specification of PLSA model.} % Table caption, can be commented out if no caption is required
+	\label{tab:specs} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
+
+As explained in Chapter \ref{NewInsights}, we are looking for two narratives according to which policy days can be classified. Thus, we set $k=2$ which will yield two topics, $\{\theta_1, \theta_2\}$. 
+
+
+
+===========================
 For our purposes, topic analysis is used to identify the topics contained in the articles reporting on the target rate adjustment, the hypothesis being that different topics will emerge for different interpretations of the Fed's policy move. 
 
 I could use LDA when doing out of sample prediction - because then I can predict documents I have not seen before, because I train an LDA model, but when I use all documents, I could just as easily do the mixed model approach with several unigram models???
@@ -659,6 +686,8 @@ I could use LDA when doing out of sample prediction - because then I can predict
 tf-idf term weighting: Apply Term Frequency Inverse Document Frequency normalization to a sparse matrix of occurrence counts. ,bag of words methodology, feature extraction has a big influence on topics that we will find, corpus specific stopwords, preprocessing with vectorizer of do your own
 
 \textcolor{red}{EM hill climbing algorithm, only reaches local maximum, thus initialize several times with different RV!! }
+
+\subsection{Implementation of a Background Topic of PLSA / Application of Topic Modeling}
 
 \section{NOTES}
 Besprechung - 24.09.2018
