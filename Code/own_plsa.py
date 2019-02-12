@@ -286,7 +286,7 @@ if __name__ == "__main__":
     #---------------------------------------
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/" #absolute path to where to store the txt files
     number_of_topics = 2 #int(argv[1])
-    stoprule = 0.01 #int(argv[2])
+    stoprule = 0.05 #int(argv[2])
     
     start_time = time.time()
     plsa = Plsa(corpus, number_of_topics, stoprule, path)
