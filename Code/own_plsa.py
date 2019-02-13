@@ -22,7 +22,8 @@ from nltk.corpus import stopwords
 import math
 import datetime
 import matplotlib.lines as mlines
-
+from multiprocessing import Process, Manager
+import multiprocessing
 #import functions from other python modules
 #-------------------------------------------
 path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/" #absolute path to the txt files
@@ -78,8 +79,10 @@ class Plsa(object):
         #self.max_iter = max_iter
         self.stoploop = stoprule
         self.model_path = model_path
-        self.L = 0.0 # log-likelihood
-        self.diffL = 1000.0 #store difference here, looping value for likelihood function
+# =============================================================================
+#         self.L = 0.0 # log-likelihood
+#         self.diffL = 1000.0 #store difference here, looping value for likelihood function
+# =============================================================================
         self.error_L = 0.0001; # error for each iter
         self.corpus = corpus		
         # bag of words
@@ -100,18 +103,20 @@ class Plsa(object):
                 index = self.vocdic[key]
                 self.n_w_d[di, index] = dic[key]
 
-		# P(z|w,d)
-        self.p_z_dw = np.zeros([self.n_d, self.n_w, self.n_t], dtype = np.float) #random initialization!
-		# P(z|d)
-        np.random.seed(123) #seed for random number, so results can be reproduced
-        self.p_z_d = np.random.random(size=[self.n_d, self.n_t])
-        for di in range(self.n_d):
-            normalize(self.p_z_d[di]) #make random numbers for each document over all topics sum to 1
-		# P(w|z)
-        np.random.seed(456) #seed for random number, so results can be reproduced
-        self.p_w_z = np.random.random(size = [self.n_t, self.n_w])
-        for zi in range(self.n_t):
-            normalize(self.p_w_z[zi])
+# =============================================================================
+# 		# P(z|w,d)
+#         self.p_z_dw = np.zeros([self.n_d, self.n_w, self.n_t], dtype = np.float) #random initialization!
+# 		# P(z|d)
+#         np.random.seed(123) #seed for random number, so results can be reproduced
+#         self.p_z_d = np.random.random(size=[self.n_d, self.n_t])
+#         for di in range(self.n_d):
+#             normalize(self.p_z_d[di]) #make random numbers for each document over all topics sum to 1
+# 		# P(w|z)
+#         np.random.seed(456) #seed for random number, so results can be reproduced
+#         self.p_w_z = np.random.random(size = [self.n_t, self.n_w])
+#         for zi in range(self.n_t):
+#             normalize(self.p_w_z[zi])
+# =============================================================================
 
 # =============================================================================
 #     def log_likelihood(self): #needs to be optimized with matrix calculation, see below
@@ -124,10 +129,12 @@ class Plsa(object):
 #                 L = L + self.n_w_d[di, wi] * np.log(sum1)
 #         return L
 # =============================================================================
-    
+   
     def log_likelihood2(self):
         '''likelihood function with array multiplication instead of for loops'''
         multi = np.dot(self.p_z_d, self.p_w_z) #multiplication across all topics
+        if 0 in multi:
+            multi[multi == 0] = 1 #log of zero is not defined, log(1)=0
         summulti = self.n_w_d * np.log(multi) #element wise multiplication of two matrices: result from before and document-word count
         L = np.sum(summulti) #add up all elements from resulting matrix
         return L
@@ -168,21 +175,49 @@ class Plsa(object):
                 prob = word_index_prob[wi][1] #select probability (second element of list of lists)
                 f.write(self.corpus.vocabulary[index] + " " + str(prob) + "\n") #pull word from vocabulary and print with probability
         f.close()
-
-    def train(self):
+        
+        
+    def multiprocess_train(self, randinit, resultdic):
+        '''a function that does the training of the EM and the likelihood function 
+        but set up so that multiple iterations can run simulatneously'''
+        #initialize the variables we need for every run
+        #===============================================
+        L = 0.0 # log-likelihood
+        diffL = 1000.0 #store difference here, looping value for likelihood function
+        # P(z|w,d)
+        p_z_dw = np.zeros([self.n_d, self.n_w, self.n_t], dtype = np.float) #random initialization!
+		# P(z|d)
+        np.random.seed(randinit) #seed for random number, so results can be reproduced
+        p_z_d = np.random.random(size=[self.n_d, self.n_t])
+        for di in range(self.n_d):
+            normalize(p_z_d[di]) #make random numbers for each document over all topics sum to 1
+		# P(w|z)
+        np.random.seed(randinit) #seed for random number, so results can be reproduced
+        p_w_z = np.random.random(size = [self.n_t, self.n_w])
+        for zi in range(self.n_t):
+            normalize(p_w_z[zi])
+            
+        #start run by calculating likelihood
+        #===============================================
         print("Training...")
         #for i_iter in range(self.max_iter): #maximal iteration instead of stopping rule? a bit ridiculous?
         i_iter = 0
-        while self.diffL > self.stoploop: #do until stopping point is reached
+        while diffL > self.stoploop: #do until stopping point is reached
             
             i_iter += 1 #just to count the iterations
             
-			# likelihood
-            placeholderL = self.log_likelihood2() #produce Likelihood and hold temporarily so difference to last round can be assessed
-            self.diffL = abs(self.L - placeholderL) #calculate increase in L from last round
-            self.L = placeholderL #store this round's L result
-
-            print("Iter " + str(i_iter) + ", L=" + str(self.L) + ", diff=" + str(self.diffL)) #print likelihood number of iteration
+            multi = np.dot(p_z_d, p_w_z) #multiplication across all topics
+            if 0 in multi:
+                multi[multi == 0] = 1 #canot take log(0), but log(1) = 0
+            summulti = self.n_w_d * np.log(multi) #element wise multiplication of two matrices: result from before and document-word count
+            placeholderL = np.sum(summulti) #add up all elements from resulting matrix, #produce Likelihood and hold temporarily so difference to last round can be assessed
+            
+            diffL = abs(L - placeholderL) #calculate increase in L from last round
+            L = placeholderL #store this round's L result
+            
+            
+            
+            #print("Iter " + str(i_iter) + ", L=" + str(L) + ", diff=" + str(diffL)) #print likelihood number of iteration
 
 # =============================================================================
 #             print("E-Step...")
@@ -199,12 +234,12 @@ class Plsa(object):
 # =============================================================================
                         
                         
-            print("E-Step...")
-            self.p_z_dw = np.einsum('ij,jk->ijk', self.p_z_d, self.p_w_z)
-            divider = np.einsum('ij,jk->ik', self.p_z_d, self.p_w_z)
+           # print("E-Step...")
+            p_z_dw = np.einsum('ij,jk->ijk', p_z_d, p_w_z)
+            divider = np.einsum('ij,jk->ik', p_z_d, p_w_z)
             divider[divider == 0] = 1 #replace all zero values with 1, cannot divide by zero
-            self.p_z_dw = self.p_z_dw / divider[:,None]
-            self.p_z_dw = np.transpose(self.p_z_dw, (0,2,1)) #transpose so depth is document, heigt is words, breadth is topic (switching word and topic to fit original set up)
+            p_z_dw = p_z_dw / divider[:,None]
+            p_z_dw = np.transpose(p_z_dw, (0,2,1)) #transpose so depth is document, heigt is words, breadth is topic (switching word and topic to fit original set up)
 
 # =============================================================================
 #             print("M-Step...")
@@ -221,11 +256,11 @@ class Plsa(object):
 #                     self.p_z_d[di, zi] = sum1 / sum2
 # =============================================================================
             
-            print("M-Step...")
-            self.p_z_d = np.einsum('ij,ijk->ik', self.n_w_d, self.p_z_dw) #p_z_d
+           # print("M-Step...")
+            p_z_d = np.einsum('ij,ijk->ik', self.n_w_d, p_z_dw) #p_z_d
             divider = np.einsum('ij->i', self.n_w_d)
             divider[divider == 0] = 1 #replace all zero values with 1, cannot divide by zero
-            self.p_z_d = self.p_z_d / divider[:,None]
+            p_z_d = p_z_d / divider[:,None]
             
 # =============================================================================
 #             # update P(w|z) #p(w|theta)
@@ -242,15 +277,17 @@ class Plsa(object):
 # =============================================================================
                     
             # update P(w|z) #p(w|theta)
-            self.p_w_z = np.einsum('ij,ijk->kj', self.n_w_d, self.p_z_dw) #p_z_d
-            divider = np.einsum('ij->i', self.p_w_z)
+            p_w_z = np.einsum('ij,ijk->kj', self.n_w_d, p_z_dw) #p_z_d
+            divider = np.einsum('ij->i', p_w_z)
             divider[divider == 0] = 1 #replace all zero values with 1, cannot divide by zero
-            self.p_w_z = self.p_w_z / divider[:,None]   
-        
+            p_w_z = p_w_z / divider[:,None]   
+            
         
         #printing topics to file
-        print("printing top words to file...")
-        self.print_top_words(10) #print ten topwords to txt file when process is finished
+        #print("printing top words to file...")
+        #self.print_top_words(10) #print ten topwords to txt file when process is finished
+        
+        resultdic[L] = (p_z_d, p_w_z)
         
 
 if __name__ == "__main__":
@@ -285,162 +322,189 @@ if __name__ == "__main__":
     #execute the PLSA
     #---------------------------------------
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/" #absolute path to where to store the txt files
+    path = ''
     number_of_topics = 2 #int(argv[1])
-    stoprule = 0.05 #int(argv[2])
+    stoprule = 0.1 #int(argv[2])
     
     start_time = time.time()
     plsa = Plsa(corpus, number_of_topics, stoprule, path)
     print("My program took", time.time() - start_time, "to run")
 
-    start_time = time.time()
-    plsa.train()
-    print("My program took", time.time() - start_time, "to run")
-    
-    
-    
-    #Returning the topic document distribution
-    #Classifying the dates as per topic via average of topci document distribution        
-    
-    # Stacked Bar plot
-    #------------------
-    #list of all meeting dates
-    meetinglist = []
-    for d in range(len(feddf['Date'])):
-        meetinglist.append((str(feddf.iloc[d, 0])[:10]))
-        
-    
-    weights=[]  #take the average of topic porbabilities over all articles per meeting date, this is topic per document distribution
-    docweights=[] #weights for every single document, to check whether averaging messes anything up
-    for day in list(feddf['Date']):
-        dayup = day + datetime.timedelta(days=2) #look for articles day after, needs day = 2 to cover sae and following day, 00:00 is start of day
-        daylow = day - datetime.timedelta(days=1) #look for articles day after, and everything between
-        indexlist = list(textdf.loc[(textdf.Date >= daylow) & (textdf.Date <= dayup), :].index) #all index of df of articles with correct date for that meeting
-        line=[]
-        for i in indexlist:
-            line.append(list(plsa.p_z_d[i])) #here the values are extracted from the matrix p(z|d)
-        weights.append(list(np.mean(line, axis=0))) #only the average over all documents is stored
-        docweights.append(line)
-    
-    #prepare plot - inspiration and code examples from https://de.dariah.eu/tatom/topic_model_visualization.html
-    N, K = len(weights), len(weights[0]) #N is numer of meeting dates, K is numer of topics
-    ind = np.arange(N)
-    width = 0.5 
-    plots = []
-    height_cumulative = np.zeros(N)
-    
-    s = []
-    for x in range(K):
-        t = [] # alist with values for all meetings for one topic
-        for entry in weights:
-            t.append(entry[x])
-        s.append(t)  #a list with K list, each with the weights on the respective topic per meetgin date
-        
-    fig = plt.figure(figsize=(14,4))
-    height_cumulative = []
-    for k in range(K):
-        color = seaborn.color_palette('deep')[k]
-        if k == 0:
-            p = plt.bar(ind, s[k], width, color=color)
-        else:
-            p = plt.bar(ind, s[k], width, bottom=height_cumulative, color=color)
-        height_cumulative += s[k]
-        plots.append(p)    
-    
-    plt.ylim((0, 1))  # proportions sum to 1, so the height of the stacked bars is 1
-    plt.title('Share of Topics')
-    plt.xticks(rotation=90)
-    plt.xticks(ind , meetinglist)
-    plt.ylabel('Average percentage per topic and policy day')
-    
-    titles = ['Share of Topic #1', 'Share of Topic #2', 'sadfasdf']
-    #for i in range(len(titles)):
-    #    titles[i] = titles[i][15:]
-    leg = plt.legend(titles, loc=2, fontsize = 'medium')
-    for text in leg.get_texts():
-        plt.setp(text, weight = 'medium')
-    plt.axhline(0.5, color="red", linewidth = 0.5, linestyle = '--')
-    
-    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
-    os.chdir(path) 
-    plt.savefig("plsamodelling.pdf", bbox_inches='tight')
-    
-    
-    #plot of distribution over the documents per day
-    #first 28 days
-    f, axarr = plt.subplots(7, 4, figsize=(7,10))
-    plt.style.use('seaborn-whitegrid')
-    #plt.style.use('classic')
-    seaborn.set_context('paper')
-    
-    for i in range(28):
-        if i / 4 < 7:
-            c = 6
-        if i / 4 < 6:
-            c = 5
-        if i / 4 < 5:
-            c = 4
-        if i / 4 < 4:
-            c = 3
-        if i / 4 < 3:
-            c = 2
-        if i / 4 < 2:
-            c = 1
-        if i / 4 < 1:
-            c = 0
-        axarr[c, i%4].plot(range(len(docweights[i])), [doc[0] for doc in docweights[i]], 'X', label='Topic 1', 
-             markeredgewidth=0.5, color=seaborn.color_palette('deep')[0])
-        axarr[c, i%4].plot(range(len(docweights[i]), 2*len(docweights[i])), [doc[1] for doc in docweights[i]], 'X', label='Topic 2', 
-             markeredgewidth=0.5, color=seaborn.color_palette('deep')[1])
-        axarr[c, i%4].set_title(meetinglist[i])
-        axarr[c, i%4].set_ylim([0, 1])
-        axarr[c, i%4].set_xlim([0, 2*len(docweights[i])])
-        axarr[c, i%4].set_xticks([len(docweights[i])])
-        axarr[c, i%4].set_yticks([0, 0.5, 1])
-    plt.tight_layout()
-    topic1 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[0], marker='X', linestyle='None',
-                          markersize=7, markeredgewidth=.5, label='Topic 1')
-    topic2 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[1], marker='X', linestyle='None',
-                          markersize=7, markeredgewidth=.5, label='Topic 2')
-    plt.figlegend(handles=[topic1, topic2], loc = 'lower left', ncol=2, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
-        
-    #plot of distribution over the documents per day
-    #second 28 days
-    f, axarr = plt.subplots(7, 4, figsize=(7,10))
-    plt.style.use('seaborn-whitegrid')
-    #plt.style.use('classic')
-    seaborn.set_context('paper')
-    
-    for i in range(28, 56):
-        if (i-28) / 4 < 7:
-            c = 6
-        if (i-28) / 4 < 6:
-            c = 5
-        if (i-28) / 4 < 5:
-            c = 4
-        if (i-28) / 4 < 4:
-            c = 3
-        if (i-28) / 4 < 3:
-            c = 2
-        if (i-28) / 4 < 2:
-            c = 1
-        if (i-28) / 4 < 1:
-            c = 0
-        axarr[c, i%4].plot(range(len(docweights[i])), [doc[0] for doc in docweights[i]], 'X', label='Topic 1', 
-             markeredgewidth=0.5, color=seaborn.color_palette('deep')[0])
-        axarr[c, i%4].plot(range(len(docweights[i]), 2*len(docweights[i])), [doc[1] for doc in docweights[i]], 'X', label='Topic 2', 
-             markeredgewidth=0.5, color=seaborn.color_palette('deep')[1])
-        axarr[c, i%4].set_title(meetinglist[i])
-        axarr[c, i%4].set_ylim([0, 1])
-        axarr[c, i%4].set_xlim([0, 2*len(docweights[i])])
-        axarr[c, i%4].set_xticks([len(docweights[i])])
-        axarr[c, i%4].set_xticklabels([])
-        axarr[c, i%4].set_yticks([0, 0.5, 1])
-    plt.tight_layout()
-    topic1 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[0], marker='X', linestyle='None',
-                          markersize=7, markeredgewidth=.5, label='Topic 1')
-    topic2 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[1], marker='X', linestyle='None',
-                          markersize=7, markeredgewidth=.5, label='Topic 2')
-    plt.figlegend(handles=[topic1, topic2], loc = 'lower left', ncol=2, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
-    
-    
 
+    start_time = time.time()
+    for k in [123,123]:
+        resultdic = {}
+        result = plsa.multiprocess_train(k, resultdic)
+    print("My program took", time.time() - start_time, "to run")
+    #print(resultdic.keys())
+
+    
+    start_time = time.time()
+    manager = multiprocessing.Manager()
+    return_dict = manager.dict()
+    jobs = []
+    for i in [123,123]:#range(1,4):
+        p = multiprocessing.Process(target=plsa.multiprocess_train, args=(i,return_dict))
+        jobs.append(p)
+        p.start()
+
+    for proc in jobs:
+        proc.join()
+    print("My parallalized program took", time.time() - start_time, "to run")
+    
+    print(return_dict.keys())
+    
+    
+# =============================================================================
+# 
+#     
+#  
+#     
+#     #Returning the topic document distribution
+#     #Classifying the dates as per topic via average of topci document distribution        
+#     
+#     # Stacked Bar plot
+#     #------------------
+#     #list of all meeting dates
+#     meetinglist = []
+#     for d in range(len(feddf['Date'])):
+#         meetinglist.append((str(feddf.iloc[d, 0])[:10]))
+#         
+#     
+#     weights=[]  #take the average of topic porbabilities over all articles per meeting date, this is topic per document distribution
+#     docweights=[] #weights for every single document, to check whether averaging messes anything up
+#     for day in list(feddf['Date']):
+#         dayup = day + datetime.timedelta(days=2) #look for articles day after, needs day = 2 to cover sae and following day, 00:00 is start of day
+#         daylow = day - datetime.timedelta(days=1) #look for articles day after, and everything between
+#         indexlist = list(textdf.loc[(textdf.Date >= daylow) & (textdf.Date <= dayup), :].index) #all index of df of articles with correct date for that meeting
+#         line=[]
+#         for i in indexlist:
+#             line.append(list(plsa.p_z_d[i])) #here the values are extracted from the matrix p(z|d)
+#         weights.append(list(np.mean(line, axis=0))) #only the average over all documents is stored
+#         docweights.append(line)
+#     
+#     #prepare plot - inspiration and code examples from https://de.dariah.eu/tatom/topic_model_visualization.html
+#     N, K = len(weights), len(weights[0]) #N is numer of meeting dates, K is numer of topics
+#     ind = np.arange(N)
+#     width = 0.5 
+#     plots = []
+#     height_cumulative = np.zeros(N)
+#     
+#     s = []
+#     for x in range(K):
+#         t = [] # alist with values for all meetings for one topic
+#         for entry in weights:
+#             t.append(entry[x])
+#         s.append(t)  #a list with K list, each with the weights on the respective topic per meetgin date
+#         
+#     fig = plt.figure(figsize=(14,4))
+#     height_cumulative = []
+#     for k in range(K):
+#         color = seaborn.color_palette('deep')[k]
+#         if k == 0:
+#             p = plt.bar(ind, s[k], width, color=color)
+#         else:
+#             p = plt.bar(ind, s[k], width, bottom=height_cumulative, color=color)
+#         height_cumulative += s[k]
+#         plots.append(p)    
+#     
+#     plt.ylim((0, 1))  # proportions sum to 1, so the height of the stacked bars is 1
+#     plt.title('Share of Topics')
+#     plt.xticks(rotation=90)
+#     plt.xticks(ind , meetinglist)
+#     plt.ylabel('Average percentage per topic and policy day')
+#     
+#     titles = ['Share of Topic #1', 'Share of Topic #2', 'sadfasdf']
+#     #for i in range(len(titles)):
+#     #    titles[i] = titles[i][15:]
+#     leg = plt.legend(titles, loc=2, fontsize = 'medium')
+#     for text in leg.get_texts():
+#         plt.setp(text, weight = 'medium')
+#     plt.axhline(0.5, color="red", linewidth = 0.5, linestyle = '--')
+#     
+#     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
+#     os.chdir(path) 
+#     plt.savefig("plsamodelling.pdf", bbox_inches='tight')
+#     
+#     
+#     #plot of distribution over the documents per day
+#     #first 28 days
+#     f, axarr = plt.subplots(7, 4, figsize=(7,10))
+#     plt.style.use('seaborn-whitegrid')
+#     #plt.style.use('classic')
+#     seaborn.set_context('paper')
+#     
+#     for i in range(28):
+#         if i / 4 < 7:
+#             c = 6
+#         if i / 4 < 6:
+#             c = 5
+#         if i / 4 < 5:
+#             c = 4
+#         if i / 4 < 4:
+#             c = 3
+#         if i / 4 < 3:
+#             c = 2
+#         if i / 4 < 2:
+#             c = 1
+#         if i / 4 < 1:
+#             c = 0
+#         axarr[c, i%4].plot(range(len(docweights[i])), [doc[0] for doc in docweights[i]], 'X', label='Topic 1', 
+#              markeredgewidth=0.5, color=seaborn.color_palette('deep')[0])
+#         axarr[c, i%4].plot(range(len(docweights[i]), 2*len(docweights[i])), [doc[1] for doc in docweights[i]], 'X', label='Topic 2', 
+#              markeredgewidth=0.5, color=seaborn.color_palette('deep')[1])
+#         axarr[c, i%4].set_title(meetinglist[i])
+#         axarr[c, i%4].set_ylim([0, 1])
+#         axarr[c, i%4].set_xlim([0, 2*len(docweights[i])])
+#         axarr[c, i%4].set_xticks([len(docweights[i])])
+#         axarr[c, i%4].set_yticks([0, 0.5, 1])
+#     plt.tight_layout()
+#     topic1 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[0], marker='X', linestyle='None',
+#                           markersize=7, markeredgewidth=.5, label='Topic 1')
+#     topic2 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[1], marker='X', linestyle='None',
+#                           markersize=7, markeredgewidth=.5, label='Topic 2')
+#     plt.figlegend(handles=[topic1, topic2], loc = 'lower left', ncol=2, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
+#         
+#     #plot of distribution over the documents per day
+#     #second 28 days
+#     f, axarr = plt.subplots(7, 4, figsize=(7,10))
+#     plt.style.use('seaborn-whitegrid')
+#     #plt.style.use('classic')
+#     seaborn.set_context('paper')
+#     
+#     for i in range(28, 56):
+#         if (i-28) / 4 < 7:
+#             c = 6
+#         if (i-28) / 4 < 6:
+#             c = 5
+#         if (i-28) / 4 < 5:
+#             c = 4
+#         if (i-28) / 4 < 4:
+#             c = 3
+#         if (i-28) / 4 < 3:
+#             c = 2
+#         if (i-28) / 4 < 2:
+#             c = 1
+#         if (i-28) / 4 < 1:
+#             c = 0
+#         axarr[c, i%4].plot(range(len(docweights[i])), [doc[0] for doc in docweights[i]], 'X', label='Topic 1', 
+#              markeredgewidth=0.5, color=seaborn.color_palette('deep')[0])
+#         axarr[c, i%4].plot(range(len(docweights[i]), 2*len(docweights[i])), [doc[1] for doc in docweights[i]], 'X', label='Topic 2', 
+#              markeredgewidth=0.5, color=seaborn.color_palette('deep')[1])
+#         axarr[c, i%4].set_title(meetinglist[i])
+#         axarr[c, i%4].set_ylim([0, 1])
+#         axarr[c, i%4].set_xlim([0, 2*len(docweights[i])])
+#         axarr[c, i%4].set_xticks([len(docweights[i])])
+#         axarr[c, i%4].set_xticklabels([])
+#         axarr[c, i%4].set_yticks([0, 0.5, 1])
+#     plt.tight_layout()
+#     topic1 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[0], marker='X', linestyle='None',
+#                           markersize=7, markeredgewidth=.5, label='Topic 1')
+#     topic2 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[1], marker='X', linestyle='None',
+#                           markersize=7, markeredgewidth=.5, label='Topic 2')
+#     plt.figlegend(handles=[topic1, topic2], loc = 'lower left', ncol=2, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
+#     
+#     
+# 
+# 
+# =============================================================================

@@ -674,7 +674,9 @@ Using the preprocessed and prepared text data, I apply the PLSA algorithm as it 
 	\label{tab:specs} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
-As explained in Chapter \ref{NewInsights}, we are looking for two narratives according to which policy days can be classified. Thus, we set $k=2$ which will yield two topics, $\{\theta_1, \theta_2\}$. 
+As explained in Chapter \ref{NewInsights}, we are looking for two narratives according to which policy days can be classified. Thus, we set $k=2$ which will yield two topics, $\{\theta_1, \theta_2\}$. As recommended by \citet[p. 363]{Zhai.2016}, I run the algorithm repeatedly (here ten times) using different random initializations. In the end, I only use the run with the highest likelihood value.
+
+For every policy several articles are included in the collection of documents. The words in every article are distributed among the two topics, i.e. every article is split between the two topics. To classify a policy day as belonging either to narrative one ($N_1$) or narrative two ($N_2$) I take the average topic coverage probabilities of all articles on a given policy day and attribute the day to the topic that dominates the articles. The use of PLSA to identify narratives implies the assumption that different narratives employ a different vocabulary, a fact PLSA will pick on up by clustering the terms used in different narratives in different topics. 
 
 
 
