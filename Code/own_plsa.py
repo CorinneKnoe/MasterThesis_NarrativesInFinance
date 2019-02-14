@@ -324,7 +324,7 @@ if __name__ == "__main__":
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/" #absolute path to where to store the txt files
     path = ''
     number_of_topics = 2 #int(argv[1])
-    stoprule = 0.1 #int(argv[2])
+    stoprule = 100 #int(argv[2])
     
     start_time = time.time()
     plsa = Plsa(corpus, number_of_topics, stoprule, path)
@@ -339,20 +339,22 @@ if __name__ == "__main__":
     #print(resultdic.keys())
 
     
-    start_time = time.time()
-    manager = multiprocessing.Manager()
-    return_dict = manager.dict()
-    jobs = []
-    for i in [123,123]:#range(1,4):
-        p = multiprocessing.Process(target=plsa.multiprocess_train, args=(i,return_dict))
-        jobs.append(p)
-        p.start()
-
-    for proc in jobs:
-        proc.join()
-    print("My parallalized program took", time.time() - start_time, "to run")
-    
-    print(return_dict.keys())
+# =============================================================================
+#     start_time = time.time()
+#     manager = multiprocessing.Manager()
+#     return_dict = manager.dict()
+#     jobs = []
+#     for i in [123,123]:#range(1,4):
+#         p = multiprocessing.Process(target=plsa.multiprocess_train, args=(i,return_dict))
+#         jobs.append(p)
+#         p.start()
+# 
+#     for proc in jobs:
+#         proc.join()
+#     print("My parallalized program took", time.time() - start_time, "to run")
+#     
+#     print(return_dict.keys())
+# =============================================================================
     
     
 # =============================================================================
