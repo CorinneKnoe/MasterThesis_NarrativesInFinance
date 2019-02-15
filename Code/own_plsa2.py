@@ -33,7 +33,6 @@ os.chdir(path)
 from prep_preprocessing import tokenize, removestopwords, albhabetizer
 
 
-
 #set up functions and PLSA
 #-------------------------
 
@@ -49,7 +48,7 @@ def normalize(vec):
 class Document(object):
 
     def __init__(self, text):
-    #'''takes a text and returns a list of words as a document, basically a tokenizer'''
+        '''takes a text and returns a list of words as a document, basically a tokenizer'''
         self.words = []
         wordlist = text.split(" ") 
         for word in wordlist:
@@ -131,22 +130,22 @@ def multiprocess_train(randint, corpus, number_of_topics, stoprule, resultdic):
         for key in dic.keys():
             index = vocdic[key]
             n_w_d[di, index] = dic[key]   
-                
+
     L = 0.0 # log-likelihood
     diffL = 1000.0 #store difference here, looping value for likelihood function
     # P(z|w,d)
-    p_z_dw = np.zeros([n_d, n_w, n_t], dtype = np.float) #random initialization!
-		# P(z|d)
+    p_z_dw = np.zeros([n_d, n_w, n_t], dtype = np.float) #empty initialization!
+	# P(z|d)
     np.random.seed(randint) #seed for random number, so results can be reproduced
     p_z_d = np.random.random(size=[n_d, n_t])
     for di in range(n_d):
         normalize(p_z_d[di]) #make random numbers for each document over all topics sum to 1
-		# P(w|z)
-    np.random.seed(randint) #seed for random number, so results can be reproduced
+    
+    # P(w|z)
     p_w_z = np.random.random(size = [n_t, n_w])
     for zi in range(n_t):
         normalize(p_w_z[zi])
-        
+    
     #start run by calculating likelihood
     #===============================================
     print("Training...")
@@ -211,15 +210,17 @@ if __name__ == "__main__":
    
     #execute the PLSA
     #---------------------------------------
-    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/" #absolute path to where to store the txt files
-    number_of_topics = 2 #int(argv[1])
-    stoprule = 500 #int(argv[2])
-     
+    number_of_topics = 2 #supposed to be 2
+    stoprule = 500 #supposed to be 0.1
+    
+    #return_dict = {}
+    #multiprocess_train(123, corpus, number_of_topics, stoprule, return_dict)
+    
     start_time = time.time()
     manager = multiprocessing.Manager()
     return_dict = manager.dict()
     jobs = []
-    for i in range(2):#range(1,4):
+    for i in range(2):#supposed to be 10: how often it is initialized with different values, i.e. how many processes run simultaneously
         p = multiprocessing.Process(target=multiprocess_train, args=(i, corpus, number_of_topics, stoprule, return_dict))
         jobs.append(p)
         p.start()
@@ -228,10 +229,10 @@ if __name__ == "__main__":
         proc.join()
     print("My parallalized program took", time.time() - start_time, "to run")
     
-    keyofbest = max(return_dict.keys())
-    print(keyofbest)
-    print(return_dict.keys())
-    print_top_words(path, number_of_topics, corpus, return_dict[keyofbest][1], 10)
+    keyofbest = max(return_dict.keys()) #find the best rund of all iterations
+
+    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/" #absolute path to where to store the txt files
+    print_top_words(path, number_of_topics, corpus, return_dict[keyofbest][1], 10) #printig top 10 words of word distributions
     
     
      # Read in the FEd meetings dates
@@ -263,7 +264,8 @@ if __name__ == "__main__":
         
     
     weights=[]  #take the average of topic porbabilities over all articles per meeting date, this is topic per document distribution
-    docweights=[] #weights for every single document, to check whether averaging messes anything up
+    docweights=[] #weights for every single document, used in lower graph 
+    datelist = [] #to check whether right days are being classified, i.e. order here and order in dataframe are same
     for day in list(adjustdf['Date']):
         dayup = day + datetime.timedelta(days=2) #look for articles day after, needs day = 2 to cover sae and following day, 00:00 is start of day
         daylow = day - datetime.timedelta(days=1) #look for articles day after, and everything between
@@ -271,9 +273,20 @@ if __name__ == "__main__":
         line=[]
         for i in indexlist:
             line.append(list(return_dict[keyofbest][0][i])) #here the values are extracted from the matrix p(z|d)
+        datelist.append(day)
         weights.append(list(np.mean(line, axis=0))) #only the average over all documents is stored
         docweights.append(line)
         
+    #see which topic dominates for a policy day and classify policy day as such  
+    classlist = []
+    for tup in range(len(weights)):
+        dominator = weights[tup].index(max(weights[tup])) #find index of dominating probability, is it topic 0, 1, or ... n
+        classlist.append(dominator)
+    #add classification to data frame, first  check whether dates are aligned!
+    if any(adjustdf["Date"] != datelist):
+        raise Exception("Topic classifications are nor allocated correctly to dates in dataframe -- order of days not correct!")
+    adjustdf["TopicClassification"] = classlist
+    
     #check whether averaging was ok, that is still sums to one across topics per day
     for z in range(len(weights)): #every policy day
         count = 0
@@ -281,6 +294,10 @@ if __name__ == "__main__":
             count += weights[z][t]
         if round(count,2) != 1.0:
             raise Exception("The averaged weights for a policy day don't sum to one across topics.")
+            
+    #save new data frame with classification in csv
+    adjustdf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAorig.csv", index=False, encoding="utf-8") #create a csv to store our data
+    
     
     #prepare plot - inspiration and code examples from https://de.dariah.eu/tatom/topic_model_visualization.html
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
@@ -324,88 +341,91 @@ if __name__ == "__main__":
         plt.setp(text, weight = 'medium')
     plt.axhline(0.5, color="red", linewidth = 0.5, linestyle = '--')
     plt.show()
-    plt.savefig("plsamodelling.pdf", bbox_inches='tight')
+    fig.savefig("plsamodelling_orig.pdf", bbox_inches='tight')
     
+    #here a figure to check whether or not the average is a good indication for classifying a policy day
+    #===================================================================================================
+    #plot of distribution over the documents per day
+    #first 28 days
+    f, axarr = plt.subplots(7, 4, figsize=(7,10))
+    plt.style.use('seaborn-whitegrid')
+    #plt.style.use('classic')
+    seaborn.set_context('paper')
     
-# =============================================================================
-#     #plot of distribution over the documents per day
-#     #first 28 days
-#     f, axarr = plt.subplots(7, 4, figsize=(7,10))
-#     plt.style.use('seaborn-whitegrid')
-#     #plt.style.use('classic')
-#     seaborn.set_context('paper')
-#     
-#     for i in range(28):
-#         if i / 4 < 7:
-#             c = 6
-#         if i / 4 < 6:
-#             c = 5
-#         if i / 4 < 5:
-#             c = 4
-#         if i / 4 < 4:
-#             c = 3
-#         if i / 4 < 3:
-#             c = 2
-#         if i / 4 < 2:
-#             c = 1
-#         if i / 4 < 1:
-#             c = 0
-#         axarr[c, i%4].plot(range(len(docweights[i])), [doc[0] for doc in docweights[i]], 'X', label='Topic 1', 
-#              markeredgewidth=0.5, color=seaborn.color_palette('deep')[0])
-#         axarr[c, i%4].plot(range(len(docweights[i]), 2*len(docweights[i])), [doc[1] for doc in docweights[i]], 'X', label='Topic 2', 
-#              markeredgewidth=0.5, color=seaborn.color_palette('deep')[1])
-#         axarr[c, i%4].set_title(meetinglist[i])
-#         axarr[c, i%4].set_ylim([0, 1])
-#         axarr[c, i%4].set_xlim([0, 2*len(docweights[i])])
-#         axarr[c, i%4].set_xticks([len(docweights[i])])
-#         axarr[c, i%4].set_yticks([0, 0.5, 1])
-#     plt.tight_layout()
-#     topic1 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[0], marker='X', linestyle='None',
-#                           markersize=7, markeredgewidth=.5, label='Topic 1')
-#     topic2 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[1], marker='X', linestyle='None',
-#                           markersize=7, markeredgewidth=.5, label='Topic 2')
-#     plt.figlegend(handles=[topic1, topic2], loc = 'lower left', ncol=2, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
-#         
-#     #plot of distribution over the documents per day
-#     #second 28 days
-#     f, axarr = plt.subplots(7, 4, figsize=(7,10))
-#     plt.style.use('seaborn-whitegrid')
-#     #plt.style.use('classic')
-#     seaborn.set_context('paper')
-#     
-#     for i in range(28, 56):
-#         if (i-28) / 4 < 7:
-#             c = 6
-#         if (i-28) / 4 < 6:
-#             c = 5
-#         if (i-28) / 4 < 5:
-#             c = 4
-#         if (i-28) / 4 < 4:
-#             c = 3
-#         if (i-28) / 4 < 3:
-#             c = 2
-#         if (i-28) / 4 < 2:
-#             c = 1
-#         if (i-28) / 4 < 1:
-#             c = 0
-#         axarr[c, i%4].plot(range(len(docweights[i])), [doc[0] for doc in docweights[i]], 'X', label='Topic 1', 
-#              markeredgewidth=0.5, color=seaborn.color_palette('deep')[0])
-#         axarr[c, i%4].plot(range(len(docweights[i]), 2*len(docweights[i])), [doc[1] for doc in docweights[i]], 'X', label='Topic 2', 
-#              markeredgewidth=0.5, color=seaborn.color_palette('deep')[1])
-#         axarr[c, i%4].set_title(meetinglist[i])
-#         axarr[c, i%4].set_ylim([0, 1])
-#         axarr[c, i%4].set_xlim([0, 2*len(docweights[i])])
-#         axarr[c, i%4].set_xticks([len(docweights[i])])
-#         axarr[c, i%4].set_xticklabels([])
-#         axarr[c, i%4].set_yticks([0, 0.5, 1])
-#     plt.tight_layout()
-#     topic1 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[0], marker='X', linestyle='None',
-#                           markersize=7, markeredgewidth=.5, label='Topic 1')
-#     topic2 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[1], marker='X', linestyle='None',
-#                           markersize=7, markeredgewidth=.5, label='Topic 2')
-#     plt.figlegend(handles=[topic1, topic2], loc = 'lower left', ncol=2, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
-#     
-# =============================================================================
+    for i in range(28):
+        if i / 4 < 7:
+            c = 6
+        if i / 4 < 6:
+            c = 5
+        if i / 4 < 5:
+            c = 4
+        if i / 4 < 4:
+            c = 3
+        if i / 4 < 3:
+            c = 2
+        if i / 4 < 2:
+            c = 1
+        if i / 4 < 1:
+            c = 0
+            
+        classlist = [] #make a list of classifications, to attribute color either to topic 0 being dominant, or topic 2 being dominant
+        for w in docweights[i]:
+            classlist.append(w.index(max(w)))
+            
+        axarr[c, i%4].scatter([doc[0] for doc in docweights[i]], [doc[1] for doc in docweights[i]], marker='X', label='Topic 1', 
+             color=[seaborn.color_palette('deep')[c] for c in classlist]) #xaxis is topic 0, yaxis is topic 1
+        axarr[c, i%4].set_title(meetinglist[i])
+        axarr[c, i%4].set_ylim([0, 1])
+        axarr[c, i%4].set_xlim([0, 1])
+        axarr[c, i%4].set_xticks([0, 0.5, 1])
+        axarr[c, i%4].set_yticks([0, 0.5, 1])
+    plt.tight_layout()
+    topic1 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[0], marker='X', linestyle='None',
+                          markersize=7, label='Document with topic 1 dominant')
+    topic2 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[1], marker='X', linestyle='None',
+                          markersize=7, label='Document with topic 2 dominant')
+    plt.figlegend(handles=[topic1, topic2], loc = 'lower left', ncol=2, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
+    plt.show()    
+    f.savefig("docsplit01_orig.pdf", bbox_inches='tight')
     
+    #plot of distribution over the documents per day
+    #second 28 days
+    f, axarr = plt.subplots(7, 4, figsize=(7,10))
+    
+    for i in range(28, 56):
+        if (i-28) / 4 < 7:
+            c = 6
+        if (i-28) / 4 < 6:
+            c = 5
+        if (i-28) / 4 < 5:
+            c = 4
+        if (i-28) / 4 < 4:
+            c = 3
+        if (i-28) / 4 < 3:
+            c = 2
+        if (i-28) / 4 < 2:
+            c = 1
+        if (i-28) / 4 < 1:
+            c = 0
+            
+        classlist = [] #make a list of classifications, to attribute color either to topic 0 being dominant, or topic 2 being dominant
+        for w in docweights[i]:
+            classlist.append(w.index(max(w)))
+            
+        axarr[c, i%4].scatter([doc[0] for doc in docweights[i]], [doc[1] for doc in docweights[i]], marker='X', label='Topic 1', 
+             color=[seaborn.color_palette('deep')[c] for c in classlist]) #xaxis is topic 0, yaxis is topic 1
+        axarr[c, i%4].set_title(meetinglist[i])
+        axarr[c, i%4].set_ylim([0, 1])
+        axarr[c, i%4].set_xlim([0, 1])
+        axarr[c, i%4].set_xticks([0, 0.5, 1])
+        axarr[c, i%4].set_yticks([0, 0.5, 1])
+    plt.tight_layout()
+    topic1 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[0], marker='X', linestyle='None',
+                          markersize=7, label='Document with topic 1 dominant')
+    topic2 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[1], marker='X', linestyle='None',
+                          markersize=7, label='Document with topic 2 dominant')
+    plt.figlegend(handles=[topic1, topic2], loc = 'lower left', ncol=2, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
+    plt.show()  
+    f.savefig("docsplit02_orig.pdf", bbox_inches='tight')
 
 
