@@ -132,7 +132,7 @@ def multiprocess_train(randint, corpus, number_of_topics, stoprule, resultdic):
             n_w_d[di, index] = dic[key]   
 
     L = 0.0 # log-likelihood
-    diffL = 1000.0 #store difference here, looping value for likelihood function
+    diffL = 10000.0 #store difference here, looping value for likelihood function
     # P(z|w,d)
     p_z_dw = np.zeros([n_d, n_w, n_t], dtype = np.float) #empty initialization!
 	# P(z|d)
@@ -174,15 +174,21 @@ def multiprocess_train(randint, corpus, number_of_topics, stoprule, resultdic):
        
        # print("M-Step...")
         p_z_d = np.einsum('ij,ijk->ik', n_w_d, p_z_dw) #p_z_d
-        divider = np.einsum('ij->i', n_w_d)
+        divider = np.einsum('ij -> i', p_z_d)
         divider[divider == 0] = 1 #replace all zero values with 1, cannot divide by zero
         p_z_d = p_z_d / divider[:,None]
+        #check normalization
+        if round(sum(p_z_d[0,:]),2) != 1.0:
+            raise Exception("Normalization for topic coverage (M-Step) is wrong")
                
         # update P(w|z) #p(w|theta)
         p_w_z = np.einsum('ij,ijk->kj', n_w_d, p_z_dw) #p_z_d
         divider = np.einsum('ij->i', p_w_z)
         divider[divider == 0] = 1 #replace all zero values with 1, cannot divide by zero
-        p_w_z = p_w_z / divider[:,None]   
+        p_w_z = p_w_z / divider[:,None]
+        #check normalization
+        if round(sum(p_w_z[0,:]),2) != 1.0:
+            raise Exception("Normalization for word distributions (M-Step) is wrong")
     
     resultdic[L] = (p_z_d, p_w_z, i_iter)
         
@@ -211,7 +217,7 @@ if __name__ == "__main__":
     #execute the PLSA
     #---------------------------------------
     number_of_topics = 2 #supposed to be 2
-    stoprule = 500 #supposed to be 0.1
+    stoprule = 0.01 #supposed to be 0.1
     
     #return_dict = {}
     #multiprocess_train(123, corpus, number_of_topics, stoprule, return_dict)
@@ -220,7 +226,17 @@ if __name__ == "__main__":
     manager = multiprocessing.Manager()
     return_dict = manager.dict()
     jobs = []
-    for i in range(2):#supposed to be 10: how often it is initialized with different values, i.e. how many processes run simultaneously
+    for i in range(3): #how often it is initialized with different values, i.e. how many processes run simultaneously
+        p = multiprocessing.Process(target=multiprocess_train, args=(i, corpus, number_of_topics, stoprule, return_dict))
+        jobs.append(p)
+        p.start()
+
+    for proc in jobs:
+        proc.join()
+        
+    jobs=[]    
+    
+    for i in range(3,6): #how often it is initialized with different values, i.e. how many processes run simultaneously
         p = multiprocessing.Process(target=multiprocess_train, args=(i, corpus, number_of_topics, stoprule, return_dict))
         jobs.append(p)
         p.start()
@@ -230,7 +246,15 @@ if __name__ == "__main__":
     print("My parallalized program took", time.time() - start_time, "to run")
     
     keyofbest = max(return_dict.keys()) #find the best rund of all iterations
-
+    
+    #print likelihood to txt file
+    filename = "C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/likelihood_orig.txt" #absolute path to where to store the txt files
+    f = open(filename, "w")
+    f.write("-------------\n" + "Likelihood of topic model of original PLSA\n")
+    f.write("Log Likelihood: " + str(keyofbest) + "\n") 
+    f.close() 
+    
+    #print top ten words of topics to txt file
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/" #absolute path to where to store the txt files
     print_top_words(path, number_of_topics, corpus, return_dict[keyofbest][1], 10) #printig top 10 words of word distributions
     
