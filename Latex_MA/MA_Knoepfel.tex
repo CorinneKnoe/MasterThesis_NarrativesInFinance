@@ -560,7 +560,7 @@ here:  general topics, document specific word distributions, corpus wide backgro
 \chapter{Data and Methodology}
 
 
-\section{Financial Data}
+\section{Financial Data}\label{Ch:financedata}
 
 Data on target rate adjustments and FOMC meetings was retrieved from the Fed's website (\citealp{FRS.2018}, \citeyear{FRS.2013}; \citealp{FOMC.2018Archive}; \citeyear{FOMC.2018}) and summarized in table \ref{tab:meetings} and \ref{tab:target} in Appendix \ref{AppendixA}. 
 
@@ -651,7 +651,7 @@ In line with the recommendation from \cite{Schofield.2017}, I refrain form apply
 After tokenization, the text data collection encompasses round 1'600'000 tokens. After the removal of stop words, the token count drops to roughly 1'100'000 tokens. Subsequently, the non-alphabetic characters, especially the punctuations marks, are removed and the final count amounts to approximately 850'000 tokens. Thus, even though a conservative preprocessing strategy has been chosen, the text data is reduced by almost half during preprocessing (see Figure \ref{tokencount} in Appendix \ref{AppendixB}).
 
 
-\subsection{Application of PLSA / Application of Topic Modeling}
+\subsection{Application of PLSA}
 
 Using the preprocessed and prepared text data, I apply the PLSA algorithm as it is presented in Chapter \ref{Ch:model}. The model specifications are presented in Table \ref{tab:specs}.
 
@@ -674,22 +674,52 @@ Using the preprocessed and prepared text data, I apply the PLSA algorithm as it 
 	\label{tab:specs} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
-As explained in Chapter \ref{NewInsights}, we are looking for two narratives according to which policy days can be classified. Thus, we set $k=2$ which will yield two topics, $\{\theta_1, \theta_2\}$. As recommended by \citet[p. 363]{Zhai.2016}, I run the algorithm repeatedly (here ten times) using different random initializations. In the end, I only use the run with the highest likelihood value.
+As explained in Chapter \ref{NewInsights}, we are looking for two narratives according to which policy days can be classified. Thus, we set $k=2$ which will yield two topics, $\{\theta_1, \theta_2\}$. As recommended by \citet[p. 363]{Zhai.2016}, I run the algorithm repeatedly (six times, to be specific) using different random initializations. In the end, I use the run with the highest likelihood value. The top ten words of each topic are listed in Table \ref{tab:topic1}.
 
-For every policy several articles are included in the collection of documents. The words in every article are distributed among the two topics, i.e. every article is split between the two topics. To classify a policy day as belonging either to narrative one ($N_1$) or narrative two ($N_2$) I take the average topic coverage probabilities of all articles on a given policy day and attribute the day to the topic that dominates the articles. The use of PLSA to identify narratives implies the assumption that different narratives employ a different vocabulary, a fact PLSA will pick on up by clustering the terms used in different narratives in different topics. 
+\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{2cm}  p{2cm}  p{2cm}  p{2cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+		\multicolumn{2}{ c }{Topic 1} & \multicolumn{2}{ c }{Topic 2} \\
+		\midrule % In-table horizontal line
+		word & prob & word & prob \\
+		\midrule
+		rate & .014 & fed & .025\\
+		year & .011 & rate & .020\\
+		said & .010 & rates & .012 \\
+		percent & .010 & said & .012\\
+		bank & .010 & inflation & .009\\
+		interest & .009 & economy & .009\\
+		market & .009 & interest & .008\\
+		rates & .009 & percent & .008\\
+		fed & .008 & federal & .008\\
+		cut & .007 & year & .007\\
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{The two topics produced by PLSA.} % Table caption, can be commented out if no caption is required
+	\label{tab:topic1} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
+
+Considering the top words of the topics, no clear topical concentration becomes apparent. Both topics attribute a high weight to words concerning interest rates, the federal reserve, and the economy. This is hardly surprising as the articles have been selected for their focus on interest rates and the federal reserve (see Chapter \ref{textdata}). It is to be expected that the articles will make heavy use of a related vocabulary, which, by the nature of PLSA, will come to dominate the inferred topics. As explained in Chapter \ref{Ch:background}, the introduction of a background topic could shift the weight from frequent terms to more meaningful, content-carrying terms. For the implementation of such a model see Chapter \ref{Ch:implembg}.
+
+A look at the the lexical dispersion of the top words as shown by Figure \ref{dispersionPLSAorig} illustrates that the top words appear frequently in all articles. Thus, we would expect the topics to be of little use when it comes to classifying articles. Rather than picking up on different narratives, the inferred topics pick up on the overall focus of the articles. 
+
+\begin{figure}
+	\caption{Dispersion of the top words in the topics inferred by original PLSA across time.}
+	\centering
+	\includegraphics[scale=1]{Images/dispersionplot_topicPLSAorig.pdf}
+	\label{dispersionPLSAorig}
+\end{figure}
+
+The text data collection comprises between 14 to 97 articles for every policy day. The words of each article are partitioned between the two topics, resulting in a topic coverage probability that indicates to what extent an article is to be attributed to a certain topic. To classify a policy day as belonging either to narrative one ($N_1$) or narrative two ($N_2$), I average the topic coverage probabilities of all articles on a given policy day and attribute the day to the topic that dominates the articles. Figure \ref{classPLSA} in Appendix \ref{AppendixB} depicts the resulting classification of the policy days. 
+
+39 policy days have been attributed to topic 2 and only 17 days to topic 1. Also, quite often both topics command a large share of the articles on any given day, one topic dominating the other only by a small margin. Thus, the classification of the policy days is not as clear cut as one might wish. If we consider how the individual articles have been classified, we would expect that on a given day all articles are attributed to the same topic. That would be a clear indication that a specific narrative, as identified by our topic model, permeated the press reporting at that time. However, as Figure \ref{classdoc01} and \ref{classdoc02} show, quite often the articles on a specific day are almost evenly split between the topics.  
+Thus, it stands to reason that the PLSA model without background distribution was not able to infer topics that would separate the policy days in a meaningful manner.
+
+\subsection{Application of PLSA with Implementation of a Background Topic}\label{Ch:implembg}
 
 
 
-===========================
-For our purposes, topic analysis is used to identify the topics contained in the articles reporting on the target rate adjustment, the hypothesis being that different topics will emerge for different interpretations of the Fed's policy move. 
-
-I could use LDA when doing out of sample prediction - because then I can predict documents I have not seen before, because I train an LDA model, but when I use all documents, I could just as easily do the mixed model approach with several unigram models???
-
-tf-idf term weighting: Apply Term Frequency Inverse Document Frequency normalization to a sparse matrix of occurrence counts. ,bag of words methodology, feature extraction has a big influence on topics that we will find, corpus specific stopwords, preprocessing with vectorizer of do your own
-
-\textcolor{red}{EM hill climbing algorithm, only reaches local maximum, thus initialize several times with different RV!! }
-
-\subsection{Implementation of a Background Topic of PLSA / Application of Topic Modeling}
 
 \section{NOTES}
 Besprechung - 24.09.2018
@@ -875,21 +905,21 @@ all absolute Fed target rate changes during the sample period -- ev. sind 10 Jah
 	\caption{Policy day classification according to original PLSA.}
 	\centering
 	\includegraphics[scale=0.8]{Images/plsamodelling_orig.pdf}
-	\label{tokencount}
+	\label{classPLSA}
 \end{sidewaysfigure}
 
 \begin{figure}
 	\caption{Document classification according to original PLSA - Part I.}
 	\centering
 	\includegraphics[scale=0.8]{Images/docsplit01_orig.pdf}
-	\label{tokencount}
+	\label{classdoc01}
 \end{figure}
 
 \begin{figure}
 	\caption{Document classification according to original PLSA - Part II.}
 	\centering
 	\includegraphics[scale=0.8]{Images/docsplit02_orig.pdf}
-	\label{tokencount}
+	\label{classdoc02}
 \end{figure}
 
 
