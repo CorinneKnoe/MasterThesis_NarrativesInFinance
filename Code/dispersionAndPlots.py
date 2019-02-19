@@ -144,3 +144,20 @@ if __name__ == '__main__':
         labellist.append(day)        
     
     dispersion_plot(alltext, ["rate", "fed", "said", "interest", "percent", "year"], wordsattick, labellist)
+    
+    
+    #create a lineplot to assess log likelihood of different PLSA models
+    ####################################################################
+    plt.style.use('seaborn')
+    seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
+    fig = plt.figure(figsize=(4,4))
+    likelihood = [-6312761.454808442, -6350000.0, -6350000.0, -6350000.0, 
+                  -6350000.0, -6350000.0, -6350000.0, -6350000.0, -6350000.0]
+    lamb = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8, 0.9]
+    
+    plt.plot(lamb, likelihood, color=seaborn.color_palette('deep')[0])
+    plt.ylim((-6200000, -6400000))  # proportions sum to 1, so the height of the stacked bars is 1
+    plt.title('Model Performance of PLSA')
+    plt.xlabel('Lambda_B')
+    plt.ylabel('Log Likelihood')
+    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ModelLambdaQuality.pdf", bbox_inches='tight')

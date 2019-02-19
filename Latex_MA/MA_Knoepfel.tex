@@ -288,11 +288,11 @@ Likewise, \cite{Cook.1989} used newspaper articles to analyze the reaction of th
 \citet[~pp. 86--87]{Gurkaynak.2004} drive the point home by saying that "previous studies estimating the effects of changes in the federal funds rate on bond yields [...] have been missing most of the story." Their research revealed that reactions on the financial market were at least partially driven by the  statements accompanying a policy action. Announcements of the FOMC, the Federal Open Market Commitee of the Fed which regulates the funds rate target, account for at least three quarters of the variation in the movement of longer term Treasury yields around a FOMC meeting.
 
 Similarly, \cite{Goetzmann.2016} support the view that market participants are highly influenced by narrative statements, especially by the financial press. A survey over a 26 year period revealed that investors generally hold an exaggerated assessment of the risk of a stock market crash and that their assessments were influenced by the news stories, in particular the front page stories, they have read. %Interestingly, articles that carried a negative sentiment were associated with higher crash probability beliefs, while positive articles had no effect. 
-According to \citeauthor{Goetzmann.2016}, newspaper articles make market returns, especially negative developments, more salient and thus influence investor behavior. Other researchers, such as \cite{Engelberg.2011}, \cite{Kraussl.2014}, and \cite{Yuan.2015}, support the view that the financial press plays an important role in focusing investor attention and thus influences their behavior.
+According to \cite{Goetzmann.2016}, newspaper articles make market returns, especially negative developments, more salient and thus influence investor behavior. Other researchers, such as \cite{Engelberg.2011}, \cite{Kraussl.2014}, and \cite{Yuan.2015}, support the view that the financial press plays an important role in focusing investor attention and thus influences their behavior.
 
 %The cleanest test of our theory would be to ask bond traders in the seconds following the target change how they interpret the policy move and then link this interpretation to the very first movements of the yield curve. This test, which is unfortunately impossible to implement, would be clean for two reasons. First, in the moments following a major economic event it is indeed professional bond traders who move the yield curve, because ultimate investors haven’t yet had time to react. Second, immediately after the policy change individual bond traders haven’t yet observed the bond price movement caused by the trading of others, and so will have to report their own interpretations rather than a rationalization of the observed yield curve change.
 
-Consequently, the author of this thesis hypothesizes that it is the interpretation of a policy event, that is the narrative surrounding a target rate change as it is perceived by the market participants, that determines the response of the financial markets and thus the movement of the long-term interest rate. Even though \cite{Ellingsen.2003} employ a narrative approach, it remains closely tied to a macroeconomic model and only allows for certain predetermined aspects of a potentially much bigger narrative. Thus, it stands to reason that opening the focus of the analysis to include any type of narrative that could potentially influence a market participant's action will yield more robust results. To this end, the author proposes the following model:
+Consequently, the author of this thesis hypothesizes that it is the interpretation of a policy event by the market participants, that is the narrative surrounding a target rate change, that determines the response of the financial markets and thus the movement of the long-term interest rate. Even though \cite{Ellingsen.2003} employ a narrative approach, it remains closely tied to a macroeconomic model and only allows for certain predetermined aspects of a potentially much bigger narrative. Thus, it stands to reason that opening the focus of the analysis to include any type of narrative that could potentially influence a market participant's action will yield more robust results. To this end, the author proposes the following model:
 \begin{align}\label{reg2}
 \Delta i^n_t &= \alpha + (\beta_n^{NP}d_t^{NP} + \beta_n^{N_1}d_t^{N_1} + \beta_n^{N_2}d_t^{N_2})\Delta i^{3m}_t + v_t^n,
 \end{align}
@@ -303,7 +303,7 @@ Ideally, an examination of newspaper articles with regards to narratives surroun
 H_0&:  \text{ For large $n$: } \beta_n^{N1}<0< \beta_n^{N2}
 \end{align}
 
-Chapter \ref{NarrativesAndDecisionMaking} outlines what narratives are and why there is reason to believe that they have a strong influence on human behavior and thus warrant more attention in financial and economic research. To circumvent the problem of subjectivity faced by previous research when it comes to the identification of narratives, this thesis uses Natural Language Processing techniques rather than manual evaluation of text data. Chapter \ref{NLP} gives an overview of different methods and the extent to which they are able to identify narrative structures. 
+Chapter \ref{NarrativesAndDecisionMaking} outlines what narratives are and why there is reason to believe that they have a strong influence on human behavior and thus warrant more attention in financial and economic research. To circumvent the problem of subjectivity faced by previous research when it comes to the identification of narratives, this thesis uses Natural Language Processing techniques rather than manual evaluation of text data. Chapter \ref{NLP} gives an account of topic modeling methods and introduces Probabilistic Latent Semantic Analysis, which will be used to identify different narratives. 
 
 \textcolor{red}{Keep in mind the check Ellingsen et al use to check for just general news related movements in the yield curve, do the same if necessary}
 
@@ -550,12 +550,6 @@ here:  general topics, document specific word distributions, corpus wide backgro
 \textcolor{red}{include critic at bayseian updating -- handbook of Bayesian epistemology}
 
 
-\section{Sensitivity Analysis}
-
-- Another problem: where the document stands does not matter, but some days have a lot more articles than others, shall we randomly select only a few as to keep the balance? Make several iterations? Questions is: how can topic model pick up on different vocabulary? -- figure out what happens when a specific word of aarrative schows up a lot more often than the word in another narrative!!!!\\
-- cross validation to find the priors that yield highest statistical significance\\
-- initialize a few times with different RVs and take run with highest likelihood
-
 
 \chapter{Data and Methodology}
 
@@ -716,9 +710,65 @@ The text data collection comprises between 14 to 97 articles for every policy da
 39 policy days have been attributed to topic 2 and only 17 days to topic 1. Also, quite often both topics command a large share of the articles on any given day, one topic dominating the other only by a small margin. Thus, the classification of the policy days is not as clear cut as one might wish. If we consider how the individual articles have been classified, we would expect that on a given day all articles are attributed to the same topic. That would be a clear indication that a specific narrative, as identified by our topic model, permeated the press reporting at that time. However, as Figure \ref{classdoc01} and \ref{classdoc02} show, quite often the articles on a specific day are almost evenly split between the topics.  
 Thus, it stands to reason that the PLSA model without background distribution was not able to infer topics that would separate the policy days in a meaningful manner.
 
-\subsection{Application of PLSA with Implementation of a Background Topic}\label{Ch:implembg}
+\subsection{Application of PLSA with Background Topic}\label{Ch:implembg}
 
+To improve the topics inferred by PLSA, I introduce a background topic that captures the most common words in the text data. The background topic is a unigram language model generated from the entire text data collection. Thus, every word has been given a probability weight that corresponds to its relative frequency in the collection (see Eq. \ref{estul}). Table \ref{tab:bgtopic} lists the ten top words of the background topic. 
 
+\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{2cm}  p{2cm}  } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+		\multicolumn{2}{ c }{Background Topic} \\
+		\midrule % In-table horizontal line
+		word & prob  \\
+		\midrule
+		 rate & .018 \\
+		 fed & .017 \\
+		 said & .011  \\
+		 rates & .011 \\
+		 year & .009 \\
+		 percent & .009\\
+		 interest & .009\\
+		 market & .007\\
+		 federal & .007\\
+		 bank & .007\\
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{The two topics produced by PLSA.} % Table caption, can be commented out if no caption is required
+	\label{tab:bgtopic} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
+
+The most common word in the background topic is \textit{rate}, followed by \textit{fed}, \textit{said}, and \textit{rates}. These are the words that featured prominently in the inferred topics of PLSA without a background distribution. Including the background topic should free up the learned topics so that meaningful topics can be inferred. To that end, I also need to specify how many words are generated by the background topic as opposed to the inferred topics (as indicated by the parameter $\lambda_B$). Since this quantity is unknown, I run the model several times with different specifications for $\lambda_B$. The model specifications are as presented in Table \ref{tab:specs2}.
+
+\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ l  l  } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+		\multicolumn{2}{ c }{Input} \\
+		\midrule % In-table horizontal line
+		\tabitem A collection of 2'318  text documents & $C=\{d_1,...,d_{2318}\}$ \\
+		\tabitem Number of topics & $k = 2$ \\
+		\tabitem The background topic & $\theta_B$ \\
+		\tabitem Fraction of words generated by $\theta_B$ & $\lambda_B \in [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]$ \\
+		\midrule
+		\multicolumn{2}{ c }{Output} \\
+		\midrule
+		\tabitem Coverage of topics in each document $d_i$ & $\{\pi_{i1}, \pi_{i2}\}$, with $\pi_{i1}+\pi_{i2}=1$\\
+		\tabitem $2$ topics & $\{\theta_1, \theta_2\}$\\ %, with $\underset{w \in V}{\sum} \ p(w | \theta_i) = 1$\\
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{Specification of PLSA model with background topic.} % Table caption, can be commented out if no caption is required
+	\label{tab:specs2} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
+
+In the end, an assessment needs to be made as to which model specification of $\lambda_B$ yields the best result. There are several ways of making this decision. One school of thought maintains that topic models can only be assessed reliably by human judgment. That is, one needs to take a look at the inferred topics and decide which topics are the most meaningful considering the specific context of their application. On the other hand, intrinsic model qualities, such as the (log) likelihood value, could serve as assessment criteria. Finally, the final results of the procedure into which the topics are fed could serve as the deciding measure. In this thesis, I will follow all three approaches and outline to what extent they recommend a certain model specification above the others. \textcolor{red}{QUOTE!!!!!!!}
+
+\begin{figure}
+	\caption{Log Likelihood of PLSA depending on value of $\lambda_B$.}
+	\centering
+	\includegraphics[scale=1]{Images/ModelLambdaQuality.pdf}
+	\label{ModelLambdaQuality}
+\end{figure}
 
 
 \section{NOTES}
@@ -739,6 +789,8 @@ all absolute Fed target rate changes during the sample period -- ev. sind 10 Jah
 
 
 \chapter{Results}
+
+Following \cite{Ellingsen.2003}, a day on which the target rate has been adjusted by the Fed is considered a policy day. If the FOMC held a meeting but failed to change the target rate, the day is considered a non-policy day. In this thesis, a 20-year period from October 1998 to October 2018 is analyzed. During this time frame, there are 56 policy day and 5'161 non-policy days. 
 
 \chapter{Conclusion}
 
