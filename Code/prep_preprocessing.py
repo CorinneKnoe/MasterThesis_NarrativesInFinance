@@ -34,7 +34,7 @@ import re
 #from nltk.corpus import gutenberg
 #nltk.download()
 #from nltk.book import *
-from wordcloud import WordCloud
+#from wordcloud import WordCloud
 from nltk.probability import ConditionalFreqDist
 from nltk import FreqDist
 #from nltk.draw import dispersion_plot
