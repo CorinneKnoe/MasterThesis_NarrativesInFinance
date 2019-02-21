@@ -790,7 +790,36 @@ all absolute Fed target rate changes during the sample period -- ev. sind 10 Jah
 
 \chapter{Results}
 
+\section{Classification with PLSA without Background Topic}
+
 Following \cite{Ellingsen.2003}, a day on which the target rate has been adjusted by the Fed is considered a policy day. If the FOMC held a meeting but failed to change the target rate, the day is considered a non-policy day. In this thesis, a 20-year period from October 1998 to October 2018 is analyzed. During this time frame, there are 56 policy day and 5'161 non-policy days. 
+
+Analogously to \citet[p. 14 -- 15]{Ellingsen.2003}, we take a look at the behavior of the interest rates. Figure \ref{Change01} plots the change in the 3-month rate against the change in the 10-year rate on the policy days. Figures \ref{Change02} and \ref{Change03} split up the policy days into days classified as influenced by Narrative one and Narrative two, respectively. \citet[p. 14]{Ellingsen.2003} found a clear positive relationship between the change of the 10-year and the 3-month rate, with some outliers. Similarly, Figure \ref{Change01} shows a predominantly positive relationship, barring some odd observations, and a concentration around the origin. This indicates that the long-term rates tend to move in the same direction as short term rates and the target rate change. 
+
+\begin{figure}
+	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days.}
+	\centering
+	\includegraphics[scale=1]{Images/ChangePlot01.pdf}
+	\label{Change01}
+\end{figure}
+
+\begin{figure}
+	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative one.}
+	\centering
+	\includegraphics[scale=1]{Images/ChangePlot02.pdf}
+	\label{Change02}
+\end{figure}
+
+\begin{figure}
+	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative two.}
+	\centering
+	\includegraphics[scale=1]{Images/ChangePlot03.pdf}
+	\label{Change03}
+\end{figure}
+
+When we split the policy days according to their classification by narratives (as identified by PLSA without background distribution), we get a similar picture (see Figures \ref{Change02} and \ref{Change03}). This goes against our expectations: A successful classification of policy days would separate the days characterized by a co-movement between the long-term rates and the target rate from the days where the rates move in opposite directions. It should be noted that \citet[p. 14--15]{Ellingsen.2003}, too, only found an ambiguous relationship when they applied their model of classification. 
+
+In a next step, I run the regression formulated in Eq. \ref{reg2}
 
 \chapter{Conclusion}
 

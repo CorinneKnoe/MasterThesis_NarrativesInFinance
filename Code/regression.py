@@ -15,6 +15,9 @@ import matplotlib.pyplot as plt
 #%matplotlib inline #for notebooks
 import seaborn; seaborn.set()
 plt.style.use('seaborn-whitegrid') #whitegrid style for plot
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+
 
 if __name__ == '__main__':
     
@@ -32,6 +35,9 @@ if __name__ == '__main__':
     #read in classification of policy days
     classorigdf = pd.read_csv('AdjustmentsClassifiedPLSAorig.csv', sep = ',')
     
+    #read in classification of policy days, lambda = 0.1
+    classL0_1 = pd.read_csv('AdjustmentsClassifiedPLSAbgLamb_0_1.csv', sep = ',')
+    
     
     #Correct time frame for financial data
     #turn date from string into datetime object
@@ -40,6 +46,7 @@ if __name__ == '__main__':
     
     for l in range(len(classorigdf)): #replace date string with date format
         classorigdf.iloc[l,0] = datetime.datetime.strptime(classorigdf.iloc[l,0], '%Y-%m-%d %H:%M:%S')
+        classL0_1.iloc[l,0] = datetime.datetime.strptime(classL0_1.iloc[l,0], '%Y-%m-%d %H:%M:%S')
         
     start = datetime.datetime.strptime('01.10.1998', '%d.%m.%Y')
     end = datetime.datetime.strptime('30.09.2018', '%d.%m.%Y')
@@ -63,27 +70,112 @@ if __name__ == '__main__':
     #classifications of non policy days
     regdf['NonPolicyDay'] = pd.Series(np.where(financedf.Adjustment.values == 0.0, 1, 0), financedf.index)
     
-    #classification of days according to narratives
-    datelist = list(classorigdf['Date'])
-    regdf['ClassL=0.0_t0'] = ''
-    regdf['ClassL=0.0_t1'] = ''
+    #classification of days according to narratives, add to dataframe for regression
+    if any(classorigdf['Date'] != classL0_1['Date']):
+        raise Exception("The dates fo different classification df do not match!")
+    regdf['ClassL=0.0t0'] = ''
+    regdf['ClassL=0.0t1'] = ''
+    regdf['ClassL=0.1t0'] = ''
+    regdf['ClassL=0.1t1'] = ''
     for i in range(len(regdf['Date'])):
         day = regdf.loc[i, 'Date']
         if day in list(classorigdf['Date']):
             rowindex = classorigdf[classorigdf['Date'] == day].index.values.astype(int)[0] #find row of date in classification df
             if classorigdf.loc[rowindex, 'TopicClassification'] == 0:
-                regdf.loc[i,'ClassL=0.0_t0'] = 1
-                regdf.loc[i,'ClassL=0.0_t1'] = 0
+                regdf.loc[i,'ClassL=0.0t0'] = 1
+                regdf.loc[i,'ClassL=0.0t1'] = 0
             if classorigdf.loc[rowindex, 'TopicClassification'] == 1:
-                regdf.loc[i,'ClassL=0.0_t0'] = 0
-                regdf.loc[i,'ClassL=0.0_t1'] = 1
+                regdf.loc[i,'ClassL=0.0t0'] = 0
+                regdf.loc[i,'ClassL=0.0t1'] = 1
+            if classL0_1.loc[rowindex, 'ClassificationLamb_0_1'] == 0:
+                regdf.loc[i,'ClassL=0.1t0'] = 1
+                regdf.loc[i,'ClassL=0.1t1'] = 0
+            if classL0_1.loc[rowindex, 'ClassificationLamb_0_1'] == 1:
+                regdf.loc[i,'ClassL=0.1t0'] = 0
+                regdf.loc[i,'ClassL=0.1t1'] = 1
         else:
-            regdf.loc[i, 'ClassL=0.0_t0'] = 0
-            regdf.loc[i,'ClassL=0.0_t1'] = 0
+            regdf.loc[i, 'ClassL=0.0t0'] = 0
+            regdf.loc[i,'ClassL=0.0t1'] = 0
+            regdf.loc[i,'ClassL=0.1t0'] = 0
+            regdf.loc[i,'ClassL=0.1t1'] = 0
     #check of correctness
     if sum(regdf['NonPolicyDay'] + regdf['ClassL=0.0_t0'] + regdf['ClassL=0.0_t1']) != len(regdf):
-        raise Exception("The data frame for regression is not constructed correctly, check the assignment of topics to policy days!")
+        raise Exception("The data frame for regression is not constructed correctly, check the assignment of topics to policy days (Lambda = 0.0)!")
+    if sum(regdf['NonPolicyDay'] + regdf['ClassL=0.1_t0'] + regdf['ClassL=0.1_t1']) != len(regdf):
+        raise Exception("The data frame for regression is not constructed correctly, check the assignment of topics to policy days (Lambda = 0.1)!")
+    
+    
+    #plot the behavior of interest rates on ppolicy days
+    plt.style.use('seaborn')
+    seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
+    fig = plt.figure(figsize=(4,4))
+    x = regdf.loc[regdf['NonPolicyDay'] == 0,'Diff3MT']
+    y = regdf.loc[regdf['NonPolicyDay'] == 0,'Diff10YT']
+    
+    plt.scatter(x, y, color=seaborn.color_palette('deep')[0])
+    plt.axhline(0, color="black", linewidth = 0.5, linestyle = '-')
+    plt.axvline(0, color="black", linewidth = 0.5, linestyle = '-')
+    plt.title('Interest rate behavior on policy days')
+    plt.xlabel('Change in 3-month rate')
+    plt.ylabel('Change in 10-year rate')
+    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot01.pdf", bbox_inches='tight')
+    #plot the behavior of interest rates on ppolicy days, Narrative One
+    plt.style.use('seaborn')
+    seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
+    fig = plt.figure(figsize=(4,4))
+    x = regdf.loc[regdf['ClassL=0.0t0'] == 1,'Diff3MT']
+    y = regdf.loc[regdf['ClassL=0.0t0'] == 1,'Diff10YT']
+    
+    plt.scatter(x, y, color=seaborn.color_palette('deep')[0])
+    plt.axhline(0, color="black", linewidth = 0.5, linestyle = '-')
+    plt.axvline(0, color="black", linewidth = 0.5, linestyle = '-')
+    plt.title('Interest rate behavior on policy days (Narrative one)')
+    plt.xlabel('Change in 3-month rate')
+    plt.ylabel('Change in 10-year rate')
+    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot02.pdf", bbox_inches='tight')
+    #plot the behavior of interest rates on ppolicy days, Narrative Two
+    plt.style.use('seaborn')
+    seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
+    fig = plt.figure(figsize=(4,4))
+    x = regdf.loc[regdf['ClassL=0.0t1'] == 1,'Diff3MT']
+    y = regdf.loc[regdf['ClassL=0.0t1'] == 1,'Diff10YT']
+    
+    plt.scatter(x, y, color=seaborn.color_palette('deep')[0])
+    plt.axhline(0, color="black", linewidth = 0.5, linestyle = '-')
+    plt.axvline(0, color="black", linewidth = 0.5, linestyle = '-')
+    plt.title('Interest rate behavior on policy days (Narrative two)')
+    plt.xlabel('Change in 3-month rate')
+    plt.ylabel('Change in 10-year rate')
+    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot03.pdf", bbox_inches='tight')
+
+    #Regression -- classification of PLSA orig
+    X = regdf['NonPolicyDay'], regdf['Diff3MT']
+    Y = regdf['Diff6MT']
+    X = sm.add_constant(X)
+    
+    model = sm.OLS(Y, X).fit() ## sm.OLS(output, input)
+    model.params
+    predictions = model.predict(X)
+    model.summary()
     
     
     
-   
+    NP = regdf.loc[regdf['NonPolicyDay'] == 1,:]
+    T0 = regdf.loc[regdf['ClassL=0.0t0'] == 1,:]
+    T1 = regdf.loc[regdf['ClassL=0.0t1'] == 1,:]
+    len(NP) + len(T0)+ len(T1)
+    fit = ols('Diff6MT ~  Diff3MT', data = NP).fit() 
+    fit.params
+    fit.summary()
+    fit = ols('Diff6MT ~  Diff3MT', data = T0).fit() 
+    fit.params
+    fit.summary()
+    fit = ols('Diff6MT ~  Diff3MT', data = T1).fit() 
+    fit.params
+    fit.summary()    
+     
+    plt.figure(figsize=(12, 6))
+    
+    plt.plot(regdf['Diff3MT'], regdf['Diff6MT'], 'o')           # scatter plot showing actual data
+    
+    plt.plot(regdf['Diff3MT'], predictions, 'r', linewidth=2)   # regression line
