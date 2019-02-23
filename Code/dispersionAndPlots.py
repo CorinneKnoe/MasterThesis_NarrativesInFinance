@@ -18,8 +18,7 @@ import re
 
 
 def dispersion_plot(text, words, xnumbers, xlabels, ignore_case=False, title="Lexical Dispersion Plot"):
-    """
-    Generate a lexical dispersion plot.
+    """Generate a lexical dispersion plot.
     :param text: The source text
     :type text: list(str) or enum(str)
     :param words: The target words
@@ -69,7 +68,7 @@ def dispersion_plot(text, words, xnumbers, xlabels, ignore_case=False, title="Le
     plt.ylim(-1, len(words))
     plt.title(title)
     plt.xlabel("Year")
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/dispersionplot_PLSAorigTopic.pdf", bbox_inches='tight')
+    #plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/dispersionplot_PLSAorigTopic.pdf", bbox_inches='tight')
 
 
 
@@ -114,7 +113,7 @@ if __name__ == '__main__':
         stoptokens = 0
         tokenslicedf = tokenslicedf.reset_index(drop=True) #have index of the sliced df start at 0
         for l in range(noofart):
-            stoptokens += len(tokenslicedf.loc[l, 'Article']) #count toekns of prepared text data
+            stoptokens += len(tokenslicedf.loc[l, 'Article'].split()) #count toekns of prepared text data
         wcountdf = wcountdf.append([[day, noofart, stoptokens]], ignore_index=True)
 
     #name column headers
@@ -126,7 +125,7 @@ if __name__ == '__main__':
     #================================================================
     alltext = []  #collect text as counted in wcountdf
     for i in range(len(tokenizedf['Article'])):
-        alltext += tokenizedf.loc[i, 'Article']
+        alltext += tokenizedf.loc[i, 'Article'].split()
         
     #dispersion plot of important words
     wordsattick = list(range(100000, 900000, 100000))
@@ -144,7 +143,7 @@ if __name__ == '__main__':
         labellist.append(day)        
     
     dispersion_plot(alltext, ["rate", "fed", "said", "interest", "percent", "year"], wordsattick, labellist)
-    
+    dispersion_plot(alltext, ["greenspan", "investors", "officials", "dollar", "trading", "euro"], wordsattick, labellist)
     
     #create a lineplot to assess log likelihood of different PLSA models
     ####################################################################
@@ -152,11 +151,11 @@ if __name__ == '__main__':
     seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
     fig = plt.figure(figsize=(4,4))
     likelihood = [-6312761.454808442, -6350000.0, -6350000.0, -6350000.0, 
-                  -6350000.0, -6350000.0, -6350000.0, -6350000.0, -6350000.0]
+                  -6350000.0, -6350000.0, -6340581.097251067, -6350264.678970301, -6364354.081529713]
     lamb = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8, 0.9]
     
     plt.plot(lamb, likelihood, color=seaborn.color_palette('deep')[0])
-    plt.ylim((-6200000, -6400000))  # proportions sum to 1, so the height of the stacked bars is 1
+    plt.ylim((-6300000, -6375000))  # proportions sum to 1, so the height of the stacked bars is 1
     plt.title('Model Performance of PLSA')
     plt.xlabel('Lambda_B')
     plt.ylabel('Log Likelihood')

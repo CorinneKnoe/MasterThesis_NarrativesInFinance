@@ -99,13 +99,15 @@ if __name__ == '__main__':
             regdf.loc[i,'ClassL=0.1t0'] = 0
             regdf.loc[i,'ClassL=0.1t1'] = 0
     #check of correctness
-    if sum(regdf['NonPolicyDay'] + regdf['ClassL=0.0_t0'] + regdf['ClassL=0.0_t1']) != len(regdf):
+    if sum(regdf['NonPolicyDay'] + regdf['ClassL=0.0t0'] + regdf['ClassL=0.0t1']) != len(regdf):
         raise Exception("The data frame for regression is not constructed correctly, check the assignment of topics to policy days (Lambda = 0.0)!")
-    if sum(regdf['NonPolicyDay'] + regdf['ClassL=0.1_t0'] + regdf['ClassL=0.1_t1']) != len(regdf):
+    if sum(regdf['NonPolicyDay'] + regdf['ClassL=0.1t0'] + regdf['ClassL=0.1t1']) != len(regdf):
         raise Exception("The data frame for regression is not constructed correctly, check the assignment of topics to policy days (Lambda = 0.1)!")
     
     
-    #plot the behavior of interest rates on ppolicy days
+    #plot the behavior of interest rates on ppolicy days -- original PLSA classification
+    # ##################################################################################
+    
     plt.style.use('seaborn')
     seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
     fig = plt.figure(figsize=(4,4))
@@ -118,7 +120,8 @@ if __name__ == '__main__':
     plt.title('Interest rate behavior on policy days')
     plt.xlabel('Change in 3-month rate')
     plt.ylabel('Change in 10-year rate')
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot01.pdf", bbox_inches='tight')
+    #plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot01.pdf", bbox_inches='tight')
+    
     #plot the behavior of interest rates on ppolicy days, Narrative One
     plt.style.use('seaborn')
     seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
@@ -132,7 +135,8 @@ if __name__ == '__main__':
     plt.title('Interest rate behavior on policy days (Narrative one)')
     plt.xlabel('Change in 3-month rate')
     plt.ylabel('Change in 10-year rate')
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot02.pdf", bbox_inches='tight')
+    #plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot02.pdf", bbox_inches='tight')
+    
     #plot the behavior of interest rates on ppolicy days, Narrative Two
     plt.style.use('seaborn')
     seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
@@ -146,7 +150,14 @@ if __name__ == '__main__':
     plt.title('Interest rate behavior on policy days (Narrative two)')
     plt.xlabel('Change in 3-month rate')
     plt.ylabel('Change in 10-year rate')
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot03.pdf", bbox_inches='tight')
+    #plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot03.pdf", bbox_inches='tight')
+
+
+
+
+
+
+
 
     #Regression -- classification of PLSA orig
     X = regdf['NonPolicyDay'], regdf['Diff3MT']

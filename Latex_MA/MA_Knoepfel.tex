@@ -1003,7 +1003,88 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}
 	\label{classdoc02}
 \end{figure}
 
+%\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+%	\centering % Centres the table on the page, comment out to left-justify
+%	\begin{tabular}{ p{1.5cm}  p{1.5cm}  p{1.5cm}  p{1.5cm}  p{1.5cm}  p{1.5cm}  p{1.5cm}  p{1.5cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+%		\toprule % Top horizontal line
+%		\multicolumn{4}{ c }{$\lambda_B=0.8$} & \multicolumn{4}{ c }{$\lambda_B=0.9$} \\
+%		
+%		\multicolumn{2}{ c }{Topic 1} & \multicolumn{2}{ c }{Topic 2} & \multicolumn{2}{ c }{Topic 1} & \multicolumn{2}{ c }{Topic 2}\\
+%		\midrule % In-table horizontal line
+%		word & prob & word & prob & word & prob & word & prob\\
+%		\midrule
+%		 &  &  & &fed&&&\\
+%		 &  &  & &inflation&&&\\
+%		 &  &  & &&&& \\
+%		 &  &  & &&&&\\
+%		 &  &  & &&&&\\
+%		 &  & & &&&&\\
+%		 &  &  &&&&&\\
+%		 &  &  &&&&&\\
+%		 &  &  &&&&&\\
+%		 &  &  &&&&&\\
+%		\bottomrule % Bottom horizontal line
+%	\end{tabular}
+%	\caption{Topics produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
+%	\label{tab:topics} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+%\end{table}
 
+\begin{table} % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+		\multicolumn{2}{ c }{$\lambda_B=0.1$}&\multicolumn{2}{ c }{$\lambda_B=0.2$} & \multicolumn{2}{ c }{$\lambda_B=0.3$} \\
+		\midrule
+		Topic 1 & Topic 2 &	Topic 1 & Topic 2 & Topic 1 & Topic 2\\
+		\midrule % In-table horizontal line
+		rate&fed&&&&\\
+		year&rate&&&&\\
+		percent&said&&&&\\
+		said&rates&&&&\\
+		bank&inflation&&&&\\
+		market&economy&&&&\\
+		interest&interest&&&&\\
+		rates&federal&&&&\\
+		dollar&percent&&&&\\
+		cut&year&&&&\\
+		
+		
+		\toprule % Top horizontal line
+		 \multicolumn{2}{ c }{$\lambda_B=0.4$}&\multicolumn{2}{ c }{$\lambda_B=0.5$} & \multicolumn{2}{ c }{$\lambda_B=0.6$} \\
+		\midrule
+		 Topic 1 & Topic 2 &	Topic 1 & Topic 2 & Topic 1 & Topic 2\\
+		\midrule % In-table horizontal line
+		  &&&&&\\
+		  &&&&&\\
+		  &&&&&\\
+		  &&&&&\\
+		  &&&&&\\
+		  &&&&&\\
+		  &&&&&\\
+		  &&&&&\\
+		  &&&&&\\
+		  &&&&&\\
+		  
+		\toprule
+	\multicolumn{2}{ c }{$\lambda_B=0.7$}&\multicolumn{2}{ c }{$\lambda_B=0.8$} & \multicolumn{2}{ c }{$\lambda_B=0.9$} \\
+		\midrule
+	  Topic 1 & Topic 2 &	Topic 1 & Topic 2 & Topic 1 & Topic 2\\
+		\midrule % In-table horizontal line
+		  fed& year&fed & year&fed&dollar\\
+		  rate& percent&inflation&percent&inflation&per\\
+		  inflation& dollar&rate&dollar&economy& yield\\
+		  economy& rate&economy&bank&economic&cent\\
+		  said& bank&economic&investors&growth &investors\\
+		 rates& market&said&per&policy&rose\\
+		  economic&interest&growth&market&officials&fell\\
+		  growth&investors&rates&yield&greenspan&euro\\
+		 policy&cut&policy&points&would&points\\
+		  federal&per&would&cent&think&trading\\
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{Topics produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
+	\label{tab:topics} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
 
 \renewcommand{\theequation}{C.\arabic{equation}}
 
