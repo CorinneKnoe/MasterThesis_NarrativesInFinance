@@ -819,7 +819,125 @@ Analogously to \citet[p. 14 -- 15]{Ellingsen.2003}, we take a look at the behavi
 
 When we split the policy days according to their classification by narratives (as identified by PLSA without background distribution), we get a similar picture (see Figures \ref{Change02} and \ref{Change03}). This goes against our expectations: A successful classification of policy days would separate the days characterized by a co-movement between the long-term rates and the target rate from the days where the rates move in opposite directions. It should be noted that \citet[p. 14--15]{Ellingsen.2003}, too, only found an ambiguous relationship when they applied their model of classification. 
 
-In a next step, I run the regression formulated in Eq. \ref{reg2}
+In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-Pagan test shows Heteroskedasticity for all yield curves (except the 6 month and the 7 year rate). Thus, in these cases White’s (1980) heteroskedasticity robust standard errors were used.  
+
+\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{2cm}  p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+		& 6m & 1y & 3y & 5y & 10y & 20y & 30y \\
+		\midrule % In-table horizontal line
+		$\alpha_n$		& -0.00 	& -0.00 	& -0.00 	& -0.00  	& -0.00 	& -0.00 	& -0.00    \\
+						& (0.00) 	& (0.00)  	& (0.00)  	& (0.00) 	& (0.00) 	& (0.00) 	&  (0.00)   \\
+		$\beta_n^{NP}$	& 0.36** 	& 0.30**   	& 0.28** 	& 0.25** 	& 0.18** 	& 0.13** 	& 0.12**  \\
+						& (0.01) 	& (0.04) 	& (0.04) 	& (0.03) 	& (0.03)  	& (0.02) 	& (0.02)    \\
+		$\beta_n^{N1}$	& 0.45** 	& 0.25 		&   0.40 	& 0.35 		& 0.43*  	& 0.19 		& 0.32*  \\
+						& (0.08) 	& (0.15) 	& (0.21) 	& (0.26) 	& (0.17)  	& (0.11) 	& (0.15)   \\
+		$\beta_n^{N2}$	& 0.71** 	& 0.62**   	&0.43**  	& 0.45** 	& 0.27** 	& 0.05		& 0.16**\\
+						& (0.05)	& (0.07) 	& (0.10) 	& (0.11) 	& (0.09)	& (0.09)	& (0.06)   \\
+		$R^2$			& 0.30 		& 0.20 		& 0.08 		& 0.06 		& 0.03 		&  0.02		& 0.02    \\
+		
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{Regression results (applying classification without background topic).} % Table caption, can be commented out if no caption is required
+	\label{tab:reg1} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
+
+\section{Classification with PLSA with Background Topic}
+
+\begin{figure}
+	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative one with $\lambda_B=0.1$.}
+	\centering
+	\includegraphics[scale=1]{Images/ChangePlot02_L0_1.pdf}
+	\label{Change02_L01}
+\end{figure}
+
+\begin{figure}
+	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative two with $\lambda_B=0.1$.}
+	\centering
+	\includegraphics[scale=1]{Images/ChangePlot03_L0_1.pdf}
+	\label{Change03_L01}
+\end{figure}
+
+\begin{figure}
+	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative one with $\lambda_B=0.9$.}
+	\centering
+	\includegraphics[scale=1]{Images/ChangePlot02_L0_9.pdf}
+	\label{Change02_L09}
+\end{figure}
+
+\begin{figure}
+	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative two with $\lambda_B=0.9$.}
+	\centering
+	\includegraphics[scale=1]{Images/ChangePlot03_L0_9.pdf}
+	\label{Change03_L09}
+\end{figure}
+
+\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{2cm}  p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+						& 6m 		& 1y 		& 3y 		& 5y 		& 10y 		& 20y 		& 30y \\
+		\midrule % In-table horizontal line
+		$\alpha_n$		& -0.00 	& -0.00 	& -0.00 	& -0.00  	& -0.00 	& -0.00 	& -0.00    \\
+						& (0.00) 	& (0.00)  	& (0.00)  	& (0.00) 	& (0.00) 	& (0.00) 	&  (0.00)   \\
+		$\beta_n^{NP}$	& 0.36**	&  0.30**	&  	0.28**	&  0.25**	&  0.18**	&  	0.13**	&   0.12**\\
+						& (0.01)	&  (0.04)	&  	(0.04)	& (0.03)	&  (0.03)	&  	(0.02)	&  (0.02)   \\
+		$\beta_n^{N1}$	& 0.65**	&  0.55**	&   0.45**	&  	0.45**	&  	0.35**	& 0.14**	&  0.20** \\
+						&  (0.05)	&  (0.11)	&  	(0.07)	&  	(0.09)	& (0.06)	&  	(0.04)	&  (0.06)  \\
+		$\beta_n^{N2}$	& 0.63**	&  0.44**	&  	0.33	&  	0.36	&  0.16		& -0.15		& 0.17\\
+						& (0.09)	& (0.15)	&  	(0.32)	&  	(0.36)	& (0.26)	& (0.22)	&  (0.19)  \\
+		$R^2$			& 0.30		& 0.20		&  	0.08	&  	0.06	&  	0.03	& 0.02		&  0.02   \\
+		
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{Regression results (applying classification with background topic, $\lambda_B=0.1$).} % Table caption, can be commented out if no caption is required
+	\label{tab:reg2} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
+
+\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{2cm}  p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+						& 6m 		& 1y 		& 3y 		& 5y 		& 10y 		& 20y 		& 30y \\
+		\midrule % In-table horizontal line
+		$\alpha_n$		& -0.00 	& -0.00 	& -0.00 	& -0.00  	& -0.00 	& -0.00 	& -0.00    \\
+						& (0.00) 	& (0.00)  	& (0.00)  	& (0.00) 	& (0.00) 	& (0.00) 	& (0.00)   \\
+		$\beta_n^{NP}$	&  0.36**	&   0.30	& 0.28**	&  0.25**	&  0.18**	&  0.13**	& 0.12**\\
+						& (0.01)	&  (0.04)	& (0.04)	&  0.03		&  (0.03)	&  (0.02)	& (0.02) \\
+		$\beta_n^{N1}$	& 0.43**	&  0.34		&  0.38		&  0.32		&  0.41*	& 0.22		& 0.34  \\
+						&  (0.09)	&  (0.19)	& (0.24)	& (0.32)	&  (0.19)	& (0.14)	& (0.18)  \\
+		$\beta_n^{N2}$	&  0.69**	&  0.57**	&  0.44**	&  0.46**	&  0.28**	& 0.05		& 0.16**\\
+						& 	(0.04)	&  (0.09)	& (0.10)	&  (0.10)	& (0.08)	& (0.09)	& (0.05) \\
+		$R^2$			&  0.30		& 0.20		& 0.08		&  0.06		&  0.03		&  0.02		&  0.02  \\
+		
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{Regression results (applying classification with background topic, $\lambda_B=0.9$).} % Table caption, can be commented out if no caption is required
+	\label{tab:reg2} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
+
+%\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+%	\centering % Centres the table on the page, comment out to left-justify
+%	\begin{tabular}{ p{2cm}  p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+%		\toprule % Top horizontal line
+%		& 6m 		& 1y 		& 3y 		& 5y 		& 10y 		& 20y 		& 30y \\
+%		\midrule % In-table horizontal line
+%		$\alpha_n$		& -0.00 	& -0.00 	& -0.00 	& -0.00  	& -0.00 	& -0.00 	& -0.00    \\
+%		& (0.00) 	& (0.00)  	& (0.00)  	& (0.00) 	& (0.00) 	& (0.00) 	&  (0.00)   \\
+%		$\beta_n^{NP}$	&  			&    		&  			&  			&  			&  			&   \\
+%		& 			&  			&  			&  			&   		&  			&     \\
+%		$\beta_n^{N1}$	&  			&  			&    		&  			&  			& 			&   \\
+%		&  			&  			&  			&  			&   		&  			&    \\
+%		$\beta_n^{N2}$	&  			&    		&  			&  			&  			& 			& \\
+%		& 			&  			&  			&  			& 			& 			&    \\
+%		$R^2$			&  			&  			&  			&  			&  			&  			&     \\
+%		
+%		\bottomrule % Bottom horizontal line
+%	\end{tabular}
+%	\caption{Regression results (applying classification without background topic).} % Table caption, can be commented out if no caption is required
+%	\label{tab:reg1} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+%\end{table}
 
 \chapter{Conclusion}
 
@@ -1037,16 +1155,16 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}
 		\midrule
 		Topic 1 & Topic 2 &	Topic 1 & Topic 2 & Topic 1 & Topic 2\\
 		\midrule % In-table horizontal line
-		rate&fed&&&&\\
-		year&rate&&&&\\
-		percent&said&&&&\\
-		said&rates&&&&\\
-		bank&inflation&&&&\\
-		market&economy&&&&\\
-		interest&interest&&&&\\
-		rates&federal&&&&\\
-		dollar&percent&&&&\\
-		cut&year&&&&\\
+		rate&fed&fed&rate&fed&rate\\
+		year&rate&rate&year&rate&year\\
+		percent&said&said&percent&said&percent\\
+		said&rates&rates&said&rates&said\\
+		bank&inflation&inflation&rates&inflation&rates\\
+		market&economy&economy&interest&economy&bank\\
+		interest&interest&interest&bank&federal&interest\\
+		rates&federal&federal&market&interest&market\\
+		dollar&percent&percent&dollar&economic&cut\\
+		cut&year&economic&cut&policy&dollar\\
 		
 		
 		\toprule % Top horizontal line
@@ -1054,16 +1172,16 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}
 		\midrule
 		 Topic 1 & Topic 2 &	Topic 1 & Topic 2 & Topic 1 & Topic 2\\
 		\midrule % In-table horizontal line
-		  &&&&&\\
-		  &&&&&\\
-		  &&&&&\\
-		  &&&&&\\
-		  &&&&&\\
-		  &&&&&\\
-		  &&&&&\\
-		  &&&&&\\
-		  &&&&&\\
-		  &&&&&\\
+		  fed&rate&fed&rate&fed&year\\
+		  rate&year&rate&year&rate&percent\\
+		  said&percent&said&percent&inflation&rate\\
+		  inflation&said&inflation&bank&economy&bank\\
+		  rates&bank&economy&said&said&market\\
+		  economy&rates&rates&market&rates&dollar\\
+		  federal&interest&federal&interest&economic&interest\\
+		  economic&market&economic&rates&federal&said\\
+		  interest&cut&policy&dollar&policy&rates\\
+		  policy&dollar&interest&investors&growth&investors\\
 		  
 		\toprule
 	\multicolumn{2}{ c }{$\lambda_B=0.7$}&\multicolumn{2}{ c }{$\lambda_B=0.8$} & \multicolumn{2}{ c }{$\lambda_B=0.9$} \\
@@ -1085,6 +1203,27 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}
 	\caption{Topics produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
 	\label{tab:topics} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
+
+\begin{sidewaysfigure}
+	\caption{Policy day classification according to PLSA with $\lambda_B = 0.1$.}
+	\centering
+	\includegraphics[scale=0.8]{Images/plsamodelling_bgLamb_0_1.pdf}
+	\label{classPLSAL01}
+\end{sidewaysfigure}
+
+\begin{figure}
+	\caption{Document classification according to PLSA with $\lambda_B = 0.1$ - Part I.}
+	\centering
+	\includegraphics[scale=0.8]{Images/docsplit01_bgLamb_0_1.pdf}
+	\label{classdoc01L01}
+\end{figure}
+
+\begin{figure}
+	\caption{Document classification according to PLSA with $\lambda_B = 0.1$ - Part II.}
+	\centering
+	\includegraphics[scale=0.8]{Images/docsplit02_bgLamb_0_1.pdf}
+	\label{classdoc02L01}
+\end{figure}
 
 \renewcommand{\theequation}{C.\arabic{equation}}
 

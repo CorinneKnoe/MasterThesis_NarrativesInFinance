@@ -150,11 +150,11 @@ if __name__ == '__main__':
     plt.style.use('seaborn')
     seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
     fig = plt.figure(figsize=(4,4))
-    likelihood = [-6312761.454808442, -6350000.0, -6350000.0, -6350000.0, 
-                  -6350000.0, -6350000.0, -6340581.097251067, -6350264.678970301, -6364354.081529713]
+    likelihood = [-6312761.454808442, -6315629.963367147, -6318781.810783763, -6322580.597065601, 
+                  -6327628.568136289, -6333440.3062127475, -6340581.097251067, -6350264.678970301, -6364354.081529713]
     lamb = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8, 0.9]
     
-    plt.plot(lamb, likelihood, color=seaborn.color_palette('deep')[0])
+    plt.plot(lamb, likelihood, '-o', color=seaborn.color_palette('deep')[0])
     plt.ylim((-6300000, -6375000))  # proportions sum to 1, so the height of the stacked bars is 1
     plt.title('Model Performance of PLSA')
     plt.xlabel('Lambda_B')
