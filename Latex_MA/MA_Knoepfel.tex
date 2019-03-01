@@ -515,6 +515,14 @@ As before, in the M-step we use a tentative partitioning of the words, as derive
 
 
 \section{Latent Dirichlet Allocation}
+
+
+
+
+
+
+
+
 PLSA is completely unsupervised and the discovery of topics is driven exclusively by the data, taking no regards of any extra knowledge on topics and their coverage that we might have. Some domain knowledge is introduced with the introduction of a background model. 
 
  Only if a background model is introduced, we also introduce some extra knowledge 
@@ -549,7 +557,23 @@ here:  general topics, document specific word distributions, corpus wide backgro
 
 \textcolor{red}{include critic at bayseian updating -- handbook of Bayesian epistemology}
 
+\begin{figure}
+	\caption{On LDA.}
+	\centering
+	\includegraphics[scale=0.5]{Images/tempPLSA.png}
+\end{figure}
 
+\begin{figure}
+	\caption{On LDA.}
+	\centering
+	\includegraphics[scale=0.5]{Images/tempPLSA1.png}
+\end{figure}
+
+\begin{figure}
+	\caption{On LDA.}
+	\centering
+	\includegraphics[scale=0.5]{Images/tempPLSA2.png}
+\end{figure}
 
 \chapter{Data and Methodology}
 
@@ -645,6 +669,60 @@ In line with the recommendation from \cite{Schofield.2017}, I refrain form apply
 After tokenization, the text data collection encompasses round 1'600'000 tokens. After the removal of stop words, the token count drops to roughly 1'100'000 tokens. Subsequently, the non-alphabetic characters, especially the punctuations marks, are removed and the final count amounts to approximately 850'000 tokens. Thus, even though a conservative preprocessing strategy has been chosen, the text data is reduced by almost half during preprocessing (see Figure \ref{tokencount} in Appendix \ref{AppendixB}).
 
 
+('federal reserve', 3538),
+('interest rate', 3428),
+('interest rates', 3384),
+('central bank', 2636),
+('funds rate', 2097),
+('per cent', 2023),
+('new york', 1764),
+('rate cut', 1511),
+('percentage point', 1422),
+('basis points', 1399),
+('federal funds', 1397),
+('short term', 1198),
+('monetary policy', 1080),
+('dow jones', 1060),
+('quarter point', 980),
+('rate cuts', 827),
+('economic growth', 804),
+('wall street', 803),
+('percent percent', 759),
+('fed funds', 759),
+('wsj com', 755),
+('next year', 712),
+('open market', 691),
+('rate increases', 679),
+('rate percent', 677),
+('financial markets', 672),
+('chief economist', 650),
+('market committee', 633),
+('quarter percentage', 619),
+('basis point', 589),
+('term interest', 578),
+('rate increase', 573),
+('fed officials', 569),
+('last week', 560),
+('federal open', 547),
+('central banks', 540),
+('rate hike', 540),
+('fed rate', 522),
+('long term', 494),
+('raise rates', 492),
+('point cut', 486),
+('stock market', 485),
+('cut rates', 485),
+('discount rate', 472),
+('two year', 461),
+('half point', 453),
+('rate hikes', 453),
+('oil prices', 435),
+('fed said', 427),
+('year treasury', 422)
+
+ManualListBadBigrams = 'wsj com', 'fed said', 'year treasury'
+
+len(corpus.vocabulary)  = 23'313, initially there are 23'313 unique words in the text data, I remove all words that only occur once (7'906), twice (3396) or thrice (1867) // so in total I remove 13'169 tokens an the remaining 10'144 tokens are used for analysis
 \subsection{Application of PLSA}
 
 Using the preprocessed and prepared text data, I apply the PLSA algorithm as it is presented in Chapter \ref{Ch:model}. The model specifications are presented in Table \ref{tab:specs}.

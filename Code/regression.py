@@ -298,8 +298,8 @@ if __name__ == '__main__':
     regressionresults = []
     runregdf = pd.DataFrame()
     runregdf['x1'] = regdf['NonPolicyDay']  * regdf['Diff3MT']
-    runregdf['x2'] = regdf['ClassL=0.0t0']  * regdf['Diff3MT']
-    runregdf['x3'] = regdf['ClassL=0.0t1']  * regdf['Diff3MT']
+    runregdf['x2'] = regdf['ClassL=0.9t0']  * regdf['Diff3MT']
+    runregdf['x3'] = regdf['ClassL=0.9t1']  * regdf['Diff3MT']
     for numerator, yieldcurve in enumerate(['Diff6MT', 'Diff1YT', 'Diff3YT', 
                                             'Diff5YT', 'Diff10YT', 'Diff20YT', 'Diff30YT']):
         #run regression with one of the endogenous variables
@@ -312,7 +312,7 @@ if __name__ == '__main__':
             regressionresults.pop() #remove regular regression that was already done
             regressionresults.append( smf.ols('y ~  x1 + x2 + x3', data = runregdf).fit(cov_type='HC0') )#run regression with robust sd
         
-    regressionresults[5].summary() 
+    regressionresults[6].summary() 
         
     
   

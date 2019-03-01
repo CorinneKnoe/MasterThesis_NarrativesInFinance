@@ -26,6 +26,7 @@ import matplotlib.pyplot as plt
 import seaborn; seaborn.set()
 from multiprocessing import Process, Manager
 import multiprocessing
+import operator
 #import functions from other python modules
 #-------------------------------------------
 path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/" #absolute path to the txt files
@@ -48,30 +49,29 @@ def normalize(vec):
 class Document(object):
 
     def __init__(self, text):
-        '''takes a text and returns a list of words as a document, basically a tokenizer'''
+        '''takes a list of strings and returns the same list of strings, but now 
+        the list has a .word function'''
         self.words = []
-        wordlist = text.split(" ") 
+        wordlist = text 
         for word in wordlist:
             if len(word) > 1:
                 self.words.append(word) 
 
 #D
-class Corpus(object): #gives a list of unique words in all documents
-	def __init__(self):
-		self.documents = []
-
-
-	def add_document(self, document): #add an article to list of corpus
-		self.documents.append(document)
-
-	def build_vocabulary(self): #create set of unique words in all documents
-		discrete_set = set()
-		for document in self.documents:
-			for word in document.words:
-				discrete_set.add(word)
-		self.vocabulary = list(discrete_set)
-
-
+class Corpus(object):
+    def __init__(self):
+        self.documents = []
+        
+    def add_document(self, document):
+        self.documents.append(document)
+        
+    def build_vocabulary(self, DisregardedWords):
+        discrete_set = set()
+        for document in self.documents:
+            for word in document.words:
+                discrete_set.add(word)
+        discrete_set = discrete_set - set(DisregardedWords)
+        self.vocabulary = list(discrete_set)
   
 def print_p_z_d(model_path, n_d, n_t, p_z_d):
     '''write the topic distribution per document in a word file'''
@@ -121,18 +121,19 @@ def multiprocess_train(randint, corpus, number_of_topics, stoprule, resultdic):
     n_t = number_of_topics
     #self.max_iter = max_iter
     stoploop = stoprule
+    
     # bag of words
     n_w_d = np.zeros([n_d, n_w], dtype = np.int) #initialze empty matrix/ndarray, documents are lines, words are columns
     vocdic = {k: v for v, k in enumerate(corpus.vocabulary)}
     for di, doc in enumerate(corpus.documents): #give counter and value
         mylist = doc.words
-        dic = {k:mylist.count(k) for k in set(mylist)}
+        dic = {k:mylist.count(k) for k in set(mylist) if k in corpus.vocabulary}
         for key in dic.keys():
             index = vocdic[key]
-            n_w_d[di, index] = dic[key]   
-
+            n_w_d[di, index] = dic[key]  
+            
     L = 0.0 # log-likelihood
-    diffL = 10000.0 #store difference here, looping value for likelihood function
+    diffL = 100000.0 #store difference here, looping value for likelihood function
     # P(z|w,d)
     p_z_dw = np.zeros([n_d, n_w, n_t], dtype = np.float) #empty initialization!
 	# P(z|d)
@@ -206,22 +207,78 @@ if __name__ == "__main__":
     #turn first colum from string to datetime
     #textdf['Date'] = pd.to_datetime(textdf['Date'])
     
-    #build the Corpus
+    #checking for bigrams and adding them to the list
+    #================================================
+    #count the most common bigrams in the text data
+    BigramCount = {}
+    for Line in range(len(textdf)):
+        UnigramsInArticle = textdf.loc[Line , 'Article'].split()
+        for NoOfUnigram in range(len(UnigramsInArticle)-1):
+            bigram = UnigramsInArticle[NoOfUnigram] + ' ' + UnigramsInArticle[NoOfUnigram +1]
+            if bigram not in BigramCount.keys():
+                BigramCount[bigram] = 0
+            BigramCount[bigram] += 1
+    
+    TopBigrams = sorted(BigramCount.items(), key=operator.itemgetter(1), reverse=True)[:50]
+    
+    TopBigrams = [Bigram[0] for Bigram in TopBigrams]
+    ManualListBadBigrams = ['wsj com', 'fed said', 'year treasury']
+    for UnnecessaryBigram in ManualListBadBigrams:
+        TopBigrams.remove(UnnecessaryBigram)
+        
+    #the most common bigrams should be in the text as bigrams, not split in two unigrams
+    for Line in range(len(textdf)):
+        Article = []
+        UnigramsInArticle = textdf.loc[Line , 'Article'].split()
+        Skip = False
+        for NoOfUnigram in range(len(UnigramsInArticle)-1):
+            if not Skip: 
+                bigram = UnigramsInArticle[NoOfUnigram] + ' ' + UnigramsInArticle[NoOfUnigram +1]
+                if bigram in TopBigrams:
+                    Article.append(bigram)
+                    Skip = True
+                else:
+                    Article.append(UnigramsInArticle[NoOfUnigram])
+            else:
+                Skip = False #only skip once
+        #add last word in Article if it was not already part of the last bigram
+        if len(Article[-1].split()) == 1: #we know last word was not added in a bigram
+            Article.append(UnigramsInArticle[-1])            
+        #save new bigram rich list in df
+        textdf.loc[Line , 'Article'] = Article
+    
+    #make some feature selection, discard tokens that appear only 1, 2 or 3 times
+    #============================================================================
+    #count the words and add up the counts in dictionary
+    VocCount = {}
+    for Line in range(len(textdf)):
+        for Token in textdf.loc[Line , 'Article']:
+            if Token not in VocCount.keys():
+                VocCount[Token] = 0
+            VocCount[Token] += 1
+            
+    WordsInFrequency = sorted(VocCount.items(), key=operator.itemgetter(1), reverse=False)
+    ToBeRemoved = [VocCountItem[0] for VocCountItem in WordsInFrequency if VocCountItem[1] == 1 or VocCountItem[1] == 2 or VocCountItem[1] == 3]
+        
+    
+    #build the Corpus -- 'Article' in textdf is already list of strings
     #--------------------------------------
     corpus = Corpus()
     for entry in textdf['Article']:
         document = Document(entry)
         corpus.add_document(document)
-    corpus.build_vocabulary()
-   
+    corpus.build_vocabulary(ToBeRemoved) #here we remove the uncommon words
+
     #execute the PLSA
     #---------------------------------------
     number_of_topics = 2 #supposed to be 2
-    stoprule = 0.01 #supposed to be 0.1
+    stoprule = 0.01 #supposed to be 0.01
     
-    #return_dict = {}
-    #multiprocess_train(123, corpus, number_of_topics, stoprule, return_dict)
-    
+# =============================================================================
+#     return_dict = {}
+#     multiprocess_train(123, corpus, number_of_topics, stoprule, return_dict)
+# =============================================================================
+      
     start_time = time.time()
     manager = multiprocessing.Manager()
     return_dict = manager.dict()
@@ -256,7 +313,7 @@ if __name__ == "__main__":
     
     #print top ten words of topics to txt file
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/" #absolute path to where to store the txt files
-    print_top_words(path, number_of_topics, corpus, return_dict[keyofbest][1], 10) #printig top 10 words of word distributions
+    print_top_words(path, number_of_topics, corpus, return_dict[keyofbest][1], 50) #printig top 10 words of word distributions
     
     
      # Read in the FEd meetings dates
@@ -339,7 +396,8 @@ if __name__ == "__main__":
         for entry in weights:
             t.append(entry[x])
         s.append(t)  #a list with K list, each with the weights on the respective topic per meetgin date
-        
+    
+    seaborn.set(context='paper')
     fig = plt.figure(figsize=(14,4))
     height_cumulative = []
     for k in range(K):
@@ -364,18 +422,16 @@ if __name__ == "__main__":
     for text in leg.get_texts():
         plt.setp(text, weight = 'medium')
     plt.axhline(0.5, color="red", linewidth = 0.5, linestyle = '--')
-    plt.show()
+    #plt.show()
     fig.savefig("plsamodelling_orig.pdf", bbox_inches='tight')
     
     #here a figure to check whether or not the average is a good indication for classifying a policy day
     #===================================================================================================
     #plot of distribution over the documents per day
     #first 28 days
+    seaborn.set(context='paper')
     f, axarr = plt.subplots(7, 4, figsize=(7,10))
-    plt.style.use('seaborn-whitegrid')
-    #plt.style.use('classic')
-    seaborn.set_context('paper')
-    
+        
     for i in range(28):
         if i / 4 < 7:
             c = 6
@@ -391,29 +447,24 @@ if __name__ == "__main__":
             c = 1
         if i / 4 < 1:
             c = 0
-            
-        classlist = [] #make a list of classifications, to attribute color either to topic 0 being dominant, or topic 2 being dominant
-        for w in docweights[i]:
-            classlist.append(w.index(max(w)))
-            
-        axarr[c, i%4].scatter([doc[0] for doc in docweights[i]], [doc[1] for doc in docweights[i]], marker='X', label='Topic 1', 
-             color=[seaborn.color_palette('deep')[c] for c in classlist]) #xaxis is topic 0, yaxis is topic 1
+        
+        axarr[c, i%4].bar(list(range(1,len(docweights[i])+1)), sorted([doc[1] for doc in docweights[i]], reverse=True), 
+             width = -1, align='edge', color=seaborn.color_palette('deep')[0]) #xaxis is topic 0, yaxis is topic 1
         axarr[c, i%4].set_title(meetinglist[i])
         axarr[c, i%4].set_ylim([0, 1])
-        axarr[c, i%4].set_xlim([0, 1])
-        axarr[c, i%4].set_xticks([0, 0.5, 1])
+        axarr[c, i%4].set_xlim([1, len(docweights[i])])
+        axarr[c, i%4].set_xticks([0, len(docweights[i])//2, len(docweights[i])])
         axarr[c, i%4].set_yticks([0, 0.5, 1])
     plt.tight_layout()
     topic1 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[0], marker='X', linestyle='None',
-                          markersize=7, label='Document with topic 1 dominant')
-    topic2 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[1], marker='X', linestyle='None',
-                          markersize=7, label='Document with topic 2 dominant')
-    plt.figlegend(handles=[topic1, topic2], loc = 'lower left', ncol=2, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
-    plt.show()    
+                          markersize=7, label='Weight of topic 1 in every document of a policy day')
+    plt.figlegend(handles=[topic1], loc = 'lower left', ncol=1, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
+    #plt.show()    
     f.savefig("docsplit01_orig.pdf", bbox_inches='tight')
     
     #plot of distribution over the documents per day
     #second 28 days
+    seaborn.set(context='paper')
     f, axarr = plt.subplots(7, 4, figsize=(7,10))
     
     for i in range(28, 56):
@@ -432,24 +483,18 @@ if __name__ == "__main__":
         if (i-28) / 4 < 1:
             c = 0
             
-        classlist = [] #make a list of classifications, to attribute color either to topic 0 being dominant, or topic 2 being dominant
-        for w in docweights[i]:
-            classlist.append(w.index(max(w)))
-            
-        axarr[c, i%4].scatter([doc[0] for doc in docweights[i]], [doc[1] for doc in docweights[i]], marker='X', label='Topic 1', 
-             color=[seaborn.color_palette('deep')[c] for c in classlist]) #xaxis is topic 0, yaxis is topic 1
+        axarr[c, i%4].bar(list(range(1,len(docweights[i])+1)), sorted([doc[1] for doc in docweights[i]], reverse=True), 
+             width = -1, align='edge', color=seaborn.color_palette('deep')[0]) #xaxis is topic 0, yaxis is topic 1
         axarr[c, i%4].set_title(meetinglist[i])
         axarr[c, i%4].set_ylim([0, 1])
-        axarr[c, i%4].set_xlim([0, 1])
-        axarr[c, i%4].set_xticks([0, 0.5, 1])
+        axarr[c, i%4].set_xlim([1, len(docweights[i])])
+        axarr[c, i%4].set_xticks([0, len(docweights[i])//2, len(docweights[i])])
         axarr[c, i%4].set_yticks([0, 0.5, 1])
     plt.tight_layout()
     topic1 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[0], marker='X', linestyle='None',
-                          markersize=7, label='Document with topic 1 dominant')
-    topic2 = mlines.Line2D([], [], color=seaborn.color_palette('deep')[1], marker='X', linestyle='None',
-                          markersize=7, label='Document with topic 2 dominant')
-    plt.figlegend(handles=[topic1, topic2], loc = 'lower left', ncol=2, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
-    plt.show()  
+                          markersize=7, label='Weight of topic 1 in every document of a policy day')
+    plt.figlegend(handles=[topic1], loc = 'lower left', ncol=1, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
+    #plt.show()    
     f.savefig("docsplit02_orig.pdf", bbox_inches='tight')
 
 
