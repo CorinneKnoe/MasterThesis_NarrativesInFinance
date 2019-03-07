@@ -29,7 +29,8 @@ import multiprocessing
 import operator
 #import functions from other python modules
 #-------------------------------------------
-path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/" #absolute path to the txt files
+#path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/" #absolute path to the txt files
+path ="C:/Users/11613676/MasterThesis_NarrativesInFinance/Code/" #absolute path to the txt files
 os.chdir(path)
 from prep_preprocessing import tokenize, removestopwords, albhabetizer
 
@@ -198,7 +199,8 @@ if __name__ == "__main__":
         
     #Read in the text dataframe from a csv
     #-------------------------------------
-    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/FACTIVA_Data/" #absolute path to the txt files
+    #path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/FACTIVA_Data/" #absolute path to the txt files
+    path ="C:/Users/11613676/MasterThesis_NarrativesInFinance/FACTIVA_Data/" #absolute path to the txt files
     os.chdir(path)
 
     #create data frame by reading csv
@@ -305,20 +307,22 @@ if __name__ == "__main__":
     keyofbest = max(return_dict.keys()) #find the best rund of all iterations
     
     #print likelihood to txt file
-    filename = "C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/likelihood_orig.txt" #absolute path to where to store the txt files
+    #filename = "C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/Likelihood_plsa_orig.txt" #absolute path to where to store the txt files
+    filename = "C:/Users/11613676/MasterThesis_NarrativesInFinance/Code/Output/Likelihood_plsa_orig.txt" #absolute path to where to store the txt files
     f = open(filename, "w")
     f.write("-------------\n" + "Likelihood of topic model of original PLSA\n")
     f.write("Log Likelihood: " + str(keyofbest) + "\n") 
     f.close() 
     
     #print top ten words of topics to txt file
-    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/" #absolute path to where to store the txt files
+    path ="C:/Users/11613676/MasterThesis_NarrativesInFinance/Code/Output/" #absolute path to where to store the txt files
+    #path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/" #absolute path to where to store the txt files
     print_top_words(path, number_of_topics, corpus, return_dict[keyofbest][1], 50) #printig top 10 words of word distributions
     
     
      # Read in the FEd meetings dates
     #---------------------------------
-    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/FED_Data" #absolute path to the txt files
+    path ="C:/Users/11613676/MasterThesis_NarrativesInFinance/MA_FinancialData/FED_Data"
     os.chdir(path) #setting working directory
     
     #read in the FED data on target rate
@@ -377,11 +381,11 @@ if __name__ == "__main__":
             raise Exception("The averaged weights for a policy day don't sum to one across topics.")
             
     #save new data frame with classification in csv
-    adjustdf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAorig.csv", index=False, encoding="utf-8") #create a csv to store our data
+    adjustdf.to_csv("C:/Users/11613676/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAorig.csv", index=False, encoding="utf-8") #create a csv to store our data
     
     
     #prepare plot - inspiration and code examples from https://de.dariah.eu/tatom/topic_model_visualization.html
-    path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
+    path ="C:/Users/11613676/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
     os.chdir(path) 
     
     N, K = len(weights), len(weights[0]) #N is numer of meeting dates, K is numer of topics
