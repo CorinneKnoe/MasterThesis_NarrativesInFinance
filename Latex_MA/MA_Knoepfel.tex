@@ -1278,32 +1278,32 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-P
 
 \begin{sidewaystable} % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
 	\centering % Centres the table on the page, comment out to left-justify
-	\begin{tabular}{ p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm} p{2cm}  p{2cm}  p{2cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes 
+	\begin{tabular}{ p{3cm}  p{3cm}  p{3cm}  p{3cm}  p{3cm}  p{3cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes 
 		\toprule
-	\multicolumn{9}{ c }{Topic 1} \\
+	\multicolumn{6}{ c }{Topic 1} \\
 		\midrule
-	  $\lambda_B=0.1$ & $\lambda_B=0.2$ &	$\lambda_B=0.3$ & $\lambda_B=0.4$ & $\lambda_B=0.5$ & $\lambda_B=0.6$ & $\lambda_B=0.7$ & $\lambda_B=0.8$ &	$\lambda_B=0.9$ \\
+	  $\lambda_B=0.1$ & $\lambda_B=0.2$ &	$\lambda_B=0.3$ & $\lambda_B=0.4$ & $\lambda_B=0.5$ & $\lambda_B=0.6$ \\
 		\midrule % In-table horizontal line
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\
-		  & & & && &&&\\		  
+		 said  			& year 			& year  		& year 			& year 		& year \\
+		 year   		& said 			& said 			& percent 		& percent 	& percent \\
+		 percent  		& percent 		& percent 		& said 			& said 		& market \\
+		 market  		& market 		& market 		& market 		&market 	& dollar \\
+		 rate   		& rate 			& dollar 		& dollar 		&dollar 	& said \\
+		 dollar 		& dollar 		& rate 			& rate 			&bank 		& bank \\
+		 cut  			& cut 			& bank 			& bank 			&investors 	& investors \\
+		 bank  			& bank 			& cut 			& cut 			&cut 		& cut \\
+		 rates  		& investors 	& investors 	& investors 	&rate 		& rate \\
+		 investors  	& rates 		& rates 		& rates 		&rates 		& per cent\\
+		 fed  			& interest rate & interest rate	& interest rate	&per cent	& yield \\
+		 interest  		& fed 			& per cent		& per cent		&interest rate& bond \\
+		 per cent 		& per cent 		& bond 			& bond 			&bond 		& interest rate\\
+		 federal  		& bond 			& yield 		& yield 		&yield 		& rates \\
+		 bond  			& federal reserve & markets 	& rose 			&rose 		& rose \\
+		 markets  		& yield 		& federal reserve& markets 		&index 		& index \\
+		 yield  		& markets 		& rose 			& index 		&markets 	& fell \\
+		 expected  		& rose 			& expected 		& federal reserve&fell 		& markets \\
+		 interest rates & expected		& index 		& expected 		&month 		& stocks \\
+		 rose  			& index 		& us 			& fell 			&expected 	& month \\		  
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{Topic 1 produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
@@ -1312,36 +1312,71 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-P
 
 \begin{sidewaystable} % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
 	\centering % Centres the table on the page, comment out to left-justify
-	\begin{tabular}{ p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm} p{2cm}  p{2cm}  p{2cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes 
+	\begin{tabular}{ p{3cm}  p{3cm}  p{3cm} | p{3cm}  p{3cm}  p{3cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes 
 		\toprule
-		\multicolumn{9}{ c }{Topic 2} \\
+		\multicolumn{3}{ c |}{Topic 1} &  \multicolumn{3}{ c }{Topic 2}\\
 		\midrule
-		$\lambda_B=0.1$ & $\lambda_B=0.2$ &	$\lambda_B=0.3$ & $\lambda_B=0.4$ & $\lambda_B=0.5$ & $\lambda_B=0.6$ & $\lambda_B=0.7$ & $\lambda_B=0.8$ &	$\lambda_B=0.9$ \\
+		$\lambda_B=0.7$ & $\lambda_B=0.8$ &	$\lambda_B=0.9$ &  $\lambda_B=0.1$ & $\lambda_B=0.2$ & $\lambda_B=0.3$ \\
 		\midrule % In-table horizontal line
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\
-		& & & && &&&\\		  
+		  year 			& dollar 		&dollar 	& 	fed 				& fed 			& fed \\
+		  percent 		&year 			&investors 	& 	said 				& said 			& said \\
+		  dollar  		 &percent 		&yield 		& 	inflation 			&inflation 		& inflation \\
+		  market  		 &market 		&bank 		& 	economy 			&economy 		& economy \\
+		  bank  		 &investors 	&rose 		& 	rate 				&rate			 & rate \\
+		  investors 	  &bank 		&per cent	& 	would 				&would 			& would \\
+		  cut  			&yield 			&fell 		& 	year 				&economic		 & economic \\
+		  said  		 &rose 			&trading 	& 	economic 			&rates			 & rates \\
+		  yield  		 &per cent		&year 		& 	rates 				&year			 & growth \\
+		  per cent		  &cut 			&bond 		& 	growth 				&growth 		& year \\
+		  rose  		 &bond 			&index 		& 	policy 				&policy			 & policy \\
+		  bond 			  &fell 		&stocks 	& 	percent 			&percent 		& could \\
+		  index 		  &index 		&yen 		& 	federal reserve		&interest rates	& interest rates\\
+		  fell  		 &stocks 		&euro 		& 	interest rates		&could 			& percent \\
+		  interest rate  &trading 		&currency 	& 	could 				&federal reserve& federal reserve\\
+		  stocks 		  &month 		&bonds 		& 	market 				&market 		& meeting \\
+		  rate  		 &bonds 		&shares 	& 	meeting 			&meeting 		& statement \\
+		  month 		  &euro 		&cents 		& 	statement 			&statement 		& market \\
+		  rates  		 &new york		&bps 		& 	time 				&time 			& time \\
+		 trading 		  &basis points	&china 		& 	interest rate		&interest rate	&one  \\		  
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{Topic 1 and Topic 2 produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
+	\label{tab:topics2} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{sidewaystable}
+
+
+\begin{sidewaystable} % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{3cm}  p{3cm}  p{3cm}  p{3cm}  p{3cm}  p{3cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes 
+		\toprule
+		\multicolumn{6}{ c }{Topic 2} \\
+		\midrule
+		$\lambda_B=0.4$ & $\lambda_B=0.5$ &	$\lambda_B=0.6$ & $\lambda_B=0.7$ & $\lambda_B=0.8$ & $\lambda_B=0.9$  \\
+		\midrule % In-table horizontal line
+		fed 			&fed  			&fed  			& fed  			&fed 		& fed \\
+		said 			&said  			& inflation 	& inflation  	&inflation 	&inflation  \\
+		inflation 		&inflation 		& economy 		& economy  		&economy	& economy \\
+		economy 		&economy  		& said 			& said  		&said 		& economic \\
+		rate 			& rate 			& rate 			& would 		&economic 	& growth \\
+		would 			& would 		& would 		& rate 			&would 		& greenspan \\
+		economic 		& economic 		& economic 		& economic 		&growth 	& would \\
+		growth 			& growth 		& growth 		& growth 		&rate 		& think \\
+		rates 			& policy 		& policy 		& policy 		&policy 	& policy \\
+		policy 			& rates 		& rates 		& could 		&greenspan 	& bernanke \\
+		year 			& could 		& could 		& rates 		&statement 	& statement \\
+		could 			& meeting 		& meeting 		& meeting 		&meeting 	& chairman \\
+		interest rates	& interest rates& statement 	& statement 	&think 		& mr \\
+		federal reserve	& statement 	& interest rates& time 			&could 		& meeting \\
+		meeting 		& federal reserve& time 		& think 		&mr 		& economists \\
+		statement 		& time 			& federal reserve& mr 			&time 		& spending \\
+		percent 		& year 			&mr   			& interest rates&bernanke 	& fomc \\
+		time 			& mr 			&think   		& greenspan		&chairman 	& washington \\
+		market 			& one 			& one  			& federal reserve&economists & consumer \\
+		one 			& think 		&greenspan 		& one 			&rates 		& know \\		  
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{Topic 2 produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
-	\label{tab:topics2} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+	\label{tab:topics3} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{sidewaystable}
 
 \begin{sidewaysfigure}
