@@ -407,9 +407,9 @@ if __name__ == "__main__":
     for k in range(K):
         color = seaborn.color_palette('deep')[k]
         if k == 0:
-            p = plt.bar(ind, s[k], width, color=color)
+            p = plt.bar(ind, s[k], width, color=color, linewidth=0)
         else:
-            p = plt.bar(ind, s[k], width, bottom=height_cumulative, color=color)
+            p = plt.bar(ind, s[k], width, bottom=height_cumulative, color=color, linewidth=0)
         height_cumulative += s[k]
         plots.append(p)    
     
@@ -453,7 +453,7 @@ if __name__ == "__main__":
             c = 0
         
         axarr[c, i%4].bar(list(range(1,len(docweights[i])+1)), sorted([doc[1] for doc in docweights[i]], reverse=True), 
-             width = -1, align='edge', color=seaborn.color_palette('deep')[0]) #xaxis is topic 0, yaxis is topic 1
+             width = -1, align='edge', linewidth=0, color=seaborn.color_palette('deep')[0]) #xaxis is topic 0, yaxis is topic 1
         axarr[c, i%4].set_title(meetinglist[i])
         axarr[c, i%4].set_ylim([0, 1])
         axarr[c, i%4].set_xlim([1, len(docweights[i])])
@@ -488,7 +488,7 @@ if __name__ == "__main__":
             c = 0
             
         axarr[c, i%4].bar(list(range(1,len(docweights[i])+1)), sorted([doc[1] for doc in docweights[i]], reverse=True), 
-             width = -1, align='edge', color=seaborn.color_palette('deep')[0]) #xaxis is topic 0, yaxis is topic 1
+             width = -1, align='edge', linewidth=0, color=seaborn.color_palette('deep')[0]) #xaxis is topic 0, yaxis is topic 1
         axarr[c, i%4].set_title(meetinglist[i])
         axarr[c, i%4].set_ylim([0, 1])
         axarr[c, i%4].set_xlim([1, len(docweights[i])])
