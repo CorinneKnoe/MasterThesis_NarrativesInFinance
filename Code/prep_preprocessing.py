@@ -122,7 +122,7 @@ def dispersion_plot(text, words, xnumbers, xlabels, ignore_case=False, title="Le
     plt.style.use('seaborn')
     seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
     fig, ax = plt.subplots(figsize=(7,4))
-    ax.plot(x, y, '|', color="b", markeredgewidth=0.1, scalex = True) #seaborn sets markeredgewidth to zero, need to specify or nonfilled markers won't show in the plot
+    ax.plot(x, y, '|', color="b", markeredgewidth=0.05, scalex = True) #seaborn sets markeredgewidth to zero, need to specify or nonfilled markers won't show in the plot
     ax.set_xlim(xmin=0, xmax=len(text_to_comp))
     plt.yticks(list(range(len(words))), words, color="b")
     plt.xticks(xnumbers, xlabels)
@@ -377,7 +377,6 @@ if __name__ == '__main__':
     plt.imshow(wtitlecloud, interpolation="bilinear")
     plt.axis("off")
     plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/wordtitlecloud.pdf", bbox_inches='tight')
-    
     
     #dispersion plot of important words
     wordsattick = list(range(100000, 900000, 100000))

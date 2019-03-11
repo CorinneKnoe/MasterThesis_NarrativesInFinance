@@ -61,14 +61,14 @@ def dispersion_plot(text, words, xnumbers, xlabels, ignore_case=False, title="Le
     plt.style.use('seaborn')
     seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
     fig, ax = plt.subplots(figsize=(7,4))
-    ax.plot(x, y, '|', color="b", markeredgewidth=0.1, scalex = True) #seaborn sets markeredgewidth to zero, need to specify or nonfilled markers won't show in the plot
+    ax.plot(x, y, '|', color="b", markeredgewidth=0.01, scalex = True) #seaborn sets markeredgewidth to zero, need to specify or nonfilled markers won't show in the plot
     ax.set_xlim(xmin=0, xmax=len(text_to_comp))
     plt.yticks(list(range(len(words))), words, color="b")
     plt.xticks(xnumbers, xlabels)
     plt.ylim(-1, len(words))
     plt.title(title)
     plt.xlabel("Year")
-    #plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/dispersionplot_PLSAorigTopic.pdf", bbox_inches='tight')
+    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/dispersionplot_PLSAorigTopic.pdf", bbox_inches='tight')
 
 
 
@@ -142,21 +142,23 @@ if __name__ == '__main__':
             index += 1
         labellist.append(day)        
     
-    dispersion_plot(alltext, ["rate", "fed", "said", "interest", "percent", "year"], wordsattick, labellist)
+    dispersion_plot(alltext, ["fed", "said", "year", "inflation", "percent", "rate"], wordsattick, labellist)
     dispersion_plot(alltext, ["greenspan", "investors", "officials", "dollar", "trading", "euro"], wordsattick, labellist)
     
-    #create a lineplot to assess log likelihood of different PLSA models
-    ####################################################################
-    plt.style.use('seaborn')
-    seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
-    fig = plt.figure(figsize=(4,4))
-    likelihood = [-6312761.454808442, -6315629.963367147, -6318781.810783763, -6322580.597065601, 
-                  -6327628.568136289, -6333440.3062127475, -6340581.097251067, -6350264.678970301, -6364354.081529713]
-    lamb = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8, 0.9]
-    
-    plt.plot(lamb, likelihood, '-o', color=seaborn.color_palette('deep')[0])
-    plt.ylim((-6300000, -6375000))  # proportions sum to 1, so the height of the stacked bars is 1
-    plt.title('Model Performance of PLSA')
-    plt.xlabel('Lambda_B')
-    plt.ylabel('Log Likelihood')
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ModelLambdaQuality.pdf", bbox_inches='tight')
+# =============================================================================
+#     #create a lineplot to assess log likelihood of different PLSA models
+#     ####################################################################
+#     plt.style.use('seaborn')
+#     seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
+#     fig = plt.figure(figsize=(4,4))
+#     likelihood = [-6312761.454808442, -6315629.963367147, -6318781.810783763, -6322580.597065601, 
+#                   -6327628.568136289, -6333440.3062127475, -6340581.097251067, -6350264.678970301, -6364354.081529713]
+#     lamb = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8, 0.9]
+#     
+#     plt.plot(lamb, likelihood, '-o', color=seaborn.color_palette('deep')[0])
+#     plt.ylim((-6300000, -6375000))  # proportions sum to 1, so the height of the stacked bars is 1
+#     plt.title('Model Performance of PLSA')
+#     plt.xlabel('Lambda_B')
+#     plt.ylabel('Log Likelihood')
+#     plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ModelLambdaQuality.pdf", bbox_inches='tight')
+# =============================================================================

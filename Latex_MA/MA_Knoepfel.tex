@@ -126,7 +126,8 @@ Supervisor\\
 %Assistant\\
 %{\Large [ Name ] \par}
 \vfill
-{\scshape Date of Submission: \today } \\[0.3\baselineskip]
+{\scshape %Date of Submission: 
+	\today } \\[0.3\baselineskip]
 \endgroup}
 
 %Special header and footer style for the Abstract and other special pages.
@@ -632,7 +633,7 @@ A closer look at the dispersion of the most common words reveals that their usag
 \begin{figure}
 	\caption{Dispersion of most common words across time.}
 	\centering
-	\includegraphics[scale=1]{Images/dispersionplot_CHtextdata.pdf}
+	\includegraphics[scale=1]{Images/dispersionplot.pdf}
 	\label{dispersion}
 \end{figure}
 
@@ -668,61 +669,44 @@ In line with the recommendation from \cite{Schofield.2017}, I refrain form apply
 
 After tokenization, the text data collection encompasses round 1'600'000 tokens. After the removal of stop words, the token count drops to roughly 1'100'000 tokens. Subsequently, the non-alphabetic characters, especially the punctuations marks, are removed and the final count amounts to approximately 850'000 tokens. Thus, even though a conservative preprocessing strategy has been chosen, the text data is reduced by almost half during preprocessing (see Figure \ref{tokencount} in Appendix \ref{AppendixB}).
 
+\subsection{Feature Space Engineering}\label{featueeng}
+\textcolor{red}{QUOTE to show that this is a thing}
 
-('federal reserve', 3538),
-('interest rate', 3428),
-('interest rates', 3384),
-('central bank', 2636),
-('funds rate', 2097),
-('per cent', 2023),
-('new york', 1764),
-('rate cut', 1511),
-('percentage point', 1422),
-('basis points', 1399),
-('federal funds', 1397),
-('short term', 1198),
-('monetary policy', 1080),
-('dow jones', 1060),
-('quarter point', 980),
-('rate cuts', 827),
-('economic growth', 804),
-('wall street', 803),
-('percent percent', 759),
-('fed funds', 759),
-('wsj com', 755),
-('next year', 712),
-('open market', 691),
-('rate increases', 679),
-('rate percent', 677),
-('financial markets', 672),
-('chief economist', 650),
-('market committee', 633),
-('quarter percentage', 619),
-('basis point', 589),
-('term interest', 578),
-('rate increase', 573),
-('fed officials', 569),
-('last week', 560),
-('federal open', 547),
-('central banks', 540),
-('rate hike', 540),
-('fed rate', 522),
-('long term', 494),
-('raise rates', 492),
-('point cut', 486),
-('stock market', 485),
-('cut rates', 485),
-('discount rate', 472),
-('two year', 461),
-('half point', 453),
-('rate hikes', 453),
-('oil prices', 435),
-('fed said', 427),
-('year treasury', 422)
+Considering the most common words in the tokenized text data (see Figure \ref{wcloud}) shows that some tokens show up in tandem, such as \textit{interest rate}, \textit{federal reserve}, or \textit{basis point}. It stands to reason that these terms should be tokenized as one token instead of two separate words, as they have a conjoint meaning. Processing the text data as bigrams, I selected the 50 most common bigrams and added them to the feature space (see Table \ref{tab:bigrams})\footnote{The attentive reader will have noticed that the table only lists 47 bigrams. From the top 50 bigrams, the expressions \textit{wsj com}, \textit{fed said}, and \textit{year treasury} have been excluded as they have no clear conjoint meaning. Note that the author set the limit at 50 because these bigrams are mostly idiosyncratic expressions featuring prominently in the text data while lower ranked bigrams appear more random with a less specific conjoint meaning.}.
 
-ManualListBadBigrams = 'wsj com', 'fed said', 'year treasury'
+\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{3.4cm}  p{1cm}  p{3.4cm}  p{1cm} p{3.4cm}  p{1cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+%		\multicolumn{6}{ c }{Top bigrams included in feature space} \\
+%		\midrule % In-table horizontal line
+		bigram & count & bigram & count & bigram & count\\
+		\midrule
+		federal reserve & 3'353 & economic growth & 804 & last week & 560\\
+		interest rate & 3'342 & wall street & 803 & federal open & 547\\
+		interest rates & 3'338 & percent percent & 759 & central banks & 540\\
+		central bank & 2'263 & fed funds & 759 & rate hike & 540\\
+		funds rate & 2'209 & next year & 712 & fed rate & 522\\
+		per cent & 2'202 & open market & 691 & long term & 494\\
+		new york & 1'176 & rate increases & 679 & raise rates & 492\\
+		rate cut & 1'151 & rate percent & 677 & point cut & 486\\
+		percentage point & 1'142 & financial markets & 672 & stock market & 485\\
+		basis points & 1'139 & chief economist & 650 & cut rates & 485\\
+		federal funds & 1'139 & market committee & 633 & discount rate & 472\\
+		short term & 1'119 & quarter percentage & 619 & two year & 461\\
+		monetary policy & 1'108 & basis point & 589 & half point & 453\\
+		dow jones & 1'106 & term interest & 578 & rate hikes & 453\\
+		quarter point & 980 & rate increase & 573 & oil prices & 435\\
+		rate cuts & 827 & fed officials & 569 &  & \\
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{The top bigrams included in the feature space.} % Table caption, can be commented out if no caption is required
+	\label{tab:bigrams} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
 
-len(corpus.vocabulary)  = 23'313, initially there are 23'313 unique words in the text data, I remove all words that only occur once (7'906), twice (3396) or thrice (1867) // so in total I remove 13'169 tokens an the remaining 10'144 tokens are used for analysis
+Including the tokens in table \ref{tab:bigrams}, the feature space consists of over 23'300 unique tokens, some of which occur only once or twice. However, tokens that occur only rarely increase the sparsity of the feature space an slow down computation without having any impact on topic generation. Thus, tokens that appear only once (about 7'900 tokens), twice (about 3'400 tokens), or thrice (around 1'900 tokens) are removed. This reduces the feature space from 23'300 unique tokens to approximately 10'150 tokens. 
+
+
 \subsection{Application of PLSA}
 
 Using the preprocessed and prepared text data, I apply the PLSA algorithm as it is presented in Chapter \ref{Ch:model}. The model specifications are presented in Table \ref{tab:specs}.
@@ -746,26 +730,36 @@ Using the preprocessed and prepared text data, I apply the PLSA algorithm as it 
 	\label{tab:specs} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
-As explained in Chapter \ref{NewInsights}, we are looking for two narratives according to which policy days can be classified. Thus, we set $k=2$ which will yield two topics, $\{\theta_1, \theta_2\}$. As recommended by \citet[p. 363]{Zhai.2016}, I run the algorithm repeatedly (six times, to be specific) using different random initializations. In the end, I use the run with the highest likelihood value. The top ten words of each topic are listed in Table \ref{tab:topic1}.
+As explained in Chapter \ref{NewInsights}, we are looking for two narratives according to which policy days can be classified. Thus, we set $k=2$ which will yield two topics, $\{\theta_1, \theta_2\}$. As recommended by \citet[p. 363]{Zhai.2016}, I run the algorithm repeatedly (six times, to be specific) using different random initializations. In the end, I use the run with the highest likelihood value. The top 20 words of each topic are listed in Table \ref{tab:topic1}.
 
 \begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
 	\centering % Centres the table on the page, comment out to left-justify
-	\begin{tabular}{ p{2cm}  p{2cm}  p{2cm}  p{2cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+	\begin{tabular}{ p{3cm}  p{2cm}  p{3cm}  p{2cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
 		\toprule % Top horizontal line
 		\multicolumn{2}{ c }{Topic 1} & \multicolumn{2}{ c }{Topic 2} \\
 		\midrule % In-table horizontal line
 		word & prob & word & prob \\
 		\midrule
-		rate & .014 & fed & .025\\
-		year & .011 & rate & .020\\
-		said & .010 & rates & .012 \\
-		percent & .010 & said & .012\\
-		bank & .010 & inflation & .009\\
-		interest & .009 & economy & .009\\
-		market & .009 & interest & .008\\
-		rates & .009 & percent & .008\\
-		fed & .008 & federal & .008\\
-		cut & .007 & year & .007\\
+		fed 			& .024 & said			 & .011\\
+		said 			& .013 & year			 & .011\\
+		inflation 		& .010 & percent		 & .009\\
+		economy 		& .010 & market			 & .009\\
+		rate 			& .010 & dollar			 & .007\\
+		rates			& .007 & fed			 & .007\\
+		year			& .006 & cut			 & .006\\
+		would			& .006 & bank			 & .006 \\
+		percent 		& .006 & rate			 & .006\\
+		economic		& .006 & investors		 & .006\\
+		federal reserve & .005 & per cent		 & .005\\
+		growth 			& .005 & interest rate 	 & .005\\
+		market			& .005 & markets		 & .005\\
+		interest rates	& .005 & us				 & .005\\
+		policy			& .005 & expected		 & .005\\
+		could			& .004 & rates			 & .004\\
+		interest rate	& .004 & federal		 & .004\\
+		time			& .004 & bond			 & .004\\
+		one				& .004 & yield			 & .004\\
+		banks			& .004 & interest rates  & .004\\
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{The two topics produced by PLSA.} % Table caption, can be commented out if no caption is required
@@ -790,33 +784,33 @@ Thus, it stands to reason that the PLSA model without background distribution wa
 
 \subsection{Application of PLSA with Background Topic}\label{Ch:implembg}
 
-To improve the topics inferred by PLSA, I introduce a background topic that captures the most common words in the text data. The background topic is a unigram language model generated from the entire text data collection. Thus, every word has been given a probability weight that corresponds to its relative frequency in the collection (see Eq. \ref{estul}). Table \ref{tab:bgtopic} lists the ten top words of the background topic. 
+To improve the topics inferred by PLSA, I introduce a background topic that captures the most common words in the text data. The background topic is a unigram language model generated from the entire text data collection. Thus, every word has been given a probability weight that corresponds to its relative frequency in the collection (see Eq. \ref{estul}). Table \ref{tab:bgtopic} lists the 20 top words of the background topic. 
 
 \begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
 	\centering % Centres the table on the page, comment out to left-justify
-	\begin{tabular}{ p{2cm}  p{2cm}  } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+	\begin{tabular}{ p{3cm}  p{2cm}  p{3cm}  p{2cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
 		\toprule % Top horizontal line
-		\multicolumn{2}{ c }{Background Topic} \\
+		\multicolumn{4}{ c }{Background Topic} \\
 		\midrule % In-table horizontal line
-		word & prob  \\
+		word & prob & word & prob \\
 		\midrule
-		 rate & .018 \\
-		 fed & .017 \\
-		 said & .011  \\
-		 rates & .011 \\
-		 year & .009 \\
-		 percent & .009\\
-		 interest & .009\\
-		 market & .007\\
-		 federal & .007\\
-		 bank & .007\\
+		 fed		& .016 & 	federal reserve	 & .005 \\
+		 said		& .013 & 	cut			  	& .005\\
+		 year		& .008 & 	interest rate	 & .004\\
+		 rate 		& .007 & 	interest rates	 & .004\\
+		 percent 	& .007 & 	bank		 	& .004\\
+		economy 	& .007 & 	economic		 & .004\\
+		inflation 	& .006 & 	expected		 & .004\\
+		market 		& .006 & 	markets			 &  .003\\
+		rates 		& .006 & 	dollar			 & .003\\
+		would 		& .005 & 	could			 & .003\\
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
-	\caption{The two topics produced by PLSA.} % Table caption, can be commented out if no caption is required
+	\caption{The background topic $\theta_B$ introduced in PLSA.} % Table caption, can be commented out if no caption is required
 	\label{tab:bgtopic} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
-The most common word in the background topic is \textit{rate}, followed by \textit{fed}, \textit{said}, and \textit{rates}. These are the words that featured prominently in the inferred topics of PLSA without a background distribution. Including the background topic should free up the learned topics so that meaningful topics can be inferred. To that end, I also need to specify how many words are generated by the background topic as opposed to the inferred topics (as indicated by the parameter $\lambda_B$). Since this quantity is unknown, I run the model several times with different specifications for $\lambda_B$. The model specifications are as presented in Table \ref{tab:specs2}.
+The most common word in the background topic is \textit{rate}, followed by \textit{fed}, \textit{said}, and \textit{rates}. These are the words that featured prominently in the inferred topics of PLSA without a background distribution. Including the background topic should free up the learned topics so that meaningful topics can be inferred. To that end, I also need to specify how many words are generated by the background topic (as indicated by the parameter $\lambda_B$). Since this quantity is unknown, I run the model several times with different specifications for $\lambda_B$. The model specifications are as presented in Table \ref{tab:specs2}.
 
 \begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
 	\centering % Centres the table on the page, comment out to left-justify
@@ -841,12 +835,12 @@ The most common word in the background topic is \textit{rate}, followed by \text
 
 In the end, an assessment needs to be made as to which model specification of $\lambda_B$ yields the best result. There are several ways of making this decision. One school of thought maintains that topic models can only be assessed reliably by human judgment. That is, one needs to take a look at the inferred topics and decide which topics are the most meaningful considering the specific context of their application. On the other hand, intrinsic model qualities, such as the (log) likelihood value, could serve as assessment criteria. Finally, the final results of the procedure into which the topics are fed could serve as the deciding measure. In this thesis, I will follow all three approaches and outline to what extent they recommend a certain model specification above the others. \textcolor{red}{QUOTE!!!!!!!}
 
-\begin{figure}
-	\caption{Log Likelihood of PLSA depending on value of $\lambda_B$.}
-	\centering
-	\includegraphics[scale=1]{Images/ModelLambdaQuality.pdf}
-	\label{ModelLambdaQuality}
-\end{figure}
+%\begin{figure}
+%	\caption{Log Likelihood of PLSA depending on value of $\lambda_B$.}
+%	\centering
+%	\includegraphics[scale=1]{Images/ModelLambdaQuality.pdf}
+%	\label{ModelLambdaQuality}
+%\end{figure}
 
 
 \section{NOTES}
@@ -1162,7 +1156,7 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-P
 \renewcommand{\theequation}{B.\arabic{equation}}
 
 
-\chapter{Text data}\label{AppendixB}
+\chapter{Text Data and Model Output}\label{AppendixB}
 
 %\begin{figure}
 %	\caption{Policy day classification according to original PLSA.}
@@ -1225,62 +1219,130 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-P
 %	\label{tab:topics} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 %\end{table}
 
-\begin{table} % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+%\begin{table} % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+%	\centering % Centres the table on the page, comment out to left-justify
+%	\begin{tabular}{ p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+%		\toprule % Top horizontal line
+%		\multicolumn{2}{ c }{$\lambda_B=0.1$}&\multicolumn{2}{ c }{$\lambda_B=0.2$} & \multicolumn{2}{ c }{$\lambda_B=0.3$} \\
+%		\midrule
+%		Topic 1 & Topic 2 &	Topic 1 & Topic 2 & Topic 1 & Topic 2\\
+%		\midrule % In-table horizontal line
+%		rate&fed&fed&rate&fed&rate\\
+%		year&rate&rate&year&rate&year\\
+%		percent&said&said&percent&said&percent\\
+%		said&rates&rates&said&rates&said\\
+%		bank&inflation&inflation&rates&inflation&rates\\
+%		market&economy&economy&interest&economy&bank\\
+%		interest&interest&interest&bank&federal&interest\\
+%		rates&federal&federal&market&interest&market\\
+%		dollar&percent&percent&dollar&economic&cut\\
+%		cut&year&economic&cut&policy&dollar\\
+%		
+%		
+%		\toprule % Top horizontal line
+%		 \multicolumn{2}{ c }{$\lambda_B=0.4$}&\multicolumn{2}{ c }{$\lambda_B=0.5$} & \multicolumn{2}{ c }{$\lambda_B=0.6$} \\
+%		\midrule
+%		 Topic 1 & Topic 2 &	Topic 1 & Topic 2 & Topic 1 & Topic 2\\
+%		\midrule % In-table horizontal line
+%		  fed&rate&fed&rate&fed&year\\
+%		  rate&year&rate&year&rate&percent\\
+%		  said&percent&said&percent&inflation&rate\\
+%		  inflation&said&inflation&bank&economy&bank\\
+%		  rates&bank&economy&said&said&market\\
+%		  economy&rates&rates&market&rates&dollar\\
+%		  federal&interest&federal&interest&economic&interest\\
+%		  economic&market&economic&rates&federal&said\\
+%		  interest&cut&policy&dollar&policy&rates\\
+%		  policy&dollar&interest&investors&growth&investors\\
+%		  
+%		\toprule
+%	\multicolumn{2}{ c }{$\lambda_B=0.7$}&\multicolumn{2}{ c }{$\lambda_B=0.8$} & \multicolumn{2}{ c }{$\lambda_B=0.9$} \\
+%		\midrule
+%	  Topic 1 & Topic 2 &	Topic 1 & Topic 2 & Topic 1 & Topic 2\\
+%		\midrule % In-table horizontal line
+%		  fed& year&fed & year&fed&dollar\\
+%		  rate& percent&inflation&percent&inflation&per\\
+%		  inflation& dollar&rate&dollar&economy& yield\\
+%		  economy& rate&economy&bank&economic&cent\\
+%		  said& bank&economic&investors&growth &investors\\
+%		 rates& market&said&per&policy&rose\\
+%		  economic&interest&growth&market&officials&fell\\
+%		  growth&investors&rates&yield&greenspan&euro\\
+%		 policy&cut&policy&points&would&points\\
+%		  federal&per&would&cent&think&trading\\
+%		\bottomrule % Bottom horizontal line
+%	\end{tabular}
+%	\caption{Topics produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
+%	\label{tab:topics} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+%\end{table}
+
+\begin{sidewaystable} % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
 	\centering % Centres the table on the page, comment out to left-justify
-	\begin{tabular}{ p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
-		\toprule % Top horizontal line
-		\multicolumn{2}{ c }{$\lambda_B=0.1$}&\multicolumn{2}{ c }{$\lambda_B=0.2$} & \multicolumn{2}{ c }{$\lambda_B=0.3$} \\
-		\midrule
-		Topic 1 & Topic 2 &	Topic 1 & Topic 2 & Topic 1 & Topic 2\\
-		\midrule % In-table horizontal line
-		rate&fed&fed&rate&fed&rate\\
-		year&rate&rate&year&rate&year\\
-		percent&said&said&percent&said&percent\\
-		said&rates&rates&said&rates&said\\
-		bank&inflation&inflation&rates&inflation&rates\\
-		market&economy&economy&interest&economy&bank\\
-		interest&interest&interest&bank&federal&interest\\
-		rates&federal&federal&market&interest&market\\
-		dollar&percent&percent&dollar&economic&cut\\
-		cut&year&economic&cut&policy&dollar\\
-		
-		
-		\toprule % Top horizontal line
-		 \multicolumn{2}{ c }{$\lambda_B=0.4$}&\multicolumn{2}{ c }{$\lambda_B=0.5$} & \multicolumn{2}{ c }{$\lambda_B=0.6$} \\
-		\midrule
-		 Topic 1 & Topic 2 &	Topic 1 & Topic 2 & Topic 1 & Topic 2\\
-		\midrule % In-table horizontal line
-		  fed&rate&fed&rate&fed&year\\
-		  rate&year&rate&year&rate&percent\\
-		  said&percent&said&percent&inflation&rate\\
-		  inflation&said&inflation&bank&economy&bank\\
-		  rates&bank&economy&said&said&market\\
-		  economy&rates&rates&market&rates&dollar\\
-		  federal&interest&federal&interest&economic&interest\\
-		  economic&market&economic&rates&federal&said\\
-		  interest&cut&policy&dollar&policy&rates\\
-		  policy&dollar&interest&investors&growth&investors\\
-		  
+	\begin{tabular}{ p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm} p{2cm}  p{2cm}  p{2cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes 
 		\toprule
-	\multicolumn{2}{ c }{$\lambda_B=0.7$}&\multicolumn{2}{ c }{$\lambda_B=0.8$} & \multicolumn{2}{ c }{$\lambda_B=0.9$} \\
+	\multicolumn{9}{ c }{Topic 1} \\
 		\midrule
-	  Topic 1 & Topic 2 &	Topic 1 & Topic 2 & Topic 1 & Topic 2\\
+	  $\lambda_B=0.1$ & $\lambda_B=0.2$ &	$\lambda_B=0.3$ & $\lambda_B=0.4$ & $\lambda_B=0.5$ & $\lambda_B=0.6$ & $\lambda_B=0.7$ & $\lambda_B=0.8$ &	$\lambda_B=0.9$ \\
 		\midrule % In-table horizontal line
-		  fed& year&fed & year&fed&dollar\\
-		  rate& percent&inflation&percent&inflation&per\\
-		  inflation& dollar&rate&dollar&economy& yield\\
-		  economy& rate&economy&bank&economic&cent\\
-		  said& bank&economic&investors&growth &investors\\
-		 rates& market&said&per&policy&rose\\
-		  economic&interest&growth&market&officials&fell\\
-		  growth&investors&rates&yield&greenspan&euro\\
-		 policy&cut&policy&points&would&points\\
-		  federal&per&would&cent&think&trading\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\
+		  & & & && &&&\\		  
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
-	\caption{Topics produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
+	\caption{Topic 1 produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
 	\label{tab:topics} % A label for referencing this table elsewhere, references are used in text as \ref{label}
-\end{table}
+\end{sidewaystable}
+
+\begin{sidewaystable} % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm}  p{2cm} p{2cm}  p{2cm}  p{2cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes 
+		\toprule
+		\multicolumn{9}{ c }{Topic 2} \\
+		\midrule
+		$\lambda_B=0.1$ & $\lambda_B=0.2$ &	$\lambda_B=0.3$ & $\lambda_B=0.4$ & $\lambda_B=0.5$ & $\lambda_B=0.6$ & $\lambda_B=0.7$ & $\lambda_B=0.8$ &	$\lambda_B=0.9$ \\
+		\midrule % In-table horizontal line
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\
+		& & & && &&&\\		  
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{Topic 2 produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
+	\label{tab:topics2} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{sidewaystable}
 
 \begin{sidewaysfigure}
 	\caption{Policy day classification according to PLSA with $\lambda_B = 0.1$.}
