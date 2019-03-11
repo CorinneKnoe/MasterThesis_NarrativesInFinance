@@ -82,6 +82,10 @@
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{coroll}{Corollary}[chapter]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{forestgreen}{rgb}{100,100,100} 
+\definecolor{forestgreen}{rgb}{0,255,0} 
+\definecolor{darkgreen}{rgb}{0,75,50}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\clubpenalty = 10000 %von Corinne
 %\widowpenalty = 10000
@@ -558,23 +562,6 @@ here:  general topics, document specific word distributions, corpus wide backgro
 
 \textcolor{red}{include critic at bayseian updating -- handbook of Bayesian epistemology}
 
-\begin{figure}
-	\caption{On LDA.}
-	\centering
-	\includegraphics[scale=0.5]{Images/tempPLSA.png}
-\end{figure}
-
-\begin{figure}
-	\caption{On LDA.}
-	\centering
-	\includegraphics[scale=0.5]{Images/tempPLSA1.png}
-\end{figure}
-
-\begin{figure}
-	\caption{On LDA.}
-	\centering
-	\includegraphics[scale=0.5]{Images/tempPLSA2.png}
-\end{figure}
 
 \chapter{Data and Methodology}
 
@@ -672,7 +659,8 @@ After tokenization, the text data collection encompasses round 1'600'000 tokens.
 \subsection{Feature Space Engineering}\label{featueeng}
 \textcolor{red}{QUOTE to show that this is a thing}
 
-Considering the most common words in the tokenized text data (see Figure \ref{wcloud}) shows that some tokens show up in tandem, such as \textit{interest rate}, \textit{federal reserve}, or \textit{basis point}. It stands to reason that these terms should be tokenized as one token instead of two separate words, as they have a conjoint meaning. Processing the text data as bigrams, I selected the 50 most common bigrams and added them to the feature space (see Table \ref{tab:bigrams})\footnote{The attentive reader will have noticed that the table only lists 47 bigrams. From the top 50 bigrams, the expressions \textit{wsj com}, \textit{fed said}, and \textit{year treasury} have been excluded as they have no clear conjoint meaning. Note that the author set the limit at 50 because these bigrams are mostly idiosyncratic expressions featuring prominently in the text data while lower ranked bigrams appear more random with a less specific conjoint meaning.}.
+Considering the most common words in the tokenized text data (see Figure \ref{wcloud}) shows that some tokens show up in tandem, such as \textit{interest rate}, \textit{federal reserve}, or \textit{basis point}. It stands to reason that these terms should be tokenized as one token instead of two separate words, as they have a conjoint meaning. Processing the text data as bigrams, I selected the 50 most common bigrams and added them to the feature space (see Table \ref{tab:bigrams} %in Appendix \ref{AppendixB}
+)\footnote{The attentive reader will have noticed that the table only lists 47 bigrams. From the top 50 bigrams, the expressions \textit{wsj com}, \textit{fed said}, and \textit{year treasury} have been excluded as they have no clear conjoint meaning. Note that the author set the limit at 50 because these bigrams are mostly idiosyncratic expressions featuring prominently in the text data while lower ranked bigrams appear more random with a less specific conjoint meaning.}.
 
 \begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
 	\centering % Centres the table on the page, comment out to left-justify
@@ -740,26 +728,26 @@ As explained in Chapter \ref{NewInsights}, we are looking for two narratives acc
 		\midrule % In-table horizontal line
 		word & prob & word & prob \\
 		\midrule
-		fed 			& .024 & said			 & .011\\
-		said 			& .013 & year			 & .011\\
-		inflation 		& .010 & percent		 & .009\\
-		economy 		& .010 & market			 & .009\\
-		rate 			& .010 & dollar			 & .007\\
-		rates			& .007 & fed			 & .007\\
-		year			& .006 & cut			 & .006\\
-		would			& .006 & bank			 & .006 \\
-		percent 		& .006 & rate			 & .006\\
-		economic		& .006 & investors		 & .006\\
-		federal reserve & .005 & per cent		 & .005\\
-		growth 			& .005 & interest rate 	 & .005\\
-		market			& .005 & markets		 & .005\\
-		interest rates	& .005 & us				 & .005\\
-		policy			& .005 & expected		 & .005\\
-		could			& .004 & rates			 & .004\\
-		interest rate	& .004 & federal		 & .004\\
-		time			& .004 & bond			 & .004\\
-		one				& .004 & yield			 & .004\\
-		banks			& .004 & interest rates  & .004\\
+		said			 & .011 & fed 				& .024 \\
+		year			 & .011 & said 				& .013  \\
+		percent		 	 & .009 & inflation 		& .010  \\
+		market			 & .009 & economy 			& .010  \\
+		dollar			 & .007 & rate 				& .010 \\
+		fed			 	 & .007 & rates				& .007 \\
+		cut			 	 & .006 & year				& .006 \\
+		bank			 & .006 & would				& .006  \\
+		rate			 & .006 & percent 			& .006  \\
+		investors		 & .006 & economic			& .006  \\
+		per cent		 & .005 & federal reserve 	& .005  \\
+		interest rate 	 & .005 & growth 			& .005  \\
+		markets		 	 & .005 & market			& .005  \\
+		us				 & .005 & interest rates	& .005  \\
+		expected		 & .005 & policy			& .005  \\
+		rates			 & .004 & could				& .004  \\
+		federal	reserve	 & .004 & interest rate		& .004  \\
+		bond			 & .004 & time				& .004  \\
+		yield			 & .004 & one				& .004  \\
+		interest rates   & .004 & banks				& .004  \\
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{The two topics produced by PLSA.} % Table caption, can be commented out if no caption is required
@@ -1011,6 +999,8 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-P
 %	\label{tab:reg1} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 %\end{table}
 
+\chapter{Discussion}
+
 \chapter{Conclusion}
 
 
@@ -1156,7 +1146,7 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-P
 \renewcommand{\theequation}{B.\arabic{equation}}
 
 
-\chapter{Text Data and Model Output}\label{AppendixB}
+\chapter{Text Data}\label{AppendixB}
 
 %\begin{figure}
 %	\caption{Policy day classification according to original PLSA.}
@@ -1165,12 +1155,48 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-P
 %	\label{tokencount}
 %\end{figure}
 
+
+%\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+%	\centering % Centres the table on the page, comment out to left-justify
+%	\begin{tabular}{ p{3.4cm}  p{1cm}  p{3.4cm}  p{1cm} p{3.4cm}  p{1cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+%		\toprule % Top horizontal line
+%		%		\multicolumn{6}{ c }{Top bigrams included in feature space} \\
+%		%		\midrule % In-table horizontal line
+%		bigram & count & bigram & count & bigram & count\\
+%		\midrule
+%		federal reserve & 3'353 & economic growth & 804 & last week & 560\\
+%		interest rate & 3'342 & wall street & 803 & federal open & 547\\
+%		interest rates & 3'338 & percent percent & 759 & central banks & 540\\
+%		central bank & 2'263 & fed funds & 759 & rate hike & 540\\
+%		funds rate & 2'209 & next year & 712 & fed rate & 522\\
+%		per cent & 2'202 & open market & 691 & long term & 494\\
+%		new york & 1'176 & rate increases & 679 & raise rates & 492\\
+%		rate cut & 1'151 & rate percent & 677 & point cut & 486\\
+%		percentage point & 1'142 & financial markets & 672 & stock market & 485\\
+%		basis points & 1'139 & chief economist & 650 & cut rates & 485\\
+%		federal funds & 1'139 & market committee & 633 & discount rate & 472\\
+%		short term & 1'119 & quarter percentage & 619 & two year & 461\\
+%		monetary policy & 1'108 & basis point & 589 & half point & 453\\
+%		dow jones & 1'106 & term interest & 578 & rate hikes & 453\\
+%		quarter point & 980 & rate increase & 573 & oil prices & 435\\
+%		rate cuts & 827 & fed officials & 569 &  & \\
+%		\bottomrule % Bottom horizontal line
+%	\end{tabular}
+%	\caption{The top bigrams included in the feature space.} % Table caption, can be commented out if no caption is required
+%	\label{tab:bigrams} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+%\end{table}
+
 \begin{figure}
 	\caption{Token and article count for every policy day.}
 	\centering
 	\includegraphics[scale=1]{Images/tokencount.pdf}
 	\label{tokencount}
 \end{figure}
+
+\renewcommand{\theequation}{C.\arabic{equation}}
+
+
+\chapter{Topic Model Output}\label{AppendixC}
 
 \begin{sidewaysfigure}
 	\caption{Policy day classification according to original PLSA.}
@@ -1275,7 +1301,7 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-P
 %	\caption{Topics produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
 %	\label{tab:topics} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 %\end{table}
-
+ 
 \begin{sidewaystable} % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
 	\centering % Centres the table on the page, comment out to left-justify
 	\begin{tabular}{ p{3cm}  p{3cm}  p{3cm}  p{3cm}  p{3cm}  p{3cm}} % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes 
@@ -1284,26 +1310,26 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-P
 		\midrule
 	  $\lambda_B=0.1$ & $\lambda_B=0.2$ &	$\lambda_B=0.3$ & $\lambda_B=0.4$ & $\lambda_B=0.5$ & $\lambda_B=0.6$ \\
 		\midrule % In-table horizontal line
-		 said  			& year 			& year  		& year 			& year 		& year \\
-		 year   		& said 			& said 			& percent 		& percent 	& percent \\
-		 percent  		& percent 		& percent 		& said 			& said 		& market \\
-		 market  		& market 		& market 		& market 		&market 	& dollar \\
-		 rate   		& rate 			& dollar 		& dollar 		&dollar 	& said \\
-		 dollar 		& dollar 		& rate 			& rate 			&bank 		& bank \\
-		 cut  			& cut 			& bank 			& bank 			&investors 	& investors \\
-		 bank  			& bank 			& cut 			& cut 			&cut 		& cut \\
-		 rates  		& investors 	& investors 	& investors 	&rate 		& rate \\
-		 investors  	& rates 		& rates 		& rates 		&rates 		& per cent\\
-		 fed  			& interest rate & interest rate	& interest rate	&per cent	& yield \\
-		 interest  		& fed 			& per cent		& per cent		&interest rate& bond \\
-		 per cent 		& per cent 		& bond 			& bond 			&bond 		& interest rate\\
-		 federal  		& bond 			& yield 		& yield 		&yield 		& rates \\
-		 bond  			& federal reserve & markets 	& rose 			&rose 		& rose \\
-		 markets  		& yield 		& federal reserve& markets 		&index 		& index \\
-		 yield  		& markets 		& rose 			& index 		&markets 	& fell \\
-		 expected  		& rose 			& expected 		& federal reserve&fell 		& markets \\
-		 interest rates & expected		& index 		& expected 		&month 		& stocks \\
-		 rose  			& index 		& us 			& fell 			&expected 	& month \\		  
+		 \textcolor{gray}{said}  		& \textcolor{gray}{year} 			& \textcolor{gray}{year}  		& \textcolor{gray}{year }			& \textcolor{gray}{year }		& \textcolor{gray}{year} \\
+		 \textcolor{gray}{year }  		& \textcolor{gray}{said }			& \textcolor{gray}{said }		& \textcolor{gray}{percent }		& \textcolor{gray}{percent }	& \textcolor{gray}{percent} \\
+		 \textcolor{gray}{percent}  	& \textcolor{gray}{percent }		& \textcolor{gray}{percent }	& \textcolor{gray}{said} 			& \textcolor{gray}{said} 		& \textcolor{gray}{market }\\
+		 \textcolor{gray}{market}  		& \textcolor{gray}{market} 			& \textcolor{gray}{market} 		& \textcolor{gray}{market} 			&\textcolor{gray}{market} 		& \textcolor{purple}{dollar} \\
+		 \textcolor{gray}{rate}   		& \textcolor{gray}{rate }			& \textcolor{purple}{dollar}	& \textcolor{purple}{dollar}		&\textcolor{purple}{dollar}		& \textcolor{gray}{said} \\
+		 \textcolor{purple}{dollar}		& \textcolor{purple}{dollar}		& \textcolor{gray}{rate}		& \textcolor{gray}{rate}			&\textcolor{gray}{bank  }		& \textcolor{gray}{bank  } \\
+		 cut  							& cut 								& \textcolor{gray}{bank  }		& \textcolor{gray}{bank  }			&\textcolor{red}{investors}		& \textcolor{red}{investors} \\
+		 \textcolor{gray}{bank  }		& \textcolor{gray}{bank  }			& cut 							& cut 								&cut 							& cut \\
+		 \textcolor{gray}{rates}		& \textcolor{red}{investors}		& \textcolor{red}{investors}	& \textcolor{red}{investors}		&\textcolor{gray}{rate}			& \textcolor{gray}{rate} \\
+		 \textcolor{red}{investors}		& \textcolor{gray}{rates}			& \textcolor{gray}{rates}		& \textcolor{gray}{rates}			&\textcolor{gray}{rates}		& per cent\\
+		 fed  							& interest rate 					& interest rate					& interest rate						&per cent						& \textcolor{magenta}{yield} \\
+		 interest  rate					& fed 								& per cent						& per cent							&interest rate					& bond \\
+		 per cent 						& per cent 							& bond 							& bond 								&bond 							& interest rate\\
+		 \textcolor{gray}{federal reserve }& bond 							& \textcolor{magenta}{yield}	& \textcolor{magenta}{yield}		&\textcolor{magenta}{yield}		& \textcolor{gray}{rates} \\
+		 bond  							& \textcolor{gray}{federal reserve }& markets 						& \textcolor{orange}{rose }			&\textcolor{orange}{rose }		& \textcolor{orange}{rose }	 \\
+		 markets  						& \textcolor{magenta}{yield}		& \textcolor{gray}{federal reserve }& markets 							&\textcolor{cyan}{index }		& \textcolor{cyan}{index } \\
+		 \textcolor{magenta}{yield}		& markets 							& \textcolor{orange}{rose }		& \textcolor{cyan}{index }			&markets 						& \textcolor{violet}{fell } \\
+		 expected  						& \textcolor{orange}{rose }			& expected 						& \textcolor{gray}{federal reserve }&\textcolor{violet}{fell }		& markets \\
+		 interest rate 					& expected							& \textcolor{cyan}{index }		& expected 							&month 							& \textcolor{green}{stocks} \\
+		 \textcolor{orange}{rose}  		& \textcolor{cyan}{index }			& us 							& \textcolor{violet}{fell }			&expected 						& month \\		  
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{Topic 1 produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
@@ -1318,26 +1344,26 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-P
 		\midrule
 		$\lambda_B=0.7$ & $\lambda_B=0.8$ &	$\lambda_B=0.9$ &  $\lambda_B=0.1$ & $\lambda_B=0.2$ & $\lambda_B=0.3$ \\
 		\midrule % In-table horizontal line
-		  year 			& dollar 		&dollar 	& 	fed 				& fed 			& fed \\
-		  percent 		&year 			&investors 	& 	said 				& said 			& said \\
-		  dollar  		 &percent 		&yield 		& 	inflation 			&inflation 		& inflation \\
-		  market  		 &market 		&bank 		& 	economy 			&economy 		& economy \\
-		  bank  		 &investors 	&rose 		& 	rate 				&rate			 & rate \\
-		  investors 	  &bank 		&per cent	& 	would 				&would 			& would \\
-		  cut  			&yield 			&fell 		& 	year 				&economic		 & economic \\
-		  said  		 &rose 			&trading 	& 	economic 			&rates			 & rates \\
-		  yield  		 &per cent		&year 		& 	rates 				&year			 & growth \\
-		  per cent		  &cut 			&bond 		& 	growth 				&growth 		& year \\
-		  rose  		 &bond 			&index 		& 	policy 				&policy			 & policy \\
-		  bond 			  &fell 		&stocks 	& 	percent 			&percent 		& could \\
-		  index 		  &index 		&yen 		& 	federal reserve		&interest rates	& interest rates\\
-		  fell  		 &stocks 		&euro 		& 	interest rates		&could 			& percent \\
-		  interest rate  &trading 		&currency 	& 	could 				&federal reserve& federal reserve\\
-		  stocks 		  &month 		&bonds 		& 	market 				&market 		& meeting \\
-		  rate  		 &bonds 		&shares 	& 	meeting 			&meeting 		& statement \\
-		  month 		  &euro 		&cents 		& 	statement 			&statement 		& market \\
-		  rates  		 &new york		&bps 		& 	time 				&time 			& time \\
-		 trading 		  &basis points	&china 		& 	interest rate		&interest rate	&one  \\		  
+		  \textcolor{gray}{year }				& \textcolor{purple}{dollar}	&\textcolor{purple}{dollar}		& 	\textcolor{gray}{fed} 				& \textcolor{gray}{fed} 		& \textcolor{gray}{fed} \\
+		  \textcolor{gray}{percent }			&\textcolor{gray}{year }		&\textcolor{red}{investors}		& 	\textcolor{gray}{said} 				& \textcolor{gray}{said} 		& \textcolor{gray}{said} \\
+		  \textcolor{purple}{dollar}			&\textcolor{gray}{percent} 		&\textcolor{magenta}{yield}		& 	\textcolor{gray}{inflation} 		&\textcolor{gray}{inflation} 	& \textcolor{gray}{inflation} \\
+		  \textcolor{gray}{market  }		 	&\textcolor{gray}{market }		&\textcolor{gray}{bank  }		& 	\textcolor{gray}{economy} 			&\textcolor{gray}{economy} 		& \textcolor{gray}{economy} \\
+		  \textcolor{gray}{bank  }				&\textcolor{red}{investors}		&\textcolor{orange}{rose }		& 	\textcolor{gray}{rate} 				&\textcolor{gray}{rate}			& \textcolor{gray}{rate} \\
+		  \textcolor{red}{investors}			&\textcolor{gray}{bank  }		&per cent						& 	\textcolor{gray}{would} 			&\textcolor{gray}{would} 		& \textcolor{gray}{would} \\
+		  cut  									&\textcolor{magenta}{yield}		&\textcolor{violet}{fell }		& 	\textcolor{gray}{year}				&\textcolor{magenta}{economic}	& \textcolor{magenta}{economic} \\
+		  \textcolor{gray}{said}  			 	&\textcolor{orange}{rose }		&\textcolor{blue}{trading}		& 	\textcolor{magenta}{economic}		&\textcolor{gray}{rates}		& \textcolor{gray}{rates} \\
+		  \textcolor{magenta}{yield}			&per cent						&\textcolor{gray}{year} 		& 	\textcolor{gray}{rates}				&\textcolor{gray}{year}			& \textcolor{blue}{growth} \\
+		  per cent		  						&cut 							&bond 							& 	\textcolor{blue}{growth }			&\textcolor{blue}{growth}		& \textcolor{gray}{year}\\
+		  \textcolor{orange}{rose }				&bond 							&\textcolor{cyan}{index }		& 	policy 								&policy			 				& policy \\
+		  bond 			  						&\textcolor{violet}{fell }		&\textcolor{green}{stocks}		& 	percent 							&percent 						& could \\
+		  \textcolor{cyan}{index }				&\textcolor{cyan}{index }		&yen 							& 	\textcolor{gray}{federal reserve}	&\textcolor{gray}{interest rates}& \textcolor{gray}{interest rates}\\
+		  \textcolor{violet}{fell } 		 	&\textcolor{green}{stocks}		&euro 							& 	\textcolor{gray}{interest rates}	&could 							& percent \\
+		  interest rate  						&\textcolor{blue}{trading}		&currency 						& 	could 								&\textcolor{gray}{federal reserve}& \textcolor{gray}{federal reserve}\\
+		  \textcolor{green}{stocks}				&month 							&bonds 							& 	market 								&market 						& meeting \\
+		  \textcolor{gray}{rate  }				&bonds 							&shares 						& 	meeting 							&meeting 						& \textcolor{cyan}{statement} \\
+		  month 		  						&euro 							&cents 							& \textcolor{cyan}{statement}			&\textcolor{cyan}{statement}	& market \\
+		  \textcolor{gray}{rates}				&new york						&bps 							& 	time 								&time 							& time \\
+		  \textcolor{blue}{trading}				&basis points					&china 							& 	\textcolor{gray}{interest rate}		&\textcolor{gray}{interest rate}&one  \\		  
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{Topic 1 and Topic 2 produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
@@ -1353,26 +1379,26 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-P
 		\midrule
 		$\lambda_B=0.4$ & $\lambda_B=0.5$ &	$\lambda_B=0.6$ & $\lambda_B=0.7$ & $\lambda_B=0.8$ & $\lambda_B=0.9$  \\
 		\midrule % In-table horizontal line
-		fed 			&fed  			&fed  			& fed  			&fed 		& fed \\
-		said 			&said  			& inflation 	& inflation  	&inflation 	&inflation  \\
-		inflation 		&inflation 		& economy 		& economy  		&economy	& economy \\
-		economy 		&economy  		& said 			& said  		&said 		& economic \\
-		rate 			& rate 			& rate 			& would 		&economic 	& growth \\
-		would 			& would 		& would 		& rate 			&would 		& greenspan \\
-		economic 		& economic 		& economic 		& economic 		&growth 	& would \\
-		growth 			& growth 		& growth 		& growth 		&rate 		& think \\
-		rates 			& policy 		& policy 		& policy 		&policy 	& policy \\
-		policy 			& rates 		& rates 		& could 		&greenspan 	& bernanke \\
-		year 			& could 		& could 		& rates 		&statement 	& statement \\
-		could 			& meeting 		& meeting 		& meeting 		&meeting 	& chairman \\
-		interest rates	& interest rates& statement 	& statement 	&think 		& mr \\
-		federal reserve	& statement 	& interest rates& time 			&could 		& meeting \\
-		meeting 		& federal reserve& time 		& think 		&mr 		& economists \\
-		statement 		& time 			& federal reserve& mr 			&time 		& spending \\
-		percent 		& year 			&mr   			& interest rates&bernanke 	& fomc \\
-		time 			& mr 			&think   		& greenspan		&chairman 	& washington \\
-		market 			& one 			& one  			& federal reserve&economists & consumer \\
-		one 			& think 		&greenspan 		& one 			&rates 		& know \\		  
+		\textcolor{gray}{fed} 			&\textcolor{gray}{fed } 			&\textcolor{gray}{fed  }			& \textcolor{gray}{fed}  			&\textcolor{gray}{fed }			& \textcolor{gray}{fed} \\
+		\textcolor{gray}{said} 			&\textcolor{gray}{said}  			& \textcolor{gray}{inflation} 		& \textcolor{gray}{inflation}  		&\textcolor{gray}{inflation} 	&\textcolor{gray}{inflation}  \\
+		\textcolor{gray}{inflation} 	&\textcolor{gray}{inflation} 		& \textcolor{gray}{economy} 		& \textcolor{gray}{economy } 		&\textcolor{gray}{economy}		& \textcolor{gray}{economy} \\
+		\textcolor{gray}{economy} 		&\textcolor{gray}{economy}  		& \textcolor{gray}{said} 			& \textcolor{gray}{said } 			&\textcolor{gray}{said} 		& \textcolor{magenta}{economic} \\
+		\textcolor{gray}{rate} 			& \textcolor{gray}{rate} 			& \textcolor{gray}{rate} 			& \textcolor{gray}{would} 			&\textcolor{magenta}{economic}	& \textcolor{blue}{growth}\\
+		\textcolor{gray}{would} 		& \textcolor{gray}{would} 			& \textcolor{gray}{would} 			& \textcolor{gray}{rate }			&\textcolor{gray}{would }		& \textcolor{green}{greenspan} \\
+		\textcolor{magenta}{economic}	& \textcolor{magenta}{economic}		& \textcolor{magenta}{economic}		& \textcolor{magenta}{economic}		&\textcolor{blue}{growth}		& \textcolor{gray}{would} \\
+		\textcolor{blue}{growth}		& \textcolor{blue}{growth}			& \textcolor{blue}{growth}			& \textcolor{blue}{growth}			&\textcolor{gray}{rate} 		& think \\
+		\textcolor{gray}{rates} 		& policy 							& policy 							& policy 							&policy 						& policy \\
+		policy 							& \textcolor{gray}{rates} 			& \textcolor{gray}{rates} 			& could 							& \textcolor{green}{greenspan}	& \textcolor{olive}{bernanke} \\
+		\textcolor{gray}{year}			& could 							& could 							& \textcolor{gray}{rates} 			&\textcolor{cyan}{statement}	& \textcolor{cyan}{statement} \\
+		could 							& meeting 							& meeting 							& meeting 							&meeting 						& \textcolor{teal}{chairman} \\
+		\textcolor{gray}{interest rates}& \textcolor{gray}{interest rates}	& \textcolor{cyan}{statement}		& \textcolor{cyan}{statement}		&think 							& mr \\
+		\textcolor{gray}{federal reserve}& \textcolor{cyan}{statement}		& \textcolor{gray}{interest rates}	& time 								&could 							& meeting \\
+		meeting 						& \textcolor{gray}{federal reserve}	& time 								& think 							&mr 							& \textcolor{violet}{economists} \\
+		\textcolor{cyan}{statement}		& time 								& \textcolor{gray}{federal reserve}	& mr 								&time 							& spending \\
+		percent 						& \textcolor{gray}{year}			& mr   								& \textcolor{gray}{interest rates}	&\textcolor{olive}{bernanke}& fomc \\
+		time 							& mr 								& think   							& \textcolor{green}{greenspan}		&\textcolor{teal}{chairman} 	& washington \\
+		market 							& one 								& one  								& \textcolor{gray}{federal reserve}	&\textcolor{violet}{economists}	& consumer \\
+		one 							& think 							& \textcolor{green}{greenspan} 		& one 								&\textcolor{gray}{rates  }		& know \\		  
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{Topic 2 produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
@@ -1398,6 +1424,27 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. The Breusch-P
 	\centering
 	\includegraphics[scale=0.8]{Images/docsplit02_bgLamb_0_1.pdf}
 	\label{classdoc02L01}
+\end{figure}
+
+\begin{sidewaysfigure}
+	\caption{Policy day classification according to PLSA with $\lambda_B = 0.9$.}
+	\centering
+	\includegraphics[scale=0.8]{Images/plsamodelling_bgLamb_0_9.pdf}
+	\label{classPLSAL09}
+\end{sidewaysfigure}
+
+\begin{figure}
+	\caption{Document classification according to PLSA with $\lambda_B = 0.9$ - Part I.}
+	\centering
+	\includegraphics[scale=0.8]{Images/docsplit01_bgLamb_0_9.pdf}
+	\label{classdoc01L09}
+\end{figure}
+
+\begin{figure}
+	\caption{Document classification according to PLSA with $\lambda_B = 0.9$ - Part II.}
+	\centering
+	\includegraphics[scale=0.8]{Images/docsplit02_bgLamb_0_9.pdf}
+	\label{classdoc02L09}
 \end{figure}
 
 \renewcommand{\theequation}{C.\arabic{equation}}

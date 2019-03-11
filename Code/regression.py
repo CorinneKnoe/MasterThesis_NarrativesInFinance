@@ -40,8 +40,6 @@ if __name__ == '__main__':
     classorigdf = pd.read_csv('AdjustmentsClassifiedPLSAorig.csv', sep = ',')
     
     #read in classification of policy days, lambda = 0.1
-    classL0_1 = pd.read_csv('AdjustmentsClassifiedPLSAbgLamb_0_1.csv', sep = ',')
-    classL0_6 = pd.read_csv('AdjustmentsClassifiedPLSAbgLamb_0_6.csv', sep = ',')
     classL0_9 = pd.read_csv('AdjustmentsClassifiedPLSAbgLamb_0_9.csv', sep = ',')
     
     
@@ -52,8 +50,6 @@ if __name__ == '__main__':
     
     for l in range(len(classorigdf)): #replace date string with date format
         classorigdf.iloc[l,0] = datetime.datetime.strptime(classorigdf.iloc[l,0], '%Y-%m-%d %H:%M:%S')
-        classL0_1.iloc[l,0] = datetime.datetime.strptime(classL0_1.iloc[l,0], '%Y-%m-%d %H:%M:%S')
-        classL0_6.iloc[l,0] = datetime.datetime.strptime(classL0_6.iloc[l,0], '%Y-%m-%d %H:%M:%S')
         classL0_9.iloc[l,0] = datetime.datetime.strptime(classL0_9.iloc[l,0], '%Y-%m-%d %H:%M:%S')
         
     start = datetime.datetime.strptime('01.10.1998', '%d.%m.%Y')
@@ -77,9 +73,9 @@ if __name__ == '__main__':
     
     #classifications of non policy days
     regdf['NonPolicyDay'] = pd.Series(np.where(financedf.Adjustment.values == 0.0, 1, 0), financedf.index)
-    
+ 
     #classification of days according to narratives, add to dataframe for regression
-    if any(classorigdf['Date'] != classL0_1['Date']):
+    if any(classorigdf['Date'] != classL0_9['Date']):
         raise Exception("The dates fo different classification df do not match!")
     
     for lamb in ['L=0.0','L=0.1', 'L=0.2', 'L=0.3', 'L=0.4', 'L=0.5', 'L=0.6', 
@@ -95,30 +91,30 @@ if __name__ == '__main__':
                 regdf.loc[i,'ClassL=0.0t1'] = 1
             if classorigdf.loc[rowindex, 'TopicClassification'] == 1:
                 regdf.loc[i,'ClassL=0.0t0'] = 1
-            if classL0_1.loc[rowindex, 'ClassificationLamb_0_1'] == 0:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_1'] == 0:
                 regdf.loc[i,'ClassL=0.1t1'] = 1
-            if classL0_1.loc[rowindex, 'ClassificationLamb_0_1'] == 1:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_1'] == 1:
                 regdf.loc[i,'ClassL=0.1t0'] = 1
                 
-            if classL0_6.loc[rowindex, 'ClassificationLamb_0_2'] == 0:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_2'] == 0:
                 regdf.loc[i,'ClassL=0.2t0'] = 1
-            if classL0_6.loc[rowindex, 'ClassificationLamb_0_2'] == 1:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_2'] == 1:
                 regdf.loc[i,'ClassL=0.2t1'] = 1
-            if classL0_6.loc[rowindex, 'ClassificationLamb_0_3'] == 0:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_3'] == 0:
                 regdf.loc[i,'ClassL=0.3t0'] = 1
-            if classL0_6.loc[rowindex, 'ClassificationLamb_0_3'] == 1:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_3'] == 1:
                 regdf.loc[i,'ClassL=0.3t1'] = 1
-            if classL0_6.loc[rowindex, 'ClassificationLamb_0_4'] == 0:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_4'] == 0:
                 regdf.loc[i,'ClassL=0.4t0'] = 1
-            if classL0_6.loc[rowindex, 'ClassificationLamb_0_4'] == 1:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_4'] == 1:
                 regdf.loc[i,'ClassL=0.4t1'] = 1
-            if classL0_6.loc[rowindex, 'ClassificationLamb_0_5'] == 0:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_5'] == 0:
                 regdf.loc[i,'ClassL=0.5t0'] = 1
-            if classL0_6.loc[rowindex, 'ClassificationLamb_0_5'] == 1:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_5'] == 1:
                 regdf.loc[i,'ClassL=0.5t1'] = 1
-            if classL0_6.loc[rowindex, 'ClassificationLamb_0_6'] == 0:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_6'] == 0:
                 regdf.loc[i,'ClassL=0.6t0'] = 1
-            if classL0_6.loc[rowindex, 'ClassificationLamb_0_6'] == 1:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_6'] == 1:
                 regdf.loc[i,'ClassL=0.6t1'] = 1
                 
             if classL0_9.loc[rowindex, 'ClassificationLamb_0_7'] == 0:
@@ -267,12 +263,6 @@ if __name__ == '__main__':
     plt.xlim(-0.65, 0.2)
     plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot03_L0_9.pdf", bbox_inches='tight')
 
-
-
-
-
-
-    
 
     #Regression -- classification of PLSA orig, without background topic
     regressionresults = []
