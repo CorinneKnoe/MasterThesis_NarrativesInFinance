@@ -281,6 +281,7 @@ if __name__ == "__main__":
 #     multiprocess_train(123, corpus, number_of_topics, stoprule, return_dict)
 # =============================================================================
       
+    
     start_time = time.time()
     manager = multiprocessing.Manager()
     return_dict = manager.dict()
@@ -320,8 +321,9 @@ if __name__ == "__main__":
     print_top_words(path, number_of_topics, corpus, return_dict[keyofbest][1], 50) #printig top 10 words of word distributions
     
     
-     # Read in the FEd meetings dates
+    # Read in the FEd meetings dates
     #---------------------------------
+    p#ath ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/FED_Data" #absolute path to the txt files
     path ="C:/Users/11613676/MasterThesis_NarrativesInFinance/MA_FinancialData/FED_Data"
     os.chdir(path) #setting working directory
     
@@ -381,10 +383,12 @@ if __name__ == "__main__":
             raise Exception("The averaged weights for a policy day don't sum to one across topics.")
             
     #save new data frame with classification in csv
+    #adjustdf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAorig.csv", index=False, encoding="utf-8") #create a csv to store our data
     adjustdf.to_csv("C:/Users/11613676/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAorig.csv", index=False, encoding="utf-8") #create a csv to store our data
     
     
     #prepare plot - inspiration and code examples from https://de.dariah.eu/tatom/topic_model_visualization.html
+    #path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
     path ="C:/Users/11613676/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
     os.chdir(path) 
     
@@ -500,5 +504,33 @@ if __name__ == "__main__":
     plt.figlegend(handles=[topic1], loc = 'lower left', ncol=1, prop={'size': 10}, borderaxespad = 0, handletextpad = 0)
     #plt.show()    
     f.savefig("docsplit02_orig.pdf", bbox_inches='tight')
-
-
+    
+    
+    # Box plot - to compare my classification with Ellingsen et al.
+    #--------------------------------------------------------------
+    #list of all meeting dates that Ellingsen et all classified
+    EndoMeetings = ['1998-10-15', '1998-11-17', '1999-06-30', '2001-01-03', '2001-01-31', '2001-03-20', '2001-04-18', '2001-06-27', '2001-08-21', '2001-10-02', '2001-11-06', '2001-12-11']
+    ExoMeetings = ['1999-08-24', '1999-11-16', '2000-03-21', '2000-05-16', '2001-05-15', '2001-09-17']
+        
+    WeightsEndo = []
+    for date in EndoMeetings:
+        position = meetinglist.index(date)
+        WeightsEndo.append(weights[position][0])
+    
+    WeightsExo = []
+    for date in ExoMeetings:
+        position = meetinglist.index(date)
+        WeightsExo.append(weights[position][0])
+    
+    #make boxplot of weights of narrative 1
+    seaborn.set(context='paper')
+    fig = plt.figure(figsize=(7,4))
+    plot = plt.boxplot([WeightsEndo, WeightsExo], labels=['endogenous policy days', 'exogenous policy days'], patch_artist=True)
+    for element in ['boxes', 'whiskers', 'fliers', 'means', 'medians', 'caps']:
+        plt.setp(plot[element], color=seaborn.color_palette('deep')[0])
+    for element in ['medians']:
+        plt.setp(plot[element], color=seaborn.color_palette('deep')[1], linewidth=1.3)
+    for patch in plot['boxes']:
+        patch.set(facecolor=seaborn.color_palette('deep')[0], alpha=1)
+    plt.ylabel('Weight of Narrative One')
+    fig.savefig("boxplot_orig.pdf", bbox_inches='tight')

@@ -19,6 +19,7 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf 
 import statsmodels.stats.api as sms
 from statsmodels.compat import lzip
+from decimal import getcontext, Decimal
 
 
 
@@ -73,7 +74,7 @@ if __name__ == '__main__':
     
     #classifications of non policy days
     regdf['NonPolicyDay'] = pd.Series(np.where(financedf.Adjustment.values == 0.0, 1, 0), financedf.index)
- 
+    
     #classification of days according to narratives, add to dataframe for regression
     if any(classorigdf['Date'] != classL0_9['Date']):
         raise Exception("The dates fo different classification df do not match!")
@@ -88,13 +89,13 @@ if __name__ == '__main__':
         if day in list(classorigdf['Date']):
             rowindex = classorigdf[classorigdf['Date'] == day].index.values.astype(int)[0] #find row of date in classification df
             if classorigdf.loc[rowindex, 'TopicClassification'] == 0:
-                regdf.loc[i,'ClassL=0.0t1'] = 1
-            if classorigdf.loc[rowindex, 'TopicClassification'] == 1:
                 regdf.loc[i,'ClassL=0.0t0'] = 1
+            if classorigdf.loc[rowindex, 'TopicClassification'] == 1:
+                regdf.loc[i,'ClassL=0.0t1'] = 1
             if classL0_9.loc[rowindex, 'ClassificationLamb_0_1'] == 0:
-                regdf.loc[i,'ClassL=0.1t1'] = 1
-            if classL0_9.loc[rowindex, 'ClassificationLamb_0_1'] == 1:
                 regdf.loc[i,'ClassL=0.1t0'] = 1
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_1'] == 1:
+                regdf.loc[i,'ClassL=0.1t1'] = 1
                 
             if classL0_9.loc[rowindex, 'ClassificationLamb_0_2'] == 0:
                 regdf.loc[i,'ClassL=0.2t0'] = 1
@@ -264,45 +265,166 @@ if __name__ == '__main__':
     plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot03_L0_9.pdf", bbox_inches='tight')
 
 
-    #Regression -- classification of PLSA orig, without background topic
-    regressionresults = []
-    runregdf = pd.DataFrame()
-    runregdf['x1'] = regdf['NonPolicyDay']  * regdf['Diff3MT']
-    runregdf['x2'] = regdf['ClassL=0.0t0']  * regdf['Diff3MT']
-    runregdf['x3'] = regdf['ClassL=0.0t1']  * regdf['Diff3MT']
-    for numerator, yieldcurve in enumerate(['Diff6MT', 'Diff1YT', 'Diff3YT', 
-                                            'Diff5YT', 'Diff10YT', 'Diff20YT', 'Diff30YT']):
-        #run regression with one of the endogenous variables
-        runregdf['y'] = regdf[yieldcurve]
-        regressionresults.append( smf.ols('y ~  x1 + x2 + x3', data = runregdf).fit() )
-        #after running regression, undertake Breusch-Pagan Test to test for heteroskedasticity
-        test = sms.het_breuschpagan(regressionresults[numerator].resid, regressionresults[numerator].model.exog)
-        if test[1] < 0.05: #check whether there is heteroskedasticity (p-value below 0.05 rejects HO of homoskedasticity)
-            print(yieldcurve + 'has heteroskedasticity with p value of ' + str(test[1]))
-            regressionresults.pop() #remove regular regression that was already done
-            regressionresults.append( smf.ols('y ~  x1 + x2 + x3', data = runregdf).fit(cov_type='HC0') )#run regression with robust sd
-        
-    regressionresults[5].summary() 
+    #Regression -- run all regressions and print results in output that can be used for Latex table
+    ###############################################################################################
+    Classifiers = []
+    for TS in range(12, len(list(regdf)), 2):
+        tup = list(regdf)[TS:TS+2]
+        tup = tuple(tup)
+        Classifiers.append(tup)
     
-    #Regression -- classification of PLSA orig, with background topic, lambda = 0.1
-    regressionresults = []
-    runregdf = pd.DataFrame()
-    runregdf['x1'] = regdf['NonPolicyDay']  * regdf['Diff3MT']
-    runregdf['x2'] = regdf['ClassL=0.9t0']  * regdf['Diff3MT']
-    runregdf['x3'] = regdf['ClassL=0.9t1']  * regdf['Diff3MT']
-    for numerator, yieldcurve in enumerate(['Diff6MT', 'Diff1YT', 'Diff3YT', 
-                                            'Diff5YT', 'Diff10YT', 'Diff20YT', 'Diff30YT']):
-        #run regression with one of the endogenous variables
-        runregdf['y'] = regdf[yieldcurve]
-        regressionresults.append( smf.ols('y ~  x1 + x2 + x3', data = runregdf).fit() )
-        #after running regression, undertake Breusch-Pagan Test to test for heteroskedasticity
-        test = sms.het_breuschpagan(regressionresults[numerator].resid, regressionresults[numerator].model.exog)
-        if test[1] < 0.05: #check whether there is heteroskedasticity (p-value below 0.05 rejects HO of homoskedasticity)
-            print(yieldcurve + 'has heteroskedasticity with p value of ' + str(test[1]))
+    for classification in Classifiers:
+    
+        regressionresults = []
+        runregdf = pd.DataFrame()
+        runregdf['x1'] = regdf['NonPolicyDay']  * regdf['Diff3MT']
+        runregdf['x2'] = regdf[classification[0]]  * regdf['Diff3MT'] #narrative one
+        runregdf['x3'] = regdf[classification[1]]  * regdf['Diff3MT'] #narrative two
+        for numerator, yieldcurve in enumerate(['Diff6MT', 'Diff1YT', 'Diff3YT', 
+                                                'Diff5YT', 'Diff10YT', 'Diff20YT', 'Diff30YT']):
+            #run regression with one of the endogenous variables
+            runregdf['y'] = regdf[yieldcurve]
+            regressionresults.append( smf.ols('y ~  x1 + x2 + x3', data = runregdf).fit() )
+            #after running regression, undertake Breusch-Pagan Test to test for heteroskedasticity
+# =============================================================================
+#             test = sms.het_breuschpagan(regressionresults[numerator].resid, regressionresults[numerator].model.exog)
+#             if test[1] < 0.05: #check whether there is heteroskedasticity (p-value below 0.05 rejects HO of homoskedasticity)
+#                 print(yieldcurve + ' has heteroskedasticity with p value of ' + str(test[1]))
+# =============================================================================
             regressionresults.pop() #remove regular regression that was already done
             regressionresults.append( smf.ols('y ~  x1 + x2 + x3', data = runregdf).fit(cov_type='HC0') )#run regression with robust sd
+            
         
-    regressionresults[6].summary() 
+        #print the regression values for a Latex table
+        #make graph of betas and confidence intervals
+        RegressionValues = {}
+        
+        #add coefficients to dictionary
+        para = -1
+        for element in ['$\\alpha_n$', '$\\beta_n^{NP}$', '$\\beta_n^{N1}$', '$\\beta_n^{N2}$']:
+            para += 1
+            RegressionValues[element] = []
+            for i in range(7):
+                RegressionValues[element].append("%.2f" % regressionresults[i].params[para]) #adding all the intercepts
+                if regressionresults[i].pvalues[para] <= 0.05 and regressionresults[i].pvalues[para] > 0.01:
+                    RegressionValues[element].append('*')
+                if regressionresults[i].pvalues[para] <= 0.01:
+                    RegressionValues[element].append('**')
+                RegressionValues[element].append(' & ')
+            RegressionValues[element].pop() #removing the last '&'
+            RegressionValues[element].append("\\\\")
+        
+        #add standard errors to dictionary
+        para = -1
+        for element in ['std0', 'std1', 'std2', 'std3']:
+            para += 1
+            RegressionValues[element] = []
+            for i in range(7):
+                RegressionValues[element].append("%.2f" % regressionresults[i].bse[para]) #adding all the intercepts
+                RegressionValues[element].append(' & ')
+            RegressionValues[element].pop() #removing the last '&'
+            RegressionValues[element].append("\\\\")
+        
+        #add R2 to dictionary
+        RegressionValues['R2'] = []
+        for i in range(7):
+            RegressionValues['R2'].append("%.2f" % regressionresults[i].rsquared)
+            RegressionValues['R2'].append(' & ')
+        RegressionValues['R2'].pop() #removing the last '&'
+        RegressionValues['R2'].append("\\\\")
+        
+        #add equality test to table
+        key = '$\\beta_n^{N1} = \\beta_n^{N2}$'
+        RegressionValues[key] = []
+        hypothesis = 'x2 = x3'
+        for i in range(7):
+            t_test = regressionresults[i].t_test(hypothesis)
+            print(t_test)
+            RegressionValues[key].append("%.2f" % t_test.effect)
+            if t_test.pvalue <= 0.05 and t_test.pvalue > 0.01:
+                  RegressionValues[key].append('*')
+            if t_test.pvalue <= 0.01:  
+                RegressionValues[key].append('**')
+            RegressionValues[key].append(' & ')
+        RegressionValues[key].pop() #removing the last '&'
+        RegressionValues[key].append("\\\\")
+
+        
+        print('######################################')
+        print("Summary of regression with " + classification[0][:-2])
+        print('######################################')
+        print ('$\\alpha_n$'  + ' & ' + ''.join(RegressionValues['$\\alpha_n$']))
+        print (" & " + ''.join(RegressionValues["std0"]) )
+        print ('$\\beta_n^{NP}$'  + ' & ' + ''.join(RegressionValues['$\\beta_n^{NP}$']))
+        print (" & " + ''.join(RegressionValues["std1"]) )
+        print ('$\\beta_n^{N1}$'  + ' & ' + ''.join(RegressionValues['$\\beta_n^{N1}$']))
+        print (" & " + ''.join(RegressionValues["std2"]) )
+        print ('$\\beta_n^{N2}$'  + ' & ' + ''.join(RegressionValues['$\\beta_n^{N2}$']))
+        print (" & " + ''.join(RegressionValues["std3"]) )
+        print ("$R^2$" + " & " + ''.join(RegressionValues["R2"]) )
+        print ('$\\beta_n^{N1} = \\beta_n^{N2}$' + " & " + ''.join(RegressionValues['$\\beta_n^{N1} = \\beta_n^{N2}$']) )
+        
+        
+        
+        #build a dictionary for graph
+        GraphDic = {}
+        
+        #add coefficients to dictionary
+        para = 1
+        for element in ['beta1', 'beta2']:
+            para += 1
+            GraphDic[element] = []
+            for i in range(7):
+                GraphDic[element].append(regressionresults[i].params[para]) 
+        
+        #add confidence intervals to dictionary
+        para = 1
+        for element in ['b1conflow', 'b2conflow']:
+            para += 1
+            GraphDic[element] = []
+            for i in range(7):
+                GraphDic[element].append(regressionresults[i].conf_int()[0][para]) 
+                
+        para = 1
+        for element in ['b1conhigh', 'b2conhigh']:
+            para += 1
+            GraphDic[element] = []
+            for i in range(7):
+                GraphDic[element].append(regressionresults[i].conf_int()[1][para]) 
+              
+        #plot the behavior of interest rates on ppolicy days, Narrative One
+        plt.style.use('seaborn')
+        seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
+        fig, ax = plt.subplots(figsize=(7,4))
+        xlabel = ['6MT', '1YT', '3YT', '5YT', '10YT', '20YT', '30YT']
+        
+        ax.plot(GraphDic['beta1'], label='Beta of Narrative 1', 
+             linewidth=1.5, color=seaborn.color_palette('deep')[0])
+        ax.plot(GraphDic['b1conflow'], 
+             linewidth=.75, linestyle = "--", color=seaborn.color_palette('deep')[0])
+        ax.plot(GraphDic['b1conhigh'], 
+             linewidth=.75, linestyle = "--", color=seaborn.color_palette('deep')[0])
+        
+        ax.fill_between(range(len(xlabel)), GraphDic['b1conflow'], GraphDic['b1conhigh'], alpha=0.2)
+         
+        ax.plot(GraphDic['beta2'], label='Beta of Narrative 2', 
+             linewidth=1.5, color=seaborn.color_palette('deep')[1])
+        ax.plot(GraphDic['b2conflow'], 
+             linewidth=.75, linestyle = "--", color=seaborn.color_palette('deep')[1])
+        ax.plot(GraphDic['b2conhigh'], 
+             linewidth=.75, linestyle = "--", color=seaborn.color_palette('deep')[1])
+        
+        ax.fill_between(range(len(xlabel)), GraphDic['b2conflow'], GraphDic['b2conhigh'], alpha=0.2)
+        
+        ax.set_xlim(xmin=0, xmax=len(xlabel)-1)
+        plt.xticks(list(range(len(xlabel))), xlabel)
+        #plt.title("Regression coefficients for narrative one and two")
+        plt.xlabel("Maturities of interest rates")
+        ax.legend(loc='upper right', frameon=False)
+        plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/betasLamb" + str(classification[0][7]) + "_" + str(classification[0][9]) + ".pdf", bbox_inches='tight')
+
+        
+        
         
     
   
