@@ -1,3 +1,3 @@
 -------------
 Likelihood of topic model of original PLSA
-Log Likelihood: -5933123.707252598
+Log Likelihood: -5855855.569920905
