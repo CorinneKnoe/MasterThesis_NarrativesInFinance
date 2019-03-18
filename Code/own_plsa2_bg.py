@@ -322,7 +322,7 @@ if __name__ == "__main__":
     #execute the PLSA
     #---------------------------------------
     number_of_topics = 2 #supposed to be 2
-    stoprule = 0.1 #supposed to be 0.1
+    stoprule = 0.01 #supposed to be 0.01
     
 # =============================================================================
 #     start_time = time.time()
@@ -584,7 +584,7 @@ if __name__ == "__main__":
         plt.ylabel('Weight of Narrative One')
         fig.savefig("boxplot_"+name+".pdf", bbox_inches='tight')
         
-        #save new data frame with classification in csv
-        #adjustdf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAbg"+name+".csv", index=False, encoding="utf-8") #create a csv to store our data
-        adjustdf.to_csv("C:/Users/11613676/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAbg"+name+".csv", index=False, encoding="utf-8") #create a csv to store our data
+    #save new data frame with classification in csv
+    #adjustdf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAbg"+name+".csv", index=False, encoding="utf-8") #create a csv to store our data
+    adjustdf.to_csv("C:/Users/11613676/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAbg"+name+".csv", index=False, encoding="utf-8") #create a csv to store our data
 
