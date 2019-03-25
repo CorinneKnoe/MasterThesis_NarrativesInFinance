@@ -673,24 +673,25 @@ As explained in Chapter \ref{NewInsights}, we are looking for two narratives acc
 		\midrule
 		said			 & .011 & fed 				& .024 \\
 		year			 & .011 & said 				& .013  \\
-		percent		 	 & .009 & inflation 		& .010  \\
+		percent		 	 & .009 & inflation 		& .011  \\
 		market			 & .009 & economy 			& .010  \\
-		dollar			 & .007 & rate 				& .010 \\
-		fed			 	 & .007 & rates				& .007 \\
-		cut			 	 & .006 & year				& .006 \\
-		bank			 & .006 & would				& .006  \\
-		rate			 & .006 & percent 			& .006  \\
-		investors		 & .006 & economic			& .006  \\
-		per cent		 & .005 & federal reserve 	& .005  \\
-		interest rate 	 & .005 & growth 			& .005  \\
-		markets		 	 & .005 & market			& .005  \\
-		us				 & .005 & interest rates	& .005  \\
-		expected		 & .005 & policy			& .005  \\
-		rates			 & .004 & could				& .004  \\
-		federal	reserve	 & .004 & interest rate		& .004  \\
-		bond			 & .004 & time				& .004  \\
-		yield			 & .004 & one				& .004  \\
-		interest rates   & .004 & banks				& .004  \\
+		rate			 & .008 & rate 				& .009 \\
+		dollar		 	 & .007 & would				& .007 \\
+		fed		 		 & .007 & year				& .006 \\
+		cut			 	 & .007 & rates				& .006 \\
+		bank			 & .006 & economic			& .006  \\
+		rates			 & .006 & percent 			& .005  \\
+		investors		 & .006 & growth			& .005  \\
+		interest rate	 & .005 & policy		 	& .005  \\
+		federal reserve	 & .005 & market		 	& .005  \\
+		per cent		 & .004 & federal reserve 	& .005  \\
+		markets		 	 & .004 & interest rates	& .005  \\
+		bond			 & .004 & could 			& .005  \\
+		expected		 & .004 & meeting			& .004  \\
+		yield			 & .004 & time				& .004  \\
+		interest rates	 & .004 & statement			& .004  \\
+		us				 & .004 & interest rate		& .004  \\
+	
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{The two topics produced by PLSA.} % Table caption, can be commented out if no caption is required
@@ -708,10 +709,10 @@ Considering the top words of the topics, no clear topical concentration becomes 
 	\label{dispersionPLSAorig}
 \end{figure}
 
-The text data collection comprises between 14 to 97 articles for every policy day. The words of each article are partitioned between the two topics, resulting in a topic coverage probability that indicates to what extent an article is to be attributed to a certain topic. To classify a policy day as belonging either to narrative one ($N_1$) or narrative two ($N_2$), I average the topic coverage probabilities of all articles on a given policy day and attribute the day to the topic that dominates the articles. Figure \ref{classPLSA} in Appendix \ref{AppendixC} depicts the resulting classification of the policy days. 
+The text data collection comprises between 14 to 97 articles for every policy day. The words of each article are partitioned between the two topics, resulting in a topic coverage probability that indicates to what extent an article is to be attributed to a certain topic. To classify a policy day as belonging either to narrative one ($N_1$) or narrative two ($N_2$), I average the topic coverage probabilities of all articles on a given policy day and attribute the day to the topic that dominates the articles. Figure \ref{classPLSA} in Appendix \ref{AppendixC1} depicts the resulting classification of the policy days. 
 
-39 policy days have been attributed to topic 2 and only 17 days to topic 1. Also, quite often both topics command a large share of the articles on a given day, one topic dominating the other only by a small margin. Thus, the classification of the policy days is not as clear cut as one might wish. If we consider how the individual articles have been classified, we would expect that on a given day all articles are attributed to the same topic. That would be a clear indication that a specific narrative, as identified by our topic model, permeated the press reporting at that time. However, as Figure \ref{classdoc01} and \ref{classdoc02} show, quite often the articles on a specific day are almost evenly split between the topics.  
-Thus, it stands to reason that the PLSA model without background distribution was not able to infer topics that would separate the policy days in a meaningful manner.
+38 policy days have been attributed to topic 2 and only 18 days to topic 1. Also, quite often both topics command a large share of the articles on a given day, one topic dominating the other only by a small margin. Thus, the classification of the policy days is not as clear cut as one might wish. If we consider how the individual articles have been classified, we would expect that on a given day all articles are attributed to the same topic. That would be a clear indication that a specific narrative, as identified by our topic model, permeated the press reporting at that time. However, as Figure \ref{classdoc01} and \ref{classdoc02} show, quite often the articles on a specific day are almost evenly split between the topics.  
+%Thus, it stands to reason that the PLSA model without background distribution was not able to infer topics that would separate the policy days in a meaningful manner.
 
 \subsection{Application of PLSA with Background Topic}\label{Ch:implembg}
 
@@ -764,14 +765,14 @@ The most common word in the background topic is \textit{fed}, followed by \texti
 	\label{tab:specs2} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
-The top 20 words of every topic are listed in Tables \ref{tab:topics}--\ref{tab:topics3} in Appendix \ref{AppendixC}. The higher $\lambda_B$, the more the count of common words in the topics decreases in favor of more interesting words. Topic 1 appears to focus on \textit{investing}: With an increasing $\lambda_B$, terms like \textit{investors}, \textit{yield}, \textit{rose}, \textit{fell}, \textit{trading}, \textit{index}, and \textit{stocks} climb to the top of the word distribution. Topic 2, on the other hand, seems to focus on the Fed's \textit{economic analysis}:  With an increasing $\lambda_B$, terms like \textit{economic}, \textit{growth}, \textit{greenspan}, \textit{bernanke}, \textit{statement}, \textit{chairman}, and \textit{economists} come to dominate the topic. Thus, the topics clearly pick up on different subjects (or narratives) in the articles and with an increased use of the background topic, the topical focus of the word distributions becomes salient.
+The top 20 words of every topic are listed in Tables \ref{tab:topics}--\ref{tab:topics3} in Appendix \ref{AppendixC2}. The higher $\lambda_B$, the more the count of common words in the topics decreases in favor of more interesting words. Topic 1 appears to focus on \textit{investing}: With an increasing $\lambda_B$, terms like \textit{investors}, \textit{yield}, \textit{rose}, \textit{fell}, \textit{trading}, \textit{index}, and \textit{stocks} climb to the top of the word distribution. Topic 2, on the other hand, seems to focus on the Fed's \textit{economic analysis}:  With an increasing $\lambda_B$, terms like \textit{economic}, \textit{growth}, \textit{greenspan}, \textit{bernanke}, \textit{statement}, \textit{chairman}, and \textit{economists} come to dominate the topic. Thus, the topics clearly pick up on different subjects (or narratives) in the articles and, with an increased use of the background topic, the topical focus of the word distributions becomes salient.
 
-Figure \ref{classPLSAL01} in Appendix \ref{AppendixC} depicts the resulting classification of the policy days for $\lambda_B=0.1$ and Figure \ref{classPLSAL09} for $\lambda_B=0.9$. With $\lambda_B=0.1$, XX policy days have been attributed to topic 2 and only XX days to topic 1. With  $\lambda_B=0.9$,  XX policy days have been attributed to topic 2 and only XX days to topic 1. The introduction of a background model as well as the level of $\lambda_B$ has very little impact on the classification of the policy days. As Figures \ref{classdoc01L01}--\ref{classdoc02L01} and \ref{classdoc01L09}--\ref{classdoc02L09} show, the higher $\lambda_B$, the less ambiguous is the classification of single documents. This is hardly surprising: When $\lambda_B=0.9$, only 10\% of the tokens of a document are still split between topic 1 and 2, which will more commonly lead to an allocation of all tokens to the same topic.
+Figure \ref{classPLSAL01} in Appendix \ref{AppendixC2} depicts the resulting classification of the policy days for $\lambda_B=0.1$ and Figure \ref{classPLSAL09} for $\lambda_B=0.9$. With $\lambda_B=0.1$, 37 policy days have been attributed to topic 2 and only 19 days to topic 1. With  $\lambda_B=0.9$,  34 policy days have been attributed to topic 2 and only 22 days to topic 1. The introduction of a background model as well as the level of $\lambda_B$ has very little impact on the classification of the policy days. As Figures \ref{classdoc01L01}--\ref{classdoc02L01} and \ref{classdoc01L09}--\ref{classdoc02L09} show, the higher $\lambda_B$, the less ambiguous is the classification of single documents. This is hardly surprising: When $\lambda_B=0.9$, only 10\% of the tokens of a document are still split between topic 1 and 2, which will more commonly lead to an allocation of all tokens to the same topic.
 
 
 There are several possible approaches to evaluate topic models and their specifications. First, a test can be set up in which a human judge must assess topic quality, in particular the coherence of the inferred topics. Second, traditional metrics, such as log-likelihood of the held-out data, can be employed to measure how well a topic model generalizes. However, such metrics are often negatively correlated with topic quality as assessed by human judges. A third approach is downstream task improvement: A model is assessed based on the statistically significant improvement it brings to another task \cite[~pp.383--384]{Zhai.2016}.
 
-For the purpose of this thesis, we have already outlined how an increase in $\lambda_B$ makes the topics more interpretable. In Chapter \ref{Ch:results} I will also consider how the different topic model specifications affect the downstream task of the financial analysis. 
+For the purpose of this thesis, we have already outlined how an increase in $\lambda_B$ makes the topics more interpretable. In Chapter \ref{Ch:results} we will also consider how the different topic model specifications affect the downstream task of the financial analysis. 
 
 %\section{NOTES}
 %Besprechung - 24.09.2018
@@ -805,7 +806,7 @@ Analogously to \citet[pp. 14 -- 15]{Ellingsen.2003}, we take a look at the behav
 	\label{Change01}
 \end{figure}
 
-In Figures \ref{Change02} and \ref{Change03}, the policy days are split up according to their classification by either Narrative one or Narrative two (as classified by PLSA without background topic, that is for $\lambda_B=0$). A successful classification of policy days is expected to separate the days characterized by a co-movement of the yield curves from the days on which the rates move in opposite directions. As such, one figure should show a clear positive relationship, with the data points populating quadrants 1 and 3, while the other figure should display a negative relationship, with all data points populating quadrant 2 and 4. However, Figures \ref{Change02} and \ref{Change03} show a rather ambiguous picture. Both figures capture policy days co-movement of the rates as well as days with counter-movement.  It should be noted that \citet[pp. 14--15]{Ellingsen.2003}, too, only found an ambiguous relationship.
+In Figures \ref{Change02} and \ref{Change03}, the policy days are split up according to their classification by either Narrative one or Narrative two (as classified by PLSA without background topic, that is for $\lambda_B=0$). A successful classification of policy days is expected to separate the days characterized by a co-movement of the yield curves from the days on which the rates move in opposite directions. As such, one figure should show a clear positive relationship, with the data points populating quadrants 1 and 3, while the other figure should display a negative relationship, with all data points populating quadrant 2 and 4. However, Figures \ref{Change02} and \ref{Change03} show a rather ambiguous picture. Both figures capture policy days with co-movement of the rates as well as days with counter-movement.  It should be noted that \citet[pp. 14--15]{Ellingsen.2003}, too, only found an ambiguous relationship.
 
 \begin{figure}
 	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative one ($\lambda_B=0$).}
@@ -821,10 +822,12 @@ In Figures \ref{Change02} and \ref{Change03}, the policy days are split up accor
 	\label{Change03}
 \end{figure}
 
-Figures \ref{Change02_L01}--\ref{Change03_L09} in Appendix \ref{AppendixD} show the split of the policy days when $\lambda_B$ is increased to 0.1 and 0.9, respectively. Even though the output of the topic model changes notably in terms of topic quality with an increase in $\lambda_B$, the introduction of a background topic has little impact on the classification of policy days. As such, Figures Figures \ref{Change02_L01}--\ref{Change03_L09} present almost the same picture as Figures \ref{Change02} and \ref{Change03}.
+Figures \ref{Change02_L01}--\ref{Change03_L09} in Appendix \ref{AppendixD} show the split of the policy days when $\lambda_B$ is increased to 0.1 and 0.9, respectively. Even though the output of the topic model changes notably in terms of topic quality with an increase in $\lambda_B$, the introduction of a background topic has little impact on the classification of the policy days. As such, Figures Figures \ref{Change02_L01}--\ref{Change03_L09} present almost the same picture as Figures \ref{Change02} and \ref{Change03}.
+
+There is a small overlap in the time frame of \cite{Ellingsen.2003} and this thesis. In Figures \ref{boxplotL00} -- \ref{boxplotL09} in Appendix \ref{AppendixD1} a comparison of the classification of \citeauthor{Ellingsen.2003} and this thesis is presented. However, the comparable sample is quite small due to the small overlap in the time frame as well as the fact that \citeauthor{Ellingsen.2003} chose no to classify a quarter of their data. Thus, only 12 of \citeauthor{Ellingsen.2003}'s endogenous policy days and 6 of their exogenous policy days have been classified in the course of this thesis. Figures \ref{boxplotL00} -- \ref{boxplotL09} show that the classification according to narratives does not make a separation between the two groups as \citeauthor{Ellingsen.2003} have done. Moreover, the classification of the selected policy days varies with a change in $\lambda_B$: Without background topic, the policy days are classified by narrative one, after the introduction of a background topic, they are classified by narrative two. This is rather unusual as  $\lambda_B$ fails to have an impact on the classification of policy days in all other settings. Most likely, the sample is to small for the purpose of a stable and reliable comparison. 
  
 \section{Regression Results}
-In a next step, I run the regression formulated in Eq. \ref{reg2}. Tables \ref{tab:reg1}--\ref{tab:reg2} give an overview of the regression output depending on the level of $\lambda_B$. Heteroskedasticity robust White’s (1980) standard errors are listed in brackets.  
+In a next step, we run the regression formulated in Eq. \ref{reg2} for the  classification with $\lambda_B =0$. Table \ref{tab:reg1} reports the ordinary-least-square estimates for maturities from 6 month to 30 years. $\beta_n^{NP}$ measures the reaction of the $n$-maturity interest rate to the 3-month rate on non-policy days, $\beta_n^{N1}$ measures the reaction on policy days classified as being influenced by Narrative one and $\beta_n^{N2}$ on policy days classified as belonging to Narrative two. $\alpha_n$ is the constant term. **/* indicate significance on the 1\% and 5\% level, respectively. Heteroskedasticity robust \citeauthor{White.1980}'s (\citeyear{White.1980}) standard errors are listed in brackets. The last row reports the test statistics from the test of equality between the estimated coefficients.
 
 \begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
 	\centering % Centres the table on the page, comment out to left-justify
@@ -833,109 +836,36 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. Tables \ref{t
 		& 6m & 1y & 3y & 5y & 10y & 20y & 30y \\
 		\midrule % In-table horizontal line
 		$\alpha_n$ & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00\\
-		& 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00\\
+		& (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00)\\
 		$\beta_n^{NP}$ & 0.36** & 0.30** & 0.28** & 0.25** & 0.18** & 0.13** & 0.12**\\
-		& 0.05 & 0.04 & 0.04 & 0.03 & 0.03 & 0.02 & 0.02\\
-		$\beta_n^{N1}$ & 0.67** & 0.58** & 0.40** & 0.45** & 0.28** & 0.04 & 0.17**\\
-		& 0.07 & 0.08 & 0.10 & 0.11 & 0.08 & 0.09 & 0.06\\
-		$\beta_n^{N2}$ & 0.54** & 0.34* & 0.51* & 0.37 & 0.41* & 0.23 & 0.30\\
-		& 0.15 & 0.17 & 0.25 & 0.30 & 0.17 & 0.12 & 0.17\\
+		& (0.05) & (0.04) & (0.04) & (0.03) & (0.03) & (0.02) & (0.02)\\
+		$\beta_n^{N1}$ & 0.67** & 0.58** & 0.41** & 0.46** & 0.29** & 0.05 & 0.17**\\
+		& (0.07) & (0.08) & (0.10) & (0.11) & (0.08) & (0.09) & (0.06)\\
+		$\beta_n^{N2}$ & 0.55** & 0.33* & 0.47* & 0.34 & 0.38* & 0.19 & 0.28\\
+		& (0.14) & (0.15) & (0.24) & (0.28) & (0.16) & (0.12) & (0.15)\\
 		$R^2$ & 0.30 & 0.20 & 0.08 & 0.05 & 0.03 & 0.02 & 0.02\\
-		$\beta_n^{N1} = \beta_n^{N2}$ & 0.13 & 0.24 & -0.11 & 0.08 & -0.13 & -0.19 & -0.14\\
+		$\beta_n^{N1} = \beta_n^{N2}$ & 0.12 & 0.25 & -0.06 & 0.12 & -0.09 & -0.14 & -0.11\\
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{Regression results (classification with $\lambda_B=0$).} % Table caption, can be commented out if no caption is required
 	\label{tab:reg1} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
-\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
-	\centering % Centres the table on the page, comment out to left-justify
-	\begin{tabular}{ p{2cm}  p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
-		\toprule % Top horizontal line
-						& 6m 		& 1y 		& 3y 		& 5y 		& 10y 		& 20y 		& 30y \\
-		\midrule % In-table horizontal line
-	$\alpha_n$ & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00\\
-	& 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00\\
-	$\beta_n^{NP}$ & 0.36** & 0.30** & 0.28** & 0.25** & 0.18** & 0.13** & 0.12**\\
-	& 0.05 & 0.04 & 0.04 & 0.03 & 0.03 & 0.02 & 0.02\\
-	$\beta_n^{N1}$ & 0.67** & 0.58** & 0.41** & 0.46** & 0.29** & 0.05 & 0.17**\\
-	& 0.07 & 0.08 & 0.10 & 0.11 & 0.08 & 0.09 & 0.06\\
-	$\beta_n^{N2}$ & 0.55** & 0.33* & 0.47* & 0.34 & 0.38* & 0.19 & 0.28\\
-	& 0.14 & 0.15 & 0.24 & 0.28 & 0.16 & 0.12 & 0.15\\
-	$R^2$ & 0.30 & 0.20 & 0.08 & 0.05 & 0.03 & 0.02 & 0.02\\
-	$\beta_n^{N1} = \beta_n^{N2}$ & 0.12 & 0.25 & -0.06 & 0.12 & -0.09 & -0.14 & -0.11\\
-		\bottomrule % Bottom horizontal line
-	\end{tabular}
-	\caption{Regression results (classification with $\lambda_B=0.1$).} % Table caption, can be commented out if no caption is required
-	\label{tab:reg2} % A label for referencing this table elsewhere, references are used in text as \ref{label}
-\end{table}
+As expected, the intercept is always zero. However, the null hypothesis (see Eq. \ref{H00}) finds little support in the data. The slope coefficients for the non-policy days are large and strongly significant for most maturities. Yet, in line with hypothesis \ref{H00}, we would expect to find that $\beta_n^{N1}$ is positive for short maturities but negative for long maturities. Even though the slope coefficient $\beta_n^{N1}$ is decreasing with longer maturities and remains significant, it does not turn negative. 
 
-\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
-	\centering % Centres the table on the page, comment out to left-justify
-	\begin{tabular}{ p{2cm}  p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
-		\toprule % Top horizontal line
-						& 6m 		& 1y 		& 3y 		& 5y 		& 10y 		& 20y 		& 30y \\
-		\midrule % In-table horizontal line
-		$\alpha_n$ & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00\\
-		& 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00\\
-		$\beta_n^{NP}$ & 0.36** & 0.30** & 0.28** & 0.25** & 0.18** & 0.13** & 0.12**\\
-		& 0.05 & 0.04 & 0.04 & 0.03 & 0.03 & 0.02 & 0.02\\
-		$\beta_n^{N1}$ & 0.69** & 0.58** & 0.41** & 0.46** & 0.29** & 0.05 & 0.18**\\
-		& 0.06 & 0.08 & 0.10 & 0.11 & 0.08 & 0.09 & 0.06\\
-		$\beta_n^{N2}$ & 0.50** & 0.34* & 0.46* & 0.33 & 0.36* & 0.18 & 0.26\\
-		& 0.14 & 0.15 & 0.22 & 0.26 & 0.15 & 0.11 & 0.14\\
-		$R^2$ & 0.30 & 0.20 & 0.08 & 0.05 & 0.03 & 0.02 & 0.02\\
-		$\beta_n^{N1} = \beta_n^{N2}$ & 0.19 & 0.25 & -0.05 & 0.13 & -0.07 & -0.13 & -0.08\\
-		\bottomrule % Bottom horizontal line
-	\end{tabular}
-	\caption{Regression results (classification with $\lambda_B=0.9$).} % Table caption, can be commented out if no caption is required
-	\label{tab:reg3} % A label for referencing this table elsewhere, references are used in text as \ref{label}
-\end{table}
+The slope coefficient $\beta_n^{N2}$, by contrast, decreases less in maturity. Figure \ref{betaL00} illustrates the change in the coefficients given the duration of the maturities. Indeed, while the difference in the betas is positive for short maturities, it turns negative for long maturities. This, at least, indicates that the classification according to narratives picks up on short- and long-term motivation. However, the differences between the coefficients are never significant. As the equality test shows, the two responses, $\beta_n^{N1}$ and $\beta_n^{N2}$, cannot be statistically separated for any maturity. In line with this finding, Figure \ref{betaL00} illustrates that the 95\% confidence intervals of the two coefficients mostly overlap. 
+
+Tables \ref{tab:reg2} and \ref{tab:reg3} in Appendix \ref{AppendixD2} show the regression result for policy day classifications with $\lambda_B=0.1$ and $\lambda_B=0.9$, respectively. However, the introduction of a background topic changes little in terms of policy day classification and, consequently, the regression results are very similar across all $\lambda_B$. Thus, also the relationship of the slope coefficients remains stable across $\lambda_B$, a fact that is once again illustrated by Figures \ref{betaL01} and \ref{betaL09} in Appendix \ref{AppendixD2}. Additionally, the introduction of a background topic has no effect whatsoever on the explained variation ($R^2$).
 
 \begin{figure}
-	\caption{Regression coefficients for narrative one and two without background topic.}
+	\caption{Regression coefficients for narrative one and two with $\lambda_B=0$.}
 	\centering
 	\includegraphics[scale=1]{Images/betasLamb0_0.pdf}
 	\label{betaL00}
 \end{figure}
 
-\begin{figure}
-	\caption{Regression coefficients for narrative one and two with $\lambda_B=0.1$.}
-	\centering
-	\includegraphics[scale=1]{Images/betasLamb0_1.pdf}
-	\label{betaL01}
-\end{figure}
 
-\begin{figure}
-	\caption{Regression coefficients for narrative one and two with $\lambda_B=0.9$.}
-	\centering
-	\includegraphics[scale=1]{Images/betasLamb0_9.pdf}
-	\label{betaL09}
-\end{figure}
 
-\textcolor{red}{note that classification remains very stable across lambdas}
-\textcolor{red}{equality test, the difference in betas is never significant!}
-
-\begin{figure}
-	\caption{Boxplot showing the weight or narrative one (without background topic) on policy days classified as endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}.}
-	\centering
-	\includegraphics[scale=1]{Images/boxplot_orig.pdf}
-	\label{boxplotL00}
-\end{figure}
-
-\begin{figure}
-	\caption{Boxplot showing the weight or narrative one (with $\lambda_B=0.1$) on policy days classified as endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}.}
-	\centering
-	\includegraphics[scale=1]{Images/boxplot_Lamb_0_1.pdf}
-	\label{boxplotL01}
-\end{figure}
-
-\begin{figure}
-	\caption{Boxplot showing the weight or narrative one (with $\lambda_B=0.9$) on policy days classified as endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}.}
-	\centering
-	\includegraphics[scale=1]{Images/boxplot_Lamb_0_9.pdf}
-	\label{boxplotL09}
-\end{figure}
 
 %\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
 %	\centering % Centres the table on the page, comment out to left-justify
@@ -958,9 +888,6 @@ In a next step, I run the regression formulated in Eq. \ref{reg2}. Tables \ref{t
 %	\caption{Regression results (applying classification without background topic).} % Table caption, can be commented out if no caption is required
 %	\label{tab:reg1} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 %\end{table}
-
-\section{Comparison to Ellingesen et al.}
-put boxplot that Gruber wanted somewhere
 
 \chapter{Discussion}
 
@@ -1132,24 +1059,28 @@ but before feature engineering.
 
 \chapter{Topic Model Output}\label{AppendixC}
 
-\section{PLSA without background topic}
+\section{PLSA without background topic}\label{AppendixC1}
+
+Figure \ref{classPLSA} shows the classification of policy days according to the weight of narrative one and narrative two across all articles of a specific policy day. The classification utilizes the topic model output without background topic, that is with $\lambda_B = 0$. 
+
+Figures \ref{classdoc01} and \ref{classdoc02} show the weight of narrative one of each document for $\lambda_B = 0$, split according to policy days. The number of documents attributed to each day vary across policy days, as indicated by the number below each graph. Ideally, all documents of a policy day would have either a very high or a very low weight of topic 1. This would indicate a clean split of days that concentrate on narrative one and days that are influenced by narrative two. As it is, the weights of he narratives are mixed across articles and days and the final classification of any given day is the result of averaging across the different weights.   
 
 \begin{sidewaysfigure}
-	\caption{Policy day classification according to original PLSA.}
+	\caption{Policy day classification according to PLSA with $\lambda_B = 0$.}
 	\centering
 	\includegraphics[scale=0.8]{Images/plsamodelling_orig.pdf}
 	\label{classPLSA}
 \end{sidewaysfigure}
 
 \begin{figure}
-	\caption{Document classification according to original PLSA - Part I.}
+	\caption{Document classification according to PLSA with $\lambda_B = 0$- Part I.}
 	\centering
 	\includegraphics[scale=0.8]{Images/docsplit01_orig.pdf}
 	\label{classdoc01}
 \end{figure}
 
 \begin{figure}
-	\caption{Document classification according to original PLSA - Part II.}
+	\caption{Document classification according to PLSA with $\lambda_B = 0$ - Part II.}
 	\centering
 	\includegraphics[scale=0.8]{Images/docsplit02_orig.pdf}
 	\label{classdoc02}
@@ -1238,7 +1169,11 @@ but before feature engineering.
 %	\label{tab:topics} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 %\end{table}
  
- \section{PLSA with background topic}
+ \section{PLSA with background topic}\label{AppendixC2}
+ 
+Tables \ref{tab:topics}--\ref{tab:topics3} show the 20 top words of every topic depending on $\lambda_B$. The use of colors emphasizes the movement of words of interest given a varying  $\lambda_B$. 
+
+Figures \ref{classPLSAL01} and \ref{classPLSAL09} illustrate the classification of policy days for $\lambda_B = 0.1$ and $\lambda_B = 0.9$, respectively. Analogously, Figures \ref{classdoc01L01}--\ref{classdoc02L01} and \ref{classdoc01L09}--\ref{classdoc02L09} show the weight of narrative one of each document for $\lambda_B = 0.1$ and $\lambda_B = 0.9$, split according to policy days.
  
 \begin{sidewaystable} % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
 	\centering % Centres the table on the page, comment out to left-justify
@@ -1249,25 +1184,25 @@ but before feature engineering.
 	  $\lambda_B=0.1$ & $\lambda_B=0.2$ &	$\lambda_B=0.3$ & $\lambda_B=0.4$ & $\lambda_B=0.5$ & $\lambda_B=0.6$ \\
 		\midrule % In-table horizontal line
 		 \textcolor{gray}{said}  		& \textcolor{gray}{year} 			& \textcolor{gray}{year}  		& \textcolor{gray}{year }			& \textcolor{gray}{year }		& \textcolor{gray}{year} \\
-		 \textcolor{gray}{year }  		& \textcolor{gray}{said }			& \textcolor{gray}{said }		& \textcolor{gray}{percent }		& \textcolor{gray}{percent }	& \textcolor{gray}{percent} \\
-		 \textcolor{gray}{percent}  	& \textcolor{gray}{percent }		& \textcolor{gray}{percent }	& \textcolor{gray}{said} 			& \textcolor{gray}{said} 		& \textcolor{gray}{market }\\
-		 \textcolor{gray}{market}  		& \textcolor{gray}{market} 			& \textcolor{gray}{market} 		& \textcolor{gray}{market} 			&\textcolor{gray}{market} 		& \textcolor{purple}{dollar} \\
+		 \textcolor{gray}{year }  		& \textcolor{gray}{said }			& \textcolor{gray}{said }		& \textcolor{gray}{said} 			& \textcolor{gray}{percent }	& \textcolor{gray}{percent} \\
+		 \textcolor{gray}{percent}  	& \textcolor{gray}{percent }		& \textcolor{gray}{percent }	& \textcolor{gray}{percent }		& \textcolor{gray}{market} 		& \textcolor{gray}{market }\\
+		 \textcolor{gray}{market}  		& \textcolor{gray}{market} 			& \textcolor{gray}{market} 		& \textcolor{gray}{market} 			&\textcolor{gray}{said} 		& \textcolor{purple}{dollar} \\
 		 \textcolor{gray}{rate}   		& \textcolor{gray}{rate }			& \textcolor{purple}{dollar}	& \textcolor{purple}{dollar}		&\textcolor{purple}{dollar}		& \textcolor{gray}{said} \\
-		 \textcolor{purple}{dollar}		& \textcolor{purple}{dollar}		& \textcolor{gray}{rate}		& \textcolor{gray}{rate}			&\textcolor{gray}{bank  }		& \textcolor{gray}{bank  } \\
-		 cut  							& cut 								& \textcolor{gray}{bank  }		& \textcolor{gray}{bank  }			&\textcolor{red}{investors}		& \textcolor{red}{investors} \\
+		 \textcolor{purple}{dollar}		& \textcolor{purple}{dollar}		& \textcolor{gray}{rate}		& \textcolor{red}{investors}		&\textcolor{red}{investors}		& \textcolor{gray}{bank  } \\
+		 cut  							& cut 								& \textcolor{gray}{bank  }		& \textcolor{gray}{bank  }			&\textcolor{gray}{bank  }		& \textcolor{red}{investors} \\
 		 \textcolor{gray}{bank  }		& \textcolor{gray}{bank  }			& cut 							& cut 								&cut 							& cut \\
-		 \textcolor{gray}{rates}		& \textcolor{red}{investors}		& \textcolor{red}{investors}	& \textcolor{red}{investors}		&\textcolor{gray}{rate}			& \textcolor{gray}{rate} \\
-		 \textcolor{red}{investors}		& \textcolor{gray}{rates}			& \textcolor{gray}{rates}		& \textcolor{gray}{rates}			&\textcolor{gray}{rates}		& per cent\\
-		 fed  							& interest rate 					& interest rate					& interest rate						&per cent						& \textcolor{magenta}{yield} \\
-		 interest  rate					& fed 								& per cent						& per cent							&interest rate					& bond \\
-		 per cent 						& per cent 							& bond 							& bond 								&bond 							& interest rate\\
-		 \textcolor{gray}{federal reserve }& bond 							& \textcolor{magenta}{yield}	& \textcolor{magenta}{yield}		&\textcolor{magenta}{yield}		& \textcolor{gray}{rates} \\
-		 bond  							& \textcolor{gray}{federal reserve }& markets 						& \textcolor{orange}{rose }			&\textcolor{orange}{rose }		& \textcolor{orange}{rose }	 \\
-		 markets  						& \textcolor{magenta}{yield}		& \textcolor{gray}{federal reserve }& markets 							&\textcolor{cyan}{index }		& \textcolor{cyan}{index } \\
-		 \textcolor{magenta}{yield}		& markets 							& \textcolor{orange}{rose }		& \textcolor{cyan}{index }			&markets 						& \textcolor{violet}{fell } \\
-		 expected  						& \textcolor{orange}{rose }			& expected 						& \textcolor{gray}{federal reserve }&\textcolor{violet}{fell }		& markets \\
-		 interest rate 					& expected							& \textcolor{cyan}{index }		& expected 							&month 							& \textcolor{green}{stocks} \\
-		 \textcolor{orange}{rose}  		& \textcolor{cyan}{index }			& us 							& \textcolor{violet}{fell }			&expected 						& month \\		  
+		 \textcolor{gray}{rates}		& \textcolor{red}{investors}		& \textcolor{red}{investors}	& per cent							&per cent						& \textcolor{gray}{rate} \\
+		 \textcolor{red}{investors}		& \textcolor{gray}{rates}			& \textcolor{gray}{rates}		& bond								&bond 							& per cent\\
+		 fed  							& interest rate 					& interest rate					& interest rate						&\textcolor{magenta}{yield}		& \textcolor{magenta}{yield} \\
+		 interest  rate					& fed 								& per cent						& \textcolor{magenta}{yield}		&\textcolor{orange}{rose }		& bond \\
+		 per cent 						& per cent 							& bond 							& \textcolor{gray}{rate}			&interest rate					& \textcolor{orange}{rose }\\
+		 \textcolor{gray}{federal reserve }& bond 							& \textcolor{magenta}{yield}	& us								&us								& interest rate  \\
+		 bond  							& \textcolor{gray}{federal reserve }& markets 						& markets							&markets						& \textcolor{gray}{rates}	 \\
+		 markets  						& \textcolor{magenta}{yield}		& \textcolor{gray}{federal reserve }& \textcolor{orange}{rose }		&\textcolor{cyan}{index }		& \textcolor{cyan}{index } \\
+		 \textcolor{magenta}{yield}		& markets 							& \textcolor{orange}{rose }		& expected							&expected 						& \textcolor{violet}{fell } \\
+		 expected  						& \textcolor{orange}{rose }			& expected 						& \textcolor{cyan}{index }			&\textcolor{violet}{fell }		& markets \\
+		 interest rate 					& expected							& \textcolor{cyan}{index }		& \textcolor{violet}{fell }			&\textcolor{green}{stocks}		& \textcolor{green}{stocks} \\
+		 \textcolor{orange}{rose}  		& \textcolor{cyan}{index }			& us 							& \textcolor{green}{stocks}			&month 							& month \\		  
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{Topic 1 produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
@@ -1283,25 +1218,25 @@ but before feature engineering.
 		$\lambda_B=0.7$ & $\lambda_B=0.8$ &	$\lambda_B=0.9$ &  $\lambda_B=0.1$ & $\lambda_B=0.2$ & $\lambda_B=0.3$ \\
 		\midrule % In-table horizontal line
 		  \textcolor{gray}{year }				& \textcolor{purple}{dollar}	&\textcolor{purple}{dollar}		& 	\textcolor{gray}{fed} 				& \textcolor{gray}{fed} 		& \textcolor{gray}{fed} \\
-		  \textcolor{gray}{percent }			&\textcolor{gray}{year }		&\textcolor{red}{investors}		& 	\textcolor{gray}{said} 				& \textcolor{gray}{said} 		& \textcolor{gray}{said} \\
-		  \textcolor{purple}{dollar}			&\textcolor{gray}{percent} 		&\textcolor{magenta}{yield}		& 	\textcolor{gray}{inflation} 		&\textcolor{gray}{inflation} 	& \textcolor{gray}{inflation} \\
+		  \textcolor{purple}{dollar}			&\textcolor{gray}{year }		&\textcolor{red}{investors}		& 	\textcolor{gray}{said} 				& \textcolor{gray}{said} 		& \textcolor{gray}{said} \\
+		  \textcolor{gray}{percent }			&\textcolor{gray}{percent} 		&\textcolor{magenta}{yield}		& 	\textcolor{gray}{inflation} 		&\textcolor{gray}{inflation} 	& \textcolor{gray}{inflation} \\
 		  \textcolor{gray}{market  }		 	&\textcolor{gray}{market }		&\textcolor{gray}{bank  }		& 	\textcolor{gray}{economy} 			&\textcolor{gray}{economy} 		& \textcolor{gray}{economy} \\
-		  \textcolor{gray}{bank  }				&\textcolor{red}{investors}		&\textcolor{orange}{rose }		& 	\textcolor{gray}{rate} 				&\textcolor{gray}{rate}			& \textcolor{gray}{rate} \\
-		  \textcolor{red}{investors}			&\textcolor{gray}{bank  }		&per cent						& 	\textcolor{gray}{would} 			&\textcolor{gray}{would} 		& \textcolor{gray}{would} \\
+		  \textcolor{red}{investors}			&\textcolor{red}{investors}		&\textcolor{orange}{rose }		& 	\textcolor{gray}{rate} 				&\textcolor{gray}{rate}			& \textcolor{gray}{rate} \\
+		  \textcolor{gray}{bank  }				&\textcolor{gray}{bank  }		&per cent						& 	\textcolor{gray}{would} 			&\textcolor{gray}{would} 		& \textcolor{gray}{would} \\
 		  cut  									&\textcolor{magenta}{yield}		&\textcolor{violet}{fell }		& 	\textcolor{gray}{year}				&\textcolor{magenta}{economic}	& \textcolor{magenta}{economic} \\
-		  \textcolor{gray}{said}  			 	&\textcolor{orange}{rose }		&\textcolor{blue}{trading}		& 	\textcolor{magenta}{economic}		&\textcolor{gray}{rates}		& \textcolor{gray}{rates} \\
-		  \textcolor{magenta}{yield}			&per cent						&\textcolor{gray}{year} 		& 	\textcolor{gray}{rates}				&\textcolor{gray}{year}			& \textcolor{blue}{growth} \\
-		  per cent		  						&cut 							&bond 							& 	\textcolor{blue}{growth }			&\textcolor{blue}{growth}		& \textcolor{gray}{year}\\
-		  \textcolor{orange}{rose }				&bond 							&\textcolor{cyan}{index }		& 	policy 								&policy			 				& policy \\
-		  bond 			  						&\textcolor{violet}{fell }		&\textcolor{green}{stocks}		& 	percent 							&percent 						& could \\
-		  \textcolor{cyan}{index }				&\textcolor{cyan}{index }		&yen 							& 	\textcolor{gray}{federal reserve}	&\textcolor{gray}{interest rates}& \textcolor{gray}{interest rates}\\
-		  \textcolor{violet}{fell } 		 	&\textcolor{green}{stocks}		&euro 							& 	\textcolor{gray}{interest rates}	&could 							& percent \\
-		  interest rate  						&\textcolor{blue}{trading}		&currency 						& 	could 								&\textcolor{gray}{federal reserve}& \textcolor{gray}{federal reserve}\\
-		  \textcolor{green}{stocks}				&month 							&bonds 							& 	market 								&market 						& meeting \\
-		  \textcolor{gray}{rate  }				&bonds 							&shares 						& 	meeting 							&meeting 						& \textcolor{cyan}{statement} \\
-		  month 		  						&euro 							&cents 							& \textcolor{cyan}{statement}			&\textcolor{cyan}{statement}	& market \\
-		  \textcolor{gray}{rates}				&new york						&bps 							& 	time 								&time 							& time \\
-		  \textcolor{blue}{trading}				&basis points					&china 							& 	\textcolor{gray}{interest rate}		&\textcolor{gray}{interest rate}&one  \\		  
+		  \textcolor{magenta}{yield}		 	&\textcolor{orange}{rose }		&\textcolor{blue}{trading}		& 	\textcolor{magenta}{economic}		&\textcolor{gray}{rates}		& \textcolor{gray}{rates} \\
+		  \textcolor{gray}{said}				&cut							&\textcolor{gray}{year} 		& 	\textcolor{gray}{rates}				&\textcolor{gray}{year}			& \textcolor{blue}{growth} \\
+		  per cent		  						&per cent 						&bond 							& 	\textcolor{blue}{growth }			&\textcolor{blue}{growth}		& \textcolor{gray}{year}\\
+		  \textcolor{orange}{rose }				&bond 							&\textcolor{cyan}{index }		& 	percent 							&policy			 				& policy \\
+		  bond 			  						&\textcolor{violet}{fell }		&\textcolor{green}{stocks}		& 	policy 								&percent 						& percent  \\
+		  \textcolor{cyan}{index }				&\textcolor{cyan}{index }		&yen 							& 	\textcolor{gray}{federal reserve}	&\textcolor{gray}{interest rates}& could \\
+		  \textcolor{violet}{fell } 		 	&\textcolor{green}{stocks}		&euro 							& 	\textcolor{gray}{interest rates}	& \textcolor{gray}{federal reserve}& \textcolor{gray}{interest rates} \\
+		  us			  						&\textcolor{blue}{trading}		&currency 						& 	could 								&could 							& \textcolor{gray}{federal reserve}\\
+		  \textcolor{green}{stocks}				&euro 							&bonds 							& 	market 								&market 						& meeting \\
+		  month									&month 							&shares 						& 	meeting 							&meeting 						& \textcolor{cyan}{statement} \\
+		  markets 		  						&us 							&cents 							& 	time								&\textcolor{cyan}{statement}	& market \\
+		  euro									&new york						&bps 							& 	\textcolor{cyan}{statement} 		&time 							& time \\
+		  \textcolor{blue}{trading}				&bonds							&china 							& 	\textcolor{gray}{interest rate}		&\textcolor{gray}{interest rate}&one  \\		  
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{Topic 1 and Topic 2 produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
@@ -1321,22 +1256,22 @@ but before feature engineering.
 		\textcolor{gray}{said} 			&\textcolor{gray}{said}  			& \textcolor{gray}{inflation} 		& \textcolor{gray}{inflation}  		&\textcolor{gray}{inflation} 	&\textcolor{gray}{inflation}  \\
 		\textcolor{gray}{inflation} 	&\textcolor{gray}{inflation} 		& \textcolor{gray}{economy} 		& \textcolor{gray}{economy } 		&\textcolor{gray}{economy}		& \textcolor{gray}{economy} \\
 		\textcolor{gray}{economy} 		&\textcolor{gray}{economy}  		& \textcolor{gray}{said} 			& \textcolor{gray}{said } 			&\textcolor{gray}{said} 		& \textcolor{magenta}{economic} \\
-		\textcolor{gray}{rate} 			& \textcolor{gray}{rate} 			& \textcolor{gray}{rate} 			& \textcolor{gray}{would} 			&\textcolor{magenta}{economic}	& \textcolor{blue}{growth}\\
-		\textcolor{gray}{would} 		& \textcolor{gray}{would} 			& \textcolor{gray}{would} 			& \textcolor{gray}{rate }			&\textcolor{gray}{would }		& \textcolor{green}{greenspan} \\
-		\textcolor{magenta}{economic}	& \textcolor{magenta}{economic}		& \textcolor{magenta}{economic}		& \textcolor{magenta}{economic}		&\textcolor{blue}{growth}		& \textcolor{gray}{would} \\
-		\textcolor{blue}{growth}		& \textcolor{blue}{growth}			& \textcolor{blue}{growth}			& \textcolor{blue}{growth}			&\textcolor{gray}{rate} 		& think \\
-		\textcolor{gray}{rates} 		& policy 							& policy 							& policy 							&policy 						& policy \\
-		policy 							& \textcolor{gray}{rates} 			& \textcolor{gray}{rates} 			& could 							& \textcolor{green}{greenspan}	& \textcolor{olive}{bernanke} \\
-		\textcolor{gray}{year}			& could 							& could 							& \textcolor{gray}{rates} 			&\textcolor{cyan}{statement}	& \textcolor{cyan}{statement} \\
-		could 							& meeting 							& meeting 							& meeting 							&meeting 						& \textcolor{teal}{chairman} \\
-		\textcolor{gray}{interest rates}& \textcolor{gray}{interest rates}	& \textcolor{cyan}{statement}		& \textcolor{cyan}{statement}		&think 							& mr \\
-		\textcolor{gray}{federal reserve}& \textcolor{cyan}{statement}		& \textcolor{gray}{interest rates}	& time 								&could 							& meeting \\
-		meeting 						& \textcolor{gray}{federal reserve}	& time 								& think 							&mr 							& \textcolor{violet}{economists} \\
+		\textcolor{gray}{rate} 			& \textcolor{gray}{rate} 			& \textcolor{gray}{rate} 			& \textcolor{gray}{would} 			&\textcolor{magenta}{economic}	& \textcolor{green}{greenspan} \\
+		\textcolor{gray}{rates} 		&  \textcolor{gray}{rates} 			& \textcolor{gray}{would} 			& \textcolor{gray}{rate }			&\textcolor{gray}{would }		&  mr \\
+		\textcolor{gray}{would}			& \textcolor{gray}{would}			& \textcolor{magenta}{economic}		& \textcolor{magenta}{economic}		&\textcolor{blue}{growth}		& think \\
+		\textcolor{magenta}{economic}	& \textcolor{magenta}{economic}		& \textcolor{blue}{growth}			& \textcolor{blue}{growth}			&\textcolor{gray}{rate} 		& \textcolor{blue}{growth} \\
+		\textcolor{blue}{growth} 		& \textcolor{blue}{growth} 			& policy 							& policy 							&policy 						& \textcolor{gray}{would } \\
+		policy 							&  policy							& \textcolor{gray}{rates} 			& could 							& \textcolor{green}{greenspan}	& \textcolor{olive}{bernanke} \\
+		\textcolor{gray}{year}			& could 							& could 							& \textcolor{gray}{rates} 			&\textcolor{cyan}{statement}	& \textcolor{gray}{rate}  \\
+		percent 						& \textcolor{gray}{interest rates}	& meeting 							& meeting 							&meeting 						& \textcolor{teal}{chairman} \\
+		\textcolor{gray}{interest rates}& \textcolor{gray}{federal reserve}	& \textcolor{cyan}{statement}	& \textcolor{cyan}{statement}			&think 							& \textcolor{cyan}{statement} \\
+		\textcolor{gray}{federal reserve}& \textcolor{cyan}{statement}		& \textcolor{gray}{interest rates}	& time 								&could 							& policy \\
+		could  							& percent 							& time 								& think 							&mr 							& consumer \\
 		\textcolor{cyan}{statement}		& time 								& \textcolor{gray}{federal reserve}	& mr 								&time 							& spending \\
-		percent 						& \textcolor{gray}{year}			& mr   								& \textcolor{gray}{interest rates}	&\textcolor{olive}{bernanke}& fomc \\
+		meeting 						& \textcolor{gray}{year}			& mr   								& \textcolor{gray}{interest rates}	&\textcolor{olive}{bernanke}	& \textcolor{violet}{economists} \\
 		time 							& mr 								& think   							& \textcolor{green}{greenspan}		&\textcolor{teal}{chairman} 	& washington \\
-		market 							& one 								& one  								& \textcolor{gray}{federal reserve}	&\textcolor{violet}{economists}	& consumer \\
-		one 							& think 							& \textcolor{green}{greenspan} 		& one 								&\textcolor{gray}{rates  }		& know \\		  
+		market 							& one 								& one  								& \textcolor{gray}{federal reserve}	&\textcolor{violet}{economists}	& time \\
+		one 							& think 							& \textcolor{green}{greenspan} 		& one 								&\textcolor{gray}{rates  }		& fomc \\		  
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{Topic 2 produced by PLSA depending on $\lambda_B$.} % Table caption, can be commented out if no caption is required
@@ -1390,6 +1325,12 @@ but before feature engineering.
 
 \chapter{Classification and Regression Results}\label{AppendixD}
 
+ 
+
+\section{Classification Output}\label{AppendixD1}
+
+Figures \ref{Change02_L01}--\ref{Change03_L09} show the reaction of the 10-year rate to a change in the 3-months rate, with the policy days split up according to their classification by narratives one and two given $\lambda_B=0.1$ and $\lambda_B=0.9$, respectively. The figures allow an eyeball assessment of the success of the classification. 
+
 \begin{figure}
 	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative one ($\lambda_B=0.1$).}
 	\centering
@@ -1418,10 +1359,93 @@ but before feature engineering.
 	\label{Change03_L09}
 \end{figure}
 
+Figures \ref{boxplotL00}--\ref{boxplotL09} show the classification of the policy days that have been classified as either endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}. There are only 18 data points available for a comparison. The classification according to narratives fails to separate the policy days in a similar fashion to \citeauthor{Ellingsen.2003} Either both groups, endogenous and exogenous policy days, are classified by narrative one or, as  $\lambda_B$ increases, by narrative two. 
 
-\section{For Example... }
 
-\lipsum[2-8]
+\begin{figure}
+	\caption{Boxplot showing the weight of narrative one (without background topic) on policy days classified as endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}.}
+	\centering
+	\includegraphics[scale=1]{Images/boxplot_orig.pdf}
+	\label{boxplotL00}
+\end{figure}
+
+\begin{figure}
+	\caption{Boxplot showing the weight of narrative one (with $\lambda_B=0.1$) on policy days classified as endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}.}
+	\centering
+	\includegraphics[scale=1]{Images/boxplot_Lamb_0_1.pdf}
+	\label{boxplotL01}
+\end{figure}
+
+\begin{figure}
+	\caption{Boxplot showing the weight of narrative one (with $\lambda_B=0.9$) on policy days classified as endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}.}
+	\centering
+	\includegraphics[scale=1]{Images/boxplot_Lamb_0_9.pdf}
+	\label{boxplotL09}
+\end{figure}
+
+\section{Regression Output}\label{AppendixD2}
+
+Figures \ref{betaL01} and \ref{betaL09} show the relationship of the slope coefficients for $\lambda_B=0.1$ and $\lambda_B=0.9$, respectively, including the 95\%-confidence interval for each $\beta_n$. Similarly, Tables \ref{tab:reg2} and \ref{tab:reg3}  show the regression result for policy day classifications with $\lambda_B=0.1$ and $\lambda_B=0.9$.
+
+\begin{figure}
+	\caption{Regression coefficients for narrative one and two with $\lambda_B=0.1$.}
+	\centering
+	\includegraphics[scale=1]{Images/betasLamb0_1.pdf}
+	\label{betaL01}
+\end{figure}
+
+\begin{figure}
+	\caption{Regression coefficients for narrative one and two with $\lambda_B=0.9$.}
+	\centering
+	\includegraphics[scale=1]{Images/betasLamb0_9.pdf}
+	\label{betaL09}
+\end{figure}
+
+\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{2cm}  p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+		& 6m 		& 1y 		& 3y 		& 5y 		& 10y 		& 20y 		& 30y \\
+		\midrule % In-table horizontal line
+		$\alpha_n$ & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00\\
+		& (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00)\\
+		$\beta_n^{NP}$ & 0.36** & 0.30** & 0.28** & 0.25** & 0.18** & 0.13** & 0.12**\\
+		& (0.05) & (0.04) & (0.04) & (0.03) & (0.03) & (0.02) & (0.02)\\
+		$\beta_n^{N1}$ & 0.67** & 0.58** & 0.41** & 0.46** & 0.29** & 0.05 & 0.17**\\
+		& (0.07) & (0.08) & (0.10) & (0.11) & (0.08) & (0.09) & (0.06)\\
+		$\beta_n^{N2}$ & 0.55** & 0.33* & 0.47* & 0.34 & 0.38* & 0.19 & 0.28\\
+		& (0.14) & (0.15) & (0.24) & (0.28) & (0.16) & (0.12) & (0.15)\\
+		$R^2$ & 0.30 & 0.20 & 0.08 & 0.05 & 0.03 & 0.02 & 0.02\\
+		$\beta_n^{N1} = \beta_n^{N2}$ & 0.12 & 0.25 & -0.06 & 0.12 & -0.09 & -0.14 & -0.11\\
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{Regression results (classification with $\lambda_B=0.1$).} % Table caption, can be commented out if no caption is required
+	\label{tab:reg2} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
+
+\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{2cm}  p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+		& 6m 		& 1y 		& 3y 		& 5y 		& 10y 		& 20y 		& 30y \\
+		\midrule % In-table horizontal line
+		$\alpha_n$ & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00\\
+		& (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00)\\
+		$\beta_n^{NP}$ & 0.36** & 0.30** & 0.28** & 0.25** & 0.18** & 0.13** & 0.12**\\
+		& (0.05) & (0.04) & (0.04) & (0.03) & (0.03) & (0.02) & (0.02)\\
+		$\beta_n^{N1}$ & 0.66** & 0.56** & 0.40** & 0.45** & 0.29** & 0.05 & 0.18**\\
+		& (0.08) & (0.10) & (0.11) & (0.11) & (0.08) & (0.09) & (0.06)\\
+		$\beta_n^{N2}$ & 0.58** & 0.39** & 0.50* & 0.35 & 0.38* & 0.18 & 0.26\\
+		& (0.13) & (0.14) & (0.24) & (0.28) & (0.16) & (0.12) & (0.16)\\
+		$R^2$ & 0.30 & 0.20 & 0.08 & 0.05 & 0.03 & 0.02 & 0.02\\
+		$\beta_n^{N1} = \beta_n^{N2}$ & 0.08 & 0.18 & -0.10 & 0.10 & -0.09 & -0.13 & -0.09\\
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{Regression results (classification with $\lambda_B=0.9$).} % Table caption, can be commented out if no caption is required
+	\label{tab:reg3} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
+
+
 
 \newpage
 {\pagestyle{firststyle}

@@ -37,10 +37,7 @@ if __name__ == '__main__':
     path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output" #absolute path to the txt files
     os.chdir(path) #setting working directory
     
-    #read in classification of policy days
-    classorigdf = pd.read_csv('AdjustmentsClassifiedPLSAorig.csv', sep = ',')
-    
-    #read in classification of policy days, lambda = 0.1
+    #read in classification of policy days, lambda = 0.0-0.9
     classL0_9 = pd.read_csv('AdjustmentsClassifiedPLSAbgLamb_0_9.csv', sep = ',')
     
     
@@ -49,8 +46,7 @@ if __name__ == '__main__':
     for i in range(len(financedf)): #replace date string with date format
         financedf.iloc[i,0] = datetime.datetime.strptime(financedf.iloc[i,0], '%Y-%m-%d')
     
-    for l in range(len(classorigdf)): #replace date string with date format
-        classorigdf.iloc[l,0] = datetime.datetime.strptime(classorigdf.iloc[l,0], '%Y-%m-%d %H:%M:%S')
+    for l in range(len(classL0_9)): #replace date string with date format
         classL0_9.iloc[l,0] = datetime.datetime.strptime(classL0_9.iloc[l,0], '%Y-%m-%d %H:%M:%S')
         
     start = datetime.datetime.strptime('01.10.1998', '%d.%m.%Y')
@@ -76,9 +72,6 @@ if __name__ == '__main__':
     regdf['NonPolicyDay'] = pd.Series(np.where(financedf.Adjustment.values == 0.0, 1, 0), financedf.index)
     
     #classification of days according to narratives, add to dataframe for regression
-    if any(classorigdf['Date'] != classL0_9['Date']):
-        raise Exception("The dates fo different classification df do not match!")
-    
     for lamb in ['L=0.0','L=0.1', 'L=0.2', 'L=0.3', 'L=0.4', 'L=0.5', 'L=0.6', 
                  'L=0.7', 'L=0.8', 'L=0.9']:
         for topic in ['t0', 't1']:
@@ -86,11 +79,11 @@ if __name__ == '__main__':
     
     for i in range(len(regdf['Date'])):
         day = regdf.loc[i, 'Date']
-        if day in list(classorigdf['Date']):
-            rowindex = classorigdf[classorigdf['Date'] == day].index.values.astype(int)[0] #find row of date in classification df
-            if classorigdf.loc[rowindex, 'TopicClassification'] == 0:
+        if day in list(classL0_9['Date']):
+            rowindex = classL0_9[classL0_9['Date'] == day].index.values.astype(int)[0] #find row of date in classification df
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_0'] == 0:
                 regdf.loc[i,'ClassL=0.0t0'] = 1
-            if classorigdf.loc[rowindex, 'TopicClassification'] == 1:
+            if classL0_9.loc[rowindex, 'ClassificationLamb_0_0'] == 1:
                 regdf.loc[i,'ClassL=0.0t1'] = 1
             if classL0_9.loc[rowindex, 'ClassificationLamb_0_1'] == 0:
                 regdf.loc[i,'ClassL=0.1t0'] = 1
@@ -138,7 +131,7 @@ if __name__ == '__main__':
     + regdf['ClassL=0.3t0'] + regdf['ClassL=0.3t1'] + regdf['ClassL=0.4t0'] + regdf['ClassL=0.4t1'] 
     + regdf['ClassL=0.5t0'] + regdf['ClassL=0.5t1'] + regdf['ClassL=0.6t0'] + regdf['ClassL=0.6t1']
     + regdf['ClassL=0.7t0'] + regdf['ClassL=0.7t1'] + regdf['ClassL=0.8t0'] + regdf['ClassL=0.8t1']
-    + regdf['ClassL=0.9t0'] + regdf['ClassL=0.9t1']) != 10*len(classorigdf):
+    + regdf['ClassL=0.9t0'] + regdf['ClassL=0.9t1']) != 10*len(classL0_9):
         raise Exception("The data frame for regression is not constructed correctly, check the assignment of topics to policy days (Lambda = 0.0)!")
     if sum(regdf['NonPolicyDay'] + regdf['ClassL=0.1t0'] + regdf['ClassL=0.1t1']) != len(regdf):
         raise Exception("The data frame for regression is not constructed correctly, check the assignment of topics to policy days (Lambda = 0.1)!")
@@ -274,7 +267,7 @@ if __name__ == '__main__':
         Classifiers.append(tup)
     
     for classification in Classifiers:
-    
+
         regressionresults = []
         runregdf = pd.DataFrame()
         runregdf['x1'] = regdf['NonPolicyDay']  * regdf['Diff3MT']
@@ -320,7 +313,7 @@ if __name__ == '__main__':
             para += 1
             RegressionValues[element] = []
             for i in range(7):
-                RegressionValues[element].append("%.2f" % regressionresults[i].bse[para]) #adding all the intercepts
+                RegressionValues[element].append("(" + "%.2f" % regressionresults[i].bse[para] + ")") #adding all the std in brakets
                 RegressionValues[element].append(' & ')
             RegressionValues[element].pop() #removing the last '&'
             RegressionValues[element].append("\\\\")
@@ -339,7 +332,7 @@ if __name__ == '__main__':
         hypothesis = 'x2 = x3'
         for i in range(7):
             t_test = regressionresults[i].t_test(hypothesis)
-            print(t_test)
+            #print(t_test)
             RegressionValues[key].append("%.2f" % t_test.effect)
             if t_test.pvalue <= 0.05 and t_test.pvalue > 0.01:
                   RegressionValues[key].append('*')
@@ -423,7 +416,7 @@ if __name__ == '__main__':
         ax.legend(loc='upper right', frameon=False)
         plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/betasLamb" + str(classification[0][7]) + "_" + str(classification[0][9]) + ".pdf", bbox_inches='tight')
 
-        
+       
         
         
     
