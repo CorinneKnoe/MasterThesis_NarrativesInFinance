@@ -24,6 +24,7 @@ import math
 import datetime
 import matplotlib.lines as mlines
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 import seaborn; seaborn.set()
 from multiprocessing import Process, Manager
 import multiprocessing
@@ -318,7 +319,7 @@ if __name__ == "__main__":
     #---------------------------------------------------------------------------
 
     lamblist = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-
+   
     #execute the PLSA
     #---------------------------------------
     number_of_topics = 2 #supposed to be 2
@@ -329,8 +330,8 @@ if __name__ == "__main__":
 #     return_dict = {}
 #     multiprocess_train(123, corpus, t_backg, lamblist[0], number_of_topics, stoprule, return_dict)    
 #     print("My normal program took", time.time() - start_time, "to run")
+# 
 # =============================================================================
-
     
     start_time = time.time()
       
@@ -416,7 +417,7 @@ if __name__ == "__main__":
             weights.append(list(np.mean(line, axis=0))) #only the average over all documents is stored
             docweights.append(line)
             
-        #see which topic dominates for a policy day and classify policy day as such  
+        #see which topic dominates for a policy day and classify policy day as such, limit is 50%  
         classlist = []
         for tup in range(len(weights)):
             dominator = weights[tup].index(max(weights[tup])) #find index of dominating probability, is it topic 0, 1, or ... n
@@ -453,32 +454,33 @@ if __name__ == "__main__":
             for entry in weights:
                 t.append(entry[x])
             s.append(t)  #a list with K list, each with the weights on the respective topic per meetgin date
-        
+              
         seaborn.set(context='paper')    
-        fig = plt.figure(figsize=(14,4))
-        height_cumulative = []
-        for k in range(K):
-            color = seaborn.color_palette('deep')[k]
-            if k == 0:
-                p = plt.bar(ind, s[k], width, color=color, linewidth=0)
-            else:
-                p = plt.bar(ind, s[k], width, bottom=height_cumulative, color=color, linewidth=0)
-            height_cumulative += s[k]
-            plots.append(p)    
+        fig, ax = plt.subplots(figsize=(14,4))
+        ax.plot(s[0])
+        ax.fill_between(range(len(meetinglist)), 0, s[0], alpha=1, color=seaborn.color_palette('deep')[0])
+        ax.fill_between(range(len(meetinglist)), 1, s[0], alpha=1, color=seaborn.color_palette('deep')[1])
         
         plt.ylim((0, 1))  # proportions sum to 1, so the height of the stacked bars is 1
         plt.title('Share of Topics')
         plt.xticks(rotation=90)
         plt.xticks(ind , meetinglist)
         plt.ylabel('Average percentage per topic and policy day')
-        
-        titles = ['Share of Topic #1', 'Share of Topic #2']
-        #for i in range(len(titles)):
-        #    titles[i] = titles[i][15:]
-        leg = plt.legend(titles, loc=2, fontsize = 'medium')
+
+        top1 = mpatches.Patch(color=seaborn.color_palette('deep')[0], label='Share of Topic #1')
+        top2 = mpatches.Patch(color=seaborn.color_palette('deep')[1], label='Share of Topic #2')
+        leg = plt.legend(handles=[top1, top2], loc=2, fontsize = 'medium')
+    
         for text in leg.get_texts():
             plt.setp(text, weight = 'medium')
-        plt.axhline(0.5, color="red", linewidth = 0.5, linestyle = '--')
+        plt.axhline(0.5, color="white", linewidth = 0.8, linestyle = '--')
+        
+        for i in range(len(s[0])):
+            if s[0][i]>0.5:
+                plt.gca().get_xticklabels()[i].set_color(seaborn.color_palette('deep')[0]) 
+            else:
+                plt.gca().get_xticklabels()[i].set_color(seaborn.color_palette('deep')[1]) 
+       
         #plt.show()
         fig.savefig("plsamodelling_bg"+name+".pdf", bbox_inches='tight')
         
@@ -588,3 +590,74 @@ if __name__ == "__main__":
     #adjustdf.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAbg"+name+".csv", index=False, encoding="utf-8") #create a csv to store our data
     adjustdf.to_csv("C:/Users/11613676/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAbg"+name+".csv", index=False, encoding="utf-8") #create a csv to store our data
 
+
+################################## do it all over with a different level for classifying the policy days
+    # Read in the FEd meetings dates
+    #---------------------------------
+    #path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/MA_FinancialData/FED_Data" #absolute path to the txt files
+    path ="C:/Users/11613676/MasterThesis_NarrativesInFinance/MA_FinancialData/FED_Data" #absolute path to the txt files
+    os.chdir(path) #setting working directory
+    
+    #read in the FED data on target rate
+    adjustdfmod = pd.read_csv('adjustments_prep.csv', sep = ',')
+    
+    #turn date from string into datetime object
+    for i in range(len(adjustdf)): #replace date string with date format
+        adjustdfmod.iloc[i,0] = datetime.datetime.strptime(adjustdfmod.iloc[i,0], '%Y-%m-%d %H:%M:%S')
+        
+        
+    for lamb in lamblist: #for every value of lambda print top ten words of all topics, and create graphs
+        name = "Lamb_" + str(lamb).replace('.','_')
+              
+        w1sort = sorted(s[0])
+        threshhold = w1sort[int(len(w1sort)/2)]
+        ClasslistMod = []
+        for tup in range(len(weights)):
+            if weights[tup][0] >= threshhold:
+                ClasslistMod.append(0)
+            else:
+                ClasslistMod.append(1)
+                
+            
+        #add classification to data frame, first  check whether dates are aligned!
+        if any(adjustdfmod["Date"] != datelist):
+            raise Exception("Topic classifications are nor allocated correctly to dates in dataframe -- order of days not correct!")
+        adjustdfmod["ClassificationMod" + name] = ClasslistMod #add classificaton to data frame             
+        
+        #prepare plot - inspiration and code examples from https://de.dariah.eu/tatom/topic_model_visualization.html
+        #path ="C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
+        path ="C:/Users/11613676/MasterThesis_NarrativesInFinance/Latex_MA/Images" #absolute path to save the graphs
+        os.chdir(path)
+              
+        seaborn.set(context='paper')    
+        fig, ax = plt.subplots(figsize=(14,4))
+        ax.plot(s[0])
+        ax.fill_between(range(len(meetinglist)), 0, s[0], alpha=1, color=seaborn.color_palette('deep')[0])
+        ax.fill_between(range(len(meetinglist)), 1, s[0], alpha=1, color=seaborn.color_palette('deep')[1])
+        
+        plt.ylim((0, 1))  # proportions sum to 1, so the height of the stacked bars is 1
+        plt.title('Share of Topics')
+        plt.xticks(rotation=90)
+        plt.xticks(ind , meetinglist)
+        plt.ylabel('Average percentage per topic and policy day')
+
+        top1 = mpatches.Patch(color=seaborn.color_palette('deep')[0], label='Share of Topic #1')
+        top2 = mpatches.Patch(color=seaborn.color_palette('deep')[1], label='Share of Topic #2')
+        leg = plt.legend(handles=[top1, top2], loc=2, fontsize = 'medium')
+    
+        for text in leg.get_texts():
+            plt.setp(text, weight = 'medium')
+        plt.axhline(threshhold, color="white", linewidth = 0.8, linestyle = '--')
+        
+        for i in range(len(s[0])):
+            if s[0][i]>= threshhold:
+                plt.gca().get_xticklabels()[i].set_color(seaborn.color_palette('deep')[0]) 
+            else:
+                plt.gca().get_xticklabels()[i].set_color(seaborn.color_palette('deep')[1]) 
+       
+        #plt.show()
+        fig.savefig("plsamodelling_bg_mod"+name+".pdf", bbox_inches='tight')
+    
+    #save new data frame with classification in csv
+    #adjustdfmod.to_csv("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAbg_mod"+name+".csv", index=False, encoding="utf-8") #create a csv to store our data
+    adjustdfmod.to_csv("C:/Users/11613676/MasterThesis_NarrativesInFinance/Code/Output/AdjustmentsClassifiedPLSAbg_mod"+name+".csv", index=False, encoding="utf-8") #create a csv to store our data
