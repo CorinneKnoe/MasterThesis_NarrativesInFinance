@@ -698,7 +698,7 @@ As explained in Chapter \ref{NewInsights}, we are looking for two narratives acc
 	\label{tab:topic1} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
-Considering the top words of the topics, no clear topical concentration becomes salient. Both topics attribute a high weight to words concerning interest rates, the federal reserve, and the economy. This is hardly surprising as the articles have been selected for their focus on interest rates and the federal reserve (see Chapter \ref{textdata}). It is to be expected that the articles will make heavy use of a related vocabulary, which, by the nature of PLSA, will come to dominate the inferred topics. A look at the the lexical dispersion of the top words as shown by Figure \ref{dispersionPLSAorig} illustrates that the top words appear frequently in all articles. As explained in Chapter \ref{Ch:background}, the introduction of a background topic could help shift the weight from frequent terms to more meaningful, content-carrying terms. For the implementation of such a model see Chapter \ref{Ch:implembg}.
+Considering the top words, no clear topical concentration becomes salient. Both topics attribute a high weight to words concerning interest rates, the federal reserve, and the economy. This is hardly surprising as the articles have been selected for their focus on interest rates and the federal reserve (see Chapter \ref{textdata}). It is to be expected that the articles will make heavy use of a related vocabulary, which, by the nature of PLSA, will come to dominate the inferred topics. A look at the the lexical dispersion of the top words as shown by Figure \ref{dispersionPLSAorig} illustrates that the top words appear frequently in all articles. As explained in Chapter \ref{Ch:background}, the introduction of a background topic could help shift the weight from frequent terms to more meaningful, content-carrying terms. For the implementation of such a model see Chapter \ref{Ch:implembg}.
 
 %Thus, we would expect the topics to be of little use when it comes to classifying articles. Rather than picking up on different narratives, the inferred topics pick up on the overall focus of the articles. 
 
@@ -709,9 +709,9 @@ Considering the top words of the topics, no clear topical concentration becomes 
 	\label{dispersionPLSAorig}
 \end{figure}
 
-The text data collection comprises between 14 to 97 articles for every policy day. The words of each article are partitioned between the two topics, resulting in a topic coverage probability that indicates to what extent an article is to be attributed to a certain topic. To classify a policy day as belonging either to narrative one ($N_1$) or narrative two ($N_2$), I average the topic coverage probabilities of all articles on a given policy day and attribute the day to the topic that dominates the articles. Figure \ref{classPLSA} in Appendix \ref{AppendixC1} depicts the resulting classification of the policy days. 
+The text data collection comprises between 14 to 97 articles for every policy day. The words of each article are partitioned between the two topics, resulting in a topic coverage probability that indicates the extent to which an article is to be attributed to a topic. To classify a policy day as belonging either to narrative one ($N_1$) or narrative two ($N_2$), I average the topic coverage probabilities of all articles on a given policy day and attribute the day to the topic that dominates the articles. Figure \ref{classPLSA} in Appendix \ref{AppendixC1} depicts the resulting classification of the policy days. 
 
-38 policy days have been attributed to topic 2 and only 18 days to topic 1. Also, quite often both topics command a large share of the articles on a given day, one topic dominating the other only by a small margin. Thus, the classification of the policy days is not as clear cut as one might wish. If we consider how the individual articles have been classified, we would expect that on a given day all articles are attributed to the same topic. That would be a clear indication that a specific narrative, as identified by our topic model, permeated the press reporting at that time. However, as Figure \ref{classdoc01} and \ref{classdoc02} show, quite often the articles on a specific day are almost evenly split between the topics.  
+38 policy days have been attributed to topic 2 and only 18 days to topic 1. Also, quite often both topics command a large share of the articles on a given day, one topic dominating the other only by a small margin. Thus, the classification of the policy days is not as clear cut as one might wish. If we consider how the individual articles have been classified, we would expect that, on a given day, all articles are attributed to the same topic. That would be a clear indication that a specific narrative, as identified by our topic model, permeated the press reporting at that time. However, as Figure \ref{classdoc01} and \ref{classdoc02} show, quite often the articles on a specific day are almost evenly split between the topics.  
 %Thus, it stands to reason that the PLSA model without background distribution was not able to infer topics that would separate the policy days in a meaningful manner.
 
 \subsection{Application of PLSA with Background Topic}\label{Ch:implembg}
@@ -767,10 +767,10 @@ The most common word in the background topic is \textit{fed}, followed by \texti
 
 The top 20 words of every topic are listed in Tables \ref{tab:topics}--\ref{tab:topics3} in Appendix \ref{AppendixC2}. The higher $\lambda_B$, the more the count of common words in the topics decreases in favor of more interesting words. Topic 1 appears to focus on \textit{investing}: With an increasing $\lambda_B$, terms like \textit{investors}, \textit{yield}, \textit{rose}, \textit{fell}, \textit{trading}, \textit{index}, and \textit{stocks} climb to the top of the word distribution. Topic 2, on the other hand, seems to focus on the Fed's \textit{economic analysis}:  With an increasing $\lambda_B$, terms like \textit{economic}, \textit{growth}, \textit{greenspan}, \textit{bernanke}, \textit{statement}, \textit{chairman}, and \textit{economists} come to dominate the topic. Thus, the topics clearly pick up on different subjects (or narratives) in the articles and, with an increased use of the background topic, the topical focus of the word distributions becomes salient.
 
-Figure \ref{classPLSAL01} in Appendix \ref{AppendixC2} depicts the resulting classification of the policy days for $\lambda_B=0.1$ and Figure \ref{classPLSAL09} for $\lambda_B=0.9$. With $\lambda_B=0.1$, 37 policy days have been attributed to topic 2 and only 19 days to topic 1. With  $\lambda_B=0.9$,  34 policy days have been attributed to topic 2 and only 22 days to topic 1. The introduction of a background model as well as the level of $\lambda_B$ has very little impact on the classification of the policy days. As Figures \ref{classdoc01L01}--\ref{classdoc02L01} and \ref{classdoc01L09}--\ref{classdoc02L09} show, the higher $\lambda_B$, the less ambiguous is the classification of single documents. This is hardly surprising: When $\lambda_B=0.9$, only 10\% of the tokens of a document are still split between topic 1 and 2, which will more commonly lead to an allocation of all tokens to the same topic.
+Figure \ref{classPLSAL01} in Appendix \ref{AppendixC2} depicts the resulting classification of the policy days for $\lambda_B=0.1$ and Figure \ref{classPLSAL09} for $\lambda_B=0.9$. With $\lambda_B=0.1$, 37 policy days have been attributed to topic 2 and only 19 days to topic 1. With  $\lambda_B=0.9$,  36 policy days have been attributed to topic 2 and 20 days to topic 1. The introduction of a background model as well as the level of $\lambda_B$ has very little impact on the classification of the policy days. When it comes to the classification of single documents, an increase in $\lambda_B$ leads to a decrease in ambiguity, as Figures \ref{classdoc01L01}--\ref{classdoc02L01} and \ref{classdoc01L09}--\ref{classdoc02L09} show. This is hardly surprising: When $\lambda_B=0.9$, only 10\% of the tokens of a document need to be split between topic 1 and 2. As a result, an allocation of all tokens to the same topic is more likely.
 
 
-There are several possible approaches to evaluate topic models and their specifications. First, a test can be set up in which a human judge must assess topic quality, in particular the coherence of the inferred topics. Second, traditional metrics, such as log-likelihood of the held-out data, can be employed to measure how well a topic model generalizes. However, such metrics are often negatively correlated with topic quality as assessed by human judges. A third approach is downstream task improvement: A model is assessed based on the statistically significant improvement it brings to another task \cite[~pp.383--384]{Zhai.2016}.
+When it comes to the evaluation of topic model quality, there are several possible approaches. First, a test can be set up in which a human judge must assess topic quality, in particular the coherence of the inferred topics. Second, traditional metrics, such as the log-likelihood of held-out data, can be employed to measure how well a topic model generalizes. However, such metrics are often negatively correlated with topic quality as assessed by human judges. A third approach is downstream task improvement: A model is assessed based on the statistically significant improvement it facilitates in another task \cite[~pp.383--384]{Zhai.2016}.
 
 For the purpose of this thesis, we have already outlined how an increase in $\lambda_B$ makes the topics more interpretable. In Chapter \ref{Ch:results} we will also consider how the different topic model specifications affect the downstream task of the financial analysis. 
 
@@ -793,40 +793,29 @@ For the purpose of this thesis, we have already outlined how an increase in $\la
 
 \chapter{Results}\label{Ch:results}
 
-\section{Classification of Policy Days}
+This Chapter presents the results of the financial analysis. In Chapter \ref{Ch:classification}, the results of the policy day classification are presented. The classification of the policy days is subsequently used in the financial regression, the results of which are presented in Chapter \ref{Ch:regressionresults}.
+
+\section{Classification of Policy Days}\label{Ch:classification}
 
 Following \cite{Ellingsen.2003}, a day on which the target rate has been adjusted by the Fed is considered a policy day. If the FOMC held a meeting but failed to change the target rate, the day is considered a non-policy day. In this thesis, a 20-year period from October 1998 to October 2018 is analyzed. During this time frame, there are 56 policy days and 5'161 non-policy days. 
 
-Analogously to \citet[pp. 14 -- 15]{Ellingsen.2003}, we take a look at the behavior of the interest rates. Figure \ref{Change01} plots the change in the 3-month rate against the change in the 10-year rate on the policy days. \citet[p. 14]{Ellingsen.2003} found a clear positive relationship between the change of the 10-year and the 3-month rate, with some outliers. Similarly, Figure \ref{Change01} shows a predominantly positive relationship, barring some odd observations, and a concentration around the origin. This indicates that the long-term rates tend to move in the same direction as the short term rates and the target rate change. 
+Analogously to \citet[pp. 14 -- 15]{Ellingsen.2003}, we take a look at the behavior of the interest rates. Figure \ref{Change01} plots the change in the 3-month rate against the change in the 10-year rate on policy days. \citet[p. 14]{Ellingsen.2003} found a clear positive relationship between the change of the 10-year and the 3-month rate, with some outliers. Similarly, Figure \ref{Change01} shows a predominantly positive relationship, barring some odd observations, and a concentration around the origin. This indicates that the long-term rates tend to move in the same direction as the short term rates and the target rate change. 
 
 \begin{figure}
-	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days.}
+	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days (classification with $\lambda_B=0$).}
 	\centering
-	\includegraphics[scale=1]{Images/ChangePlot01.pdf}
+	\includegraphics[scale=1]{Images/ChangePlot_L0_0.pdf}
 	\label{Change01}
 \end{figure}
 
-In Figures \ref{Change02} and \ref{Change03}, the policy days are split up according to their classification by either Narrative one or Narrative two (as classified by PLSA without background topic, that is for $\lambda_B=0$). A successful classification of policy days is expected to separate the days characterized by a co-movement of the yield curves from the days on which the rates move in opposite directions. As such, one figure should show a clear positive relationship, with the data points populating quadrants 1 and 3, while the other figure should display a negative relationship, with all data points populating quadrant 2 and 4. However, Figures \ref{Change02} and \ref{Change03} show a rather ambiguous picture. Both figures capture policy days with co-movement of the rates as well as days with counter-movement.  It should be noted that \citet[pp. 14--15]{Ellingsen.2003}, too, only found an ambiguous relationship.
+Note that the policy days are split up according to their classification by either Narrative one or Narrative two (as classified by PLSA without background topic, that is for $\lambda_B=0$). A successful classification of policy days is expected to separate the days characterized by a co-movement of the yield curves from the days on which the rates move in opposite directions. As such, one narrative should dominate the days with a clear positive relationship, with the data points of one color populating quadrants 1 and 3, while the other narrative should characterize the days with a negative relationship, with all data points of the other color populating quadrant 2 and 4. However, Figure \ref{Change01} shows a rather ambiguous picture. Both narratives classify policy days with co-movement of the rates as well as days with counter-movement.  It should be noted that \citet[pp. 14--15]{Ellingsen.2003}, too, only found an ambiguous relationship.
 
-\begin{figure}
-	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative one ($\lambda_B=0$).}
-	\centering
-	\includegraphics[scale=1]{Images/ChangePlot02.pdf}
-	\label{Change02}
-\end{figure}
 
-\begin{figure}
-	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative two ($\lambda_B=0$).}
-	\centering
-	\includegraphics[scale=1]{Images/ChangePlot03.pdf}
-	\label{Change03}
-\end{figure}
+Figures \ref{Change02_L01} and \ref{Change02_L09} in Appendix \ref{AppendixD} show the split of the policy days when $\lambda_B$ is increased to 0.1 and 0.9, respectively. Even though the output of the topic model changes notably in terms of topic quality with an increase in $\lambda_B$, the introduction of a background topic has little impact on the classification of the policy days. As such, Figures Figures \ref{Change02_L01} and \ref{Change02_L09} present an almost identical picture to Figure \ref{Change01}.
 
-Figures \ref{Change02_L01}--\ref{Change03_L09} in Appendix \ref{AppendixD} show the split of the policy days when $\lambda_B$ is increased to 0.1 and 0.9, respectively. Even though the output of the topic model changes notably in terms of topic quality with an increase in $\lambda_B$, the introduction of a background topic has little impact on the classification of the policy days. As such, Figures Figures \ref{Change02_L01}--\ref{Change03_L09} present almost the same picture as Figures \ref{Change02} and \ref{Change03}.
-
-There is a small overlap in the time frame of \cite{Ellingsen.2003} and this thesis. In Figures \ref{boxplotL00} -- \ref{boxplotL09} in Appendix \ref{AppendixD1} a comparison of the classification of \citeauthor{Ellingsen.2003} and this thesis is presented. However, the comparable sample is quite small due to the small overlap in the time frame as well as the fact that \citeauthor{Ellingsen.2003} chose no to classify a quarter of their data. Thus, only 12 of \citeauthor{Ellingsen.2003}'s endogenous policy days and 6 of their exogenous policy days have been classified in the course of this thesis. Figures \ref{boxplotL00} -- \ref{boxplotL09} show that the classification according to narratives does not make a separation between the two groups as \citeauthor{Ellingsen.2003} have done. Moreover, the classification of the selected policy days varies with a change in $\lambda_B$: Without background topic, the policy days are classified by narrative one, after the introduction of a background topic, they are classified by narrative two. This is rather unusual as  $\lambda_B$ fails to have an impact on the classification of policy days in all other settings. Most likely, the sample is to small for the purpose of a stable and reliable comparison. 
+There is a small overlap in the time frame of \cite{Ellingsen.2003} and of this thesis. In Figures \ref{boxplotL00} -- \ref{boxplotL09} in Appendix \ref{AppendixD1} a comparison of the classification of \citeauthor{Ellingsen.2003} and the classification of this thesis is presented. However, the comparable sample is quite small due to the small overlap in the time frame as well as the fact that \citeauthor{Ellingsen.2003} chose no to classify a quarter of their data. Thus, only 12 of \citeauthor{Ellingsen.2003}'s endogenous policy days and 6 of their exogenous policy days have been classified in the course of this thesis. Figures \ref{boxplotL00} -- \ref{boxplotL09} show that the classification according to narratives does not split the policy days in a fashion similar to \citeauthor{Ellingsen.2003}. Both, the days classified as endogenous as well as the days classified as exogenous by \citeauthor{Ellingsen.2003}, are attributed to Narrative two in this thesis.  
  
-\section{Regression Results}
+\section{Regression Results}\label{Ch:regressionresults}
 In a next step, we run the regression formulated in Eq. \ref{reg2} for the  classification with $\lambda_B =0$. Table \ref{tab:reg1} reports the ordinary-least-square estimates for maturities from 6 month to 30 years. $\beta_n^{NP}$ measures the reaction of the $n$-maturity interest rate to the 3-month rate on non-policy days, $\beta_n^{N1}$ measures the reaction on policy days classified as being influenced by Narrative one and $\beta_n^{N2}$ on policy days classified as belonging to Narrative two. $\alpha_n$ is the constant term. **/* indicate significance on the 1\% and 5\% level, respectively. Heteroskedasticity robust \citeauthor{White.1980}'s (\citeyear{White.1980}) standard errors are listed in brackets. The last row reports the test statistics from the test of equality between the estimated coefficients.
 
 \begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
@@ -853,9 +842,9 @@ In a next step, we run the regression formulated in Eq. \ref{reg2} for the  clas
 
 As expected, the intercept is always zero. However, the null hypothesis (see Eq. \ref{H00}) finds little support in the data. The slope coefficients for the non-policy days are large and strongly significant for most maturities. Yet, in line with hypothesis \ref{H00}, we would expect to find that $\beta_n^{N1}$ is positive for short maturities but negative for long maturities. Even though the slope coefficient $\beta_n^{N1}$ is decreasing with longer maturities and remains significant, it does not turn negative. 
 
-The slope coefficient $\beta_n^{N2}$, by contrast, decreases less in maturity. Figure \ref{betaL00} illustrates the change in the coefficients given the duration of the maturities. Indeed, while the difference in the betas is positive for short maturities, it turns negative for long maturities. This, at least, indicates that the classification according to narratives picks up on short- and long-term motivation. However, the differences between the coefficients are never significant. As the equality test shows, the two responses, $\beta_n^{N1}$ and $\beta_n^{N2}$, cannot be statistically separated for any maturity. In line with this finding, Figure \ref{betaL00} illustrates that the 95\% confidence intervals of the two coefficients mostly overlap. 
+The slope coefficient $\beta_n^{N2}$ also decreases in maturity, but by a smaller margin than $\beta_n^{N1}$. Figure \ref{betaL00} illustrates the change in the coefficients given the duration of the maturities. Indeed, while the difference in the betas is positive for short maturities, it turns negative for long maturities. This, at least, indicates that the classification according to narratives picks up on short- and long-term motivation. However, the differences between the coefficients are never significant. As the equality test shows, the two responses, $\beta_n^{N1}$ and $\beta_n^{N2}$, cannot be statistically separated for any maturity. In line with this finding, Figure \ref{betaL00} illustrates that the 95\% confidence intervals of the two coefficients mostly overlap. 
 
-Tables \ref{tab:reg2} and \ref{tab:reg3} in Appendix \ref{AppendixD2} show the regression result for policy day classifications with $\lambda_B=0.1$ and $\lambda_B=0.9$, respectively. However, the introduction of a background topic changes little in terms of policy day classification and, consequently, the regression results are very similar across all $\lambda_B$. Thus, also the relationship of the slope coefficients remains stable across $\lambda_B$, a fact that is once again illustrated by Figures \ref{betaL01} and \ref{betaL09} in Appendix \ref{AppendixD2}. Additionally, the introduction of a background topic has no effect whatsoever on the explained variation ($R^2$).
+Tables \ref{tab:reg2} and \ref{tab:reg3} in Appendix \ref{AppendixD2} show the regression result for policy day classifications with $\lambda_B=0.1$ and $\lambda_B=0.9$, respectively. However, the introduction of a background topic changes little in terms of policy day classification and, consequently, the regression results are very similar across all $\lambda_B$. Thus, the relationship of the slope coefficients remains stable across $\lambda_B$, a fact that is once again illustrated by Figures \ref{betaL01} and \ref{betaL09} in Appendix \ref{AppendixD2}. Additionally, the introduction of a background topic has no effect whatsoever on the explained variation ($R^2$).
 
 \begin{figure}
 	\caption{Regression coefficients for narrative one and two with $\lambda_B=0$.}
@@ -1068,21 +1057,21 @@ Figures \ref{classdoc01} and \ref{classdoc02} show the weight of narrative one o
 \begin{sidewaysfigure}
 	\caption{Policy day classification according to PLSA with $\lambda_B = 0$.}
 	\centering
-	\includegraphics[scale=0.8]{Images/plsamodelling_orig.pdf}
+	\includegraphics[scale=0.8]{Images/plsamodelling_bgLamb_0_0}
 	\label{classPLSA}
 \end{sidewaysfigure}
 
 \begin{figure}
 	\caption{Document classification according to PLSA with $\lambda_B = 0$- Part I.}
 	\centering
-	\includegraphics[scale=0.8]{Images/docsplit01_orig.pdf}
+	\includegraphics[scale=0.8]{Images/docsplit01_bgLamb_0_0}
 	\label{classdoc01}
 \end{figure}
 
 \begin{figure}
 	\caption{Document classification according to PLSA with $\lambda_B = 0$ - Part II.}
 	\centering
-	\includegraphics[scale=0.8]{Images/docsplit02_orig.pdf}
+	\includegraphics[scale=0.8]{Images/docsplit02_bgLamb_0_0}
 	\label{classdoc02}
 \end{figure}
 
@@ -1171,9 +1160,9 @@ Figures \ref{classdoc01} and \ref{classdoc02} show the weight of narrative one o
  
  \section{PLSA with background topic}\label{AppendixC2}
  
-Tables \ref{tab:topics}--\ref{tab:topics3} show the 20 top words of every topic depending on $\lambda_B$. The use of colors emphasizes the movement of words of interest given a varying  $\lambda_B$. 
+Tables \ref{tab:topics}--\ref{tab:topics3} show the 20 top words of every topic depending on $\lambda_B$. The use of colors emphasizes the movement of words of interest across different specifications of  $\lambda_B$. 
 
-Figures \ref{classPLSAL01} and \ref{classPLSAL09} illustrate the classification of policy days for $\lambda_B = 0.1$ and $\lambda_B = 0.9$, respectively. Analogously, Figures \ref{classdoc01L01}--\ref{classdoc02L01} and \ref{classdoc01L09}--\ref{classdoc02L09} show the weight of narrative one of each document for $\lambda_B = 0.1$ and $\lambda_B = 0.9$, split according to policy days.
+Figures \ref{classPLSAL01} and \ref{classPLSAL09} illustrate the classification of policy days for $\lambda_B = 0.1$ and $\lambda_B = 0.9$, respectively. Analogously, Figures \ref{classdoc01L01}--\ref{classdoc02L01} and \ref{classdoc01L09}--\ref{classdoc02L09} show the weight of narrative one of each document for $\lambda_B = 0.1$ and $\lambda_B = 0.9$.
  
 \begin{sidewaystable} % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
 	\centering % Centres the table on the page, comment out to left-justify
@@ -1329,52 +1318,39 @@ Figures \ref{classPLSAL01} and \ref{classPLSAL09} illustrate the classification 
 
 \section{Classification Output}\label{AppendixD1}
 
-Figures \ref{Change02_L01}--\ref{Change03_L09} show the reaction of the 10-year rate to a change in the 3-months rate, with the policy days split up according to their classification by narratives one and two given $\lambda_B=0.1$ and $\lambda_B=0.9$, respectively. The figures allow an eyeball assessment of the success of the classification. 
+Figures \ref{Change02_L01} and \ref{Change02_L09} show the reaction of the 10-year rate to a change in the 3-months rate, with the policy days split up according to their classification by narratives and given the weight in the background topic $\lambda_B=0.1$ or $\lambda_B=0.9$, respectively. The figures allow an eyeball assessment of the success of the classification. 
 
 \begin{figure}
-	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative one ($\lambda_B=0.1$).}
+	\caption{Response of the 10-year interest rate to a change in the 3-month rate (classification with $\lambda_B=0.1$).}
 	\centering
-	\includegraphics[scale=1]{Images/ChangePlot02_L0_1.pdf}
+	\includegraphics[scale=1]{Images/ChangePlot_L0_1.pdf}
 	\label{Change02_L01}
 \end{figure}
 
 \begin{figure}
-	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative two ($\lambda_B=0.1$).}
+	\caption{Response of the 10-year interest rate to a change in the 3-month rate (classification with $\lambda_B=0.9$).}
 	\centering
-	\includegraphics[scale=1]{Images/ChangePlot03_L0_1.pdf}
-	\label{Change03_L01}
-\end{figure}
-
-\begin{figure}
-	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative one ($\lambda_B=0.9$).}
-	\centering
-	\includegraphics[scale=1]{Images/ChangePlot02_L0_9.pdf}
+	\includegraphics[scale=1]{Images/ChangePlot_L0_9.pdf}
 	\label{Change02_L09}
 \end{figure}
 
-\begin{figure}
-	\caption{Response of the 10-year interest rate to a change in the 3-month rate on policy days influenced by Narrative two ($\lambda_B=0.9$).}
-	\centering
-	\includegraphics[scale=1]{Images/ChangePlot03_L0_9.pdf}
-	\label{Change03_L09}
-\end{figure}
 
-Figures \ref{boxplotL00}--\ref{boxplotL09} show the classification of the policy days that have been classified as either endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}. There are only 18 data points available for a comparison. The classification according to narratives fails to separate the policy days in a similar fashion to \citeauthor{Ellingsen.2003} Either both groups, endogenous and exogenous policy days, are classified by narrative one or, as  $\lambda_B$ increases, by narrative two. 
+Figures \ref{boxplotL00}--\ref{boxplotL09} show the classification of the policy days that have been classified as either endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}. There are only 18 data points available for a comparison. The classification according to narratives fails to separate the policy days in a similar fashion to \citeauthor{Ellingsen.2003} Both groups, endogenous and exogenous policy days, are classified as belonging to narrative two. 
 
 
 \begin{figure}
 	\caption{Boxplot showing the weight of narrative one (without background topic) on policy days classified as endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}.}
 	\centering
-	\includegraphics[scale=1]{Images/boxplot_orig.pdf}
+	\includegraphics[scale=1]{Images/boxplot_Lamb_0_0.pdf}
 	\label{boxplotL00}
 \end{figure}
 
-\begin{figure}
-	\caption{Boxplot showing the weight of narrative one (with $\lambda_B=0.1$) on policy days classified as endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}.}
-	\centering
-	\includegraphics[scale=1]{Images/boxplot_Lamb_0_1.pdf}
-	\label{boxplotL01}
-\end{figure}
+%\begin{figure}
+%	\caption{Boxplot showing the weight of narrative one (with $\lambda_B=0.1$) on policy days classified as endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}.}
+%	\centering
+%	\includegraphics[scale=1]{Images/boxplot_Lamb_0_1.pdf}
+%	\label{boxplotL01}
+%\end{figure}
 
 \begin{figure}
 	\caption{Boxplot showing the weight of narrative one (with $\lambda_B=0.9$) on policy days classified as endogenous or exogenous by \citet[p. 11]{Ellingsen.2003}.}
@@ -1433,18 +1409,155 @@ Figures \ref{betaL01} and \ref{betaL09} show the relationship of the slope coeff
 		& (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00)\\
 		$\beta_n^{NP}$ & 0.36** & 0.30** & 0.28** & 0.25** & 0.18** & 0.13** & 0.12**\\
 		& (0.05) & (0.04) & (0.04) & (0.03) & (0.03) & (0.02) & (0.02)\\
-		$\beta_n^{N1}$ & 0.66** & 0.56** & 0.40** & 0.45** & 0.29** & 0.05 & 0.18**\\
-		& (0.08) & (0.10) & (0.11) & (0.11) & (0.08) & (0.09) & (0.06)\\
-		$\beta_n^{N2}$ & 0.58** & 0.39** & 0.50* & 0.35 & 0.38* & 0.18 & 0.26\\
-		& (0.13) & (0.14) & (0.24) & (0.28) & (0.16) & (0.12) & (0.16)\\
+		$\beta_n^{N1}$ & 0.69** & 0.58** & 0.41** & 0.46** & 0.29** & 0.05 & 0.18**\\
+		& (0.06) & (0.08) & (0.10) & (0.11) & (0.08) & (0.09) & (0.06)\\
+		$\beta_n^{N2}$ & 0.50** & 0.34* & 0.46* & 0.33 & 0.36* & 0.18 & 0.26\\
+		& (0.14) & (0.15) & (0.22) & (0.26) & (0.15) & (0.11) & (0.14)\\
 		$R^2$ & 0.30 & 0.20 & 0.08 & 0.05 & 0.03 & 0.02 & 0.02\\
-		$\beta_n^{N1} = \beta_n^{N2}$ & 0.08 & 0.18 & -0.10 & 0.10 & -0.09 & -0.13 & -0.09\\
+		$\beta_n^{N1} = \beta_n^{N2}$ & 0.19 & 0.25 & -0.05 & 0.13 & -0.07 & -0.13 & -0.08\\
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
 	\caption{Regression results (classification with $\lambda_B=0.9$).} % Table caption, can be commented out if no caption is required
 	\label{tab:reg3} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
+\renewcommand{\theequation}{E.\arabic{equation}}
+
+
+\chapter{Alternative Classification: Median}\label{AppendixE}
+
+\section{Classification Output according to Median}\label{AppendixE1}
+
+\begin{sidewaysfigure}
+	\caption{Policy day classification according to Median with $\lambda_B = 0$.}
+	\centering
+	\includegraphics[scale=0.8]{Images/plsamodelling_bg_modLamb_0_0.pdf}
+	\label{classPLSAmed}
+\end{sidewaysfigure}
+
+%\begin{sidewaysfigure}
+%	\caption{Policy day classification according to Median with $\lambda_B = 0.1$.}
+%	\centering
+%	\includegraphics[scale=0.8]{Images/plsamodelling_bg_modLamb_0_1.pdf}
+%	\label{classPLSAmed0_1}
+%\end{sidewaysfigure}
+
+\begin{sidewaysfigure}
+	\caption{Policy day classification according to Median with $\lambda_B = 0.9$.}
+	\centering
+	\includegraphics[scale=0.8]{Images/plsamodelling_bg_modLamb_0_9.pdf}
+	\label{classPLSAmed0_9}
+\end{sidewaysfigure}
+
+\begin{figure}
+	\caption{Response of the 10-year interest rate to a change in the 3-month rate (classification with $\lambda_B=0$, applying median as classification threshold).}
+	\centering
+	\includegraphics[scale=1]{Images/ChangePlotmod_L0_0.pdf}
+	\label{Change02mod_L00}
+\end{figure}
+
+%\begin{figure}
+%	\caption{Response of the 10-year interest rate to a change in the 3-month rate (classification with $\lambda_B=0.1$, applying median as classification threshold).}
+%	\centering
+%	\includegraphics[scale=1]{Images/ChangePlotmod_L0_1.pdf}
+%	\label{Change02mod_L01}
+%\end{figure}
+
+\begin{figure}
+	\caption{Response of the 10-year interest rate to a change in the 3-month rate (classification with $\lambda_B=0.9$, applying median as classification threshold).}
+	\centering
+	\includegraphics[scale=1]{Images/ChangePlotmod_L0_9.pdf}
+	\label{Change02mod_L09}
+\end{figure}
+
+\section{Regression Output according to Median}\label{AppendixE2}
+
+\begin{figure}
+	\caption{Regression coefficients for narrative one and two with $\lambda_B=0$, applying median as classification threshold.}
+	\centering
+	\includegraphics[scale=1]{Images/betasLambMod0_0.pdf}
+	\label{betaModL00}
+\end{figure}
+
+%\begin{figure}
+%	\caption{Regression coefficients for narrative one and two with $\lambda_B=0.1$, applying median as classification threshold.}
+%	\centering
+%	\includegraphics[scale=1]{Images/betasLambMod0_1.pdf}
+%	\label{betaModL01}
+%\end{figure}
+
+\begin{figure}
+	\caption{Regression coefficients for narrative one and two with $\lambda_B=0.9$, applying median as classification threshold.}
+	\centering
+	\includegraphics[scale=1]{Images/betasLambMod0_9.pdf}
+	\label{betaModL09}
+\end{figure}
+
+\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{2cm}  p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+		& 6m 		& 1y 		& 3y 		& 5y 		& 10y 		& 20y 		& 30y \\
+		\midrule % In-table horizontal line
+		$\alpha_n$ & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00\\
+		& (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00)\\
+		$\beta_n^{NP}$ & 0.36** & 0.30** & 0.28** & 0.25** & 0.18** & 0.13** & 0.12**\\
+		& (0.05) & (0.04) & (0.04) & (0.03) & (0.03) & (0.02) & (0.02)\\
+		$\beta_n^{N1}$ & 0.68** & 0.54** & 0.39** & 0.40** & 0.28** & 0.05 & 0.16**\\
+		& (0.06) & (0.10) & (0.10) & (0.12) & (0.07) & (0.08) & (0.05)\\
+		$\beta_n^{N2}$ & 0.30 & 0.39 & 0.71* & 0.73 & 0.57 & 0.40 & 0.53\\
+		& (0.28) & (0.31) & (0.33) & (0.38) & (0.33) & (0.22) & (0.29)\\
+		$R^2$ & 0.30 & 0.20 & 0.08 & 0.06 & 0.03 & 0.02 & 0.02\\
+		$\beta_n^{N1} = \beta_n^{N2}$ & 0.38 & 0.15 & -0.31 & -0.33 & -0.29 & -0.35 & -0.37\\
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{Regression results (classification with $\lambda_B=0.1$, applying median as classification threshold).} % Table caption, can be commented out if no caption is required
+	\label{tab:reg1Mod} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
+
+%\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+%	\centering % Centres the table on the page, comment out to left-justify
+%	\begin{tabular}{ p{2cm}  p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+%		\toprule % Top horizontal line
+%		& 6m 		& 1y 		& 3y 		& 5y 		& 10y 		& 20y 		& 30y \\
+%		\midrule % In-table horizontal line
+%		$\alpha_n$ & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00\\
+%		& (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00)\\
+%		$\beta_n^{NP}$ & 0.36** & 0.30** & 0.28** & 0.25** & 0.18** & 0.13** & 0.12**\\
+%		& (0.05) & (0.04) & (0.04) & (0.03) & (0.03) & (0.02) & (0.02)\\
+%		$\beta_n^{N1}$ & 0.68** & 0.54** & 0.39** & 0.40** & 0.28** & 0.05 & 0.16**\\
+%		& (0.06) & (0.10) & (0.10) & (0.12) & (0.07) & (0.08) & (0.05)\\
+%		$\beta_n^{N2}$ & 0.30 & 0.39 & 0.71* & 0.73 & 0.57 & 0.40 & 0.53\\
+%		& (0.28) & (0.31) & (0.33) & (0.38) & (0.33) & (0.22) & (0.29)\\
+%		$R^2$ & 0.30 & 0.20 & 0.08 & 0.06 & 0.03 & 0.02 & 0.02\\
+%		$\beta_n^{N1} = \beta_n^{N2}$ & 0.38 & 0.15 & -0.31 & -0.33 & -0.29 & -0.35 & -0.37\\
+%		\bottomrule % Bottom horizontal line
+%	\end{tabular}
+%	\caption{Regression results (classification with $\lambda_B=0.1$, applying median as classification threshold).} % Table caption, can be commented out if no caption is required
+%	\label{tab:reg2Mod} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+%\end{table}
+
+\begin{table}[h] % Add the following just after the closing bracket on this line to specify a position for the table on the page: [h], [t], [b] or [p] - these mean: here, top, bottom and on a separate page, respectively
+	\centering % Centres the table on the page, comment out to left-justify
+	\begin{tabular}{ p{2cm}  p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} } % The final bracket specifies the number of columns in the table along with left and right borders which are specified using vertical pipes (|); each column can be left, right or center-justified using l, r or c. Columns will widen to hold the content in them by default, to specify a precise width, use p{width}, e.g. p{5cm}
+		\toprule % Top horizontal line
+		& 6m 		& 1y 		& 3y 		& 5y 		& 10y 		& 20y 		& 30y \\
+		\midrule % In-table horizontal line
+		$\alpha_n$ & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00 & -0.00\\
+		& (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00) & (0.00)\\
+		$\beta_n^{NP}$ & 0.36** & 0.30** & 0.28** & 0.25** & 0.18** & 0.13** & 0.12**\\
+		& (0.05) & (0.04) & (0.04) & (0.03) & (0.03) & (0.02) & (0.02)\\
+		$\beta_n^{N1}$ & 0.67** & 0.55** & 0.37** & 0.39** & 0.29** & 0.05 & 0.17**\\
+		& (0.07) & (0.10) & (0.11) & (0.13) & (0.08) & (0.08) & (0.05)\\
+		$\beta_n^{N2}$ & 0.48* & 0.41* & 0.71** & 0.62* & 0.43 & 0.23 & 0.32\\
+		& (0.20) & (0.20) & (0.22) & (0.25) & (0.22) & (0.16) & (0.22)\\
+		$R^2$ & 0.30 & 0.20 & 0.08 & 0.05 & 0.03 & 0.02 & 0.02\\
+		$\beta_n^{N1} = \beta_n^{N2}$ & 0.19 & 0.14 & -0.33 & -0.23 & -0.14 & -0.17 & -0.14\\
+		\bottomrule % Bottom horizontal line
+	\end{tabular}
+	\caption{Regression results (classification with $\lambda_B=0.9$, applying median as classification threshold).} % Table caption, can be commented out if no caption is required
+	\label{tab:reg3Mod} % A label for referencing this table elsewhere, references are used in text as \ref{label}
+\end{table}
 
 
 \newpage

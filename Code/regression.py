@@ -38,7 +38,8 @@ if __name__ == '__main__':
     os.chdir(path) #setting working directory
     
     #read in classification of policy days, lambda = 0.0-0.9
-    classL0_9 = pd.read_csv('AdjustmentsClassifiedPLSAbgLamb_0_9.csv', sep = ',')
+    #classL0_9 = pd.read_csv('AdjustmentsClassifiedPLSAbgLamb_0_9.csv', sep = ',')
+    classL0_9 = pd.read_csv('AdjustmentsClassifiedPLSAbg_modLamb_0_9.csv', sep = ',')
     
     
     #Correct time frame for financial data
@@ -140,87 +141,55 @@ if __name__ == '__main__':
     #plot the behavior of interest rates on ppolicy days -- original PLSA classification
     # ##################################################################################
     
+    #plot the behavior of interest rates on ppolicy days, Narrative One & Two
     plt.style.use('seaborn')
     seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
     fig = plt.figure(figsize=(4,4))
-    x = regdf.loc[regdf['NonPolicyDay'] == 0,'Diff3MT']
-    y = regdf.loc[regdf['NonPolicyDay'] == 0,'Diff10YT']
+   
+    x = regdf.loc[regdf['ClassL=0.0t1'] == 1,'Diff3MT']
+    y = regdf.loc[regdf['ClassL=0.0t1'] == 1,'Diff10YT']
+    plt.scatter(x, y, color=seaborn.color_palette('deep')[1], alpha = 1, label='Narrative Two')
     
-    plt.scatter(x, y, color=seaborn.color_palette('deep')[0])
+    x = regdf.loc[regdf['ClassL=0.0t0'] == 1,'Diff3MT']
+    y = regdf.loc[regdf['ClassL=0.0t0'] == 1,'Diff10YT']
+    plt.scatter(x, y, color=seaborn.color_palette('deep')[0], alpha = 1, label='Narrative One')
+    
     plt.axhline(0, color="black", linewidth = 0.5, linestyle = '-')
     plt.axvline(0, color="black", linewidth = 0.5, linestyle = '-')
     plt.title('Interest rate behavior on policy days')
     plt.xlabel('Change in 3-month rate')
     plt.ylabel('Change in 10-year rate')
     plt.xlim(-0.65, 0.2)
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot01.pdf", bbox_inches='tight')
-    
-    #plot the behavior of interest rates on ppolicy days, Narrative One
-    plt.style.use('seaborn')
-    seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
-    fig = plt.figure(figsize=(4,4))
-    x = regdf.loc[regdf['ClassL=0.0t0'] == 1,'Diff3MT']
-    y = regdf.loc[regdf['ClassL=0.0t0'] == 1,'Diff10YT']
-    
-    plt.scatter(x, y, color=seaborn.color_palette('deep')[0])
-    plt.axhline(0, color="black", linewidth = 0.5, linestyle = '-')
-    plt.axvline(0, color="black", linewidth = 0.5, linestyle = '-')
-    plt.title('Interest rate behavior on policy days (Narrative one)')
-    plt.xlabel('Change in 3-month rate')
-    plt.ylabel('Change in 10-year rate')
-    plt.xlim(-0.65, 0.2)
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot02.pdf", bbox_inches='tight')
-    
-    #plot the behavior of interest rates on ppolicy days, Narrative Two
-    plt.style.use('seaborn')
-    seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
-    fig = plt.figure(figsize=(4,4))
-    x = regdf.loc[regdf['ClassL=0.0t1'] == 1,'Diff3MT']
-    y = regdf.loc[regdf['ClassL=0.0t1'] == 1,'Diff10YT']
-    
-    plt.scatter(x, y, color=seaborn.color_palette('deep')[0])
-    plt.axhline(0, color="black", linewidth = 0.5, linestyle = '-')
-    plt.axvline(0, color="black", linewidth = 0.5, linestyle = '-')
-    plt.title('Interest rate behavior on policy days (Narrative two)')
-    plt.xlabel('Change in 3-month rate')
-    plt.ylabel('Change in 10-year rate')
-    plt.xlim(-0.65, 0.2)
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot03.pdf", bbox_inches='tight')
-
-        #plot the behavior of interest rates on ppolicy days -- lambda = 0.1 PLSA classification
+    plt.legend()
+    #plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot_L0_0.pdf", bbox_inches='tight')
+    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlotmod_L0_0.pdf", bbox_inches='tight')
+ 
+           #plot the behavior of interest rates on ppolicy days -- lambda = 0.1 PLSA classification
     # ##################################################################################
     
     #plot the behavior of interest rates on ppolicy days, Narrative One
     plt.style.use('seaborn')
     seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
     fig = plt.figure(figsize=(4,4))
-    x = regdf.loc[regdf['ClassL=0.1t0'] == 1,'Diff3MT']
-    y = regdf.loc[regdf['ClassL=0.1t0'] == 1,'Diff10YT']
     
-    plt.scatter(x, y, color=seaborn.color_palette('deep')[0])
-    plt.axhline(0, color="black", linewidth = 0.5, linestyle = '-')
-    plt.axvline(0, color="black", linewidth = 0.5, linestyle = '-')
-    plt.title('Interest rate behavior on policy days (Narrative one)')
-    plt.xlabel('Change in 3-month rate')
-    plt.ylabel('Change in 10-year rate')
-    plt.xlim(-0.65, 0.2)
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot02_L0_1.pdf", bbox_inches='tight')
-    
-    #plot the behavior of interest rates on ppolicy days, Narrative Two
-    plt.style.use('seaborn')
-    seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
-    fig = plt.figure(figsize=(4,4))
     x = regdf.loc[regdf['ClassL=0.1t1'] == 1,'Diff3MT']
     y = regdf.loc[regdf['ClassL=0.1t1'] == 1,'Diff10YT']
+    plt.scatter(x, y, color=seaborn.color_palette('deep')[1], alpha = 1, label='Narrative Two')
     
-    plt.scatter(x, y, color=seaborn.color_palette('deep')[0])
+    x = regdf.loc[regdf['ClassL=0.1t0'] == 1,'Diff3MT']
+    y = regdf.loc[regdf['ClassL=0.1t0'] == 1,'Diff10YT']
+    plt.scatter(x, y, color=seaborn.color_palette('deep')[0], alpha = 1, label='Narrative One')
+   
     plt.axhline(0, color="black", linewidth = 0.5, linestyle = '-')
     plt.axvline(0, color="black", linewidth = 0.5, linestyle = '-')
-    plt.title('Interest rate behavior on policy days (Narrative two)')
+    plt.title('Interest rate behavior on policy days')
     plt.xlabel('Change in 3-month rate')
     plt.ylabel('Change in 10-year rate')
     plt.xlim(-0.65, 0.2)
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot03_L0_1.pdf", bbox_inches='tight')
+    plt.legend()
+    #plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot_L0_1.pdf", bbox_inches='tight')
+    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlotmod_L0_1.pdf", bbox_inches='tight')
+
 
        #plot the behavior of interest rates on ppolicy days -- lambda = 0.9 PLSA classification
     # ##################################################################################
@@ -229,33 +198,24 @@ if __name__ == '__main__':
     plt.style.use('seaborn')
     seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
     fig = plt.figure(figsize=(4,4))
-    x = regdf.loc[regdf['ClassL=0.9t0'] == 1,'Diff3MT']
-    y = regdf.loc[regdf['ClassL=0.9t0'] == 1,'Diff10YT']
     
-    plt.scatter(x, y, color=seaborn.color_palette('deep')[0])
-    plt.axhline(0, color="black", linewidth = 0.5, linestyle = '-')
-    plt.axvline(0, color="black", linewidth = 0.5, linestyle = '-')
-    plt.title('Interest rate behavior on policy days (Narrative one)')
-    plt.xlabel('Change in 3-month rate')
-    plt.ylabel('Change in 10-year rate')
-    plt.xlim(-0.65, 0.2)
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot02_L0_9.pdf", bbox_inches='tight')
-    
-    #plot the behavior of interest rates on ppolicy days, Narrative Two
-    plt.style.use('seaborn')
-    seaborn.set_context('paper')#, rc={'lines.markeredgewidth': .1})
-    fig = plt.figure(figsize=(4,4))
     x = regdf.loc[regdf['ClassL=0.9t1'] == 1,'Diff3MT']
     y = regdf.loc[regdf['ClassL=0.9t1'] == 1,'Diff10YT']
+    plt.scatter(x, y, color=seaborn.color_palette('deep')[1], alpha = 1, label='Narrative Two')
     
-    plt.scatter(x, y, color=seaborn.color_palette('deep')[0])
+    x = regdf.loc[regdf['ClassL=0.9t0'] == 1,'Diff3MT']
+    y = regdf.loc[regdf['ClassL=0.9t0'] == 1,'Diff10YT']
+    plt.scatter(x, y, color=seaborn.color_palette('deep')[0], alpha = 1, label='Narrative One')
+   
     plt.axhline(0, color="black", linewidth = 0.5, linestyle = '-')
     plt.axvline(0, color="black", linewidth = 0.5, linestyle = '-')
-    plt.title('Interest rate behavior on policy days (Narrative two)')
+    plt.title('Interest rate behavior on policy days')
     plt.xlabel('Change in 3-month rate')
     plt.ylabel('Change in 10-year rate')
     plt.xlim(-0.65, 0.2)
-    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot03_L0_9.pdf", bbox_inches='tight')
+    plt.legend()
+    #plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlot_L0_9.pdf", bbox_inches='tight')
+    plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/ChangePlotmod_L0_9.pdf", bbox_inches='tight')
 
 
     #Regression -- run all regressions and print results in output that can be used for Latex table
@@ -414,10 +374,11 @@ if __name__ == '__main__':
         #plt.title("Regression coefficients for narrative one and two")
         plt.xlabel("Maturities of interest rates")
         ax.legend(loc='upper right', frameon=False)
-        plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/betasLamb" + str(classification[0][7]) + "_" + str(classification[0][9]) + ".pdf", bbox_inches='tight')
+        #plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/betasLamb" + str(classification[0][7]) + "_" + str(classification[0][9]) + ".pdf", bbox_inches='tight')
+        plt.savefig("C:/Users/corin/Documents/Uni/M.A.HSG/MA_Arbeit/MasterThesis_NarrativesInFinance/Latex_MA/Images/betasLambMod" + str(classification[0][7]) + "_" + str(classification[0][9]) + ".pdf", bbox_inches='tight')
 
        
-        
+        sum(regdf['ClassL=0.9t1'])
         
     
   
