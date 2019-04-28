@@ -40,6 +40,19 @@
 \usepackage{booktabs}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
+
+\usepackage{fontawesome}
+
+% Render author's github (optional)
+% Usage: \github{<github-nick>}
+\newcommand{\githubSymbol}{\faGithub}
+\newcommand\link[2]{\color{black}\href{#1}{#2}\color{black} }
+\newcommand*{\github}[1]{\sociallink{\githubSymbol}{https://www.github.com/#1}{github.com/#1}} 
+% Render a link with its symbol
+% Usage; \sociallink{<icon>}{<label>}
+\newcommand{\sociallink}[3]{\mbox{\textcolor{black}{#1}\hspace{0.5em}\link{#2}{#3}\hspace{1em}}} 
+
+
 %Setup of the reference links.
 \hypersetup{
      colorlinks=false,
@@ -176,6 +189,13 @@ Supervisor\\
 %\newpage
 \chapter*{Abstract}
 
+\vspace*{\fill}
+
+All data and code utilized in this thesis can be accessed on demand at\\
+\noindent \github{CorinneKnoe/MasterThesis\_NarrativesInFinance}
+
+
+
 {\pagestyle{firststyle}
 \tableofcontents
 \cleardoublepage
@@ -191,11 +211,26 @@ Supervisor\\
 \pagenumbering{arabic}
 % \part{[ Part title ]}
 \chapter{Introduction}
- 
+In his address delivered to the American Economic Association in 2017, Nobel laureate Robert \citeauthor{Shiller.2017} called for an expansion of the field of economics to include the study of narratives. According to \citeauthor{Shiller.2017} "the human brain has always been highly tuned toward narratives [...] to justify ongoing actions, even such basic actions as spending and investing." Other disciplines, such as psychology, sociology, and anthropology have long recognized the importance of narratives. In economics and finance, however, comparatively little effort has been undertaken to understand the impact of narratives. Responding to \citeauthor{Shiller.2017}'s call for more quantitative narrative research in economics and finance, this thesis analyzes newspaper articles with the aim of identifying narratives that can account for the puzzling response of the financial markets to the U.S. Federal Reserve's target rate adjustments. 
+
+The understanding of the relationship between monetary policy and market interest rates is incomplete at best. On average, an increase in the central bank's target rate leads to an increase in the interest rates of all maturities. However, there are many instances where interest rates of long maturities fell in response to an increase in the central bank's rate. This effect is puzzling as the response of the long-term rates is not consistent: Long-term rates move up or down when the Federal Reserve increases the target rate.
+
+This thesis approaches the puzzle with a quantitative narrative approach, hypothesizing that it is the interpretation of a policy event by the market participants, that is the narrative surrounding a target rate change, that determines the response of the financial markets and thus the movement of the long-term interest rate. To determine whether the explanation to the movement of the long-term rate can be found in narratives, over 2'300 newspaper articles reporting on the target rate adjustments in the time period from October 1, 1998 to September 30, 2018 are analyzed. Unlike previous research, the text data is analyzed with the use of natural language processing methods, allowing the analysis of a larger amount of data as well as removing any subjectivity bias. 
+
+With the application of a topic model, two narratives are identified in the text data. The two narratives are subsequently used to classify the policy days. The hypothesis is simple: If the narratives, that is the interpretations of the target rate adjustment as they are presented in the newspaper articles, drive the movement of the long-term interest rate, one narrative will be associated with the policy days on which the relationship between target rate and long-term rates is positive, and the other narrative with the policy days on which the yield curves exhibit a negative relationship. Previous research, most importantly \citet{Ellingsen.2003}, has already analyzed the puzzle using a narrative approach. However, so far researchers have evaluated the text data using a manual approach. In contrast, this thesis explores the possibility of using new quantitative methods to improve the text analysis. 
+
+In Chapter \ref{MonetaryPolicy} an overview of the puzzle of inconsistent yield curve movements is presented. Existing research and explanations are outlined and the research of \citet{Ellingsen.2003} in particular is explained. The hypothesis of this thesis is formalized in Chapter \ref{NewInsights} based on the framework provided by \citet{Ellingsen.2003}.
+Drawing on the findings of other disciplines, Chapter \ref{NarrativesAndDecisionMaking} gives an overview of the research regarding narratives to explain how the term narrative can be understood and how narratives influence human beings as well as their decision making.
+Chapter \ref{NLP} provides a closer look at topic mining and analysis, a field of natural language
+processing that aims at analyzing the content of text data. Probabilistic Latent Semantic Analysis, the topic model utilized to identify narratives in the text data, is explained in detail. 
+Chapter \ref{D&M} outlines the financial data and the text data utilized in this thesis. Further, it explains the processing of the data, the application of the topic modeling task, and finally the narratives produced by the topic model. 
+Chapter \ref{Ch:results} presents the results of the financial analysis based on the inferred narratives. In Chapter \ref{Ch:discussion} the results are discussed and evaluated.
+
+
 
 \chapter{Monetary Policy and Interest Rates} \label{MonetaryPolicy}
  
-\noindent However little understood, the relationship between monetary policy and market interest rates is undeniable. Interest rates of all maturities react to changes in monetary policy, creating opportunities and risks for traders, challenges for policy makers, and puzzling effects for academics to study \citep[p. 1594]{Ellingsen.2001}. 
+\noindent However little understood, there is an undeniable relationship between monetary policy and market interest rates. Interest rates of all maturities react to changes in monetary policy, creating opportunities and risks for traders, challenges for policy makers, and puzzling effects for academics to study \citep[p. 1594]{Ellingsen.2001}. 
 
 Target rate changes in particular have an impact on the bond market and on interest rates \citep[p. 332]{Cook.1989}. %Overall, there is an invested interest in how monetary policy impacts yield curve movement.
 Yet, the understanding of yield curve movements is incomplete at best. On average, the relationship between monetary policy and interest rates appears to be positive: An increase in the central bank's target rate leads to an increase in the interest rates of all maturities. However, there are many instances where this simple rule has proven false and interest rates of long maturities fell in response to an increase in the central bank's rate \citep[p. 1594]{Ellingsen.2001}. 
@@ -205,15 +240,15 @@ Chapter \ref{SensitivityPuzzle} gives an account of the puzzle posed by the inco
 
 \section{Excess Sensitivity Puzzle} \label{SensitivityPuzzle}
 
-\cite{Cook.1989} analyzed financial data from the late 70s and found that the U.S. Federal Reserve (Fed), by setting the target for the federal funds rate, had a strong influence on interest rate movements. While short-term rates reacted particularly strongly, changes in the target rate also caused small but significant movements in long-term rates. 
+\cite{Cook.1989} analyzed financial data from the late 70s and found that the U.S. Federal Reserve (Fed), by setting the target for the federal funds rate, had a strong influence on interest rate movements. While the reaction of short-term rates was particularly strong, changes in the target rate also caused small but significant movements in long-term rates. 
  
-It is not surprising that short-term rates follow the target rate closely, after all the Fed keeps the overnight rate close to the target and thus directly influences the one-month rate \citep[p. 1]{Ellingsen.2003}. The movements of the long-term rates are more ambiguous. \citet[pp. 343--346]{Cook.1989} interpret the fact that, on average, 10-year and 30-year bonds co-move with the short-term rates as evidence for the expectation theory of the term structure of interest rates. According to the expectation theory, long-term rates are equal to short-term rates over the same period of time plus a term premium. Thus, an increase in the short-term rates is expected to drive up long-term rates as well, but to a lesser extent \citep[p. 1594]{Ellingsen.2001}.
+It is not surprising that short-term rates follow the target rate closely, after all the Fed keeps the overnight rate close to the target and thus directly influences the one-month rate \citep[p. 1]{Ellingsen.2003}. The movements of the long-term rates are more ambiguous. \citet[pp. 343--346]{Cook.1989} interpret the fact that, on average, 10-year and 30-year bonds co-move with short-term rates as evidence for the expectation theory of the term structure of interest rates. According to the expectation theory, long-term rates are equal to short-term rates over the same period of time plus a term premium. Thus, an increase in the short-term rates is expected to also drive up long-term rates, but to a lesser extent \citep[p. 1594]{Ellingsen.2001}.
 
 To \cite{Romer.2000}, on the other hand, the response of long-term rates presents a puzzle. They argue that standard theory predicts a drop in inflation as short-term rates rise, which ought to lead to a reduction in long-term rates. The opposite can be observed, however: Interest rates for all maturities typically rise following an increase in the target rate. \cite{Romer.2000} explain this anomaly with information-asymmetry between the Fed and the general public. They find evidence that the Fed is in possession of private information, which it reveals to other market participants through its monetary policy. In response, market participants adjust their inflation expectations upwards, causing long-term rates to rise.
 
-Dissecting the interest rate response in more detail led Skinner and Zettelmeyer (1995) to paint an even complexer picture. While the yield curve shifts upwards on average, they found a number of occasions where an adjustment to the target rate caused the yield curve to tilt: Long and short rates responded by moving in opposite directions (as cited in \citealp[p. 1]{Ellingsen.2003}). Skinner and Zettelmeyer came to the conclusion that these were not singular occurrences, but that such tilts made up a considerable portion of the yield curve responses and could be observed in all four of the big economies they studied, that is in France, Germany, the United Kingdom, and the United States (as cited in \citealp[p. 1594]{Ellingsen.2001}). An example is the yield curve movement in 1994, where interest rates of long maturities fell after the Fed announced an increase in its target rate \citep[~p. 1594]{Ellingsen.2001}. So not only is the positive response of long-term rates difficult to explain, the response is not even consistent in its direction: long-term rates may move up or down when the Fed increases the target rate. 
+Dissecting the interest rate response in more detail led \cite{Skinner.1995} to paint an even complexer picture. While the yield curve shifts upwards on average, they found a number of occasions where an adjustment to the target rate caused the yield curve to tilt: Long and short rates responded by moving in opposite directions (as cited in \citealp[p. 1]{Ellingsen.2003}). Skinner and Zettelmeyer came to the conclusion that these were not singular occurrences, but that such tilts made up a considerable portion of the yield curve responses and could be observed in all four of the big economies they studied, that is in France, Germany, the United Kingdom, and the United States. An example is the yield curve movement in 1994, where interest rates of long maturities fell after the Fed announced an increase in its target rate \citep[~p. 1594]{Ellingsen.2001}. So not only is the positive response of long-term rates difficult to explain, the response is not even consistent in its direction: long-term rates move up or down when the Fed increases the target rate. 
 
-Whether positive or negative, to \citet[p. 425]{Gurkaynak.2005} any response of long-term rates is in contradiction to standard macroeconomic models. They argue that models predict that short-term rates return quickly to their steady state and thus have only a transitory effect on the future path of interest rates. Therefore, one would expect long-term rates not to react to monetary policy changes. They refer to the fact that long-term rates move significantly in response to monetary policy decisions as \textit{excess sensitivity} of long-term interest rates \cite[p. 2]{Gurkaynak.2003}.
+Whether positive or negative, to \citet[p. 425]{Gurkaynak.2005} any response of long-term rates is in contradiction to standard macroeconomic models. They argue that models predict short-term rates to return quickly to their steady state. As a result, short-term rates have only a transitory effect on the future path of interest rates. Therefore, one would expect long-term rates not to react to monetary policy changes. They refer to the fact that long-term rates move significantly in response to monetary policy decisions as \textit{excess sensitivity} of long-term interest rates \cite[p. 2]{Gurkaynak.2003}.
 
 \citet[pp. 426--427]{Gurkaynak.2005} focus on the response of forward interest rates as a different way of expressing the yield curve. They find that long-term forward rates move in the opposite direction as the monetary policy actions. As they note, this stands in sharp contrast to the findings of \cite{Cook.1989} and \cite{Romer.2000}, who observed a movement of long-term rates in the same direction. \citeauthor{Gurkaynak.2005} put this down to their use of forward rates, which they consider a better measure for sensitivity. %instead of long-term yields. 
 Additionally, they criticize previous research for the usage of raw change in the target rate, neglecting to differentiate between expected and unexpected policy moves. In their opinion, only the unexpected components of a monetary policy action can be expected to influence the term structure \citep[pp. 430--431]{Gurkaynak.2005}.
@@ -260,7 +295,7 @@ H_0&:  \text{ For large $n$: } \beta_n^{Ex}<0< \beta_n^{End}
 
 Using data from October 1988 to December 2001, \citet[~p. 16]{Ellingsen.2003} find significant positive responses of the the 6-month and 1-year rate to endogenous and exogenous policy actions. For the 10-year and the 30-year rate, on the other hand, the coefficients are significant and positive for endogenous changes, and negative for exogenous changes. \citeauthor{Ellingsen.2003} conclude that their model finds strong support in U.S. data. 
 
-Yet, the author of this thesis cannot help but note that the explained variation ($R^2$) is rather small for long rates. While the model is able to account for up to 60\% of the variation in short rates, this ratio drops to 15\% for 10-year rates and 10\% for 30-year rates \citep[~p. 16]{Ellingsen.2003}. Additionally, \citet[~p. 20]{Ellingsen.2003} admit that their results might be dependent on the classification of a few pivotal events. Since the classification was done manually, it is quite subjective. This could explain why \cite{Krosigk.2017} was not able to replicate their results using text mining techniques. \Citeauthor{Krosigk.2017} analyzed data for the time period of January 2002 to June 2017 and found only positive coefficients, especially for exogenous events, with the only significant effect pertaining to the 6-month rate \citeyearpar[~p. 36]{Krosigk.2017}. This stands in sharp contrast to \citeauthor{Ellingsen.2003}'s results and raises doubts concerning the robustness of their findings.
+However, \citet[~p. 20]{Ellingsen.2003} admit that their results might be dependent on the classification of a few pivotal events. Since the classification was done manually, it is quite subjective. This could explain why \cite{Krosigk.2017} was not able to replicate their results using text mining techniques. \Citeauthor{Krosigk.2017} analyzed data for the time period of January 2002 to June 2017 and found only positive coefficients, especially for exogenous events, with the only significant effect pertaining to the 6-month rate \citeyearpar[~p. 36]{Krosigk.2017}. This stands in sharp contrast to \citeauthor{Ellingsen.2003}'s results and raises doubts concerning the robustness of their findings.
 
 %\begin{quote}It has often been noted that  Most models of monetary policy cannot account for this puzzling behavior of long-term interest rates. In our previous work, we have shown that such a behavior is easily explained in a model where the central bank has private information about economic shocks and its own preferences or targets.~\cite{Ellingsen.2004}\end{quote}
 %%
@@ -284,9 +319,9 @@ Yet, the author of this thesis cannot help but note that the explained variation
 %
 %E2001 is a narrative approach
 
-\section{New Insights Through Narrative Research} \label{NewInsights}
+\section{New Insights through Narrative Research} \label{NewInsights}
 
-It is striking that \cite{Ellingsen.2003}, in order to find data in support of their model, naturally chose a narrative approach. In their model, they explicitly assume that the yield curve's response depends "on market participants’ interpretation of the policy move" \citep[~p. 1603]{Ellingsen.2001}. They aim at classifying policy events as they are perceived by financial investors "since it is the investors’ beliefs that determine the interest rate response" \citet[~p. 1604]{Ellingsen.2001}. They analyze newspaper articles not to determine the central bank's intentions underlying a policy move, but rather the traders' opinions. In their view it is "irrelevant whether a target change is in fact driven by policy preferences or by economic events. At any given point in time it is traders, and not the Fed, that determine the price of long-term bonds" \cite[~p. 2]{Ellingsen.2003}. Thus, the effect on market interest rates is not driven by policy actions, but by the opinions and views market participants form about such actions. In other words, it's not the target rate change that influences the yield curve, but the stories surrounding it.
+It is striking that \cite{Ellingsen.2003}, in order to find data in support of their model, naturally chose a narrative approach. In their model, they explicitly assume that the yield curve's response depends "on market participants’ interpretation of the policy move" \citep[~p. 1603]{Ellingsen.2001}. They aim at classifying policy events as they are perceived by financial investors "since it is the investors’ beliefs that determine the interest rate response" \citep[~p. 1604]{Ellingsen.2001}. They analyze newspaper articles not to determine the central bank's intentions underlying a policy move, but rather the traders' opinions. In their view, it is "irrelevant whether a target change is in fact driven by policy preferences or by economic events. At any given point in time it is traders, and not the Fed, that determine the price of long-term bonds" \cite[~p. 2]{Ellingsen.2003}. Thus, the effect on market interest rates is not driven by policy actions but by the opinions and views market participants form about such actions. In other words, it's not the target rate change that influences the yield curve but the stories surrounding it.
 
 Likewise, \cite{Cook.1989} used newspaper articles to analyze the reaction of the yield curve to target rate movements. They focused on perceived changes in the target rate as reported by the Wall Street Journal on the day after a target rate change to determine its magnitude and direction. Interestingly, \citet[~p. 337]{Cook.1989} mention that the Journal sometimes used "speculative language" which hampered their ability to isolate the bare facts of the policy action. In their quest to determine the facts of the policy move, they did their best to strip the articles of all other information, including the manner in which the facts were presented and the interpretative value of the "speculative language." 
 
@@ -308,45 +343,73 @@ Ideally, an examination of newspaper articles with regards to narratives surroun
 H_0&:  \text{ For large $n$: } \beta_n^{N1}<0< \beta_n^{N2}
 \end{align}
 
-Chapter \ref{NarrativesAndDecisionMaking} outlines what narratives are and why there is reason to believe that they have a strong influence on human behavior and thus warrant more attention in financial and economic research. To circumvent the problem of subjectivity faced by previous research when it comes to the identification of narratives, this thesis uses Natural Language Processing techniques rather than manual evaluation of text data. Chapter \ref{NLP} gives an account of topic modeling methods and introduces Probabilistic Latent Semantic Analysis, which will be used to identify different narratives. 
+Chapter \ref{NarrativesAndDecisionMaking} 
+gives an overview of research regarding narratives to corroborate the notion that narratives play an important part in individual behavior and decision making and thus warrant more attention in financial and economic research. 
 
 %also kann Textauswertung etwas dazu beitragen, es geht um das Verständnis zu Narrativen - aber jetzt die Frage der Zeitdimension: die Kurse sind innerhalb einer halben Stunden verändert - question: is the narrative really driving the change still or is this rather a case of already observing the result -> we can't explain y by knowing y!
 
 \chapter{Narratives and Decision Making}\label{NarrativesAndDecisionMaking}
 
+In his address delivered to the American Economic Association in 2017, Nobel laureate Robert \citeauthor{Shiller.2017} called for an expansion of the field of economics to include the study of narratives. According to \citet[p. 967]{Shiller.2017} "the human brain has always been highly tuned
+toward narratives [...] to justify ongoing actions, even such basic actions as spending and investing." As such, narratives have the potential to be the underlying cause of economic outcomes and the serious quantitative study of popular narratives is necessary to understand economic fluctuations \cite[p. 967]{Shiller.2017}. This view is supported by \citet{Akerlof.2016} who assert that narratives play a fundamental role in economic decision making.
 
-\section{What Narratives Are}
+Other disciplines, such as psychology, sociology, and anthropology have long recognized the importance of narratives and the scientific interest in narratives has increased rapidly since 2010. In economics and finance, however, comparatively little effort has been undertaken to understand the impact of narratives \cite[pp. 970--97]{Shiller.2017}. According to \citet[p. 59]{Akerlof.2016} standard economics omits the role of narratives in favor of a simplified model of human behavior. The shortcomings of such a model have been highlighted by other disciplines, leading to new fields of research such as behavioral economics. Indeed, insofar as narratives are used as explanations or as points of reference, they are related to concepts such as framing or the representativeness heuristic (\citealp{Kahnemann.1974,Kahneman.2002,Thaler.2016}). However, as \citet[p. 59]{Akerlof.2016} point out, behavioral economics has little to say about the role of narratives in general and additional research is needed before the impact of narratives on economic decisions will be fully appreciated. 
 
-\subsection{McAdams Research on Narratives}
-
-\subsection{Social Psychology Background}
-
-
-\section{How Narratives can help}
-
-\subsection{Bayesian Brain and Predictive Coding}
-
-Here, there could be a direct link to the algorithms that are used in Machine Learning, AI, and NLP. 
-
-\subsection{Influence and Change on Human Beings}
-
-Akerlof and Shiller understand narratives as a convention, but it is more than that, it changes how people think and perceive the world. \cite{Akerlof.2016}
+To reach an understanding of the concept of narratives, this chapter draws on the findings of other disciplines to explain how the term narrative can be understood (Chapter \ref{CH:2.1}) and how narratives influence human beings as well as their decision making (Chapter \ref{CH:2.2}). 
 
 
-\section{Narrative Research}
+%Figure \ref{narrativesfields} illustrates the difference between economics and other social sciences when it comes to narrative research. 
+%\begin{figure}
+%	\caption{Ratio of articles mentioning narratives across fields \cite[p. 970]{Shiller.2017}.}
+%	\centering
+%	\includegraphics[scale=1]{Images/NarrativesFields.png}
+%	\label{narrativesfields}
+%\end{figure}
 
+
+
+
+\section{On the Nature of Narratives}\label{CH:2.1}
+
+For \citeauthor{Shiller.2017}, narratives are simple stories or easily expressed explanations of events that can be used to stimulate the concerns and emotions of the audience. Consequently, many people will want to bring such stories up in conversation, on the news, or on social media. While narratives may be based on facts, they are a construct enriched with emotions, human interest, and other extraneous detail that form an impression on the human mind \cite[pp. 968--973]{Shiller.2017}. \citet[p. 58]{Akerlof.2016} keep a simple understanding of narratives as "stories that people tell themselves and others." 
+
+Indeed, story telling seems to be the basis of a narrative understanding of the world. Some researchers go as far as to suggest that human beings, by definition, are "cause-seeking, purpose-forming, story-telling animals" ~\cite[p.~434]{Atran.2010} or "storytellers by nature" ~\cite[p.~27]{McAdams.1993}. 
+~\citet[p.~434]{Atran.2010} argues that part of being a storyteller is a strong  tendency  for  confabulation,  that is a propensity to search for underlying patterns and principles and, when  such patterns are absent, to construct them. Active confabulation has indeed been demonstrated in \citeauthor{Gazzaniga.1985}'s (\citeyear{Gazzaniga.1985}) famous experiment with split-brain patients.\footnote{Taking advantage of the fact that people with a severed corpora callosa can no longer pass information between the two hemispheres of the brain, \citeauthor{Gazzaniga.1985} presented different visual stimuli to the participants' brain hemispheres. However, only the left half of the brain has access to the language centers and thus controls speech. When the right hemisphere received the visual stimulus, participants were able to correctly explain what they have seen. When stimulated on the other side, they lacked that ability as the right hemisphere registered the picture but was unable to transfer that information to the language center. An example is a particular subject whose left hemisphere registered a chicken claw, and the right a snow scene. Subsequently asked to choose an image from a selection of pictures, the subject chose a shovel with his left hand and a chicken with the right. The explanation for this choice was that "the chicken claw goes with the chicken and you need the shovel to clean out the chicken shed." Lacking the necessary information to explain their actions did not stop people from making up plausible stories. This led \citeauthor{Gazzaniga.1985} to refer to the language centers on the left side of the brain as the interpreter module, whose job it is to give a running commentary on whatever the self is doing, even though the interpreter module has no access to the real causes or motives of the self's behavior ~\citep{Gazzaniga.1985, GazzanigaM.IvryR.andMangunG..1998}.}
+
+A penchant for storytelling can be beneficial in a world that offers many regularities. \citeauthor{Atran.2010} proposes that the mental capacity to confabulate as well as to detect and react to recurring patterns has most likely offered a survival benefit to human ancestors, e.g by allowing them to systematically track game, store food for bad times, or develop agriculture. As a result, human brains are now hard-wired to see patterns, so much so that they are  reluctant  to believe things just happen by chance. Instead, people  insist on telling themselves stories about their lives and all its major events, trying   to  detect  a  red thread 
+and a meaningful, coherent  narrative \cite[p.~435--436]{Atran.2010}. Evidence in support of \citeauthor{Atran.2010}'s theory has been provided by \citet{Whitson.2008} and \cite{HeiderF.andSimmelM..}, amongst others.\footnote{\citet{Whitson.2008} shed light on the phenomenon of illusory pattern perception. At the beginning of their experiments, they induced a feeling of lack of control in their subjects (e.g. through random performance feedback or by letting them vividly recall an experience in which they lacked control). Afterwards, they assessed subjects on the Personal Need for Structure Scale and asked whether they could see patterns in a grainy image or stock market information. \citeauthor{Whitson.2008} found that feeling a lack of control encourages pattern perception. They ascribe the increase in perceived illusory patterns to a desire for more structure and a need to feel in control. In fact, this desire is so strong that individuals will "produce a pattern from noise to return the world to a predictable state" \citep[p.~117]{Whitson.2008}.
+		
+Similarly, \cite{HeiderF.andSimmelM..} requested their subjects to interpret a short film depicting moving geometrical figures. All subjects, with very few exceptions, interpreted the movements as actions of animated beings, mainly of persons. Interestingly, a fair amount of subjects reported a coherent story \citep[~p.246]{HeiderF.andSimmelM..}, e.g. interpreting two triangles as men fighting over a girl (a circle) or seeing the shapes as young lovers that are accosted by a villain. It seems that in this short movie starring moving geometrical shapes people automatically and consistently detected patterns and agency, and even saw entire stories play out. }
+
+\citet[pp.~123--124]{RobinsonJohnA.HawpeLinda.1986} argue that "narrative thinking -- storytelling -- is a successful method of organizing perception, thought, memory, and action." To them, narrative thinking is a heuristic process, requiring skill, judgment, and experience. If successful, the story making will result in a coherent and plausible account of how and why something has happened. Thus, stories are a solution to the social problem of establishing order in human affairs, allowing the (re)interpretation of events and the construction of causal patterns ~\cite[pp.~111--112]{RobinsonJohnA.HawpeLinda.1986}. This resonates in \citeauthor{Bruner.2000}'s \citeyearpar{Bruner.2000} concept of \textit{narrative knowing}, which is employed to understand human conduct. While the paradigmatic mode of thought  organizes human experience by means of reasoned analysis, logical proof, and empirical observation, the narrative mode yields a different explanation of events, able to account for the ambiguity of human intention and behavior \citep{Bruner.2000}. \citeauthor{Bruner.2000} argues that humans evolved to tell stories, because the capacity to explain the world in terms of stories is adaptive in a social environment (see also ~\citeauthor{McAdams.2006}, ~\citeyear{McAdams.2006}; \citeauthor{McAdams.1993}, ~\citeyear{McAdams.1993}, ~p.29).
+
+
+\section{The Influence of Narratives}\label{CH:2.2} 
+%/ How Narratives Influence Behavior / Why Narratives Make A Difference}\label{CH:2.2}
+
+"Storytelling is sense-making", both of the external and the internal world ~\citep[p. 76]{McAdams.2006}. Narratives are not vehicles by which events are understood and rationalized but also a crucial building block of individual identity: "We also expect stories to tell us who
+we are" (McAdams, 2006, p. 76). Humans naturally tend to construct coherent life stories that reflect not only their experiences but also social expectations and traditions.  As such, narratives are psycho-social constructs that go beyond facts in order to (re)construct the past, present, and future ~\cite[pp.~301--307]{McAdams.1996}. ~\citet[p.~81]{JackJ.Bauer.2008} call this construct a "narrative identity", that is an internal, dynamic life story that an individual constructs to make sense of his or her life. Thus, insofar as behavior is attributed to an individual, it is necessarily influenced by narrative elements. As \citet[p. 59]{Akerlof.2016} already pointed out, this is a far more nuanced understanding of human decision making than classic economic models usually account for.\footnote{Life stories are adapted and re-constructed throughout a human life. For a deeper understanding of the process of live story construction see the research of \citeauthor{McAdams.1985} (\citeyear{McAdams.1985}, ~\citeyear{McAdams.1996}, \citeyear{McAdams.2001}, ~\citeyear{McAdams.2006}, ~\citeyear{McAdams.}), \cite{Damasio.1999}, and \cite{Habermas.2000}.}
+
+Narratives are based on facts and remembered events. However, often facts are at least partially made-up and memories inaccurately recollected. Memory is notoriously unreliable and often people are overconfident when it comes to the accuracy of their memories ~\citep{McAdams.2006}. In an experiment, \citet{Offer.2000} showed that accuracy of memory was generally no better than expected by chance. \citet{Conway.2000} propose that memories of past events are influenced by current goals and hopes for the future. As such, in line with their capacity for confabulation, humans tend to remember events in a way that best serves them in the current moment. ~\citet[~p. 300]{McAdams.1982} talks of "memory selection" and assumes a circular relationship: Autobiographical memories are shaped by personal motives and, in turn, personal motives are shaped by memories. In a similar vein, \citet{McGregor.1999} and \citet{Murray.1994} discovered that while narratives are influenced by memories, memories are just as strongly influenced by narratives. Nuanced differences in story lines can change memories, leading to a distorted recollection of evidence and to biased judgments. Additionally, different stories regarding certain events correlate with different real life outcomes, such as different divorce rates in romantic relationships. 
+
+The stories we tell ourselves and others have the power to influence our identity, our memory, and our behavior (see \citealp{Pasupathi.1998}; \citealp{Murray.1994}). Moreover, narratives also contribute to psychological maturity, mental health, and professional and marital satisfaction \citep[p. 248]{McAdams.}. Research on the link between narratives and subjective well-being found that coherent narratives rich in positive elements and vocabulary were connected to higher levels of well-being \citep{King.2000}. \cite{Adler.2008} found that themes of agency in narratives are associated with psychological health, subjective well-being, and nuanced meaning-making. 
+
+Given the impact narratives have on individuals as well as their decision making and behavior, \citet[pp. 997--999]{Shiller.2017} calls for more research on the topic. Specifically, he mentions the increasing feasibility of analyzing text data by use of quantitative methods. Such methods allow the processing of previously prohibitively large amounts of data and the introduction of a new scientific rigor into the field of narrative analysis. \citet[pp. 997--999]{Shiller.2017} stresses the need for economics to include such methods in its research. 
+This thesis takes a step in this direction by investigating to what extent machine learning methods can be employed to identify economically relevant narratives.
+%As mentioned in Chapter \ref{MonetaryPolicy}, \cite{Ellingsen.2003} already employed a qualitative narrative approach in their research. However, to circumvent the problem of subjectivity when it comes to the identification of narratives, this thesis uses Natural Language Processing techniques rather than manual evaluation of the text data. 
+Chapter \ref{NLP} introduces Probabilistic Latent Semantic Analysis, a topic modeling method which will be used to identify different narratives.\footnote{Some of the arguments presented in Chapter \ref{NarrativesAndDecisionMaking} were already brought forward and expounded upon by the author of this thesis in \cite{Knoe.2017}.}
 
 
 %\chapter{Natural Language Processing / Topic Modeling}\label{NLP}
 \chapter{Topic Analysis}\label{NLP}
-In this chapter, I take a closer look at topic mining and analysis, a field of natural language processing that aims at analyzing the content of text data. To that end, I introduce unsupervised text mining techniques called probabilistic topic models that discover latent topics in the text data. \citet[p.~329]{Zhai.2016} define a topic as "the main idea discussed in the text data, which may also be regarded as a theme or subject of a discussion or conversation."
+This chapter provides a closer look at topic mining and analysis, a field of natural language processing that aims at analyzing the content of text data. To that end, I introduce unsupervised text mining techniques called probabilistic topic models that discover latent topics in the text data. \citet[p.~329]{Zhai.2016} define a topic as "the main idea discussed in the text data, which may also be regarded as a theme or subject of a discussion or conversation."
 
 The reason for the use of topic analysis in this thesis is obvious: News articles that present different narratives on the target rate adjustment will do so by discussing different themes or topics concerning such an adjustment. On an analytical level, we can expect that articles reporting along the lines of different narratives will also employ a different vocabulary. This is exactly what a probabilistic topic modeling with its bag-of-words method is able to pick up on. 
 
 A well-known topic model is Latent Dirichlet Allocation (LDA) which was first introduced by \cite{Blei.2003}. LDA has been further developed and adapted by \cite{Hoffman2010} to allow for the processing of massive text data collections that arrive continuously. Although LDA is a very popular topic model, this thesis focuses on Probabilistic Latent Semantic Analysis (PLSA), which preceded LDA and provided the foundation LDA was built on. Given that I analyze a large but fixed set of newspaper articles (see Chapter \ref{textdata}), PLSA is an appropriate model that offers sufficient functionality for the analysis.\footnote{Unlike PLSA, LDA is able to assign probabilities to unseen documents. While this comes in handy when out of sample properties are to be assessed, it offers no advantage in the current analysis.}
 
 %\section{Probabilistic Latent Semantic Analysis}\label{PLSA}
-Probabilistic Latent Semantic Analysis (PLSA) was first introduced by \cite{Hofmann.1999}. \citet[p.~994]{Blei.2003} called \citeauthor{Hofmann.1999}'s model a "significant step forward" in probabilistic topic modeling. The main achievement of PLSA was to supplement the theory of Latent Semantic Analysis with a sound statistical foundation and to introduce a proper generative model of the data \cite[p. 289]{Hofmann.1999}. It is based on the idea that documents are mixtures of topics and the generative model specifies a probabilistic procedure by which documents are assumed to be generated \cite[p.~2]{Steyvers(2007)}. As \citet[p. 994]{Blei.2003} explain, PLSA "models each word in a document as a sample from a mixture model, where the mixture components are multinomial random variables that can be viewed as representations of 'topics'." Let's take a closer look at the generative process via such mixture models.
+Probabilistic Latent Semantic Analysis (PLSA) was first introduced by \cite{Hofmann.1999}. \citet[p.~994]{Blei.2003} called \citeauthor{Hofmann.1999}'s model a "significant step forward" in probabilistic topic modeling. The main achievement of PLSA was to supplement the theory of Latent Semantic Analysis with a sound statistical foundation and to introduce a proper generative model of the data \cite[p. 289]{Hofmann.1999}. It is based on the idea that documents are mixtures of topics and the generative model specifies a probabilistic procedure by which documents are assumed to be generated \cite[p.~2]{Steyvers(2007)}. As \citet[p. 994]{Blei.2003} explain, PLSA "models each word in a document as a sample from a mixture model, where the mixture components are multinomial random variables that can be viewed as representations of 'topics'."
 
 
 \section{Generative Model}\label{GM}
@@ -504,7 +567,7 @@ Note that the PLSA model with a background topic is the more general case. By se
 
 
 
-\chapter{Data and Methodology}
+\chapter{Data and Methodology}\label{D&M}
 
 This chapter gives an overview of the data used in this thesis. The financial data set is outlined in Chapter \ref{Ch:financedata}, the text data set in Chapter \ref{textdata}. Further, Chapter \ref{methodology} explains how the data was processed and applied to the topic modeling task.  
 
@@ -572,7 +635,7 @@ A closer look at the dispersion of the most common words reveals that their usag
 
 \section{Methodology}\label{methodology}
 
-This Chapter explains the preprocessing of the text data (Chapter  \ref{preprocessing}), the engenieering of the feature space (Chapter \ref{featueeng}) and the application of the PLSA model with and without background topic (Chapter \ref{appPLSA} and \ref{Ch:implembg}).
+This Chapter explains the preprocessing of the text data (Chapter  \ref{preprocessing}), the engineering of the feature space (Chapter \ref{featueeng}) and the application of the PLSA model with and without background topic (Chapter \ref{appPLSA} and \ref{Ch:implembg}).
 
 
 \subsection{Text Preprocessing}\label{preprocessing}
@@ -709,7 +772,7 @@ Considering the top words, no clear topical concentration becomes salient. Both 
 	\label{dispersionPLSAorig}
 \end{figure}
 
-The text data collection comprises between 14 to 97 articles for every policy day. The words of each article are partitioned between the two topics, resulting in a topic coverage probability that indicates the extent to which an article is to be attributed to a topic. To classify a policy day as belonging either to narrative one ($N_1$) or narrative two ($N_2$), I average the topic coverage probabilities of all articles on a given policy day and attribute the day to the topic that dominates the articles. Figure \ref{classPLSA} in Appendix \ref{AppendixC1} depicts the resulting classification of the policy days. 
+The text data collection comprises between 14 to 97 articles for every policy day. The words of each article are partitioned between the two topics, resulting in a topic coverage probability that indicates the extent to which an article is to be attributed to a topic. To classify a policy day as belonging either to narrative one ($N_1$) or narrative two ($N_2$), I average the topic coverage probabilities of all articles on a given policy day and attribute the day to the topic that dominates the articles. Figure \ref{classPLSA} in Appendix \ref{AppendixC1} depicts the resulting classification of the policy days.\footnote{Ideally, articles on a given policy daz would be fully attributed to the same topic. However, often the articles are made up from words of both topics. Using the average as a threshold value for classification is intuitive but leads to an unbalanced split between $N_1$ and $N_2$. Alternatively, the threshold can be adjusted to allow an even split of the policy days between the two narratives. The results of the analysis with a balanced split are presented in Appendix \ref{AppendixE}. However, the results using the median as a threshold hardly differ from the results presented here.}
 
 38 policy days have been attributed to topic 2 and only 18 days to topic 1. Also, quite often both topics command a large share of the articles on a given day, one topic dominating the other only by a small margin. Thus, the classification of the policy days is not as clear cut as one might wish. If we consider how the individual articles have been classified, we would expect that, on a given day, all articles are attributed to the same topic. That would be a clear indication that a specific narrative, as identified by our topic model, permeated the press reporting at that time. However, as Figure \ref{classdoc01} and \ref{classdoc02} show, quite often the articles on a specific day are almost evenly split between the topics.  
 %Thus, it stands to reason that the PLSA model without background distribution was not able to infer topics that would separate the policy days in a meaningful manner.
@@ -767,12 +830,12 @@ The most common word in the background topic is \textit{fed}, followed by \texti
 
 The top 20 words of every topic are listed in Tables \ref{tab:topics}--\ref{tab:topics3} in Appendix \ref{AppendixC2}. The higher $\lambda_B$, the more the count of common words in the topics decreases in favor of more interesting words. Topic 1 appears to focus on \textit{investing}: With an increasing $\lambda_B$, terms like \textit{investors}, \textit{yield}, \textit{rose}, \textit{fell}, \textit{trading}, \textit{index}, and \textit{stocks} climb to the top of the word distribution. Topic 2, on the other hand, seems to focus on the Fed's \textit{economic analysis}:  With an increasing $\lambda_B$, terms like \textit{economic}, \textit{growth}, \textit{greenspan}, \textit{bernanke}, \textit{statement}, \textit{chairman}, and \textit{economists} come to dominate the topic. Thus, the topics clearly pick up on different subjects (or narratives) in the articles and, with an increased use of the background topic, the topical focus of the word distributions becomes salient.
 
-Figure \ref{classPLSAL01} in Appendix \ref{AppendixC2} depicts the resulting classification of the policy days for $\lambda_B=0.1$ and Figure \ref{classPLSAL09} for $\lambda_B=0.9$. With $\lambda_B=0.1$, 37 policy days have been attributed to topic 2 and only 19 days to topic 1. With  $\lambda_B=0.9$,  36 policy days have been attributed to topic 2 and 20 days to topic 1. The introduction of a background model as well as the level of $\lambda_B$ has very little impact on the classification of the policy days. When it comes to the classification of single documents, an increase in $\lambda_B$ leads to a decrease in ambiguity, as Figures \ref{classdoc01L01}--\ref{classdoc02L01} and \ref{classdoc01L09}--\ref{classdoc02L09} show. This is hardly surprising: When $\lambda_B=0.9$, only 10\% of the tokens of a document need to be split between topic 1 and 2. As a result, an allocation of all tokens to the same topic is more likely.
+Figure \ref{classPLSAL01} in Appendix \ref{AppendixC2} depicts the resulting classification of the policy days for $\lambda_B=0.1$ and Figure \ref{classPLSAL09} for $\lambda_B=0.9$. With $\lambda_B=0.1$, 37 policy days have been attributed to topic 2 and only 19 days to topic 1. With  $\lambda_B=0.9$,  36 policy days have been attributed to topic 2 and 20 days to topic 1. The introduction of a background model as well as the level of $\lambda_B$ has very little impact on the classification of the policy days. When it comes to the classification of single documents, an increase in $\lambda_B$ leads to a decrease in ambiguity, as Figures \ref{classdoc01L01},\ref{classdoc02L01}, \ref{classdoc01L09}, and \ref{classdoc02L09} show. This is not surprising: When only 10\% of the tokens of a document have to be split between topic 1 and 2, an allocation of all tokens to the same topic is more likely.
 
 
 When it comes to the evaluation of topic model quality, there are several possible approaches. First, a test can be set up in which a human judge must assess topic quality, in particular the coherence of the inferred topics. Second, traditional metrics, such as the log-likelihood of held-out data, can be employed to measure how well a topic model generalizes. However, such metrics are often negatively correlated with topic quality as assessed by human judges. A third approach is downstream task improvement: A model is assessed based on the statistically significant improvement it facilitates in another task \cite[~pp.383--384]{Zhai.2016}.
 
-For the purpose of this thesis, we have already outlined how an increase in $\lambda_B$ makes the topics more interpretable. In Chapter \ref{Ch:results} we will also consider how the different topic model specifications affect the downstream task of the financial analysis. 
+It has already been mentioned that an increase in $\lambda_B$ makes the topics more interpretable. The results of the financial analysis are presented in Chapter \ref{Ch:results} and discussed in Chapter \ref{Ch:discussion}. 
 
 %\section{NOTES}
 %Besprechung - 24.09.2018
@@ -793,7 +856,7 @@ For the purpose of this thesis, we have already outlined how an increase in $\la
 
 \chapter{Results}\label{Ch:results}
 
-This Chapter presents the results of the financial analysis. In Chapter \ref{Ch:classification}, the results of the policy day classification are presented. The classification of the policy days is subsequently used in the financial regression, the results of which are presented in Chapter \ref{Ch:regressionresults}.
+In Chapter \ref{Ch:classification}, the results of the policy day classification are presented. The classification of the policy days is subsequently used in the financial regression, the results of which are presented in Chapter \ref{Ch:regressionresults}.
 
 \section{Classification of Policy Days}\label{Ch:classification}
 
@@ -840,7 +903,7 @@ In a next step, we run the regression formulated in Eq. \ref{reg2} for the  clas
 	\label{tab:reg1} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
-As expected, the intercept is always zero. However, the null hypothesis (see Eq. \ref{H00}) finds little support in the data. The slope coefficients for the non-policy days are large and strongly significant for most maturities. Yet, in line with hypothesis \ref{H00}, we would expect to find that $\beta_n^{N1}$ is positive for short maturities but negative for long maturities. Even though the slope coefficient $\beta_n^{N1}$ is decreasing with longer maturities and remains significant, it does not turn negative. 
+As expected, the intercept is zero. However, the null hypothesis (see Eq. \ref{H00}) finds little support in the data. The slope coefficients for the non-policy days are large and strongly significant for most maturities. Yet, in line with hypothesis \ref{H00}, we would expect to find that $\beta_n^{N1}$ is positive for short maturities but negative for long maturities. Even though the slope coefficient $\beta_n^{N1}$ is decreasing with longer maturities and remains significant, it does not turn negative. 
 
 The slope coefficient $\beta_n^{N2}$ also decreases in maturity, but by a smaller margin than $\beta_n^{N1}$. Figure \ref{betaL00} illustrates the change in the coefficients given the duration of the maturities. Indeed, while the difference in the betas is positive for short maturities, it turns negative for long maturities. This, at least, indicates that the classification according to narratives picks up on short- and long-term motivation. However, the differences between the coefficients are never significant. As the equality test shows, the two responses, $\beta_n^{N1}$ and $\beta_n^{N2}$, cannot be statistically separated for any maturity. In line with this finding, Figure \ref{betaL00} illustrates that the 95\% confidence intervals of the two coefficients mostly overlap. 
 
@@ -878,9 +941,34 @@ Tables \ref{tab:reg2} and \ref{tab:reg3} in Appendix \ref{AppendixD2} show the r
 %	\label{tab:reg1} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 %\end{table}
 
-\chapter{Discussion}
+\chapter{Discussion}\label{Ch:discussion}
+
+The PLSA topic model produced two topics as illustrated by Tables \ref{tab:topic1} and \ref{tab:topics}--\ref{tab:topics3}. With an increasing weight on the background topic, different thematic foci become salient. The first topic picks up on words concerning \textit{investing}, the second topic on words regarding the \textit{Fed's economic outlook}. Technically speaking, the topics inferred by PLSA are word distributions. In the context of this thesis, they are interpreted as narratives. Specifically, it is assumed that the use of different vocabularies indicates the presence of different stories in the analyzed articles. In this case, the articles reporting on the target rate adjustments do so by talking about issues and concerns surrounding investments or by mentioning the Fed and it's economic analysis. 
+
+Using the two narratives to classify the policy days does not separate the days characterized by a co-movement of the yield curves from the days on which the rates move in opposite directions. An increase in the weight on the background topic only marginally affects the classification. This is a first indication that, while the PLSA model identifies two distinct narratives and is able to attribute the articles accordingly, the narratives do not pick up on the information that explains the inconsistent reaction of the yield curves.
+
+Indeed, the regression results do not support the the null hypothesis (see Eq. \ref{H00}). While the slope coefficients for the non-policy days are large and strongly significant for most maturities, they do not turn negative for long maturities. Additionally, the differences between the two slope coefficients are not significant for any maturity. As with the policy day classification, changing the weight on the background topic has almost no effect on the results. 
+
+Clearly, the two narratives the author was able to identify with the use of PLSA do not explain the inconsistent response of the long-term interest rates. There are several possible reasons for this. First, it is possible that narratives in general are not the defining factor that drive inconsistent yield curve movements. Moreover, it is possible that narratives in newspaper articles do not pick up on the relevant information to explain the excess sensitivity puzzle. However, the author of this thesis finds that unlikely, seeing as other researchers in the field already applied a narrative approach with some success (see \cite{Ellingsen.2003}, \cite{Cook.1989}, \cite{Goetzmann.2016}, \cite{Gurkaynak.2004}). Second, PLSA might not be able to pick up on narrative nuances that would allow to account for the excess sensitivity puzzle. While being a very effective tool in topic mining, PLSA is only able to produce word distributions and relies on the bag-of-words assumption. Interpreting the use of vocabulary as synonymous with the use of narratives might be an oversimplification and even lead to the elimination of important narrative elements such as agency, causal chains, etc. On top of that, given the current specifications, PLSA is only able to detect two topics. Consequently, the two narratives remain closely related with both being almost exclusively made up of economic terms. In reality, there might be a greater mix of narratives in the text data or even sub-narratives that only become salient once the obvious topics are accounted for.
+
+In conclusion, using PLSA to identify two narratives does not yield a successful classification of policy days and the identified narratives are not able to account  for the unexplained puzzle in the movements of the yield. However, this is most likely an indication that PLSA in its current form, despite its promising premise, is not the right tool to undertake a quantitative analysis of economic narratives. The author suggests that further research needs to be undertaken to understand which text processing methods are suited for the analysis of economic narratives and how the scientific rigor of statistical methods can be introduced into narrative analysis. 
+
 
 \chapter{Conclusion}
+
+
+The relationship between monetary policy and market interest rates poses a puzzle: Long-term rates move up or down in response to an increase of the Fed's target rate. This thesis analyzed to what extent narratives can explain the inconsistent reaction of the long-term interest rates. It is hypothesized that the different reactions of the long-term rates are driven by the market participants' interpretation of the target rate adjustments rather than the policy move itself. These interpretations can be understood as narratives and are assumed to be influenced by the newspaper articles reporting on the target rate adjustment. 
+
+Nobel laureates Robert \citeauthor{Shiller.2017} and George Akerlof have stressed the importance of narratives when it comes to understanding economics decision making and economic fluctuations. Other disciplines, such as psychology and sociology, have shown an increasing interest in narratives in recent years and their research has shown that narratives have a significant impact on individuals and their behavior. However, comparatively little research has been undertaken in the fields of economics and finance. In response to this lack of research, \citeauthor{Shiller.2017} called for an expansion of the field of economics to include the study of narratives. Specifically, he emphasized the need to utilize the increasing opportunities offered by statistical learning models to analyze text data.
+Following \citeauthor{Shiller.2017}'s call, this thesis applies a quantitative narrative approach to investigate the puzzle of the inconsistence response of the long-term interest rates.
+
+In order to identify different narratives surrounding the target rate adjustments, over 2'300 articles from American newspapers were analyzed. The articles reported on the 56 target rate adjustments that took place between October 1998 to September 2018. With the use of Probabilistic Latent Semantic Analysis (PLSA), a topic mining model, two topics were identified. Technically, the topics produced by PLSA are word distributions, i.e. they attach a probability weight to the words in the text data and are characterized by the words that are given a large weight. In terms of narratives, word distributions indicate the use of a specific vocabulary and under the assumption that different narratives demand the use of different vocabularies the word distributions are interpreted as narratives. Thus, narrative one focuses on \textit{investing}, with terms like \textit{investors}, \textit{yield}, \textit{trading}, \textit{index}, and \textit{stocks} featuring prominently. Narrative two, on the other hand, is characterized by words such as \textit{economic}, \textit{growth}, \textit{greenspan}, \textit{bernanke}, and \textit{chairman} and seems to be focused  on the \textit{Fed's economic analysis}. 
+
+The words of all articles are attributed to either narrative one or narrative two. Subsequently, the policy days are classified as being influenced by either narrative one or narrative two. To that end, it is determined whether a policy day is mostly dominated by articles reporting on narrative one or by articles attributed to narrative two. Having achieved a split of the policy days between the two narratives, it is straightforward to determine whether the narratives are correlated with yield curve movements: one narrative should be associated with a co-movement of the interest rates while the other narrative should dominate the policy days on which the rates move in opposite directions. 
+
+Having achieved a classification of policy days by narratives, the daily change in the interest rates with maturities 6 month, 1 year, 3 years, 5 years, 10 years, 20 years, and 30 years are regressed on the change of the 3-month rate. In line with the research of \citet{Ellingsen.2003}, the one-day change in the 3-month T-bill rate is taken as a measure of unexpected monetary policy action. According to the hypothesis proposed in this thesis, it is expected that both slope coefficients are positive for short maturities but that one of the slope coefficients is negative for long maturities. The financial analysis lends no support to the hypothesis. The slope coefficients of both narratives are positive for all maturities. Additionally, the differences between the coefficients are never significant. As the equality test shows, the responses of the two different narratives cannot be statistically separated for any maturity.
+
+Clearly, the two narratives identified with the use of PLSA do not explain the inconsistent response of the long-term interest rates. There are several potential reasons for this. Possibly, narratives in general have no influence on yield curve movements and can thus not explain its inconsistent response. However, other researchers in the field already applied a narrative approach to the problem with some success. Thus, the author is not inclined to discount the influence of narratives altogether. Rather, it is possible that PLSA was not able to pick up on the relevant narratives. PLSA is based on a probabilistic approach and relies on the bag-of-word assumption, that is it neglects to recognize the order of words in the text data. As a result, important narrative information might have been lost in the analysis. Thus, the author can only conclude that PLSA in its current form is not the right tool to undertake a quantitative analysis of economic narratives. The author suggests that further efforts are undertaken to understand the impact of narratives in economics. In particular, research should be undertaken to understand which text processing methods are suited for the analysis of economic narratives.  
 
 
 \newpage
@@ -1048,7 +1136,7 @@ but before feature engineering.
 
 \chapter{Topic Model Output}\label{AppendixC}
 
-\section{PLSA without background topic}\label{AppendixC1}
+\section{PLSA without Background Topic}\label{AppendixC1}
 
 Figure \ref{classPLSA} shows the classification of policy days according to the weight of narrative one and narrative two across all articles of a specific policy day. The classification utilizes the topic model output without background topic, that is with $\lambda_B = 0$. 
 
@@ -1158,7 +1246,7 @@ Figures \ref{classdoc01} and \ref{classdoc02} show the weight of narrative one o
 %	\label{tab:topics} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 %\end{table}
  
- \section{PLSA with background topic}\label{AppendixC2}
+ \section{PLSA with Background Topic}\label{AppendixC2}
  
 Tables \ref{tab:topics}--\ref{tab:topics3} show the 20 top words of every topic depending on $\lambda_B$. The use of colors emphasizes the movement of words of interest across different specifications of  $\lambda_B$. 
 
@@ -1426,10 +1514,17 @@ Figures \ref{betaL01} and \ref{betaL09} show the relationship of the slope coeff
 
 \chapter{Alternative Classification: Median}\label{AppendixE}
 
+
+
 \section{Classification Output according to Median}\label{AppendixE1}
 
+Figures \ref{classPLSAmed} and \ref{classPLSAmed0_9} illustrate the classification of policy days for $\lambda_B = 0.1$ and $\lambda_B = 0.9$, respectively, when the median is used as a classification threshold. 
+
+Figures \ref{Change02mod_L00} and \ref{Change02mod_L09} plot the change in the 3-month rate against the change in the 10-year rate on policy days for $\lambda_B = 0.1$ and $\lambda_B = 0.9$, respectively. Note that the policy days are split evenly between narrative one and narrative two: 28 policy days have been attributed to each narrative. 
+
+
 \begin{sidewaysfigure}
-	\caption{Policy day classification according to Median with $\lambda_B = 0$.}
+	\caption{Policy day classification according to median with $\lambda_B = 0$.}
 	\centering
 	\includegraphics[scale=0.8]{Images/plsamodelling_bg_modLamb_0_0.pdf}
 	\label{classPLSAmed}
@@ -1443,7 +1538,7 @@ Figures \ref{betaL01} and \ref{betaL09} show the relationship of the slope coeff
 %\end{sidewaysfigure}
 
 \begin{sidewaysfigure}
-	\caption{Policy day classification according to Median with $\lambda_B = 0.9$.}
+	\caption{Policy day classification according to median with $\lambda_B = 0.9$.}
 	\centering
 	\includegraphics[scale=0.8]{Images/plsamodelling_bg_modLamb_0_9.pdf}
 	\label{classPLSAmed0_9}
@@ -1471,6 +1566,8 @@ Figures \ref{betaL01} and \ref{betaL09} show the relationship of the slope coeff
 \end{figure}
 
 \section{Regression Output according to Median}\label{AppendixE2}
+
+Based on the classification with the median as classification threshold, the regression formulated in Eq. \ref{reg2} is run. Figures \ref{betaL01} and \ref{betaL09} show the relationship of the slope coefficients for $\lambda_B=0$ and $\lambda_B=0.9$, respectively, including the 95\%-confidence interval for each $\beta_n$. Similarly, Tables \ref{tab:reg2} and \ref{tab:reg3}  show the regression result for policy day classifications with $\lambda_B=0$ and $\lambda_B=0.9$.
 
 \begin{figure}
 	\caption{Regression coefficients for narrative one and two with $\lambda_B=0$, applying median as classification threshold.}
@@ -1511,7 +1608,7 @@ Figures \ref{betaL01} and \ref{betaL09} show the relationship of the slope coeff
 		$\beta_n^{N1} = \beta_n^{N2}$ & 0.38 & 0.15 & -0.31 & -0.33 & -0.29 & -0.35 & -0.37\\
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
-	\caption{Regression results (classification with $\lambda_B=0.1$, applying median as classification threshold).} % Table caption, can be commented out if no caption is required
+	\caption{Regression results (classification with $\lambda_B=0$, median as classification threshold).} % Table caption, can be commented out if no caption is required
 	\label{tab:reg1Mod} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
@@ -1555,7 +1652,7 @@ Figures \ref{betaL01} and \ref{betaL09} show the relationship of the slope coeff
 		$\beta_n^{N1} = \beta_n^{N2}$ & 0.19 & 0.14 & -0.33 & -0.23 & -0.14 & -0.17 & -0.14\\
 		\bottomrule % Bottom horizontal line
 	\end{tabular}
-	\caption{Regression results (classification with $\lambda_B=0.9$, applying median as classification threshold).} % Table caption, can be commented out if no caption is required
+	\caption{Regression results (classification with $\lambda_B=0.9$, median as classification threshold).} % Table caption, can be commented out if no caption is required
 	\label{tab:reg3Mod} % A label for referencing this table elsewhere, references are used in text as \ref{label}
 \end{table}
 
